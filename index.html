@@ -1,1 +1,158 @@
-<!--#include file="header.html" -->
+<html lang = "en">
+<head>
+<title>Pique</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Icon font -->
+<script src="https://use.fontawesome.com/2af200affc.js"></script>
+
+<!-- My styles -->
+<link rel="stylesheet" href="common.css">
+</head>
+<body class = "interior" id = "feed">
+  <header class = "interior-header">
+    <div class ="container">
+      <div class = "logo-container pull-left">
+        <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
+      </div>
+      <div class = "header-right pull-right">
+        <div class = "nav">
+          <a class = "nav-link" href = "/applications">Applications</a>
+        </div>
+
+        <a href = "/profile" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div></a>
+      </div>
+    </div>
+  </header>
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-4">
+      <h4 class = "pod-label">How It Works
+      <div class = "pod" id = "how-it-works">
+
+      </div>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg invite-btn" data-toggle="modal" data-target="#myModal">
+        Invite People to Review Your Applications
+      </button>
+
+
+    </div>
+    <div class = "col-sm-8">
+      <div class = "action-bar">
+        <table>
+          <tr>
+            <td class = "number" id = "scored">
+              5
+            </td>
+            <td class = "number" id = "unscored">
+              0
+            </td>
+            <td class = "number" id = "finalists">
+              3
+            </td>
+            <td class = "number" id = "days">
+              17
+            </td>
+          </tr>
+          <tr>
+            <td class = "action-label" id = "scored">
+              scored
+            </td>
+            <td class = "action-label" id = "unscored">
+              unscored
+            </td>
+            <td class = "action-label" id = "finalists">
+              finalists
+            </td>
+            <td class = "action-label" id = "days">
+              days left
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <span class = "application-count">5 Applications</span>
+      <div class = "applicant-block" id = "">
+        <table>
+          <tr>
+            <td class = "applicant">
+              <a href = "/applicant" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div></a>
+            </td>
+            <td class = "vertical-bottom">
+              <a href = "/applicant" class = "applicant-name">Ron Peled</a>
+            </td>
+          </tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Intro
+            </td>
+            <td class = "applicant-info" id = "intro">
+              I am a passionate student about coding.
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              GPA
+            </td>
+            <td class = "applicant-info" id = "gpa">
+              4.0
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Extra Curriculars
+            </td>
+            <td class = "applicant-info" id = "extra-curriculars">
+              Chess, SGI, Basketball
+            </td>
+          <tr>
+        </table>
+      </div>   <!-- end applicant-block -->
+      <div class = "applicant-block" id = "">
+        <table>
+          <tr>
+            <td class = "applicant">
+              <a href = "/applicant" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div></a>
+            </td>
+            <td class="vertical-bottom with-location">
+              <a href = "/applicant" class = "applicant-name">Bryon John</a>
+              <p class = "location">Los Angeles, CA</p>
+            </td>
+          </tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Intro
+            </td>
+            <td class = "applicant-info" id = "intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo euismod urna, bibendum dapibus magna accumsan quis. Duis non neque et nibh convallis accumsan in eget ligula.
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              GPA
+            </td>
+            <td class = "applicant-info" id = "gpa">
+              4.0
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Extra Curriculars
+            </td>
+            <td class = "applicant-info" id = "extra-curriculars">
+              Chess, SGI, Basketball
+            </td>
+          <tr>
+        </table>
+      </div>   <!-- end applicant-block -->
+    </div>
+  </div>  <!-- end row -->
+</div> <!-- end container -->
+</body>

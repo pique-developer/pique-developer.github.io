@@ -1,0 +1,47 @@
+header.interior-header{
+  background-color: @darkblue;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+.logo-container{
+  #logo{
+    height: 30px;
+    margin-top: 10px;
+    display: inline-block;
+    img{
+      height:100%;
+    }
+  }
+}
+
+.nav{
+  display: inline-block;
+  float: left;
+  .nav-link{
+    color: @fontgrey;
+    .helvetica-light;
+    display: inline-block;
+    padding: 5px 4px;
+    margin: 10px;
+    &.selected, &:hover{
+      color: white;
+      border-bottom: 1px solid white;
+    }
+  }
+}
+
+.user-photo-link{
+  display: inline-block;
+  float: right;
+  padding:8px;
+  margin-left: 15px;
+  .user-photo{
+    width:30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 3px;
+    display: inline-block;
+    background-size: cover;
+  }
+}

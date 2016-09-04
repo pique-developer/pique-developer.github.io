@@ -1,0 +1,94 @@
+body.interior{
+  background-color: #F0F1F2;
+}
+.vertical-bottom{
+  vertical-align: bottom;
+  &.with-location{
+    padding-top: 16px;
+    vertical-align: inherit;
+    line-height: 14px;
+  }
+}
+
+.action-bar{
+  background: white;
+  border-radius: 8px;
+  padding: 25px 0px;
+  margin-bottom: 30px;
+  table{
+    width: 100%;
+    td{
+      width: 25%;
+      text-align: center;
+
+    }
+    td + td{
+      border-left: 1px solid @grey3;
+    }
+    .number{
+      font-size: 30px;
+    }
+    .action-label{
+      text-transform: uppercase;
+      color: @fontgrey;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+}
+
+.application-count{
+  color: @fontgrey;
+  margin-left: 10px;
+}
+
+.applicant-block{
+  border: 1px solid #EDEEF0;
+  background-color:@grey1;
+  padding-bottom: 10px;
+  .applicant{
+    .user-photo-link{
+      float: none;
+      padding: 0;
+      margin-top: 15px;
+      margin-left: 25px;
+    }
+    .user-photo{
+      height:50px;
+      width: 50px;
+    }
+  }
+
+  .applicant-name{
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 500;
+  }
+  .location{
+    margin: 0;
+    color: @fontgrey;
+  }
+  .applicant-info-label{
+    text-transform: uppercase;
+    color: @fontgrey;
+    font-weight: 500;
+    font-size: 13px;
+    width:60px;
+    padding:15px 15px 10px 25px;
+    vertical-align: super;
+
+  }
+  .applicant-info{
+    padding:15px;
+    padding-left: 0px;
+  }
+}
+
+.invite-btn{
+  width: 100%;
+  font-size: 14px;
+  background-color: @lightblue;
+  border:none;
+}

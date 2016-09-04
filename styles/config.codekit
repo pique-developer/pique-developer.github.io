@@ -22,7 +22,7 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/foundations.less": {
+	"\/feed.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -30,8 +30,8 @@
 		"ieCompatibility": 1,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/foundations.less",
-		"outputAbbreviatedPath": "\/css\/foundations.css",
+		"inputAbbreviatedPath": "\/feed.less",
+		"outputAbbreviatedPath": "\/css\/feed.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

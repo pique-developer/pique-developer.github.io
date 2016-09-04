@@ -1,3 +1,139 @@
 .helvetica {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.helvetica-light {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+}
+a:hover {
+  text-decoration: none;
+}
+header.interior-header {
+  background-color: #09063d;
+  height: 50px;
+  margin-bottom: 30px;
+}
+.logo-container #logo {
+  height: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+.logo-container #logo img {
+  height: 100%;
+}
+.nav {
+  display: inline-block;
+  float: left;
+}
+.nav .nav-link {
+  color: #a0a0a0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  display: inline-block;
+  padding: 5px 4px;
+  margin: 10px;
+}
+.nav .nav-link.selected,
+.nav .nav-link:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+.user-photo-link {
+  display: inline-block;
+  float: right;
+  padding: 8px;
+  margin-left: 15px;
+}
+.user-photo-link .user-photo {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 3px;
+  display: inline-block;
+  background-size: cover;
+}
+body.interior {
+  background-color: #F0F1F2;
+}
+.vertical-bottom {
+  vertical-align: bottom;
+}
+.vertical-bottom.with-location {
+  padding-top: 16px;
+  vertical-align: inherit;
+  line-height: 14px;
+}
+.action-bar {
+  background: white;
+  border-radius: 8px;
+  padding: 25px 0px;
+  margin-bottom: 30px;
+}
+.action-bar table {
+  width: 100%;
+}
+.action-bar table td {
+  width: 25%;
+  text-align: center;
+}
+.action-bar table td + td {
+  border-left: 1px solid #dde2e7;
+}
+.action-bar table .number {
+  font-size: 30px;
+}
+.action-bar table .action-label {
+  text-transform: uppercase;
+  color: #a0a0a0;
+  font-size: 13px;
+  font-weight: 500;
+}
+.application-count {
+  color: #a0a0a0;
+  margin-left: 10px;
+}
+.applicant-block {
+  border: 1px solid #EDEEF0;
+  background-color: #f9fafb;
+  padding-bottom: 10px;
+}
+.applicant-block .applicant .user-photo-link {
+  float: none;
+  padding: 0;
+  margin-top: 15px;
+  margin-left: 25px;
+}
+.applicant-block .applicant .user-photo {
+  height: 50px;
+  width: 50px;
+}
+.applicant-block .applicant-name {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 500;
+}
+.applicant-block .location {
+  margin: 0;
+  color: #a0a0a0;
+}
+.applicant-block .applicant-info-label {
+  text-transform: uppercase;
+  color: #a0a0a0;
+  font-weight: 500;
+  font-size: 13px;
+  width: 60px;
+  padding: 15px 15px 10px 25px;
+  vertical-align: super;
+}
+.applicant-block .applicant-info {
+  padding: 15px;
+  padding-left: 0px;
+}
+.invite-btn {
+  width: 100%;
+  font-size: 14px;
+  background-color: #4abced;
+  border: none;
+}
