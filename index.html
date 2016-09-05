@@ -31,20 +31,20 @@
 
 <div class = "container">
   <div class = "row">
-    <div class = "col-sm-4">
-      <h4 class = "pod-label">How It Works
+    <div class = "col-sm-3">
+      <h4 class = "grey-label">How It Works</h4>
       <div class = "pod" id = "how-it-works">
-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo euismod urna, bibendum dapibus magna accumsan quis. Duis non neque et nibh convallis accumsan in eget ligula.
       </div>
 
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary btn-lg invite-btn" data-toggle="modal" data-target="#myModal">
-        Invite People to Review Your Applications
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>Invite People to Review Your Applications
       </button>
 
 
     </div>
-    <div class = "col-sm-8">
+    <div class = "col-sm-9">
       <div class = "action-bar">
         <table>
           <tr>
@@ -77,16 +77,17 @@
           </tr>
         </table>
       </div>
-
-      <span class = "application-count">5 Applications</span>
-      <div class = "applicant-block" id = "">
+      <!-- To change the count of applications just target #count -->
+      <span class = "application-count"><span id = "count">5</span> Applications</span>
+      <a href = "/applicant" class = "applicant-block" id = "">
         <table>
           <tr>
             <td class = "applicant">
-              <a href = "/applicant" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div></a>
+              <div href = "/applicant" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
             </td>
             <td class = "vertical-bottom">
-              <a href = "/applicant" class = "applicant-name">Ron Peled</a>
+              <span class = "applicant-name">Ron Peled</span>
+              <p class = "location">San Francisco, CA</p>
             </td>
           </tr>
           <tr>
@@ -114,15 +115,15 @@
             </td>
           <tr>
         </table>
-      </div>   <!-- end applicant-block -->
-      <div class = "applicant-block" id = "">
+      </a>   <!-- end applicant-block -->
+      <a class = "applicant-block" id = "">
         <table>
           <tr>
             <td class = "applicant">
-              <a href = "/applicant" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div></a>
+              <div class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
             </td>
-            <td class="vertical-bottom with-location">
-              <a href = "/applicant" class = "applicant-name">Bryon John</a>
+            <td class="vertical-bottom">
+              <span class = "applicant-name">Bryon John</span>
               <p class = "location">Los Angeles, CA</p>
             </td>
           </tr>
@@ -151,7 +152,81 @@
             </td>
           <tr>
         </table>
-      </div>   <!-- end applicant-block -->
+      </a>   <!-- end applicant-block -->
+      <a class = "applicant-block" id = "">
+        <table>
+          <tr>
+            <td class = "applicant">
+              <div class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
+            </td>
+            <td class="vertical-bottom">
+              <span class = "applicant-name">Kendra Sanchezf</span>
+              <p class = "location">Los Angeles, CA</p>
+            </td>
+          </tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Intro
+            </td>
+            <td class = "applicant-info" id = "intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo euismod urna, bibendum dapibus magna accumsan quis. Duis non neque et nibh convallis accumsan in eget ligula.
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              GPA
+            </td>
+            <td class = "applicant-info" id = "gpa">
+              4.0
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Extra Curriculars
+            </td>
+            <td class = "applicant-info" id = "extra-curriculars">
+              Chess, SGI, Basketball
+            </td>
+          <tr>
+        </table>
+      </a>   <!-- end applicant-block -->
+      <a class = "applicant-block" id = "">
+        <table>
+          <tr>
+            <td class = "applicant">
+              <div class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
+            </td>
+            <td class="vertical-bottom">
+              <span class = "applicant-name">Emmanuel Lopez</span>
+              <p class = "location">Los Angeles, CA</p>
+            </td>
+          </tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Intro
+            </td>
+            <td class = "applicant-info" id = "intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo euismod urna, bibendum dapibus magna accumsan quis. Duis non neque et nibh convallis accumsan in eget ligula.
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              GPA
+            </td>
+            <td class = "applicant-info" id = "gpa">
+              4.0
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Extra Curriculars
+            </td>
+            <td class = "applicant-info" id = "extra-curriculars">
+              Chess, SGI, Basketball
+            </td>
+          <tr>
+        </table>
+      </a>   <!-- end applicant-block -->
     </div>
   </div>  <!-- end row -->
 </div> <!-- end container -->

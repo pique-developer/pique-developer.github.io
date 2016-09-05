@@ -3,11 +3,10 @@ body.interior{
 }
 .vertical-bottom{
   vertical-align: bottom;
-  &.with-location{
     padding-top: 16px;
     vertical-align: inherit;
-    line-height: 14px;
-  }
+    line-height: 10px;
+
 }
 
 .action-bar{
@@ -15,6 +14,7 @@ body.interior{
   border-radius: 8px;
   padding: 25px 0px;
   margin-bottom: 30px;
+  box-shadow: 0px 2px 7px rgb(217, 217, 218);
   table{
     width: 100%;
     td{
@@ -45,7 +45,12 @@ body.interior{
 .applicant-block{
   border: 1px solid #EDEEF0;
   background-color:@grey1;
+  display: block;
   padding-bottom: 10px;
+      box-shadow: 0px 2px 7px rgb(217, 217, 218);
+  &:hover{
+    background-color: @grey3
+  }
   .applicant{
     .user-photo-link{
       float: none;
@@ -54,14 +59,14 @@ body.interior{
       margin-left: 25px;
     }
     .user-photo{
-      height:50px;
-      width: 50px;
+      height:40px;
+      width: 40px;
     }
   }
 
   .applicant-name{
     color: black;
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 10px;
     display: block;
     font-weight: 500;
@@ -69,26 +74,46 @@ body.interior{
   .location{
     margin: 0;
     color: @fontgrey;
+    font-size: 14px;
   }
   .applicant-info-label{
     text-transform: uppercase;
     color: @fontgrey;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 12px;
     width:60px;
-    padding:15px 15px 10px 25px;
+    padding:10px 15px 5px 25px;
     vertical-align: super;
 
   }
   .applicant-info{
-    padding:15px;
+    padding:10px;
     padding-left: 0px;
+    padding-right: 50px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    vertical-align: top;
   }
 }
 
+.grey-label, .gray-label{
+  color:@fontgrey;
+  font-weight: 500;
+}
+#how-it-works{
+  height:250px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 2px 7px rgb(217, 217, 218);
+  margin-bottom: 30px;
+  border-radius: 5px;
+  padding:10px 15px;
+  margin-top: 10px;
+}
 .invite-btn{
   width: 100%;
   font-size: 14px;
   background-color: @lightblue;
   border:none;
+  white-space: normal;
 }
