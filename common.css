@@ -109,6 +109,11 @@ header.interior-header {
   display: inline-block;
   margin-bottom: 15px;
 }
+#login.modal .modal-content .small-grey-text {
+  color: #B2BCD3;
+  margin-bottom: 15px;
+  display: block;
+}
 #login.modal .modal-content .social-icons-container {
   margin-bottom: 15px;
 }
@@ -119,8 +124,8 @@ header.interior-header {
   display: inline-block;
   color: white;
   text-align: center;
-  font-size: 20px;
-  padding-top: 4px;
+  font-size: 26px;
+  padding-top: 12px;
   margin: 0 10px;
 }
 #login.modal .modal-content .social-icons-container .social-icon.facebook {
@@ -131,6 +136,28 @@ header.interior-header {
 }
 #login.modal .modal-content .social-icons-container .social-icon.google {
   background-color: #d7543a;
+}
+#login.modal .modal-content .submit-button + .submit-button {
+  margin-left: 13px;
+}
+#login.modal .modal-content .submit-button {
+  width: 48%;
+  display: inline-block;
+  border-radius: 50px;
+  padding: 12px;
+  font-weight: 300;
+  font-size: 16px;
+  border: none;
+}
+#login.modal .modal-content .submit-button.log-in {
+  background-color: #3cd070;
+  color: white;
+}
+#login.modal .modal-content .submit-button.need-account {
+  border: none;
+  color: #B2BCD3;
+  background-color: white;
+  border: 1px solid #DFE1F8;
 }
 body.interior {
   background-color: #F0F1F2;
