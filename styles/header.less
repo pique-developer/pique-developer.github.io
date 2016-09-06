@@ -80,13 +80,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#215edd', end
   }
   input{
     height:50px;
+    border: 1px solid #B2BCD3;
+    box-shadow: none;
+    &::-webkit-input-placeholder {
+         color: #B2BCD3;
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+         color: #B2BCD3;  
+      }
+
+      &::-moz-placeholder {  /* Firefox 19+ */
+         color: #B2BCD3;  
+      }
+
+      &:-ms-input-placeholder {
+         color: #B2BCD3;  
+      }
   }
   .form-group{
     margin-bottom: 25px;
   }
   .modal-content{
     border:none;
-    box-shadow: 0px 1px 30px rgba(17, 6, 113, 0.5);
+    box-shadow: 0 5px 33px rgba(39, 39, 39, 0.5);
     border-radius: 0;
     text-align: center;
     .welcome{
