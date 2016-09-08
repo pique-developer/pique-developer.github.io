@@ -12,29 +12,252 @@
 <!-- Latest compiled and minified  Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<!-- materialize-js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
 <!-- Icon font -->
 <script src="https://use.fontawesome.com/2af200affc.js"></script>
 
+
+<!-- datepicker -->
+
+<script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
+ <script type="text/javascript" src="../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 <!-- My styles -->
-<link rel="stylesheet" href="materialize.css">
-<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="../materialize.css">
+<link rel="stylesheet" href="../common.css">
 </head>
-<body>
+<body class = "interior">
   <header class = "interior-header">
     <div class ="container">
       <div class = "logo-container pull-left">
-        <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
+        <a href ="/" alt = "Home" id = "logo"><img src = "../images/Logo.png"></a>
       </div>
       <div class = "header-right pull-right">
         <div class = "nav">
           <a class = "nav-link" href = "/applications">Applications</a>
         </div>
 
-        <a href = "/profile" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div></a>
-         <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Log In</a>
+        <a href = "/profile" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("../images/user.jpg")'></div></a>
+         <!-- <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Log In</a> -->
       </div>
 
     </div>
   </header>
+  <div class = "container content">
+    <h4 class = "page-header">Scholarship Details</h4>
+    <form class="form-horizontal" id = "scholarship">
 
+      <div class="form-group">
+        <label for="foundation_name" class="col-sm-3 control-label">Foundation Name</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="foundation_name" placeholder="Name of Your Foundation">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description" class="col-sm-3 control-label">Description</label>
+        <div class="col-sm-9">
+          <textarea type="text" class="form-control" id="description" placeholder=""></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="deadline" class="col-sm-3 control-label">Deadline</label>
+        <div class="col-sm-9">
+          <div class='input-group date' id='datetimepicker1'>
+                      <input type='text' class="form-control"  placeholder="Select a date"/>
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+        </div>
+      </div>
+      <script>
+
+          $('#datetimepicker1').datetimepicker();
+       </script>
+       <div class="form-group">
+         <label for="deadline" class="col-sm-3 control-label">Award</label>
+         <div class="col-sm-9">
+           <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+           <div class="input-group">
+             <div class="input-group-addon">$</div>
+             <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+           </div>
+         </div>
+       </div>
+
+       <div class = "form-group">
+         <label for="tags" class="col-sm-3 control-label">Word Limit</label>
+         <div class="col-sm-9">
+           <input type="number" id="word_count" class="form-control" aria-describedby="wordhelp">
+
+          <span id="wordhelp" class="help-block">If you have a page limit instead of word limit, consider each page to have 250 words</span>
+         </div>
+       </div>
+
+       <div class = "form-group">
+         <label for="scores" class="col-sm-3 control-label">SAT or ACT Scores Required?</label>
+         <div class="col-sm-9">
+           <div class="radio">
+              <label>
+                <input type="radio" id = "yes-scores" value="">Yes
+              </label>
+            </div>
+            <div class="radio">
+               <label>
+                 <input type="radio" id ="no-scores" value="">No
+               </label>
+             </div>
+
+         </div>
+       </div>
+       <div class = "form-group">
+         <label for="deadline" class="col-sm-3 control-label">Which tags best describe your scholarship theme? </label>
+         <div class="col-sm-9">
+           <div class="checkbox">
+              <label>
+                <input type="checkbox" id ="community-service" value="">Community Service
+              </label>
+            </div>
+            <div class="checkbox">
+               <label>
+                 <input type="checkbox" id ="athletic" value="">Athletic
+               </label>
+             </div>
+             <div class="checkbox">
+                <label>
+                  <input type="checkbox" id ="local-community" value="">Local Community Based
+                </label>
+              </div>
+              <div class="checkbox">
+                 <label>
+                   <input type="checkbox" id ="leadership" value="">Leadership
+                 </label>
+               </div>
+         </div>
+       </div>
+       <div class = "form-group">
+         <label for="transcript" class="col-sm-3 control-label">Official Transcript Required?</label>
+         <div class="col-sm-9">
+           <div class="radio">
+              <label>
+                <input type="radio" id = "yes-transcript" value="">Yes
+              </label>
+            </div>
+            <div class="radio">
+               <label>
+                 <input type="radio" id ="no-transcript" value="">No
+               </label>
+             </div>
+
+         </div>
+       </div>
+       <div class = "form-group">
+         <label for="state-specific" class="col-sm-3 control-label">Is this scholarship limited to students from a particular city/state? </label>
+         <div class="col-sm-9">
+           <div class="radio">
+              <label>
+                <input type="radio" id = "yes-statespecific" value="">Yes
+              </label>
+            </div>
+            <div class="radio">
+               <label>
+                 <input type="radio" id ="no-statespecific" value="">No
+               </label>
+             </div>
+
+         </div>
+       </div>
+       <div class = "form-group">
+         <label for="student-grade" class="col-sm-3 control-label">The scholarship is only for...</label>
+         <div class="col-sm-9">
+           <div class="checkbox">
+              <label>
+                <input type="checkbox" id ="all-students" value="">All Students
+              </label>
+            </div>
+            <div class="checkbox">
+               <label>
+                 <input type="checkbox" id ="black-students" value="">Black students
+               </label>
+             </div>
+             <div class="checkbox">
+                <label>
+                  <input type="checkbox" id ="latino-students" value="">Latino Students
+                </label>
+              </div>
+              <div class="checkbox">
+                 <label>
+                   <input type="checkbox" id ="asian-students" value="">Asian students
+                 </label>
+               </div>
+               <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id ="jewish-students" value="">Jewish students
+                  </label>
+                </div>
+                <div class="checkbox">
+                   <label>
+                     <input type="checkbox" id ="women" value="">Women
+                   </label>
+                 </div>
+                 <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id ="students-of-color" value="">Students of color
+                    </label>
+                  </div>
+                  <div class="checkbox">
+                     <label>
+                       <input type="checkbox" id ="stem-students" value="">Students going into a STEM program
+                     </label>
+                   </div>
+                   <div class="checkbox">
+                      <label>
+                        <input type="checkbox" id ="law-students" value="">Students going into law
+                      </label>
+                    </div>
+         </div>
+       </div>
+       <div class = "form-group">
+         <label for="demographics" class="col-sm-3 control-label">The scholarship is only for...</label>
+         <div class="col-sm-9">
+           <div class="checkbox">
+              <label>
+                <input type="checkbox" id ="all-students-demo" value="">All Students
+              </label>
+            </div>
+            <div class="checkbox">
+               <label>
+                 <input type="checkbox" id ="freshman" value="">Freshman only
+               </label>
+             </div>
+             <div class="checkbox">
+                <label>
+                  <input type="checkbox" id ="sophomore" value="">Sophomores only
+                </label>
+              </div>
+              <div class="checkbox">
+                 <label>
+                   <input type="checkbox" id ="junior" value="">Juniors only
+                 </label>
+               </div>
+               <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id ="senior" value="">Seniors only
+                  </label>
+                </div>
+         </div>
+       </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-default">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </body>

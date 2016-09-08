@@ -125,7 +125,7 @@ header.interior-header {
   transition: 0.5s height ease-in;
 }
 #login.modal .name-form-group.expanded {
-  height: 72px;
+  height: 70px;
 }
 #login.modal .terms {
   height: 0px;
@@ -224,8 +224,22 @@ header.interior-header {
   background-color: #67C7EF;
   color: white;
 }
+.control-label {
+  color: #020F3C;
+}
+form#scholarship {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+form#scholarship .form-group {
+  margin-top: 30px;
+}
 body.interior {
   background-color: #F0F1F2;
+}
+body.interior .content {
+  background: white;
 }
 .vertical-bottom {
   vertical-align: bottom;
