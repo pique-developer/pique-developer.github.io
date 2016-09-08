@@ -246,6 +246,7 @@ body.interior {
 }
 body.interior .content {
   background: white;
+  padding: 0 50px;
 }
 .vertical-bottom {
   vertical-align: bottom;
