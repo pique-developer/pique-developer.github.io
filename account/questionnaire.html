@@ -80,15 +80,25 @@
        </script>
        <div class="form-group">
          <label for="deadline" class="col-sm-3 control-label">Award</label>
-         <div class="col-sm-9">
-           <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-           <div class="input-group">
+         <div class="col-sm-6 award-container">
+           <label class="sr-only" for="award1">Amount (in dollars)</label>
+           <div class="input-group award1">
              <div class="input-group-addon">$</div>
-             <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+             <input type="text" class="form-control" id="award1" placeholder="Amount">
            </div>
          </div>
+         <div class = "col-sm-3">
+           <button class="btn btn-default" id = "add-award">+ Add another award</button>
+         </div>
        </div>
-
+      <script>
+      var awardCount = 1;
+        $('#add-award').on('click', function(e){
+          e.preventDefault();
+          awardCount = awardCount + 1;
+          $('.award-container').append('<label class="sr-only" for="award'+awardCount+'">Amount (in dollars)</label><div class="input-group"><div class="input-group-addon">$</div><input type="text" class="form-control" id="award'+awardCount+'" placeholder="Amount #'+awardCount+'"></div>')
+        })
+      </script>
        <div class = "form-group">
          <label for="tags" class="col-sm-3 control-label">Word Limit</label>
          <div class="col-sm-9">
