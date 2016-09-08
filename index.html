@@ -256,21 +256,44 @@ $(document).ready(function(){
       <a href = "" class = "twitter social-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
       <a href = "" class = "google social-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
     </div>
-    <span class = "small-grey-text">Or email</span>
+    <span class = "small-grey-text">Don't Worry, We Don't Post to Any of Your Accounts</span>
     <form id = "login">
+      <div class = 'row name-form-group'>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="first_name" placeholder="First Name">
+          </div>
+        </div>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+          </div>
+        </div>
+      </div>
       <div class="form-group">
         <input type="email" class="form-control" id="email" placeholder="Email">
       </div>
       <div class="form-group">
         <input type="password" class="form-control" id="password" placeholder="Password">
       </div>
+      <div class = "terms small-grey-text">
+        By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
+      </div>
       <button type = "submit" class = "submit-button log-in">Log In</button>
       <button type = "" class = "submit-button need-account">Need an Account ?</button>
     </form>
+    <a class = "small-grey-text">Forget the Password ?</span>
   </div>
-
+  <span class = "copyright">Pique&nbsp;&#169;</span>
 </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-
+<script>
+  $('.need-account').on('click',function(e){
+    e.preventDefault();
+    $('.welcome').html('Sign Up for Pique!');
+    $('.name-form-group').addClass('expanded',100)
+    $('.terms').addClass('expanded',100)
+  })
+</script>
 </html>

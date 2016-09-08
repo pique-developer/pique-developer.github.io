@@ -53,7 +53,7 @@ header.interior-header{
   background: -webkit-linear-gradient(45deg,  #215edd 0%,#4abced 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(45deg,  #215edd 0%,#4abced 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#215edd', endColorstr='#4abced',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+  top:0;
   opacity: 0.9 !important;
   background-repeat: no-repeat;
    background-attachment: fixed;
@@ -68,7 +68,7 @@ header.interior-header{
 #login.modal{
   background-color: transparent;
   box-shadow: none;
-  top:1% !important;
+  top:-19% !important;
   overflow:visible;
   overflow-y: visible;
   max-width: 500px;
@@ -84,9 +84,12 @@ header.interior-header{
     }
   }
   input{
-    height:50px;
+    height:45px;
     border: 1px solid #B2BCD3;
     box-shadow: none;
+    &:focus{
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(57, 118, 224,.6);
+    }
     &::-webkit-input-placeholder {
          color: #B2BCD3;
       }
@@ -106,6 +109,31 @@ header.interior-header{
   .form-group{
     margin-bottom: 25px;
   }
+  .name-form-group{
+    height: 0px;
+    overflow: hidden;
+    transition: 0.5s height ease-in;
+    &.expanded{
+      height: 70px;
+    }
+  }
+  .terms{
+    height: 0px;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 20px;
+    transition: 0.5s height ease-in;
+    &.expanded{
+      height: 40px;
+    }
+  }
+  .copyright{
+    color: white;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 8px;
+  }
   .modal-content{
     border:none;
     box-shadow: 0 5px 33px rgba(39, 39, 39, 0.5);
@@ -124,7 +152,14 @@ header.interior-header{
       color: #B2BCD3;
       margin-bottom: 15px;
       display: block;
+      font-size: 12px;
     }
+    a.small-grey-text{
+      font-size: 14px;
+      &:hover{
+      color: @blue;
+    }
+  }
 
     .social-icons-container{
       margin-bottom: 15px;
@@ -137,7 +172,7 @@ header.interior-header{
         text-align: center;
         font-size: 26px;
         padding-top: 12px;
-        margin:0 10px;
+        margin:0 25px;
         &.facebook{
           background-color: @facebook;
         }
@@ -160,15 +195,25 @@ header.interior-header{
       font-weight: 300;
       font-size: 16px;
       border:none;
+      transition: 0.1s all ease-in;
       &.log-in{
         background-color: @green;
         color: white;
+          border: 1.5px solid @green;
+        &:hover{
+          background-color: #43b26a;
+        }
       }
       &.need-account{
         border:none;
-        color: #B2BCD3;
+        color: #67C7EF;
         background-color: white;
-        border: 1px solid #DFE1F8;
+        border: 1.5px solid #67C7EF;
+
+        &:hover{
+          background-color: #67C7EF;
+          color: white;
+        }
       }
     }
   }
