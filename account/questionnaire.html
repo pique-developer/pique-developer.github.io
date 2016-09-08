@@ -127,7 +127,7 @@
 
        <script>
         $('#yes-scores').on('click',function(){
-            $('.scores-container').append('<div class="form-group"><div class = "col-sm-6"><label for="sat-scores">SAT Minimum Score</label><input type="number" class="form-control" id="sat-scores" placeholder=""></div></div><div class="form-group"><div class = "col-sm-6"><label for="act-scores">ACT Minimum Score</label><input type="email" class="form-control" id="act-scores"></div></div> ')
+            $('.scores-container').append('<div class="form-group"><div class = "col-sm-6"><label for="sat-scores">SAT Minimum Score</label><input type="number" class="form-control" id="sat-scores" placeholder=""></div></div><div class="form-group"><div class = "col-sm-6"><label for="act-scores">ACT Minimum Score</label><input type="number" class="form-control" id="act-scores"></div></div> ')
         })
        </script>
        <div class = "form-group">
@@ -160,12 +160,12 @@
          <div class="col-sm-9">
            <div class="radio">
               <label>
-                <input type="radio" id = "yes-transcript" value="">Yes
+                <input type="radio" name = "transcript" id = "yes-transcript" value="">Yes
               </label>
             </div>
             <div class="radio">
                <label>
-                 <input type="radio" id ="no-transcript" value="">No
+                 <input type="radio" name = "transcript"  id ="no-transcript" value="">No
                </label>
              </div>
 
@@ -176,12 +176,12 @@
          <div class="col-sm-9">
            <div class="radio">
               <label>
-                <input type="radio" id = "yes-statespecific" value="">Yes
+                <input type="radio" name = "statespecific" id = "yes-statespecific" value="">Yes
               </label>
             </div>
             <div class="radio">
                <label>
-                 <input type="radio" id ="no-statespecific" value="">No
+                 <input type="radio" name = "statespecific" id ="no-statespecific" value="">No
                </label>
              </div>
 
@@ -267,7 +267,22 @@
                 </div>
          </div>
        </div>
+       <div class = "form-group">
+         <label for="transcript" class="col-sm-3 control-label">Is this a need based scholarship?</label>
+         <div class="col-sm-9">
+           <div class="radio">
+              <label>
+                <input type="radio" name = "need" id = "yes-need" value="">Yes
+              </label>
+            </div>
+            <div class="radio">
+               <label>
+                 <input type="radio" name = "need" id ="no-need" value="">No
+               </label>
+             </div>
 
+         </div>
+       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
           <button type="submit" class="btn btn-primary">Submit</button>
