@@ -53,18 +53,22 @@ header.interior-header {
   background-size: cover;
 }
 .lean-overlay {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#215edd+0,2989d8+50,207cca+51,4abced+100 */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#215edd+0,4abced+100 */
   background: #215edd;
   /* Old browsers */
-  background: -moz-linear-gradient(45deg, #215edd 0%, #2989d8 50%, #207cca 51%, #4abced 100%);
+  background: -moz-linear-gradient(45deg, #215edd 0%, #4abced 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #215edd 0%, #2989d8 50%, #207cca 51%, #4abced 100%);
+  background: -webkit-linear-gradient(45deg, #215edd 0%, #4abced 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #215edd 0%, #2989d8 50%, #207cca 51%, #4abced 100%);
+  background: linear-gradient(45deg, #215edd 0%, #4abced 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#215edd', endColorstr='#4abced', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
   opacity: 0.9 !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  margin: 0;
 }
 #login-button {
   background-color: #4abced;
