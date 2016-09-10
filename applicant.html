@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="materialize.css">
 <link rel="stylesheet" href="common.css">
 </head>
-<body class = "interior" id = "feed">
+<body class = "interior" id = "">
   <header class = "interior-header">
     <div class ="container">
       <div class = "logo-container pull-left">
@@ -31,7 +31,7 @@
         </div>
 
         <a href = "/profile" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div></a>
-         <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Log In</a>
+         <!-- <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Log In</a> -->
       </div>
 
     </div>
@@ -87,11 +87,11 @@
       </div>
       <!-- To change the count of applications just target #count -->
       <span class = "application-count"><span id = "count">5</span> Applications</span>
-      <a href = "./applicant.html" class = "applicant-block" id = "">
+      <a href = "/applicant" class = "applicant-block" id = "">
         <table>
           <tr>
             <td class = "applicant">
-              <div href = "../applicant" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
+              <div href = "/applicant" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
             </td>
             <td class = "vertical-bottom">
               <span class = "applicant-name">Ron Peled</span>
@@ -239,69 +239,5 @@
   </div>  <!-- end row -->
 </div> <!-- end container -->
 
-<!-- Modal JQuery Initialization -->
-<script>
-$(document).ready(function(){
-  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-  $('.modal-trigger').leanModal({
-    starting_top: '4%', // Starting top style attribute
-      ending_top: '-10%'
-  }
 
-  );
-});
-</script>
-<!-- Modal Structure -->
-<div id="login" class="modal">
-  <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
-  <div class="modal-content">
-    <div class = "welcome"></div>
-    <div class = "social-icons-container">
-      <a href = "" class = "facebook social-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a href = "" class = "twitter social-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a href = "" class = "google social-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-    </div>
-    <span class = "small-grey-text">Don't Worry, We Don't Post to Any of Your Accounts</span>
-    <form id = "login">
-      <div class = 'row name-form-group'>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="first_name" placeholder="First Name">
-          </div>
-        </div>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="last_name" placeholder="Last Name">
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <input type="email" class="form-control" id="email" placeholder="Email">
-      </div>
-      <div class="form-group">
-        <input type="password" class="form-control" id="password" placeholder="Password">
-      </div>
-      <div class = "terms small-grey-text">
-        By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
-      </div>
-      <button type = "submit" class = "submit-button log-in">Log In</button>
-      <button type = "" class = "submit-button need-account"></button>
-    </form>
-    <a class = "small-grey-text">Forget the Password ?</span>
-  </div>
-  <span class = "copyright">Pique&nbsp;&#169;</span>
-</div>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-<script>
-  $('.need-account').on('click',function(e){
-    e.preventDefault();
-    $('.modal-content').toggleClass('create-account');
-    $('.name-form-group').toggleClass('expanded')
-    $('.terms').toggleClass('expanded',100);
-
-  })
-
-
-</script>
 </html>

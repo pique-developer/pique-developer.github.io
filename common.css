@@ -158,6 +158,9 @@ header.interior-header {
   display: inline-block;
   margin-bottom: 15px;
 }
+#login.modal .modal-content .welcome:after {
+  content: 'Welcome to Pique!';
+}
 #login.modal .modal-content .small-grey-text {
   color: #B2BCD3;
   margin-bottom: 15px;
@@ -220,15 +223,24 @@ header.interior-header {
   background-color: white;
   border: 1.5px solid #67C7EF;
 }
+#login.modal .modal-content .submit-button.need-account:after {
+  content: 'Need an Account?';
+}
 #login.modal .modal-content .submit-button.need-account:hover {
   background-color: #67C7EF;
   color: white;
+}
+#login.modal .modal-content.create-account .welcome:after {
+  content: 'Sign Up for Pique!';
+}
+#login.modal .modal-content.create-account .need-account:after {
+  content: 'Already have an Account?';
 }
 .control-label {
   color: #020F3C;
 }
 form#scholarship {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 40px;
 }
@@ -240,6 +252,58 @@ form#scholarship .award-container .input-group {
 }
 form#scholarship .award-container .input-group.award1 {
   margin-top: 0px;
+}
+body#questionnaire .container {
+  max-width: 900px;
+}
+body#questionnaire header {
+  margin-bottom: 0;
+}
+body#questionnaire .content {
+  margin-top: 40px;
+}
+body#questionnaire .subheader {
+  color: white;
+  padding: 20px;
+  background-color: #4abced;
+}
+body#questionnaire .subheader h1 {
+  text-align: center;
+  font-family: 'Helvetica Neue';
+  font-weight: 100;
+  letter-spacing: 2px;
+  font-size: 2.5em;
+}
+body#questionnaire button.remove {
+  margin-top: 15px;
+  background-color: white;
+  border: 1px solid #dde2e7;
+}
+body#questionnaire .infographic {
+  display: none;
+  position: absolute;
+  width: 355px;
+  top: -50px;
+  right: -175%;
+  z-index: 100;
+  box-shadow: 0px 7px 37px gray;
+}
+body#questionnaire #recommendation-info {
+  color: #4abced;
+  text-decoration: underline;
+}
+body#questionnaire #recommendation-info:hover .infographic {
+  display: block;
+}
+body#questionnaire #add-award {
+  width: 100%;
+}
+body#questionnaire .state1 {
+  margin-top: 20px;
+  width: 100%;
+}
+body#questionnaire .state1 input {
+  width: 100%;
 }
 body.interior {
   background-color: #F0F1F2;

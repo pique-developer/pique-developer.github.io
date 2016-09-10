@@ -140,12 +140,16 @@ header.interior-header{
     border-radius: 0;
     text-align: center;
     .welcome{
+
       border-bottom: 1px solid #67C7EF;
       color: #67C7EF;
       padding: 8px 0;
       margin: 0 auto;
       display: inline-block;
       margin-bottom: 15px;
+      &:after{
+          content:'Welcome to Pique!';
+      }
     }
 
     .small-grey-text{
@@ -205,16 +209,28 @@ header.interior-header{
         }
       }
       &.need-account{
+
         border:none;
         color: #67C7EF;
         background-color: white;
         border: 1.5px solid #67C7EF;
-
+        &:after{
+          content: 'Need an Account?';
+        }
         &:hover{
           background-color: #67C7EF;
           color: white;
         }
       }
     }
+  }
+}
+
+#login.modal .modal-content.create-account{
+  .welcome:after{
+    content: 'Sign Up for Pique!';
+  }
+  .need-account:after{
+    content: 'Already have an Account?'
   }
 }
