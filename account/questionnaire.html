@@ -57,7 +57,7 @@
       <div class="form-group">
         <label for="foundation_name" class="col-sm-3 control-label">Foundation Name</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="foundation_name" placeholder="Name of Your Foundation">
+          <input type="text" class="form-control" id="foundation_name" onkeypress="return bugFix(event)"  placeholder="Name of Your Foundation">
         </div>
       </div>
 
@@ -90,6 +90,7 @@
            <div class="input-group award1">
              <div class="input-group-addon">$</div>
              <input type="text" class="form-control" id="award1" onkeypress="return bugFix(event)" placeholder="Amount">
+             <div class="input-group-addon">.00</div>
            </div>
          </div>
          <div class = "col-sm-3 remove-container">
@@ -98,7 +99,7 @@
        </div>
       <script>
       var awardCount = 1;
-        var bugFix = function(e){
+        bugFix = function(e){
           if (e.keyCode == 13) {
                 return false;
             }
@@ -107,7 +108,7 @@
           e.preventDefault();
           if(e.keyCode != 13){
             awardCount = awardCount + 1;
-            $('.award-container').append('<label class="sr-only" for="award'+awardCount+'">Amount (in dollars)</label><div class="input-group award'+awardCount+'"><div class="input-group-addon">$</div><input type="text" onkeypress = "return bugFix(event)" class="form-control" id="award'+awardCount+'" placeholder="Amount #'+awardCount+'"></div>');
+            $('.award-container').append('<label class="sr-only" for="award'+awardCount+'">Amount (in dollars)</label><div class="input-group award'+awardCount+'"><div class="input-group-addon">$</div><input type="text" onkeypress = "return bugFix(event)" class="form-control" id="award'+awardCount+'" placeholder="Amount #'+awardCount+'"><div class="input-group-addon">.00</div></div>');
             $('.remove-container').append('<div class = "row"><div class = "col-sm-12"><button class = "btn remove" id = "'+awardCount+'">x</button></div></div><script>$(".remove#'+awardCount+'").on("click",function(e){e.preventDefault();$(".award'+awardCount+'").remove(); this.remove();awardCount= awardCount - 1})')
           }
         })
@@ -131,7 +132,7 @@
        <div class = "form-group">
          <label for="tags" class="col-sm-3 control-label">Word Limit</label>
          <div class="col-sm-8">
-           <input type="number" id="word_count" class="form-control" aria-describedby="wordhelp">
+           <input type="number" id="word_count" class="form-control" onkeypress="return bugFix(event)" aria-describedby="wordhelp">
 
           <span id="wordhelp" class="help-block">If you have a page limit instead of word limit, consider each page to have 250 words</span>
          </div>
@@ -162,6 +163,7 @@
        <div class = "form-group">
          <label for="deadline" class="col-sm-3 control-label">Which tags best describe your scholarship theme? </label>
          <div class="col-sm-8">
+           <div class="col-sm-6">
            <div class="checkbox">
               <label>
                 <input type="checkbox" id ="community-service" value="">Community Service
@@ -172,6 +174,8 @@
                  <input type="checkbox" id ="athletic" value="">Athletic
                </label>
              </div>
+           </div>
+           <div class="col-sm-6">
              <div class="checkbox">
                 <label>
                   <input type="checkbox" id ="local-community" value="">Local Community Based
@@ -182,6 +186,7 @@
                    <input type="checkbox" id ="leadership" value="">Leadership
                  </label>
                </div>
+             </div>
          </div>
        </div>
        <div class = "form-group">
@@ -228,7 +233,7 @@
 
                   stateCount = stateCount + 1;
                   $('.state-column').append('<div class="input-group state'+stateCount+'"><input type="text" onkeypress = "return bugFix(event)" class="form-control" id="state'+stateCount+'" placeholder="Add locations"></div>');
-                
+
 
 
           })
@@ -240,6 +245,7 @@
        <div class = "form-group">
          <label for="student-grade" class="col-sm-3 control-label">The scholarship is only for...</label>
          <div class="col-sm-8">
+           <div class = "col-sm-6">
            <div class="checkbox">
               <label>
                 <input type="checkbox" id ="all-students" value="">All Students
@@ -265,6 +271,8 @@
                     <input type="checkbox" id ="jewish-students" value="">Jewish students
                   </label>
                 </div>
+              </div>
+              <div class="col-sm-6">
                 <div class="checkbox">
                    <label>
                      <input type="checkbox" id ="women" value="">Women
@@ -285,11 +293,13 @@
                         <input type="checkbox" id ="law-students" value="">Students going into law
                       </label>
                     </div>
+                  </div>
          </div>
        </div>
        <div class = "form-group">
          <label for="demographics" class="col-sm-3 control-label">The scholarship is only for...</label>
          <div class="col-sm-8">
+           <div class="col-sm-6">
            <div class="checkbox">
               <label>
                 <input type="checkbox" id ="all-students-demo" value="">All Students
@@ -305,6 +315,8 @@
                   <input type="checkbox" id ="sophomore" value="">Sophomores only
                 </label>
               </div>
+            </div>
+            <div class="col-sm-6">
               <div class="checkbox">
                  <label>
                    <input type="checkbox" id ="junior" value="">Juniors only
@@ -315,6 +327,7 @@
                     <input type="checkbox" id ="senior" value="">Seniors only
                   </label>
                 </div>
+              </div>
          </div>
        </div>
        <div class = "form-group">
