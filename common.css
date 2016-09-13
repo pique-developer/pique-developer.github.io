@@ -426,3 +426,92 @@ body.interior .content {
   font-size: 18px;
   position: relative;
 }
+.modal {
+  background: transparent;
+  box-shadow: none;
+}
+body#applicant {
+  padding-bottom: 100px;
+}
+body#applicant .container {
+  max-width: 830px;
+}
+body#applicant header {
+  margin-bottom: 0;
+}
+body#applicant header .container {
+  max-width: none;
+}
+.cover-photo {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 150px;
+}
+.profile-pic {
+  background-size: cover;
+  background-color: white;
+  border-radius: 8px;
+  background-position: center center;
+  height: 160px;
+  width: 160px;
+  margin-right: 25px;
+  position: relative;
+  top: -40px;
+}
+.applicant-info h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 36px;
+}
+.applicant-info h4 {
+  font-weight: 200;
+}
+.bottom h6 {
+  color: #a0a0a0;
+  text-transform: uppercase;
+}
+.bottom .comments {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 2px 7px #d9d9da;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.bottom .comments .comment {
+  border-bottom: 1px solid #f2f3f4;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+.bottom .comments .comment-header {
+  width: 100%;
+  display: inline-block;
+}
+.bottom .comments .comment-header .star-container {
+  color: #4abced;
+}
+.bottom .comments .comment-header .user-photo-link {
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-top: 0px;
+}
+.bottom .comments .comment-header .user-photo-link .user-photo {
+  width: 40px;
+  height: 40px;
+}
+.bottom .comments .comment-header h5.name {
+  color: #020f3c;
+  margin-bottom: 0px;
+}
+.stuck-footer {
+  background-color: #020f3c;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 10px 15px;
+}
+.stuck-footer button {
+  background-color: #4abced;
+}
