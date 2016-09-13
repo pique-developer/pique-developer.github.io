@@ -468,6 +468,9 @@ body#applicant header .container {
 .applicant-info h4 {
   font-weight: 200;
 }
+.applicant-info h4 i {
+  vertical-align: middle;
+}
 .bottom h6 {
   color: #a0a0a0;
   text-transform: uppercase;
@@ -504,6 +507,41 @@ body#applicant header .container {
 .bottom .comments .comment-header h5.name {
   color: #020f3c;
   margin-bottom: 0px;
+}
+.section {
+  margin-top: 35px;
+}
+.section h3 {
+  color: #a0a0a0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+}
+.section i {
+  vertical-align: middle;
+  font-size: 20px;
+  margin-right: 5px;
+}
+.section .glyphicon {
+  margin-right: 9px;
+}
+.section .doc-preview {
+  display: inline-block;
+  border: 3px solid #bac6d3;
+  width: 200px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.section .doc-preview .doc {
+  width: 100%;
+  height: 100px;
+  background-size: contain;
+  display: inline-block;
+}
+.section .doc-preview .doc-title {
+  background-color: #bac6d3;
+  color: #535454;
+  padding: 8px 8px 5px;
 }
 .stuck-footer {
   background-color: #020f3c;

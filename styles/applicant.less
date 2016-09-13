@@ -39,6 +39,9 @@ body#applicant{
   }
   h4{
     font-weight: 200;
+    i {
+      vertical-align: middle;
+    }
   }
 }
 .bottom{
@@ -77,6 +80,43 @@ body#applicant{
         color: @darkblue;
         margin-bottom: 0px;
       }
+    }
+  }
+}
+
+.section{
+  margin-top: 35px;
+  h3{
+    color: @fontgrey;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  }
+
+  i{
+    vertical-align: middle;
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  .glyphicon{
+    margin-right: 9px;
+  }
+  .doc-preview{
+    display: inline-block;
+    border:3px solid #bac6d3;
+    width:200px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    .doc{
+      width: 100%;
+      height:100px;
+      background-size: contain;
+      display: inline-block;
+    }
+    .doc-title{
+      background-color: #bac6d3;
+      color:#535454;
+      padding:8px 8px 5px;
     }
   }
 }
