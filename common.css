@@ -469,6 +469,9 @@ body#applicant header .container {
   font-weight: 200;
   font-size: 16px;
 }
+.applicant-info h4.locations {
+  color: #a0a0a0;
+}
 .applicant-info h4 i {
   vertical-align: middle;
   font-size: 16px;
