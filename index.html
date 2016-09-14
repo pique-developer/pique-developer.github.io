@@ -14,6 +14,8 @@
 
 <!-- Icon font -->
 <script src="https://use.fontawesome.com/2af200affc.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!-- My styles -->
 <link rel="stylesheet" href="materialize.css">
@@ -244,8 +246,8 @@
     <div class="modal-content">
       <h4>Invite others to review your foundation's applicants</h4>
 <form class="form-horizontal">
-      <input type="email" class="form-control" id="share-emails" placeholder="Enter email addresses..">
-<br>
+      <div class = "chips chips-placeholder"></div>
+      <br>
   <textarea class="form-control" rows="3">Add a note..</textarea>
   <br>
   <input class="btn btn-primary" type="submit" value="Submit">
@@ -257,6 +259,12 @@
   </div>
 <!-- Modal JQuery Initialization -->
 <script>
+
+$('.chips-placeholder').material_chip({
+   placeholder: '+ Add ',
+   secondaryPlaceholder: '+ Add Email ',
+ });
+
 $(document).ready(function(){
   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
   $('.modal-trigger').leanModal({
@@ -308,7 +316,7 @@ $(document).ready(function(){
   <span class = "copyright">Pique&nbsp;&#169;</span>
 </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
 <script>
   $('.need-account').on('click',function(e){
     e.preventDefault();

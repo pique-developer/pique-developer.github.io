@@ -123,12 +123,32 @@ body.interior{
   padding:10px;
   i{
     margin-right: 8px;
-    top: 6px;
+    top: 1px;
     font-size: 18px;
     position: relative;
   }
 }
-
+#modal1{
+  top:25% !important;
+  .chip{
+    border-radius: 0;
+  }
+  .chips {
+    border: none;
+    border: 1px solid #cccccc;
+    box-shadow: none;
+    margin-bottom: 6px;
+    min-height: 45px;
+    outline: none;
+    border-radius: 5px;
+    padding: 7px 9px 3px;
+    transition: all .3s;
+  }
+  .btn-primary{
+    background-color: @lightblue;
+    border: none;
+  }
+}
 .modal{
   background: transparent;
   box-shadow: none;

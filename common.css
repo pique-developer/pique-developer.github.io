@@ -422,9 +422,30 @@ body.interior .content {
 }
 .invite-btn i {
   margin-right: 8px;
-  top: 6px;
+  top: 1px;
   font-size: 18px;
   position: relative;
+}
+#modal1 {
+  top: 25% !important;
+}
+#modal1 .chip {
+  border-radius: 0;
+}
+#modal1 .chips {
+  border: none;
+  border: 1px solid #cccccc;
+  box-shadow: none;
+  margin-bottom: 6px;
+  min-height: 45px;
+  outline: none;
+  border-radius: 5px;
+  padding: 7px 9px 3px;
+  transition: all .3s;
+}
+#modal1 .btn-primary {
+  background-color: #4abced;
+  border: none;
 }
 .modal {
   background: transparent;
