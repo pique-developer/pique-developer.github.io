@@ -16,7 +16,6 @@ body.interior{
 .action-bar{
   background: white;
   border-radius: 8px;
-  padding: 25px 0px;
   margin-bottom: 30px;
   box-shadow: 0px 2px 7px rgb(217, 217, 218);
   table{
@@ -31,12 +30,17 @@ body.interior{
     }
     .number{
       font-size: 30px;
+      padding-top: 20px;
     }
     .action-label{
       text-transform: uppercase;
       color: @fontgrey;
       font-size: 13px;
       font-weight: 500;
+      padding-bottom: 20px;
+      &.selected{
+        border-bottom: 3px solid @lightblue;
+      }
     }
   }
 }

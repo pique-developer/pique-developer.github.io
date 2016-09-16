@@ -321,7 +321,6 @@ body.interior .content {
 .action-bar {
   background: white;
   border-radius: 8px;
-  padding: 25px 0px;
   margin-bottom: 30px;
   box-shadow: 0px 2px 7px #d9d9da;
 }
@@ -337,12 +336,17 @@ body.interior .content {
 }
 .action-bar table .number {
   font-size: 30px;
+  padding-top: 20px;
 }
 .action-bar table .action-label {
   text-transform: uppercase;
   color: #a0a0a0;
   font-size: 13px;
   font-weight: 500;
+  padding-bottom: 20px;
+}
+.action-bar table .action-label.selected {
+  border-bottom: 3px solid #4abced;
 }
 .application-count {
   color: #a0a0a0;
@@ -455,7 +459,7 @@ body#applicant {
   padding-bottom: 100px;
 }
 body#applicant .container {
-  max-width: 830px;
+  max-width: 985px;
 }
 body#applicant header {
   margin-bottom: 0;
@@ -544,6 +548,7 @@ body#applicant header .container {
   color: #a0a0a0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
+  margin-top: 0px;
   font-weight: 200;
 }
 .section i {
@@ -557,13 +562,13 @@ body#applicant header .container {
 .section .doc-preview {
   display: inline-block;
   border: 2px solid #e2eaf3;
-  width: 200px;
+  width: 249px;
   margin-right: 20px;
   margin-bottom: 20px;
 }
 .section .doc-preview .doc {
   width: 100%;
-  background-color: #f7f7f7;
+  background-color: white;
   height: 100px;
   background-size: 80%;
   display: inline-block;
@@ -579,11 +584,13 @@ body#applicant header .container {
   background-color: white;
   box-shadow: 0px 2px 7px #d9d9da;
   border-radius: 5px;
-  padding: 15px 25px 20px;
+  padding: 0px 25px 20px;
   text-align: center;
+  display: inline-block;
+  width: 100%;
 }
 .ratings h3 {
-  margin-top: 23px;
+  margin-top: 35px;
   font-size: 18px;
   font-weight: 200;
   color: #020f3c;
@@ -594,6 +601,8 @@ body#applicant header .container {
   margin: 0 auto;
   text-align: center;
   margin-top: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dde2e7;
 }
 .ratings .form-group {
   text-align: center;
