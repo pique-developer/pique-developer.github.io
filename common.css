@@ -695,8 +695,70 @@ body#about .section-header {
 }
 body#about .team {
   text-align: center;
+  margin-bottom: 100px;
 }
 body#about .team .section-header {
   margin-top: 80px;
-  margin-bottom: 120px;
+  margin-bottom: 110px;
+}
+body#about .team-member {
+  position: relative;
+  height: 275px;
+}
+body#about .team-member .square {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 100%;
+  width: 100%;
+}
+body#about .team-member .overlay {
+  display: table;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3 opacity ease-in;
+}
+body#about .team-member .overlay .cell {
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Avenir Next', sans-serif;
+}
+body#about .team-member .overlay .cell .name {
+  font-weight: 600;
+  font-size: 20px;
+}
+body#about .team-member .overlay .cell .overlay-title {
+  font-size: 16px;
+}
+body#about .team-member .overlay .cell .education {
+  color: #31D26C;
+  font-size: 15px;
+}
+body#about .team-member:hover .overlay {
+  opacity: 1;
+}
+body#about .no-padding:first-child .team-member,
+body#about .no-padding:nth-child(7) .team-member {
+  background-color: #31D26C;
+}
+body#about .no-padding:nth-child(8) .team-member,
+body#about .no-padding:nth-child(2) .team-member {
+  background-color: #51BBF1;
+}
+body#about .no-padding:nth-child(3) .team-member,
+body#about .no-padding:nth-child(5) .team-member {
+  background-color: #E1D113;
+}
+body#about .no-padding:nth-child(4) .team-member,
+body#about .no-padding:nth-child(6) .team-member {
+  background-color: #2BDBB4;
+}
+.no-padding {
+  padding: 0;
 }

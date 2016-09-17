@@ -37,7 +37,7 @@ body#about{
       width: 75%;
       margin: 0 auto;
       position: absolute;
-    top: 214px;
+      top: 214px;
       @media screen and (max-width: 991px) {width: 100%;}
 
 
@@ -77,9 +77,74 @@ body#about{
   }
   .team{
     text-align: center;
+    margin-bottom: 100px;
     .section-header{
       margin-top: 80px;
-      margin-bottom: 120px;
+      margin-bottom: 110px;
+    }
+
+  }
+
+  .team-member{
+    position: relative;
+    height: 275px;
+    .square{
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      height: 100%;
+      width: 100%;
+    }
+    .overlay{
+      display: table;
+      position: absolute;
+      top:0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      text-align: center;
+      opacity: 0;
+      transition: 0.3 opacity ease-in;
+      .cell{
+        display: table-cell;
+        vertical-align: middle;
+        font-family: 'Avenir Next', sans-serif;
+        .name{
+          font-weight: 600;
+          font-size: 20px;
+        }
+        .overlay-title{
+          font-size: 16px;
+        }
+        .education{
+          color: #31D26C;
+          font-size: 15px;
+        }
+      }
+
+    }
+    &:hover{
+      .overlay{
+        opacity: 1;
+      }
     }
   }
+
+  .no-padding:first-child .team-member, .no-padding:nth-child(7) .team-member{
+    background-color: #31D26C;
+  }
+  .no-padding:nth-child(8) .team-member,.no-padding:nth-child(2) .team-member{
+    background-color: #51BBF1;
+  }
+  .no-padding:nth-child(3) .team-member,.no-padding:nth-child(5) .team-member{
+    background-color: #E1D113;
+  }
+  .no-padding:nth-child(4) .team-member,.no-padding:nth-child(6) .team-member{
+    background-color: #2BDBB4;
+  }
+}
+
+.no-padding{
+  padding: 0;
 }
