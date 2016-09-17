@@ -631,9 +631,10 @@ body#about #login-button {
   border: 1px solid white;
 }
 body#about .about-header {
-  background-image: url('/images/about/about-header.jpg');
+  background-image: url('images/about/about-header.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   height: 490px;
   width: 100%;
 }
