@@ -623,12 +623,20 @@ body#about .about-banner {
   position: absolute;
   z-index: -1;
 }
+body#about .nav {
+  margin-right: 20px;
+}
 body#about .nav-link {
   color: white;
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 body#about #login-button {
   background-color: transparent;
   border: 1px solid white;
+  border-radius: 16px;
+  font-weight: 100;
+  letter-spacing: 1px;
 }
 body#about .about-header {
   background-image: url('images/about/about-header.jpg');
@@ -646,4 +654,7 @@ body#about .about-header h1 {
   width: 75%;
   margin: 0 auto;
   margin-top: 150px;
+}
+body#about .light-blue-container {
+  background-color: #F9FBFF;
 }
