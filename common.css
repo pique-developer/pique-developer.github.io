@@ -656,7 +656,8 @@ body#about .about-header h1 {
   color: white;
   width: 75%;
   margin: 0 auto;
-  margin-top: 150px;
+  position: absolute;
+  top: 214px;
 }
 @media screen and (max-width: 991px) {
   body#about .about-header h1 {
