@@ -628,14 +628,14 @@ body#about .nav {
 }
 body#about .nav-link {
   color: white;
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: 1px;
 }
 body#about #login-button {
   background-color: transparent;
   border: 1px solid white;
   border-radius: 16px;
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: 1px;
 }
 body#about .about-header {
@@ -645,6 +645,9 @@ body#about .about-header {
   background-position: center center;
   height: 490px;
   width: 100%;
+}
+body#about .about-header .clearfix {
+  margin-top: 20px;
 }
 body#about .about-header h1 {
   font-size: 30px;
@@ -667,8 +670,8 @@ body#about .light-blue-container {
 }
 body#about .light-blue-container .flag {
   display: block;
-  margin: 25px auto;
-  margin-top: 35px;
+  margin: 35px auto;
+  margin-top: 45px;
 }
 body#about .light-blue-container .about-text {
   font-family: 'Avenir Next', sans-serif;
@@ -687,6 +690,7 @@ body#about .section-header {
   border-bottom: 3px solid black;
   font-weight: 700;
   display: inline-block;
+  margin-top: 70px;
 }
 body#about .team {
   text-align: center;
