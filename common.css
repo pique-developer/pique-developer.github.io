@@ -618,3 +618,31 @@ body#applicant header .container {
 .stuck-footer button {
   background-color: #4abced;
 }
+body#about .about-banner {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+body#about .nav-link {
+  color: white;
+}
+body#about #login-button {
+  background-color: transparent;
+  border: 1px solid white;
+}
+body#about .about-header {
+  background-image: url('/images/about/about-header.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 490px;
+  width: 100%;
+}
+body#about .about-header h1 {
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Avenir Next', sans-serif;
+  color: white;
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
