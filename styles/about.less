@@ -1,4 +1,10 @@
 body#about{
+  .clearfixx{
+    position: fixed;
+    width: 100%;
+    padding: 30px 40px;
+    z-index: 3;
+  }
   .about-banner{
     width: 100%;
     position: absolute;
@@ -7,28 +13,49 @@ body#about{
   .nav{
     margin-right: 20px;
   }
+  .logo-container #logo{
+    height: 40px;
+  }
   .nav-link{
     color: white;
     font-weight: 200;
     letter-spacing: 1px;
+    margin: 10px 20px;
   }
   #login-button{
-    background-color:transparent;
-    border:1px solid white;
-    border-radius: 16px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 22px;
     font-weight: 200;
     letter-spacing: 1px;
+    padding: 8px 25px;
+    &:hover{
+      background-color: white;
+      color:@blue;
+      box-shadow: none;
+
+    }
+  }
+  .black-fade{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
   }
   .about-header{
-    background-image: url('images/about/about-header.jpg');
+    background-image: url('images/about/about-banner.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: black;
     background-position: center center;
     height: 490px;
     width: 100%;
-    .clearfix{
-      margin-top: 20px
-    }
+    transition: 0.4s all ease-in;
+    -webkit-mask-image: url('images/about/mask.png');
+     -webkit-mask-repeat: no-repeat;
+     -webkit-mask-size: 100%;
+     -webkit-mask-position: bottom;
+
     h1{
       font-size: 30px;
       text-align: center;
@@ -38,16 +65,44 @@ body#about{
       margin: 0 auto;
       position: absolute;
       top: 214px;
+      left: 0;
+      right: 0;
       @media screen and (max-width: 991px) {width: 100%;}
 
 
     }
+    &:after{
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      content: '';
+      background: black;
+      opacity: 0;
+      transition: 0.5s opacity ease-in;
+    }
+    &.fixed-header{
+
+      &:after{
+        opacity: 1;
+        transition: 0.5s opacity ease-in;
+      }
+    }
+
+
+  }
+  .black-header{
+        background-color: black;
+
+
   }
 
   .light-blue-container{
     text-align: center;
     background-color: #F9FBFF;
     padding-bottom: 90px;
+    margin-top: -80px;
+    padding-top: 20px;
+
     .flag{
       display: block;
       margin: 35px auto;

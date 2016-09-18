@@ -25,33 +25,50 @@
 
 </head>
 <body id = "about">
+  <div class = "clearfixx">
+    <div class = "logo-container pull-left">
+      <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
+    </div>
+
+    <div class = "header-right pull-right">
+
+      <div class = "nav">
+        <a class = "nav-link" href = "/applications">About Us</a>
+        <a class = "nav-link" href = "/applications">Educators</a>
+        <a class = "nav-link" href = "/applications">Register Scholarship</a>
+        <a class = "nav-link" href = "/applications">Share</a>
+      </div>
+
+       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Sign Up</a>
+
+    </div>
+  </div>
   <div class = "about-header">
 
+    <div class = "black-fade"></div>
+    <div class = "">
 
-    <div class = "container">
-      <div class = "clearfix">
-        <div class = "logo-container pull-left">
-          <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
-        </div>
-
-        <div class = "header-right pull-right">
-
-          <div class = "nav">
-            <a class = "nav-link" href = "/applications">About Us</a>
-            <a class = "nav-link" href = "/applications">Educators</a>
-            <a class = "nav-link" href = "/applications">Register Scholarship</a>
-            <a class = "nav-link" href = "/applications">Share</a>
-          </div>
-
-           <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Sign Up</a>
-
-        </div>
-      </div>
       <h1>ur lobortis id lorem id bibendum. Ut id consectetur magna.
    Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at. </h1>
     </div>
   </div>
-
+  <script>
+    $(window).scroll(function(){
+      $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
+      var scrollpos = $(window).scrollTop();
+      if(scrollpos >257){
+        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0175));
+      }else{
+        $('.about-header .black').removeClass('fixed-header');
+        $(".about-header .black-fade").css("opacity",  0)
+      }
+      if(scrollpos >314){
+        $('.clearfixx').addClass('black-header')
+      }else{
+        $('.clearfixx').removeClass('black-header')
+      }
+  });
+  </script>
   <div class = "light-blue-container">
     <div class = "container">
       <h3 class = "section-header">Our mission</h3>
@@ -76,7 +93,7 @@
             <div class = "overlay">
               <div class = "cell">
                 <h4 class="name">Paul</h4>
-                <h5 class="overlay-title">Fouder</h5>
+                <h5 class="overlay-title">Founder</h5>
                 <h5 class="education">Education: Haverford</h5>
               </div>
             </div>
@@ -90,7 +107,7 @@
             <div class = "overlay">
               <div class = "cell">
                 <h4 class="name">Paul</h4>
-                <h5 class="overlay-title">Fouder</h5>
+                <h5 class="overlay-title">Founder</h5>
                 <h5 class="education">Education: Haverford</h5>
               </div>
             </div>
@@ -104,7 +121,7 @@
             <div class = "overlay">
               <div class = "cell">
                 <h4 class="name">Paul</h4>
-                <h5 class="overlay-title">Fouder</h5>
+                <h5 class="overlay-title">Founder</h5>
                 <h5 class="education">Education: Haverford</h5>
               </div>
             </div>
@@ -118,7 +135,7 @@
             <div class = "overlay">
               <div class = "cell">
                 <h4 class="name">Paul</h4>
-                <h5 class="overlay-title">Fouder</h5>
+                <h5 class="overlay-title">Founder</h5>
                 <h5 class="education">Education: Haverford</h5>
               </div>
             </div>
@@ -132,7 +149,7 @@
             <div class = "overlay">
               <div class = "cell">
                 <h4 class="name">Paul</h4>
-                <h5 class="overlay-title">Fouder</h5>
+                <h5 class="overlay-title">Founder</h5>
                 <h5 class="education">Education: Haverford</h5>
               </div>
             </div>
@@ -146,7 +163,7 @@
             <div class = "overlay">
               <div class = "cell">
                 <h4 class="name">Paul</h4>
-                <h5 class="overlay-title">Fouder</h5>
+                <h5 class="overlay-title">Founder</h5>
                 <h5 class="education">Education: Haverford</h5>
               </div>
             </div>
@@ -160,7 +177,7 @@
             <div class = "overlay">
               <div class = "cell">
                 <h4 class="name">Paul</h4>
-                <h5 class="overlay-title">Fouder</h5>
+                <h5 class="overlay-title">Founder</h5>
                 <h5 class="education">Education: Haverford</h5>
               </div>
             </div>
@@ -174,7 +191,7 @@
             <div class = "overlay">
               <div class = "cell">
                 <h4 class="name">Paul</h4>
-                <h5 class="overlay-title">Fouder</h5>
+                <h5 class="overlay-title">Founder</h5>
                 <h5 class="education">Education: Haverford</h5>
               </div>
             </div>
