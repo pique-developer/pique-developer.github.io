@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="common.css">
 
 </head>
-<body id = "about">
+<body class = "about" id = "about-us">
   <div class = "clearfixx">
     <div class = "logo-container pull-left">
       <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
@@ -56,13 +56,14 @@
     $(window).scroll(function(){
       $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
       var scrollpos = $(window).scrollTop();
+      console.log(scrollpos);
       if(scrollpos >257){
-        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0175));
+        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
       }else{
         $('.about-header .black').removeClass('fixed-header');
         $(".about-header .black-fade").css("opacity",  0)
       }
-      if(scrollpos >314){
+      if(scrollpos >356){
         $('.clearfixx').addClass('black-header')
       }else{
         $('.clearfixx').removeClass('black-header')

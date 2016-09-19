@@ -618,31 +618,31 @@ body#applicant header .container {
 .stuck-footer button {
   background-color: #4abced;
 }
-body#about .clearfixx {
+body.about .clearfixx {
   position: fixed;
   width: 100%;
   padding: 30px 40px;
   z-index: 3;
 }
-body#about .about-banner {
+body.about .about-banner {
   width: 100%;
   position: absolute;
   z-index: -1;
 }
-body#about .nav {
+body.about .nav {
   margin-right: 20px;
 }
-body#about .logo-container #logo {
+body.about .logo-container #logo {
   height: 40px;
 }
-body#about .nav-link {
+body.about .nav-link {
   color: white;
   font-weight: 200;
   letter-spacing: 1px;
   margin: 10px 20px;
   font-size: 17px;
 }
-body#about #login-button {
+body.about #login-button {
   background-color: transparent;
   border: 2px solid white;
   border-radius: 22px;
@@ -651,24 +651,24 @@ body#about #login-button {
   padding: 8px 25px;
   font-size: 17px;
 }
-body#about #login-button:hover {
+body.about #login-button:hover {
   background-color: white;
   color: #205fdc;
   box-shadow: none;
 }
-body#about .black-fade {
+body.about .black-fade {
   width: 100%;
   height: 100%;
   background-color: black;
   opacity: 0;
 }
-body#about .about-header {
+body.about .about-header {
   background-image: url('images/about/about-banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
   background-position: center center;
-  height: 490px;
+  height: 560px;
   width: 100%;
   transition: 0.4s all ease-in;
   -webkit-mask-image: url('images/about/mask.png');
@@ -676,7 +676,7 @@ body#about .about-header {
   -webkit-mask-size: 100%;
   -webkit-mask-position: bottom;
 }
-body#about .about-header h1 {
+body.about .about-header h1 {
   font-size: 30px;
   text-align: center;
   font-family: 'Avenir Next', sans-serif;
@@ -689,11 +689,11 @@ body#about .about-header h1 {
   right: 0;
 }
 @media screen and (max-width: 991px) {
-  body#about .about-header h1 {
+  body.about .about-header h1 {
     width: 100%;
   }
 }
-body#about .about-header:after {
+body.about .about-header:after {
   width: 100%;
   height: 100%;
   display: inline-block;
@@ -702,35 +702,35 @@ body#about .about-header:after {
   opacity: 0;
   transition: 0.5s opacity ease-in;
 }
-body#about .about-header.fixed-header:after {
+body.about .about-header.fixed-header:after {
   opacity: 1;
   transition: 0.5s opacity ease-in;
 }
-body#about .black-header {
+body.about .black-header {
   background-color: black;
 }
-body#about .light-blue-container {
+body.about .light-blue-container {
   text-align: center;
   background-color: #F9FBFF;
   padding-bottom: 90px;
   margin-top: -80px;
   padding-top: 20px;
 }
-body#about .light-blue-container .flag {
+body.about .light-blue-container .flag {
   display: block;
   margin: 35px auto;
   margin-top: 45px;
 }
-body#about .light-blue-container .about-text {
+body.about .light-blue-container .about-text {
   font-family: 'Avenir Next', sans-serif;
   font-weight: 400;
   line-height: 35px;
   font-size: 16px;
 }
-body#about .light-blue-container .about-text span {
+body.about .light-blue-container .about-text span {
   font-weight: 700;
 }
-body#about .section-header {
+body.about .section-header {
   font-family: 'Avenir Next', sans-serif;
   font-size: 16px;
   margin: 0 auto;
@@ -740,26 +740,26 @@ body#about .section-header {
   display: inline-block;
   margin-top: 70px;
 }
-body#about .team {
+body.about .team {
   text-align: center;
   margin-bottom: 100px;
 }
-body#about .team .section-header {
+body.about .team .section-header {
   margin-top: 80px;
   margin-bottom: 110px;
 }
-body#about .team-member {
+body.about .team-member {
   position: relative;
   height: 275px;
 }
-body#about .team-member .square {
+body.about .team-member .square {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right bottom;
   height: 100%;
   width: 100%;
 }
-body#about .team-member .overlay {
+body.about .team-member .overlay {
   display: table;
   position: absolute;
   top: 0;
@@ -769,43 +769,64 @@ body#about .team-member .overlay {
   color: white;
   text-align: center;
   opacity: 0;
-  transition: 0.3 opacity ease-in;
+  transition: 0.3s opacity ease-in;
 }
-body#about .team-member .overlay .cell {
+body.about .team-member .overlay .cell {
   display: table-cell;
   vertical-align: middle;
   font-family: 'Avenir Next', sans-serif;
 }
-body#about .team-member .overlay .cell .name {
+body.about .team-member .overlay .cell .name {
   font-weight: 600;
   font-size: 20px;
 }
-body#about .team-member .overlay .cell .overlay-title {
+body.about .team-member .overlay .cell .overlay-title {
   font-size: 16px;
 }
-body#about .team-member .overlay .cell .education {
+body.about .team-member .overlay .cell .education {
   color: #31D26C;
   font-size: 15px;
 }
-body#about .team-member:hover .overlay {
+body.about .team-member:hover .overlay {
   opacity: 1;
 }
-body#about .no-padding:first-child .team-member,
-body#about .no-padding:nth-child(7) .team-member {
+body.about .no-padding:first-child .team-member,
+body.about .no-padding:nth-child(7) .team-member {
   background-color: #31D26C;
 }
-body#about .no-padding:nth-child(8) .team-member,
-body#about .no-padding:nth-child(2) .team-member {
+body.about .no-padding:nth-child(8) .team-member,
+body.about .no-padding:nth-child(2) .team-member {
   background-color: #51BBF1;
 }
-body#about .no-padding:nth-child(3) .team-member,
-body#about .no-padding:nth-child(5) .team-member {
+body.about .no-padding:nth-child(3) .team-member,
+body.about .no-padding:nth-child(5) .team-member {
   background-color: #E1D113;
 }
-body#about .no-padding:nth-child(4) .team-member,
-body#about .no-padding:nth-child(6) .team-member {
+body.about .no-padding:nth-child(4) .team-member,
+body.about .no-padding:nth-child(6) .team-member {
   background-color: #2BDBB4;
 }
 .no-padding {
   padding: 0;
+}
+body#landing .about-header {
+  background-image: url('images/about/groupbanner.jpg');
+}
+body#landing .about-header h1 {
+  font-size: 42px;
+  text-shadow: 0px 1px 5px #545454;
+}
+body#landing .about-header h6 {
+  position: absolute;
+  top: 289px;
+  color: white;
+  width: 54%;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 200;
+  margin: 0 auto;
+  left: 0;
+  line-height: 26px;
+  right: 0;
+  text-shadow: 0px 1px 5px #545454;
 }

@@ -1,4 +1,4 @@
-body#about{
+body.about{
   .clearfixx{
     position: fixed;
     width: 100%;
@@ -50,7 +50,7 @@ body#about{
     background-size: cover;
     background-color: black;
     background-position: center center;
-    height: 490px;
+    height: 560px;
     width: 100%;
     transition: 0.4s all ease-in;
     -webkit-mask-image: url('images/about/mask.png');
@@ -162,7 +162,8 @@ body#about{
       color: white;
       text-align: center;
       opacity: 0;
-      transition: 0.3 opacity ease-in;
+      transition: 0.3s opacity ease-in;
+
       .cell{
         display: table-cell;
         vertical-align: middle;
@@ -204,4 +205,29 @@ body#about{
 
 .no-padding{
   padding: 0;
+}
+
+
+body#landing{
+  .about-header{
+    background-image: url('images/about/groupbanner.jpg');
+    h1{
+      font-size: 42px;
+      text-shadow: 0px 1px 5px #545454;
+    }
+    h6{
+      position: absolute;
+      top: 289px;
+      color: white;
+      width: 54%;
+      font-size: 17px;
+      text-align: center;
+      font-weight: 200;
+      margin: 0 auto;
+      left: 0;
+      line-height: 26px;
+      right: 0;
+      text-shadow: 0px 1px 5px #545454;
+    }
+  }
 }

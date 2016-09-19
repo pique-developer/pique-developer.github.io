@@ -1,0 +1,335 @@
+<html lang = "en">
+<head>
+<title>Pique</title>
+
+
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Latest compiled and minified  Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+<!-- Material Icon font -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- My styles -->
+<link rel="stylesheet" href="materialize.css">
+<link rel="stylesheet" href="common.css">
+
+</head>
+<body class = "interior" id = "feed">
+  <header class = "interior-header">
+    <div class ="container">
+      <div class = "logo-container pull-left">
+        <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
+      </div>
+      <div class = "header-right pull-right">
+        <div class = "nav">
+          <a class = "nav-link" href = "/applications">Applications</a>
+        </div>
+
+        <a href = "/profile" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div></a>
+         <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Log In</a>
+      </div>
+
+    </div>
+  </header>
+
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-3">
+      <h4 class = "grey-label">How It Works</h4>
+      <div class = "pod" id = "how-it-works">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo euismod urna, bibendum dapibus magna accumsan quis. Duis non neque et nibh convallis accumsan in eget ligula.
+      </div>
+
+      <!-- Button trigger modal -->
+
+      <button type="button" class="btn btn-primary btn-lg invite-btn modal-trigger" href="#modal1">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>Invite People to Review Your Applications
+      </button>
+
+
+    </div>
+    <div class = "col-sm-9">
+      <div class = "action-bar">
+        <table>
+          <tr>
+            <td class = "number" id = "scored">
+              5
+            </td>
+            <td class = "number" id = "unscored">
+              0
+            </td>
+            <td class = "number" id = "finalists">
+              3
+            </td>
+            <td class = "number" id = "days">
+              17
+            </td>
+          </tr>
+          <tr>
+            <td class = "action-label" id = "scored">
+              scored
+            </td>
+            <td class = "action-label" id = "unscored">
+              unscored
+            </td>
+            <td class = "action-label" id = "finalists">
+              finalists
+            </td>
+            <td class = "action-label" id = "days">
+              days left
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- To change the count of applications just target #count -->
+      <span class = "application-count"><span id = "count">5</span> Applications</span>
+      <a href = "./applicant.html" class = "applicant-block" id = "">
+        <table>
+          <tr>
+            <td class = "applicant">
+              <div href = "../applicant" class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
+            </td>
+            <td class = "vertical-bottom">
+              <span class = "applicant-name">Ron Peled</span>
+              <p class = "location">San Francisco, CA</p>
+            </td>
+          </tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Intro
+            </td>
+            <td class = "applicant-info" id = "intro">
+              I am a passionate student about coding.
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              GPA
+            </td>
+            <td class = "applicant-info" id = "gpa">
+              4.0
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Extra Curriculars
+            </td>
+            <td class = "applicant-info" id = "extra-curriculars">
+              Chess, SGI, Basketball
+            </td>
+          <tr>
+        </table>
+      </a>   <!-- end applicant-block -->
+      <a class = "applicant-block" id = "">
+        <table>
+          <tr>
+            <td class = "applicant">
+              <div class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
+            </td>
+            <td class="vertical-bottom">
+              <span class = "applicant-name">Bryon John</span>
+              <p class = "location">Los Angeles, CA</p>
+            </td>
+          </tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Intro
+            </td>
+            <td class = "applicant-info" id = "intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo euismod urna, bibendum dapibus magna accumsan quis. Duis non neque et nibh convallis accumsan in eget ligula.
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              GPA
+            </td>
+            <td class = "applicant-info" id = "gpa">
+              4.0
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Extra Curriculars
+            </td>
+            <td class = "applicant-info" id = "extra-curriculars">
+              Chess, SGI, Basketball
+            </td>
+          <tr>
+        </table>
+      </a>   <!-- end applicant-block -->
+      <a class = "applicant-block" id = "">
+        <table>
+          <tr>
+            <td class = "applicant">
+              <div class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user2.jpg")'></div>
+            </td>
+            <td class="vertical-bottom">
+              <span class = "applicant-name">Kendra Sanchez</span>
+              <p class = "location">Los Angeles, CA</p>
+            </td>
+          </tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Intro
+            </td>
+            <td class = "applicant-info" id = "intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo euismod urna, bibendum dapibus magna accumsan quis. Duis non neque et nibh convallis accumsan in eget ligula.
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              GPA
+            </td>
+            <td class = "applicant-info" id = "gpa">
+              4.0
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Extra Curriculars
+            </td>
+            <td class = "applicant-info" id = "extra-curriculars">
+              Chess, SGI, Basketball
+            </td>
+          <tr>
+        </table>
+      </a>   <!-- end applicant-block -->
+      <a class = "applicant-block" id = "">
+        <table>
+          <tr>
+            <td class = "applicant">
+              <div class = "user-photo-link"><div class = "user-photo" style = 'background-image:url("images/user.jpg")'></div>
+            </td>
+            <td class="vertical-bottom">
+              <span class = "applicant-name">Emmanuel Lopez</span>
+              <p class = "location">Los Angeles, CA</p>
+            </td>
+          </tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Intro
+            </td>
+            <td class = "applicant-info" id = "intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo euismod urna, bibendum dapibus magna accumsan quis. Duis non neque et nibh convallis accumsan in eget ligula.
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              GPA
+            </td>
+            <td class = "applicant-info" id = "gpa">
+              4.0
+            </td>
+          <tr>
+          <tr>
+            <td class = "applicant-info-label" >
+              Extra Curriculars
+            </td>
+            <td class = "applicant-info" id = "extra-curriculars">
+              Chess, SGI, Basketball
+            </td>
+          <tr>
+        </table>
+      </a>   <!-- end applicant-block -->
+    </div>
+  </div>  <!-- end row -->
+</div> <!-- end container -->
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Invite others to review your foundation's applicants</h4>
+<form class="form-horizontal">
+      <div class = "chips chips-placeholder"></div>
+      <br>
+  <textarea class="form-control" rows="3">Add a note..</textarea>
+  <br>
+  <input class="btn btn-primary" type="submit" value="Submit">
+  <input class="btn btn-default" type="submit" value="Cancel">
+</form>
+
+    </div>
+
+  </div>
+<!-- Modal JQuery Initialization -->
+<script>
+
+$('.chips-placeholder').material_chip({
+   placeholder: '+ Add ',
+   secondaryPlaceholder: '+ Add Email ',
+ });
+
+$(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal({
+    starting_top: '4%', // Starting top style attribute
+      ending_top: '-10%'
+  }
+
+  );
+});
+</script>
+<!-- Modal Structure -->
+<div id="login" class="modal">
+  <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
+  <div class="modal-content">
+    <div class = "welcome"></div>
+    <div class = "social-icons-container">
+      <a href = "" class = "facebook social-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href = "" class = "twitter social-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href = "" class = "google social-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    </div>
+    <span class = "small-grey-text">Don't Worry, We Don't Post to Any of Your Accounts</span>
+    <form id = "login">
+      <div class = 'row name-form-group'>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="first_name" placeholder="First Name">
+          </div>
+        </div>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <div class = "terms small-grey-text">
+        By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
+      </div>
+      <button type = "submit" class = "submit-button log-in">Log In</button>
+      <button type = "" class = "submit-button need-account"></button>
+    </form>
+    <a class = "small-grey-text">Forget the Password ?</span>
+  </div>
+  <span class = "copyright">Pique&nbsp;&#169;</span>
+</div>
+</body>
+
+<script>
+  $('.need-account').on('click',function(e){
+    e.preventDefault();
+    $('.modal-content').toggleClass('create-account');
+    $('.name-form-group').toggleClass('expanded')
+    $('.terms').toggleClass('expanded',100);
+
+  })
+
+
+
+</script>
+</html>
