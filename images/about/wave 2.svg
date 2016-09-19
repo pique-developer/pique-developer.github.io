@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200px" height="203px" viewBox="0 0 1200 203" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>wave 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="98.3328202%" x2="50%" y2="45.1390748%" id="linearGradient-1">
+            <stop stop-color="#0BEE84" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#0BBA7C" stop-opacity="0.0972316576" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pique---Educator" transform="translate(0.000000, -1102.000000)" fill="url(#linearGradient-1)">
+            <g id="The-Harsh-Facts" transform="translate(0.000000, 762.000000)">
+                <path d="M0,368.499999 C0,368.499999 33,358.000001 126,395.000001 C219,432.000001 359.5,395 359.5,395 C359.5,395 480.5,343.999999 615,389.5 C749.5,435.000001 854.5,417 905.5,383 C956.5,349 1002,328 1083,349 C1164,370 1223,479.000004 1244.5,376.5 C1266,273.999996 1239.5,531 1239.5,531 L1108,565.5 L956.5,573.5 L0,549.500001 L0,368.499999 Z" id="wave-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

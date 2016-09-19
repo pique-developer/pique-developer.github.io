@@ -56,7 +56,6 @@
     $(window).scroll(function(){
       $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
       var scrollpos = $(window).scrollTop();
-      console.log(scrollpos);
       if(scrollpos >257){
         $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
       }else{

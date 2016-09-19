@@ -830,3 +830,244 @@ body#landing .about-header h6 {
   right: 0;
   text-shadow: 0px 1px 5px #545454;
 }
+body#landing .section-header {
+  margin-bottom: 30px;
+  margin-top: -10px;
+}
+body#landing .university-partners {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+body#landing .hard-facts {
+  text-align: center;
+}
+body#landing .hard-facts .loaned {
+  color: #E1D113;
+  font-weight: 800;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 70px;
+  text-shadow: 5px 2px 12px rgba(225, 209, 19, 0.33);
+}
+body#landing .hard-facts .second-section {
+  position: relative;
+  top: 159px;
+}
+body#landing .hard-facts .second-section h3 {
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+}
+body#landing .hard-facts .second-section .graduating {
+  color: #2BDBB4;
+}
+body#landing .hard-facts .second-section .loan {
+  color: #26E98F;
+}
+body#landing .hard-facts .second-section .tuition {
+  color: #51BBF1;
+}
+body#landing .hard-facts .number-label {
+  color: #B2BCD3;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 12px;
+}
+body#landing .blue1 {
+  background-color: #4874ec;
+  margin-top: 50px;
+}
+.hero {
+  margin-top: -20px;
+  position: relative;
+}
+.hero svg {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  max-width: 100%;
+}
+.hero .graph-lines .path {
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+  -webkit-transition: -webkit-transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hero .graph-lines .path.grown {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.hero .graph-lines .path.one {
+  -webkit-transition-delay: 100ms;
+  transition-delay: 100ms;
+}
+.hero .graph-lines .path.two {
+  -webkit-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.hero .graph-lines .path.three {
+  -webkit-transition-delay: 300ms;
+  transition-delay: 300ms;
+}
+.hero .graph-lines .path.four {
+  -webkit-transition-delay: 400ms;
+  transition-delay: 400ms;
+}
+.hero .graph-lines .path.five {
+  -webkit-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+.hero .graph-lines .draw {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+  -webkit-transition: -webkit-transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: -webkit-transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hero .graph-lines .draw:nth-child(1) {
+  -webkit-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.hero .graph-lines .draw:nth-child(2) {
+  -webkit-transition-delay: 400ms;
+  transition-delay: 400ms;
+}
+.hero .graph-lines .draw:nth-child(3) {
+  -webkit-transition-delay: 600ms;
+  transition-delay: 600ms;
+}
+.hero .graph-lines .draw:nth-child(4) {
+  -webkit-transition-delay: 800ms;
+  transition-delay: 800ms;
+}
+.hero .graph-lines .draw:nth-child(5) {
+  -webkit-transition-delay: 1000ms;
+  transition-delay: 1000ms;
+}
+.hero .graph-lines .draw:nth-child(6) {
+  -webkit-transition-delay: 1200ms;
+  transition-delay: 1200ms;
+}
+.hero .graph-lines .draw:nth-child(7) {
+  -webkit-transition-delay: 1400ms;
+  transition-delay: 1400ms;
+}
+.hero .graph-lines .draw:nth-child(8) {
+  -webkit-transition-delay: 1600ms;
+  transition-delay: 1600ms;
+}
+.hero .graph-lines .draw:nth-child(9) {
+  -webkit-transition-delay: 1800ms;
+  transition-delay: 1800ms;
+}
+.hero .graph-lines .draw:nth-child(10) {
+  -webkit-transition-delay: 2000ms;
+  transition-delay: 2000ms;
+}
+.hero .graph-lines .draw:nth-child(11) {
+  -webkit-transition-delay: 2200ms;
+  transition-delay: 2200ms;
+}
+.hero .graph-lines .draw:nth-child(12) {
+  -webkit-transition-delay: 2400ms;
+  transition-delay: 2400ms;
+}
+.hero .graph-lines .draw:nth-child(13) {
+  -webkit-transition-delay: 2600ms;
+  transition-delay: 2600ms;
+}
+.hero .graph-lines .draw:nth-child(14) {
+  -webkit-transition-delay: 2800ms;
+  transition-delay: 2800ms;
+}
+.hero .graph-lines .draw:nth-child(15) {
+  -webkit-transition-delay: 3000ms;
+  transition-delay: 3000ms;
+}
+.hero .graph-lines .draw:nth-child(16) {
+  -webkit-transition-delay: 3200ms;
+  transition-delay: 3200ms;
+}
+.hero .graph-lines .draw.drawn {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.hero .graph-lines .circle {
+  opacity: 0;
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+}
+.hero .graph-lines .circle:nth-child(1) {
+  -webkit-transition-delay: 250ms;
+  transition-delay: 250ms;
+}
+.hero .graph-lines .circle:nth-child(2) {
+  -webkit-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+.hero .graph-lines .circle:nth-child(3) {
+  -webkit-transition-delay: 750ms;
+  transition-delay: 750ms;
+}
+.hero .graph-lines .circle:nth-child(4) {
+  -webkit-transition-delay: 1000ms;
+  transition-delay: 1000ms;
+}
+.hero .graph-lines .circle:nth-child(5) {
+  -webkit-transition-delay: 1250ms;
+  transition-delay: 1250ms;
+}
+.hero .graph-lines .circle:nth-child(6) {
+  -webkit-transition-delay: 1500ms;
+  transition-delay: 1500ms;
+}
+.hero .graph-lines .circle:nth-child(7) {
+  -webkit-transition-delay: 1750ms;
+  transition-delay: 1750ms;
+}
+.hero .graph-lines .circle:nth-child(8) {
+  -webkit-transition-delay: 2000ms;
+  transition-delay: 2000ms;
+}
+.hero .graph-lines .circle:nth-child(9) {
+  -webkit-transition-delay: 2250ms;
+  transition-delay: 2250ms;
+}
+.hero .graph-lines .circle:nth-child(10) {
+  -webkit-transition-delay: 2500ms;
+  transition-delay: 2500ms;
+}
+.hero .graph-lines .circle:nth-child(11) {
+  -webkit-transition-delay: 2750ms;
+  transition-delay: 2750ms;
+}
+.hero .graph-lines .circle:nth-child(12) {
+  -webkit-transition-delay: 3000ms;
+  transition-delay: 3000ms;
+}
+.hero .graph-lines .circle:nth-child(13) {
+  -webkit-transition-delay: 3250ms;
+  transition-delay: 3250ms;
+}
+.hero .graph-lines .circle:nth-child(14) {
+  -webkit-transition-delay: 3500ms;
+  transition-delay: 3500ms;
+}
+.hero .graph-lines .circle:nth-child(15) {
+  -webkit-transition-delay: 3750ms;
+  transition-delay: 3750ms;
+}
+.hero .graph-lines .circle:nth-child(16) {
+  -webkit-transition-delay: 4000ms;
+  transition-delay: 4000ms;
+}
+.hero .graph-lines .circle.faded {
+  opacity: 0.55;
+}
