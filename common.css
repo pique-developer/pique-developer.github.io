@@ -880,6 +880,10 @@ body#landing .about-header button#sign-up-free {
   width: 167px;
   text-align: center;
 }
+body#landing .about-header button#sign-up-free:hover {
+  background-color: white;
+  color: #0F9A7B;
+}
 body#landing .about-header h6 {
   position: absolute;
   top: 289px;
