@@ -1152,6 +1152,92 @@ body#landing .blue1 {
   font-family: 'Avenir Next', sans-serif;
   font-size: 12px;
 }
+.section-header {
+  text-align: center;
+}
+.section-header.long {
+  border-bottom: none
+     !important;
+  position: relative;
+  display: block !important;
+}
+.section-header.long:after {
+  width: 90px;
+  height: 2px;
+  content: '';
+  background-color: black;
+  /* display: inline-block; */
+  position: absolute;
+  bottom: -2px;
+  right: 47%;
+}
+.green-section {
+  background-color: #3cd070;
+  text-align: center;
+  padding-top: 1px;
+}
+.green-section .section-header {
+  color: white;
+}
+.green-section .section-header.long:after {
+  background-color: white;
+}
+body#educator .invite-us {
+  padding: 50px 122px 76px;
+  text-align: center;
+}
+body#educator .invite-us .img-section {
+  margin-top: 40px;
+}
+body#educator .invite-us .img-section .img-responsive {
+  margin: 0 auto;
+}
+body#educator .invite-us .img-section .img-caption {
+  font-family: 'Avenir Next', sans-serif;
+}
+body#educator .invite-us .invite-to-school {
+  background-color: #3cd070;
+  color: white;
+  border: none;
+  text-align: center;
+  width: 300px;
+  margin-top: 50px;
+  font-size: 17px;
+  padding: 13px;
+  font-family: 'Avenir Next', sans-serif;
+  border-radius: 28px;
+  font-weight: 100;
+  box-shadow: 6px 12px 30px #a3ecbd;
+}
+body#educator .green-content-container {
+  width: 100%;
+  max-width: 840px;
+  margin: 0px 40px;
+  padding: 20px 50px 20px 36px;
+  display: inline-block;
+  background-color: white;
+  position: relative;
+  bottom: -50px;
+  box-shadow: 0px 0px 33px #8b8e8c;
+}
+body#educator .green-content-container table {
+  font-family: 'Avenir Next', sans-serif;
+}
+body#educator .green-content-container table .bolded {
+  font-family: 'Avenir Next', sans-serif;
+  font-weight: 700;
+}
+body#educator .green-content-container table td.help-text {
+  line-height: 31px;
+  padding-bottom: 20px;
+  padding-left: 35px;
+}
+body#educator .green-content-container table td.icon {
+  vertical-align: sub;
+}
+body#educator .green-content-container table td.icon img {
+  margin-top: 12px;
+}
 body#educator .hard-facts {
   margin-top: 50px;
 }
@@ -1228,7 +1314,7 @@ body.no-fixed-header .clearfixx {
   width: 500px;
   height: 380px;
   background-color: white;
-  box-shadow: 0px 0px 33px #1e6cad;
+  box-shadow: 0px 0px 33px #8b8e8c;
   display: block;
   margin: 40px auto;
   position: absolute;
