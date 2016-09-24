@@ -945,6 +945,9 @@ body#landing .blue1 {
   margin-top: -20px;
   position: relative;
 }
+.hero.second {
+  margin-top: -85px;
+}
 .hero svg {
   position: absolute;
   left: 50%;
@@ -1195,7 +1198,7 @@ body#landing .blue1 {
   padding-top: 1px;
 }
 .green-section .section-header {
-  color: white;
+  color: white !important;
 }
 .green-section .section-header.long:after {
   background-color: white;
