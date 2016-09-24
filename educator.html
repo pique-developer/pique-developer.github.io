@@ -1,0 +1,76 @@
+<html lang = "en">
+<head>
+<title>Pique</title>
+
+
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Latest compiled and minified  Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+<!-- Material Icon font -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- My styles -->
+<link rel="stylesheet" href="materialize.css">
+<link rel="stylesheet" href="common.css">
+
+</head>
+<body class = "about" id = "educator">
+  <div class = "clearfixx">
+    <div class = "logo-container pull-left">
+      <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
+    </div>
+
+    <div class = "header-right pull-right">
+
+      <div class = "nav">
+        <a class = "nav-link selected" href = "/applications">About Us</a>
+        <a class = "nav-link" href = "/applications">Educators</a>
+        <a class = "nav-link" href = "/applications">Register Scholarship</a>
+        <a class = "nav-link" href = "/applications">Share</a>
+      </div>
+
+       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Sign Up</a>
+
+    </div>
+  </div>
+  <div class = "gradient-header">
+
+    <div class = "black-fade"></div>
+    <div class = "">
+
+      <h1>Help Students in Your Classroom<br>Win Scholarships by Bringing Pique to Your School</h1>
+      <h6>If you are a teacher in the Washington, D.C. metropolitan area, we would love to come<br> to your school to tell students about the importance of scholarships and how to win them</h6>
+    </div>
+
+    <div class = "banner-form">
+
+    </div>
+  </div>
+  <script>
+    $(window).scroll(function(){
+      $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
+      $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 150);
+      var scrollpos = $(window).scrollTop();
+      if(scrollpos >257){
+        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
+      }else{
+        $('.about-header .black').removeClass('fixed-header');
+        $(".about-header .black-fade").css("opacity",  0)
+      }
+      if(scrollpos >356){
+        $('.clearfixx').addClass('black-header')
+      }else{
+        $('.clearfixx').removeClass('black-header')
+      }
+  });
+  </script>

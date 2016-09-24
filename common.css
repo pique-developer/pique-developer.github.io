@@ -236,6 +236,52 @@ header.interior-header {
 #login.modal .modal-content.create-account .need-account:after {
   content: 'Already have an Account?';
 }
+footer {
+  background: #05FA28;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #05fa28 0%, #1780ff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #05fa28 0%, #1780ff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #05fa28 0%, #1780ff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#05FA28', endColorstr='#1780FF', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  color: white;
+  padding-bottom: 30px;
+}
+.footer-links {
+  padding: 80px 50px 60px;
+}
+.subfooter {
+  padding: 18px 50px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}
+.subfooter a {
+  color: white;
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 20px;
+}
+.footer-nav-link {
+  color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+  padding: 15px 0px 4px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+}
+.footer-nav-link:hover {
+  border-bottom: 1px solid white;
+  color: white;
+}
+.link-header {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
 .control-label {
   color: #020F3C;
 }
@@ -852,6 +898,7 @@ body#landing .hard-facts .loaned {
 body#landing .hard-facts .second-section {
   position: relative;
   top: 159px;
+  margin-bottom: 225px;
 }
 body#landing .hard-facts .second-section h3 {
   font-family: 'Avenir Next', sans-serif;
@@ -1070,4 +1117,81 @@ body#landing .blue1 {
 }
 .hero .graph-lines .circle.faded {
   opacity: 0.55;
+}
+body#educator .gradient-header {
+  background: #215edd;
+  /* Old browsers */
+  background: -moz-linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#215edd', endColorstr='#4abced', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  background-position: center center;
+  height: 720px;
+  width: 100%;
+  position: relative;
+}
+body#educator .gradient-header h1 {
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Avenir Next', sans-serif;
+  color: white;
+  width: 75%;
+  margin: 0 auto;
+  position: absolute;
+  top: 214px;
+  left: 0;
+  right: 0;
+}
+@media screen and (max-width: 991px) {
+  body#educator .gradient-header h1 {
+    width: 100%;
+  }
+}
+body#educator .gradient-header:after {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  content: '';
+  background: black;
+  opacity: 0;
+  transition: 0.5s opacity ease-in;
+}
+body#educator .gradient-header h6 {
+  position: absolute;
+  top: 307px;
+  color: white;
+  width: 54%;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 100;
+  margin: 0 auto;
+  left: 0;
+  line-height: 26px;
+  right: 0;
+}
+body#educator .gradient-header.fixed-header:after {
+  opacity: 1;
+  transition: 0.5s opacity ease-in;
+}
+body#educator .black-header {
+  background-color: black;
+}
+.banner-form {
+  width: 500px;
+  height: 380px;
+  background-color: white;
+  box-shadow: 0px 0px 33px #1e6cad;
+  display: block;
+  margin: 40px auto;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  right: 0;
 }
