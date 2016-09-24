@@ -705,7 +705,7 @@ body.about #login-button:hover {
 body.about .black-fade {
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #020f3c;
   opacity: 0;
 }
 body.about .about-header {
@@ -753,7 +753,7 @@ body.about .about-header.fixed-header:after {
   transition: 0.5s opacity ease-in;
 }
 body.about .black-header {
-  background-color: black;
+  background-color: #020f3c;
 }
 body.about .light-blue-container {
   text-align: center;
