@@ -59,17 +59,17 @@
 
   <script>
     $(window).scroll(function(){
-      $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
-      $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 150);
-      $(".about-header button").css("opacity", 1 - $(window).scrollTop() / 150);
+      $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 180);
+      $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 220);
+      $(".about-header button").css("opacity", 1 - $(window).scrollTop() / 260);
       var scrollpos = $(window).scrollTop();
-      if(scrollpos >257){
-        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
+      if(scrollpos >400){
+        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-400 )*0.0115));
       }else{
         $('.about-header .black').removeClass('fixed-header');
         $(".about-header .black-fade").css("opacity",  0)
       }
-      if(scrollpos >356){
+      if(scrollpos >516){
         $('.clearfixx').addClass('black-header')
       }else{
         $('.clearfixx').removeClass('black-header')

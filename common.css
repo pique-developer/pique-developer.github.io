@@ -732,7 +732,9 @@ body.about .about-header h1 {
   position: absolute;
   top: 264px;
   left: 0;
+  font-weight: 400;
   right: 0;
+  letter-spacing: 2px;
 }
 @media screen and (max-width: 991px) {
   body.about .about-header h1 {
