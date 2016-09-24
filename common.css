@@ -861,7 +861,7 @@ body#landing .about-header {
 }
 body#landing .about-header h1 {
   font-size: 42px;
-  text-shadow: 0px 1px 5px #545454;
+  text-shadow: 0px 1px 5px #949292;
 }
 body#landing .about-header button#sign-up-free {
   position: absolute;
@@ -900,7 +900,6 @@ body#landing .about-header h6 {
   left: 0;
   line-height: 26px;
   right: 0;
-  text-shadow: 0px 1px 5px #545454;
 }
 body#landing .section-header {
   margin-bottom: 30px;
