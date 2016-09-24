@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="common.css">
 
 </head>
-<body class = "about" id = "educator">
+<body class = "about no-fixed-header" id = "educator">
   <div class = "clearfixx">
     <div class = "logo-container pull-left">
       <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
@@ -53,7 +53,52 @@
     </div>
 
     <div class = "banner-form">
+      <form id = "educator">
+        <select id= "publishing-option" name = "published">
+          <option value = "0">Not Published</option>
+          <option value = "1">Published</option>
+        </select>
+        <br><br><br>
+        <div class = "select-slider-container">
 
+          <div class= "option selected" id = "published">I'm an Educator</div>
+          <div class = "option" id = "not-published">I'm a Community Leader</div>
+        </div>
+        <script>
+        $('.option').on('click',function(){
+         $('.option').toggleClass('selected') 
+        })
+
+        $('#published').on('click',function(){
+          $('#publishing-option').val('1')
+        })
+
+        $('#not-published').on('click',function(){
+          $('#publishing-option').val('0')
+        })
+        </script>
+        <div class = 'row name-form-group'>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="first_name" placeholder="First Name">
+            </div>
+          </div>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="school" placeholder="Name of School">
+        </div>
+
+        <button type = "submit" class = "submit-button log-in"></button>
+
+      </form>
     </div>
   </div>
   <script>
@@ -61,13 +106,14 @@
       $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
       $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 150);
       var scrollpos = $(window).scrollTop();
+      console.log(scrollpos)
       if(scrollpos >257){
         $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
       }else{
         $('.about-header .black').removeClass('fixed-header');
         $(".about-header .black-fade").css("opacity",  0)
       }
-      if(scrollpos >356){
+      if(scrollpos >600){
         $('.clearfixx').addClass('black-header')
       }else{
         $('.clearfixx').removeClass('black-header')

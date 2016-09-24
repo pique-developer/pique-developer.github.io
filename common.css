@@ -1145,7 +1145,7 @@ body#educator .gradient-header h1 {
   width: 75%;
   margin: 0 auto;
   position: absolute;
-  top: 214px;
+  top: 200px;
   left: 0;
   right: 0;
 }
@@ -1165,7 +1165,7 @@ body#educator .gradient-header:after {
 }
 body#educator .gradient-header h6 {
   position: absolute;
-  top: 307px;
+  top: 287px;
   color: white;
   width: 54%;
   font-size: 17px;
@@ -1175,6 +1175,7 @@ body#educator .gradient-header h6 {
   left: 0;
   line-height: 26px;
   right: 0;
+  letter-spacing: 1px;
 }
 body#educator .gradient-header.fixed-header:after {
   opacity: 1;
@@ -1182,6 +1183,9 @@ body#educator .gradient-header.fixed-header:after {
 }
 body#educator .black-header {
   background-color: black;
+}
+body.no-fixed-header .clearfixx {
+  position: absolute;
 }
 .banner-form {
   width: 500px;
@@ -1194,4 +1198,85 @@ body#educator .black-header {
   bottom: -100px;
   left: 0;
   right: 0;
+  padding: 20px 30px;
+}
+.banner-form input {
+  height: 45px;
+  border: 1px solid #B2BCD3;
+  box-shadow: none;
+}
+.banner-form input:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(57, 118, 224, 0.6);
+}
+.banner-form input::-webkit-input-placeholder {
+  color: #B2BCD3;
+}
+.banner-form input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #B2BCD3;
+}
+.banner-form input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #B2BCD3;
+}
+.banner-form input:-ms-input-placeholder {
+  color: #B2BCD3;
+}
+.banner-form .form-group {
+  margin-bottom: 25px;
+}
+.banner-form .submit-button {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 12px;
+  font-weight: 300;
+  font-size: 16px;
+  width: 100%;
+  transition: 0.1s all ease-in;
+  border: none;
+  color: #d5daf7;
+  background-color: white;
+  border: 1.5px solid #d5daf7;
+}
+.banner-form .submit-button:after {
+  content: 'Submit';
+}
+.banner-form .submit-button:hover {
+  background-color: #3cd070;
+  border-color: #3cd070;
+  color: white;
+}
+.banner-form .select-slider-container {
+  border-radius: 25px;
+  display: inline-block;
+  margin: 0 auto;
+  position: absolute;
+  top: -5px;
+}
+.banner-form .option {
+  display: inline-block;
+  max-height: 50px;
+  margin: 16px 47px;
+  text-align: center;
+  color: black;
+  padding: 10px;
+}
+.banner-form .option + .option {
+  margin: 15px 15px 15px 37px;
+}
+.banner-form .option + .option:before {
+  width: 1px;
+  height: 20px;
+  content: '';
+  background-color: #cecece;
+  display: inline-block;
+  position: relative;
+  right: 45px;
+  top: 5px;
+}
+.banner-form .selected {
+  color: black;
+  z-index: 3;
+  position: relative;
+  border-bottom: 1px solid black;
 }
