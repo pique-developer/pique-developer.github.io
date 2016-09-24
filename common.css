@@ -1118,6 +1118,43 @@ body#landing .blue1 {
 .hero .graph-lines .circle.faded {
   opacity: 0.55;
 }
+.hard-facts {
+  text-align: center;
+}
+.hard-facts .loaned {
+  color: #E1D113;
+  font-weight: 800;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 70px;
+  text-shadow: 5px 2px 12px rgba(225, 209, 19, 0.33);
+}
+.hard-facts .second-section {
+  position: relative;
+  top: 159px;
+  margin-bottom: 225px;
+}
+.hard-facts .second-section h3 {
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+}
+.hard-facts .second-section .graduating {
+  color: #2BDBB4;
+}
+.hard-facts .second-section .loan {
+  color: #26E98F;
+}
+.hard-facts .second-section .tuition {
+  color: #51BBF1;
+}
+.hard-facts .number-label {
+  color: #B2BCD3;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 12px;
+}
+body#educator .hard-facts {
+  margin-top: 50px;
+}
 body#educator .gradient-header {
   background: #215edd;
   /* Old browsers */

@@ -16,6 +16,8 @@
 <!-- Materialize JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
+<!-- font awesome font for social icons -->
+<script src="https://use.fontawesome.com/c478d977aa.js"></script>
 <!-- Material Icon font -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -66,7 +68,7 @@
         </div>
         <script>
         $('.option').on('click',function(){
-         $('.option').toggleClass('selected') 
+         $('.option').toggleClass('selected')
         })
 
         $('#published').on('click',function(){
@@ -120,3 +122,152 @@
       }
   });
   </script>
+  <div class = "clearfix">
+    <div class = "hard-facts">
+      <h3 class = "section-header">
+        The Hard Facts
+      </h3>
+      <h2 class = "loaned">$<span class="Count">33000
+        </span></h2>
+      <h6 class = "number-label">Average Amount Loaned Annually for College</h6>
+
+
+      <section class="hero">
+      <div class="graph-lines">
+          <?xml version="1.0" encoding="utf-8"?>
+          <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+          <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+          <svg viewBox="0 0 1200 203"preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+      <defs>
+          <linearGradient x1="50%" y1="98.3328202%" x2="50%" y2="45.1390748%" id="linearGradient-1">
+              <stop stop-color="#0BEE84" stop-opacity="0" offset="0%"></stop>
+              <stop stop-color="#0BBA7C" stop-opacity="0.0972316576" offset="100%"></stop>
+          </linearGradient>
+      </defs>
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Pique---Educator" transform="translate(0.000000, -1102.000000)" fill="url(#linearGradient-1)">
+              <g id="The-Harsh-Facts" transform="translate(0.000000, 762.000000)">
+                  <path class = "path two" d="M0,368.499999 C0,368.499999 33,358.000001 126,395.000001 C219,432.000001 359.5,395 359.5,395 C359.5,395 480.5,343.999999 615,389.5 C749.5,435.000001 854.5,417 905.5,383 C956.5,349 1002,328 1083,349 C1164,370 1223,479.000004 1244.5,376.5 C1266,273.999996 1239.5,531 1239.5,531 L1108,565.5 L956.5,573.5 L0,549.500001 L0,368.499999 Z" id="wave-2"></path>
+              </g>
+          </g>
+      </g>
+  </svg>
+      </div>
+  </section>
+        <section class="hero">
+      <div class="graph-lines">
+            <?xml version="1.0" encoding="utf-8"?>
+          <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+          <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+          <svg   preserveAspectRatio="none" viewBox="0 0 1200 290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+      <defs>
+          <linearGradient x1="50%" y1="98.3328202%" x2="50%" y2="45.1390748%" id="linearGradient-2">
+              <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+              <stop stop-color="#1417EF" stop-opacity="0.0972316576" offset="100%"></stop>
+          </linearGradient>
+      </defs>
+      <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Pique---Educator" transform="translate(0.000000, -1013.000000)" fill="url(#linearGradient-2)">
+              <g id="The-Harsh-Facts2" transform="translate(0.000000, 762.000000)">
+                  <path class="path one" d="M-8.5,452.5 C-8.5,452.5 26,360.499993 134.5,348.499993 C243,336.499993 336.5,417 394,425.5 C451.5,434 520,395.475945 560,383.487969 C600,371.499993 708.5,363.499993 785,383.487969 C861.5,403.475945 950.5,411.499993 1015,383.487969 C1079.5,355.475945 1168,309.500002 1213.5,230 C1259,150.499999 1239,547.500001 1239,547.500001 L-21,547.5 L-8.5,452.5 Z" id="wave1"></path>
+              </g>
+          </g>
+      </g>
+  </svg>
+
+      </div>
+  </section>
+    <div class = "second-section">
+      <div class = "row">
+        <div class = "col-xs-4">
+          <h3 class = "tuition"><span class="Count">45
+    </span>%</h3>
+          <h6 class = "number-label">Increase in College Tuition this Decade</h6>
+        </div>
+        <div class = "col-xs-4">
+          <h3 class = "loan"><span class="Count">74
+    </span>%</h3>
+          <h6 class = "number-label">Increase in Student Loan Size</h6>
+        </div>
+        <div class = "col-xs-4">
+          <h3 class = "graduating"><span class="Count">40
+    </span>%</h3>
+          <h6 class = "number-label">Students Graduating in 2014 Took Out a Student Loan</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+  $(window).scroll(function(event) {
+
+    if($(".hero").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
+        setTimeout(function () {
+          $(".path.one").attr("class", "path one grown");
+          $(".path.two").attr("class", "path two grown");
+          //
+      }, 500);
+    }
+
+  });
+  $(window).load(function() {
+      $('.Count').each(function() {
+          var $this = $(this);
+          jQuery({Counter: 0}).animate({Counter: $this.text()}, {
+              duration: 1500,
+              easing: 'swing',
+              step: function() {
+                  var num = Math.ceil(this.Counter).toString();
+                  if(Number(num) > 999){
+                      while (/(\d+)(\d{3})/.test(num)) {
+                          num = num.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+                      }
+                  }
+                  $this.text(num);
+              }
+          });
+      });
+  });
+
+  </script>
+
+    </div>
+  <footer>
+    <div class = "row footer-links">
+      <div class = "col-sm-4">
+        <a class = "footer-nav-link link-header">Company</a><br>
+        <a class = "footer-nav-link">About Us</a><br>
+        <a class = "footer-nav-link">Team</a><br>
+        <a class = "footer-nav-link">Blog</a><br>
+      </div>
+      <div class = "col-sm-4">
+        <a class = "footer-nav-link link-header">Support</a><br>
+        <a class = "footer-nav-link">FAQ</a><br>
+        <a class = "footer-nav-link">Privacy Policy</a><br>
+        <a class = "footer-nav-link">Terms of Use</a><br>
+      </div>
+      <div class = "col-sm-4">
+        <a class = "footer-nav-link link-header">Scholarship Foundations</a><br>
+        <a class = "footer-nav-link">About</a><br>
+        <a class = "footer-nav-link">FAQ</a><br>
+        <a class = "footer-nav-link">Become a Partner</a><br>
+      </div>
+
+    </div>
+    <div class = "subfooter">
+      <div class = "pull-left">
+        <a href = "" class = "social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+  </a>
+        <a href = "" class = "social-media"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href = "" class = "social-media"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </div>
+      <div class = "pull-right">
+        Copyright 2016 Pique
+      </div>
+    </div>
+  </footer>
