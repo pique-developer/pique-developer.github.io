@@ -52,12 +52,16 @@
 
       <h1>We're the Common App for Scholarships.</h1>
       <h6>Discover, save & apply for scholarships for high school and college students in the DC area aand get access to our digital tools to help students win more scholarships and more money</h6>
+      <button id = "sign-up-free">Sign Up for Free!</button>
     </div>
-  </div>
+    </div>
+
+
   <script>
     $(window).scroll(function(){
       $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
       $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 150);
+      $(".about-header button").css("opacity", 1 - $(window).scrollTop() / 150);
       var scrollpos = $(window).scrollTop();
       if(scrollpos >257){
         $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
@@ -100,7 +104,7 @@
 <div class = "clearfix">
   <div class = "hard-facts">
     <h3 class = "section-header">
-      The Hard Facts
+      The Harsh Facts
     </h3>
     <h2 class = "loaned">$<span class="Count">33000
       </span></h2>

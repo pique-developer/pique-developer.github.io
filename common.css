@@ -714,7 +714,7 @@ body.about .about-header {
   background-size: cover;
   background-color: black;
   background-position: center center;
-  height: 560px;
+  height: 650px;
   width: 100%;
   transition: 0.4s all ease-in;
   -webkit-mask-image: url('images/about/mask.png');
@@ -785,6 +785,7 @@ body.about .section-header {
   font-weight: 700;
   display: inline-block;
   margin-top: 70px;
+  color: #020f3c;
 }
 body.about .team {
   text-align: center;
@@ -856,11 +857,28 @@ body.about .no-padding:nth-child(6) .team-member {
   padding: 0;
 }
 body#landing .about-header {
-  background-image: url('images/about/groupbanner.jpg');
+  background-image: url('images/about/bg-Header.jpg');
 }
 body#landing .about-header h1 {
   font-size: 42px;
   text-shadow: 0px 1px 5px #545454;
+}
+body#landing .about-header button#sign-up-free {
+  position: absolute;
+  /* left: 0; */
+  /* right: 0; */
+  margin: 0 auto;
+  left: 0;
+  top: 440px;
+  display: inline-block;
+  right: 0;
+  border: 1px solid white;
+  background: transparent;
+  border-radius: 30px;
+  padding: 10px 26px;
+  color: white;
+  width: 167px;
+  text-align: center;
 }
 body#landing .about-header h6 {
   position: absolute;
@@ -917,7 +935,7 @@ body#landing .hard-facts .second-section .tuition {
 body#landing .hard-facts .number-label {
   color: #B2BCD3;
   font-family: 'Avenir Next', sans-serif;
-  font-size: 12px;
+  font-size: 15px;
 }
 body#landing .blue1 {
   background-color: #4874ec;
@@ -1357,9 +1375,9 @@ body.no-fixed-header .clearfixx {
   width: 100%;
   transition: 0.1s all ease-in;
   border: none;
-  color: #d5daf7;
+  color: #2971E0;
   background-color: white;
-  border: 1.5px solid #d5daf7;
+  border: 1.5px solid #2971E0;
 }
 .banner-form .submit-button:after {
   content: 'Submit';
@@ -1381,7 +1399,7 @@ body.no-fixed-header .clearfixx {
   max-height: 50px;
   margin: 16px 47px;
   text-align: center;
-  color: black;
+  color: #2971E0;
   padding: 10px;
 }
 .banner-form .option + .option {
@@ -1398,8 +1416,8 @@ body.no-fixed-header .clearfixx {
   top: 5px;
 }
 .banner-form .selected {
-  color: black;
+  color: #2971E0;
   z-index: 3;
   position: relative;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #2971E0;
 }
