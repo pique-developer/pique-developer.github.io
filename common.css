@@ -1268,10 +1268,18 @@ body#educator .green-content-container table td.icon {
 body#educator .green-content-container table td.icon img {
   margin-top: 12px;
 }
-body#educator .hard-facts {
+.black-header {
+  background-color: black;
+}
+body.no-fixed-header .clearfixx {
+  position: absolute;
+}
+body#educator .hard-facts,
+body#students .hard-facts {
   margin-top: 50px;
 }
-body#educator .gradient-header {
+body#educator .gradient-header,
+body#students .gradient-header {
   background: #215edd;
   /* Old browsers */
   background: -moz-linear-gradient(45deg, #215edd 0%, #4abced 100%);
@@ -1290,7 +1298,8 @@ body#educator .gradient-header {
   width: 100%;
   position: relative;
 }
-body#educator .gradient-header h1 {
+body#educator .gradient-header h1,
+body#students .gradient-header h1 {
   font-size: 30px;
   text-align: center;
   font-family: 'Avenir Next', sans-serif;
@@ -1303,11 +1312,13 @@ body#educator .gradient-header h1 {
   right: 0;
 }
 @media screen and (max-width: 991px) {
-  body#educator .gradient-header h1 {
+  body#educator .gradient-header h1,
+  body#students .gradient-header h1 {
     width: 100%;
   }
 }
-body#educator .gradient-header:after {
+body#educator .gradient-header:after,
+body#students .gradient-header:after {
   width: 100%;
   height: 100%;
   display: inline-block;
@@ -1316,7 +1327,8 @@ body#educator .gradient-header:after {
   opacity: 0;
   transition: 0.5s opacity ease-in;
 }
-body#educator .gradient-header h6 {
+body#educator .gradient-header h6,
+body#students .gradient-header h6 {
   position: absolute;
   top: 287px;
   color: white;
@@ -1330,15 +1342,10 @@ body#educator .gradient-header h6 {
   right: 0;
   letter-spacing: 1px;
 }
-body#educator .gradient-header.fixed-header:after {
+body#educator .gradient-header.fixed-header:after,
+body#students .gradient-header.fixed-header:after {
   opacity: 1;
   transition: 0.5s opacity ease-in;
-}
-body#educator .black-header {
-  background-color: black;
-}
-body.no-fixed-header .clearfixx {
-  position: absolute;
 }
 .banner-form {
   width: 500px;
@@ -1398,6 +1405,9 @@ body.no-fixed-header .clearfixx {
   background-color: #3cd070;
   border-color: #3cd070;
   color: white;
+}
+.banner-form select#career {
+  visibility: hidden;
 }
 .banner-form .select-slider-container {
   border-radius: 25px;
