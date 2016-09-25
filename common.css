@@ -667,7 +667,7 @@ body#applicant header .container {
 body.about .clearfixx {
   position: fixed;
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 40px;
   z-index: 3;
 }
 body.about .about-banner {
