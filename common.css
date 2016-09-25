@@ -669,6 +669,7 @@ body.about .clearfixx {
   width: 100%;
   padding: 10px 40px;
   z-index: 3;
+  top: 10px;
 }
 body.about .about-banner {
   width: 100%;
@@ -686,7 +687,7 @@ body.about .nav-link {
   font-weight: 200;
   letter-spacing: 1px;
   margin: 10px 20px;
-  font-size: 17px;
+  font-size: 15px;
 }
 body.about #login-button {
   background-color: transparent;
@@ -695,7 +696,7 @@ body.about #login-button {
   font-weight: 200;
   letter-spacing: 1px;
   padding: 8px 25px;
-  font-size: 17px;
+  font-size: 15px;
 }
 body.about #login-button:hover {
   background-color: white;
@@ -755,6 +756,7 @@ body.about .about-header.fixed-header:after {
 }
 body.about .black-header {
   background-color: #132663;
+  top: 0px;
 }
 body.about .light-blue-container {
   text-align: center;
