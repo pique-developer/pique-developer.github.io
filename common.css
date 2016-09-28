@@ -714,7 +714,7 @@ body.about .about-header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 540px;
+  height: 600px;
   width: 100%;
   transition: 0.4s all ease-in;
   -webkit-mask-image: url('images/about/mask.png');
