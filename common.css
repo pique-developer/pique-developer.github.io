@@ -1460,6 +1460,7 @@ body#students .gradient-header.fixed-header:after {
   padding-top: 60px;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100%;
+  -webkit-mask-position: bottom;
 }
 .blue-sections .blue-texts {
   width: 70%;
@@ -1473,7 +1474,6 @@ body#students .gradient-header.fixed-header:after {
 .blue-sections #blue1 {
   background-color: #3656eb;
   -webkit-mask-image: url('images/about/mask1.png');
-  margin-bottom: -90px;
 }
 .blue-sections #blue2 {
   background-color: #2242E9;
@@ -1534,4 +1534,23 @@ body#students .white-section .section-header {
 }
 body#students .white-section .section-header:after {
   background-color: #4E6DFF;
+}
+body#students .wait-button {
+  margin: 80px auto;
+  background-color: #3cd070;
+  color: white;
+  border-radius: 50px;
+  padding: 15px;
+  width: 400px;
+  text-align: center;
+  font-size: 19px;
+  font-family: 'Avenir Next', sans-serif;
+  border: 2px solid #3cd070;
+  display: inline-block;
+  transition: 0.2s all ease-in;
+}
+body#students .wait-button:hover {
+  border: 2px solid #2971E0;
+  color: #2971E0;
+  background-color: white;
 }

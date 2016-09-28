@@ -247,7 +247,7 @@
         <h3 class = "blue-header">Apply to New Scholarships You Won't Find in a Google Search</h3>
         Not looking to apply to the same scholarships as 1,000 other students? We got you covered. Each month Pique finds and gives you acess to hundreds of new scholarships you can't find on Google and that have never been applied to before.
       </div>
-      <img class = "screenshot" src = "images/about/screenshot.jpg">
+      <img class = "screenshot" src = "images/about/screenshot-cropped.jpg">
     </div>
     <div class = "blue-section" id = "blue2">
 
@@ -255,7 +255,7 @@
         <h3 class = "blue-header">Write One Essay, Apply to Five Scholarships!</h3>
         Not looking to apply to the same scholarships as 1,000 other students? We got you covered. Each month Pique finds and gives you acess to hundreds of new scholarships you can't find on Google and that have never been applied to before.
       </div>
-      <img class = "screenshot" src = "images/about/screenshot.jpg">
+      <img class = "screenshot" src = "images/about/screenshot-cropped.jpg">
     </div>
     <div class = "blue-section" id = "blue3">
 
@@ -270,8 +270,26 @@
 
   <div class = "white-section">
     <h3 class = "section-header long">What Are You Waiting For?</h3>
+    <a href = "#educator" class = "wait-button ">Sign Up!</a>
   </div>
 
+
+  <script>
+  $(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top - 150
+          }, 1000);
+          return false;
+        }
+      }
+    });
+    });
+  </script>
     <footer>
       <div class = "row footer-links">
         <div class = "col-sm-4">

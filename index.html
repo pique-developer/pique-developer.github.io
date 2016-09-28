@@ -63,13 +63,14 @@
       $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 220);
       $(".about-header button").css("opacity", 1 - $(window).scrollTop() / 260);
       var scrollpos = $(window).scrollTop();
-      if(scrollpos >400){
-        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-400 )*0.0115));
+      console.log(scrollpos);
+      if(scrollpos >320){
+        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-400 )*0.0235));
       }else{
         $('.about-header .black').removeClass('fixed-header');
         $(".about-header .black-fade").css("opacity",  0)
       }
-      if(scrollpos >516){
+      if(scrollpos >440){
         $('.clearfixx').addClass('black-header')
       }else{
         $('.clearfixx').removeClass('black-header')
