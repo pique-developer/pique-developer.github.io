@@ -854,6 +854,19 @@ body.about .team-member:hover .overlay .name {
 body.about .no-padding:first-child .team-member,
 body.about .no-padding:nth-child(7) .team-member {
   background-color: #31D26C;
+  position: relative;
+}
+body.about .no-padding:first-child .team-member:after,
+body.about .no-padding:nth-child(7) .team-member:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #31D26C;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
 }
 body.about .no-padding:nth-child(8) .team-member,
 body.about .no-padding:nth-child(2) .team-member {
@@ -862,6 +875,19 @@ body.about .no-padding:nth-child(2) .team-member {
 body.about .no-padding:nth-child(3) .team-member,
 body.about .no-padding:nth-child(5) .team-member {
   background-color: #E1D113;
+  position: relative;
+}
+body.about .no-padding:nth-child(3) .team-member:after,
+body.about .no-padding:nth-child(5) .team-member:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #E1D113;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
 }
 body.about .no-padding:nth-child(4) .team-member,
 body.about .no-padding:nth-child(6) .team-member {

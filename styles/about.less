@@ -207,12 +207,36 @@ body.about{
 
   .no-padding:first-child .team-member, .no-padding:nth-child(7) .team-member{
     background-color: #31D26C;
+    position: relative;
+    &:after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #31D26C;
+      opacity: 0.3;
+      top:0;
+      left: 0;
+    }
   }
   .no-padding:nth-child(8) .team-member,.no-padding:nth-child(2) .team-member{
     background-color: #51BBF1;
   }
   .no-padding:nth-child(3) .team-member,.no-padding:nth-child(5) .team-member{
     background-color: #E1D113;
+    position: relative;
+    &:after{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: #E1D113;
+      opacity: 0.3;
+      top:0;
+      left: 0;
+    }
   }
   .no-padding:nth-child(4) .team-member,.no-padding:nth-child(6) .team-member{
     background-color: #2BDBB4;
