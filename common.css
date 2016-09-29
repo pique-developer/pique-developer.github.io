@@ -829,15 +829,26 @@ body.about .team-member .overlay .cell {
 body.about .team-member .overlay .cell .name {
   font-weight: 600;
   font-size: 20px;
+  margin-top: 50px;
+  opacity: 0.7;
+  transition: 0.3s all ease-in;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 body.about .team-member .overlay .cell .overlay-title {
   font-size: 16px;
+  margin-bottom: 5px;
 }
 body.about .team-member .overlay .cell .education {
   color: #31D26C;
   font-size: 15px;
+  margin-top: 5px;
 }
 body.about .team-member:hover .overlay {
+  opacity: 1;
+}
+body.about .team-member:hover .overlay .name {
+  margin-top: 0;
   opacity: 1;
 }
 body.about .no-padding:first-child .team-member,

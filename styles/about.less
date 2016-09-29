@@ -176,13 +176,20 @@ body.about{
         .name{
           font-weight: 600;
           font-size: 20px;
+          margin-top: 50px;
+          opacity: 0.7;
+          transition: 0.3s all ease-in;
+          letter-spacing: 1px;
+          margin-bottom: 20px;
         }
         .overlay-title{
           font-size: 16px;
+          margin-bottom: 5px;
         }
         .education{
           color: #31D26C;
           font-size: 15px;
+          margin-top: 5px;
         }
       }
 
@@ -190,6 +197,10 @@ body.about{
     &:hover{
       .overlay{
         opacity: 1;
+        .name{
+          margin-top: 0;
+          opacity: 1;
+        }
       }
     }
   }
