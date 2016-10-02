@@ -1571,14 +1571,14 @@ body#students .wait-button:hover {
 }
 .button-grid {
   text-align: center;
-  margin-bottom: 30px;
-  padding: 70px;
+  padding: 80px 180px;
 }
 .button-grid .button {
   position: relative;
   height: 275px;
   display: table;
   margin-bottom: 0;
+  cursor: pointer;
 }
 .button-grid .button .cell {
   display: table-cell;
@@ -1660,4 +1660,51 @@ body#students .wait-button:hover {
   font-weight: 200;
   letter-spacing: 2px;
   font-size: 44px;
+}
+#studentsmodal .modal-dialog {
+  min-width: 750px;
+}
+#studentsmodal .modal-content {
+  padding: 0;
+}
+#studentsmodal .modal-body {
+  display: inline-block;
+  padding: 0;
+}
+#studentsmodal .blue-half {
+  background-color: #359DE5;
+  color: white;
+  padding: 50px;
+}
+#studentsmodal .blue-half .section-header {
+  color: white;
+}
+#studentsmodal .blue-half .section-header:after {
+  background-color: white;
+}
+#studentsmodal ul.points {
+  list-style-type: initial;
+  padding: initial;
+}
+#studentsmodal ul.points li {
+  list-style: initial;
+  margin-bottom: 20px;
+}
+#studentsmodal ul.points li h4 {
+  font-weight: 200;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+#studentsmodal .blue-half .section-header,
+#studentsmodal .white-half .section-header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0px;
+}
+#studentsmodal .blue-half .section-header:after,
+#studentsmodal .white-half .section-header:after {
+  right: 36%;
+}
+#studentsmodal .white-half {
+  padding: 50px;
 }

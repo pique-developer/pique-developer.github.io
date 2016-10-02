@@ -1,12 +1,12 @@
 .button-grid{
   text-align: center;
-  margin-bottom: 30px;
-  padding:70px;
+  padding:80px 180px;;
   .button{
   position: relative;
   height: 275px;
   display: table;
   margin-bottom: 0;
+  cursor: pointer;
     .cell{
       display: table-cell;
       vertical-align: middle;
@@ -90,5 +90,55 @@
       letter-spacing: 2px;
       font-size: 44px;
     }
+  }
+}
+
+#studentsmodal{
+  .modal-dialog{
+    min-width: 750px;
+  }
+  .modal-content{
+    padding: 0;
+  }
+  .modal-body{
+    display: inline-block;
+    padding: 0;
+  }
+  .blue-half{
+    background-color: #359DE5;
+    color: white;
+    padding: 50px;
+    .section-header{
+      color: white;
+      &:after{
+        background-color: white;
+      }
+    }
+  }
+  ul.points{
+    list-style-type: initial;
+    padding: initial;
+    li{
+      list-style: initial;
+      margin-bottom: 20px;
+      h4{
+        font-weight: 200;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .blue-half, .white-half{
+    .section-header{
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 0px;
+      &:after{
+        right:36%;
+      }
+    }
+  }
+  .white-half{
+    padding: 50px;
   }
 }
