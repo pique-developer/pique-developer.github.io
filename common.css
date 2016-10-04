@@ -1558,6 +1558,54 @@ body#students .gradient-header.fixed-header:after {
   margin-right: 30px;
   line-height: 20px;
 }
+.overlap-divs {
+  background: #44008D;
+  text-align: center;
+  padding: 50px;
+  padding-bottom: 300px;
+  background: -moz-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  background: -webkit-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  background: linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#194BBC', GradientType=1);
+}
+.overlap-divs .section-header {
+  color: white !important;
+  font-size: 24px !important;
+  font-weight: 200 !important;
+  margin-top: 0 !important;
+}
+.overlap-divs .section-header:after {
+  background-color: white !important;
+}
+.overlap-divs .overlap-block {
+  padding: 20px 40px;
+  padding-bottom: 35px;
+  width: 60%;
+  color: white;
+  position: relative;
+  z-index: 2;
+  background-color: #3DB39E;
+  margin-top: 50px;
+}
+.overlap-divs .overlap-block.overlap {
+  z-index: 3;
+  top: -80px;
+  float: right;
+  background-color: #6217D3;
+}
+.overlap-divs .overlap-block img {
+  width: 75px;
+}
+.overlap-divs .overlap-block h2 {
+  font-size: 26px;
+  font-weight: 400;
+}
+.overlap-divs .overlap-block .overlap-text {
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 23px;
+  margin-top: 20px;
+}
 .blue-sections {
   color: white !important ;
   background: #44008D;
