@@ -1,6 +1,10 @@
 .blue-sections{
   color: white !important ;
-  background-color: #2242E9;
+  background: #44008D;
+  background: -moz-linear-gradient(-45deg,  #44008D 0%, #125AAC 100%);
+  background: -webkit-linear-gradient(-45deg,  #44008D 0%,#125AAC 100%);
+  background: linear-gradient(-45deg,  #44008D 0%,#125AAC 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44008D', endColorstr='#125AAC',GradientType=1 );
   font-family: 'Avenir Next';
   .blue-section{
     padding: 0 50px;
@@ -9,18 +13,63 @@
      -webkit-mask-size: 100%;
      -webkit-mask-position: bottom;
   }
+  h3{
+    font-size: 24px;
+  }
+  .screenshot{
+    width: 50%;
+  }
   .blue-texts{
     width: 70%;
+    font-size: 16px;
+    line-height: 27px;
     max-width: 690px;
     color: white;
     margin-bottom: 40px;
     .blue-header{
       color: white;
     }
+    .button-container{
+      a{
+        display: inline-block;
+        width: 180px;
+        padding:7px;
+        border-radius: 40px;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        background-color: rgba(255,255,255,0.15);
+        border: 2px solid white;
+        margin-top: 25px;
+        transition: 0.2s all ease-in;
+        &:hover{
+          background-color:rgba(255,255,255,0);
+        }
+        &.filled-in{
+          background-color: white;
+          color: #2213B1;
+          &:hover{
+            background-color: rgba(255,255,255,0.25);
+            color: white
+          }
+        }
+
+      }
+      a+a{
+        margin-left: 20px;
+      }
+    }
   }
   #blue1{
-    background-color: rgb(54,86,235);
+
     -webkit-mask-image: url('images/about/mask1.png');
+    z-index: 3;
+    position: relative;
+    background: #44008D;
+    background: -moz-linear-gradient(45deg,  #44008D 0%, #194BBC 100%);
+    background: -webkit-linear-gradient(45deg,  #44008D 0%,#194BBC 100%);
+    background: linear-gradient(45deg,  #44008D 0%,#194BBC 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44008D', endColorstr='#194BBC',GradientType=1 );
   }
 
   #blue2{
@@ -33,20 +82,32 @@
 
   }
   #blue3{
-    background-color: #4297F2;
     position: relative;
     z-index: 2;
     padding-top: 0;
+
     &:before{
       content: '';
       width: 100%;
       height: 400px;
-      background-color:#4297F2;
+      background-color:#inherit;;
       display: inline-block;
       position: absolute;
       z-index: 1;
       right: 0;
       top:-400px;
+    }
+    height: 446px;
+    .screenshot{
+      position: absolute;
+      width: 38%;
+      right: 0;
+      top: -93px;
+      z-index: 4;
+    }
+    .blue-texts{
+      position: absolute;
+      bottom: 20px;
     }
   }
   .pull-right{
@@ -56,9 +117,7 @@
     text-align: left;
   }
 
-  .screenshot{
-    width: 70%;
-  }
+
 
 
   .triangle{
