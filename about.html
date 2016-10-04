@@ -56,13 +56,14 @@
     $(window).scroll(function(){
       $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
       var scrollpos = $(window).scrollTop();
-      if(scrollpos >257){
-        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
+      console.log(scrollpos)
+      if(scrollpos >139){
+        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-139)*0.0105));
       }else{
         $('.about-header .black').removeClass('fixed-header');
         $(".about-header .black-fade").css("opacity",  0)
       }
-      if(scrollpos >356){
+      if(scrollpos >225){
         $('.clearfixx').addClass('black-header')
       }else{
         $('.clearfixx').removeClass('black-header')
@@ -77,7 +78,7 @@
         <span>We're millennials, techies, and activists on a mission to make college more accessible for all. </span><br>
         Students and families confront countless barriers when applying to college and we intend to knock each of them down but first we need to clean up an inefficient process in need of a little tech love, applying to scholarships.<br><br>
 
-        We fundamentally believe that if higher education is become more accessible on a national scale, it will be due to the work carried out by educators and non-profits coupled with tech driven solutions.<br><br>
+        We fundamentally believe that if higher education is become more accessible on a large scale, it will be due to the work carried out by educators and non-profits coupled with tech driven solutions.<br><br>
 
         If you support our mission then join us, spread the word, and help us to help make college more accessible.
       </div>
@@ -176,6 +177,18 @@
 
 
       </div>
+    </div>
+  </div>
+
+  <div class = "startup-section">
+    <h3 class = "section-header long">Our Investors</h3>
+    <img class = "five-hund" src = "images/about/500.jpg">
+    <div class = "startup-text">
+      Pique is a 500 Startups portfolio company. <br>
+500 Startups is a leading global venture capital seed fund and startup accelerator. <br>
+Based in Silicon Valley, 500 Startups manages $200M in assets.<br>
+And has invested in over 1,300 tech startups
+
     </div>
   </div>
   <footer>
