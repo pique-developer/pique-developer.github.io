@@ -1676,6 +1676,12 @@ body#students .gradient-header.fixed-header:after {
   background: linear-gradient(45deg, #44008d 0%, #194bbc 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#194BBC', GradientType=1);
 }
+.blue-sections #blue1 .screenshot {
+  margin-top: -50px;
+}
+.blue-sections #blue1 .blue-texts {
+  margin-bottom: 0px;
+}
 .blue-sections #blue2 {
   background-color: #2242E9;
   -webkit-mask-image: url('images/about/mask2.png');
