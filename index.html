@@ -107,7 +107,7 @@
     <h3 class = "section-header">
       The Harsh Facts
     </h3>
-    <h2 class = "loaned">$<span class="Count">37172
+    <h2 class = "loaned">$<span class="Countl">37172
       </span></h2>
     <h6 class = "number-label">Average Amount Loaned Annually for College</h6>
 
@@ -184,19 +184,8 @@
 </div>
 </div>
 <script>
-$(window).scroll(function(event) {
-
-  if($(".hero").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
-      setTimeout(function () {
-        $(".path.one").attr("class", "path one grown");
-        $(".path.two").attr("class", "path two grown");
-        //
-    }, 500);
-  }
-
-});
 $(window).load(function() {
-    $('.Count').each(function() {
+    $('.Countl').each(function() {
         var $this = $(this);
         jQuery({Counter: 0}).animate({Counter: $this.text()}, {
             duration: 1500,
@@ -213,6 +202,37 @@ $(window).load(function() {
         });
     });
 });
+$(window).scroll(function(event) {
+
+  if($(".hero").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
+      setTimeout(function () {
+        $(".path.one").attr("class", "path one grown");
+        $(".path.two").attr("class", "path two grown");
+        //
+    }, 500);
+  }
+
+  if($(".second-section").offset().top == ($(window).scrollTop() + window.innerHeight)) {
+    $('.Count').each(function() {
+        var $this = $(this);
+        jQuery({Counter: 0}).animate({Counter: $this.text()}, {
+            duration: 1500,
+            easing: 'swing',
+            step: function() {
+                var num = Math.ceil(this.Counter).toString();
+                if(Number(num) > 999){
+                    while (/(\d+)(\d{3})/.test(num)) {
+                        num = num.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
+                    }
+                }
+                $this.text(num);
+            }
+        });
+    });
+  }
+});
+
+
 
 </script>
 
@@ -236,7 +256,7 @@ $(window).load(function() {
         <b>High School Seniors,</b> fill out one scholarship application and apply to unlimited scholarships. That means never request a recommendation, official transcript or pay to send our SAT or ACT test scores to a scholarship foundation again. That's the Pique way.
         <div class = "button-container">
           <a href = "" class = "filled-in">Sign Up!</a>
-          <a href = "" class = "">Learn More</a>
+          <a href = "students.html#how-it-works-info" class = "">Learn More</a>
         </div>
       </div>
       <img class = "screenshot" src = "images/about/screenshot.jpg">

@@ -1477,6 +1477,7 @@ body#students .gradient-header.fixed-header:after {
   text-align: center;
   color: #2971E0;
   padding: 10px;
+  cursor: pointer;
 }
 .banner-form .option + .option {
   margin: 15px 15px 15px 70px;
@@ -1578,6 +1579,7 @@ body#students .gradient-header.fixed-header:after {
   background-color: white !important;
 }
 .overlap-divs .overlap-block {
+  box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.37);
   padding: 20px 40px;
   padding-bottom: 35px;
   width: 60%;
@@ -1750,31 +1752,67 @@ body#students .white-section .section-header {
 body#students .white-section .section-header:after {
   background-color: #4E6DFF;
 }
-body#students .wait-button {
-  margin: 80px auto;
-  background-color: #3cd070;
-  color: white;
-  border-radius: 50px;
-  padding: 15px;
-  width: 400px;
-  text-align: center;
-  font-size: 19px;
-  font-family: 'Avenir Next', sans-serif;
-  border: 2px solid #3cd070;
-  display: inline-block;
-  transition: 0.2s all ease-in;
-}
-body#students .wait-button:hover {
-  border: 2px solid #2971E0;
-  color: #2971E0;
-  background-color: white;
-}
 form#student .select-slider-container {
   display: block;
   left: 0;
   right: 0;
   text-align: center;
   width: auto;
+}
+.pique-difference {
+  background: #44008D;
+  color: white;
+  padding: 50px;
+  display: inline-block;
+  background: -moz-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  background: -webkit-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  background: linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#194BBC', GradientType=1);
+}
+.pique-difference .section-header {
+  color: white !important;
+  font-size: 24px !important;
+  font-weight: 200 !important;
+  margin-top: 0 !important;
+}
+.pique-difference .section-header:after {
+  background-color: white !important;
+}
+.pique-difference .diff-text {
+  width: 60%;
+  text-align: left;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 100px;
+  font-size: 16px;
+  font-weight: 200;
+}
+.pique-difference .diff-text.pull-right {
+  text-align: right;
+}
+.pique-difference .diff-text h3 {
+  color: white;
+  font-weight: 300;
+}
+.pique-difference .button {
+  border-radius: 50px;
+  padding: 7px 20px;
+}
+.pique-difference .button.filled {
+  background-color: white;
+  border: 2px solid white;
+  color: #2213B1;
+  margin-top: 30px;
+  display: inline-block;
+}
+.pique-difference .essay-example {
+  background-color: white;
+  border-radius: 8px;
+  color: #3845C1;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 200;
 }
 .button-grid {
   text-align: center;
@@ -1953,12 +1991,12 @@ form#student .select-slider-container {
   background: linear-gradient(45deg, #1a5be1 0%, #3fb1ed 100%);
   display: flex;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1A5BE1', endColorstr='#3FB1ED', GradientType=1);
-  padding: 20px;
+  padding: 20px 70px;
 }
 .cards .card {
   background-color: white;
   flex: 1;
-  margin: 50px 30px;
+  margin: 50px 25px;
   color: #1A5BE1;
   padding: 20px;
   text-align: center;
