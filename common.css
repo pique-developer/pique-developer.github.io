@@ -1632,6 +1632,7 @@ body#students .gradient-header.fixed-header:after {
   font-size: 16px;
   line-height: 23px;
   margin-top: 20px;
+  color: rgba(255, 255, 255, 0.9);
 }
 .blue-sections {
   color: white !important ;
@@ -2037,7 +2038,7 @@ form#student .select-slider-container {
   background-color: #1A5BE1;
   width: 80px;
   height: 1px;
-  right: 43.5%;
+  right: 40.5%;
 }
 .cards .card h4 {
   font-size: 21px;

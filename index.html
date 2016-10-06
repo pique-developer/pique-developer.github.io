@@ -288,7 +288,7 @@ $(window).scroll(function(event) {
       </div>
       <div class = "button-container">
         <a href = "" class = "filled-in">Sign Up!</a>
-        <a href = "" class = "">Learn More</a>
+        <a href = "students.html" class = "">Learn More</a>
       </div>
     </div>
   </div>
@@ -316,7 +316,10 @@ $(window).scroll(function(event) {
 </div>
 
 <script>
+$( document ).ready(function() {
   $("#first-card").height($("#second-card").height());
+});
+
 </script>
 
 <div class = "dc-banner" style = "background-image:url('images/about/dc.jpg')">
@@ -331,25 +334,28 @@ $(window).scroll(function(event) {
 
 <footer>
   <div class = "row footer-links">
-    <div class = "col-sm-4">
+    <div class = "col-sm-3">
       <a class = "footer-nav-link link-header">Company</a><br>
-      <a href = "about.html" class = "footer-nav-link">About Us</a><br>
       <a href = "about.html#team" class = "footer-nav-link">Team</a><br>
       <a class = "footer-nav-link">Blog</a><br>
+      <a class = "footer-nav-link">Get Involved</a><br>
     </div>
-    <div class = "col-sm-4">
-      <a class = "footer-nav-link link-header">Support</a><br>
-      <a class = "footer-nav-link">FAQ</a><br>
-      <a class = "footer-nav-link">Privacy Policy</a><br>
-      <a class = "footer-nav-link">Terms of Use</a><br>
+    <div class = "col-sm-3">
+        <a class = "footer-nav-link link-header">Educators</a><br>
+        <a href = "educator.html" class = "footer-nav-link">Get Started</a><br>
+        <a href = "educator.html" class = "footer-nav-link">Learn More</a><br>
     </div>
-    <div class = "col-sm-4">
+    <div class = "col-sm-3">
       <a class = "footer-nav-link link-header">Scholarship Foundations</a><br>
-      <a class = "footer-nav-link">About</a><br>
+      <a href = "about.html" class = "footer-nav-link">About</a><br>
       <a class = "footer-nav-link">FAQ</a><br>
       <a class = "footer-nav-link">Become a Partner</a><br>
     </div>
+    <div class = "col-sm-3">
+      <a class = "footer-nav-link link-header">Support</a><br>
+      <a class = "footer-nav-link">FAQ</a><br>
 
+    </div>
   </div>
   <div class = "subfooter">
     <div class = "pull-left">
@@ -363,5 +369,4 @@ $(window).scroll(function(event) {
     </div>
   </div>
 </footer>
-
 </body>
