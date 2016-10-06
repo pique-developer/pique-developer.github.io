@@ -24,7 +24,7 @@
 <!-- My styles -->
 <link rel="stylesheet" href="materialize.css">
 <link rel="stylesheet" href="common.css">
-
+ <link rel="stylesheet" href="styles/animate.css">
 </head>
 <body class = "about" id = "landing">
   <div class = "clearfixx">
@@ -246,8 +246,23 @@ $(window).scroll(function(event) {
   <div class = "blue-bar-text">Students spend countless hours looking and applying to scholarships.<br>Counselors and teachers spend hours writing new recommendations for each scholarship.<br>Parents spend too much money to send SAT and ACT test scores.</div>
 
 </div>
-
-
+<script src="scripts/visible.min.js"></script>
+<script>
+  $(window).scroll(function() {
+    if($('#blue1 .screenshot').visible()){
+      setTimeout(function(){
+        $('#blue1 .screenshot').show();
+      $('#blue1 .screenshot').addClass('fadeInLeft animated')
+    },1000)
+    }
+    if($('#first-card').visible()){
+      setTimeout(function(){
+        $('#blue3 .screenshot').show();
+        $('#blue3 .screenshot').addClass('fadeInRight animated')
+      },2000)
+    }
+  });
+</script>
   <div class = "blue-sections">
     <div class = "blue-section" id = "blue1">
 
@@ -259,7 +274,7 @@ $(window).scroll(function(event) {
           <a href = "students.html#how-it-works-info" class = "">Learn More</a>
         </div>
       </div>
-      <img class = "screenshot" src = "images/about/screenshot.jpg">
+      <img class = "screenshot zero-opacity" src = "images/about/screenshot.jpg">
     </div>
     <div class = "blue-section" id = "blue3">
 
@@ -271,7 +286,7 @@ $(window).scroll(function(event) {
           <a href = "" class = "">How Does It Work?</a>
         </div>
       </div>
-      <img class = "screenshot " src = "images/about/foundation-screenshot.jpg">
+      <img class = "screenshot zero-opacity" src = "images/about/foundation-screenshot.jpg">
     </div>
 
   </div>

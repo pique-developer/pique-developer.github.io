@@ -1,3 +1,4 @@
+@import "animate.css";
 .helvetica {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -921,6 +922,9 @@ body.about .no-padding:nth-child(6) .team-member {
   font-size: 20px;
   font-weight: 200;
   line-height: 32px;
+}
+.zero-opacity {
+  opacity: 0;
 }
 body#landing .about-header {
   background-image: url('images/about/bg-Header.jpg');
