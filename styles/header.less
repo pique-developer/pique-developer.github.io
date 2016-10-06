@@ -24,9 +24,21 @@ header.interior-header{
     display: inline-block;
     padding: 5px 4px;
     margin: 10px;
-    &.selected, &:hover{
+    &.selected{
       color: white;
       border-bottom: 1px solid white;
+    }
+    &:after{
+      display:block;
+      content: '';
+      border-bottom: solid 1px white;
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+    }
+    &:hover{
+      &:after{
+        transform-origin:  0% 50%;
+      }
     }
   }
 }

@@ -33,10 +33,19 @@ header.interior-header {
   padding: 5px 4px;
   margin: 10px;
 }
-.nav .nav-link.selected,
-.nav .nav-link:hover {
+.nav .nav-link.selected {
   color: white;
   border-bottom: 1px solid white;
+}
+.nav .nav-link:after {
+  display: block;
+  content: '';
+  border-bottom: solid 1px white;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.nav .nav-link:hover:after {
+  transform-origin: 0% 50%;
 }
 .user-photo-link {
   display: inline-block;
@@ -971,7 +980,7 @@ body#landing .hard-facts .loaned {
 body#landing .hard-facts .second-section {
   position: relative;
   top: 159px;
-  margin-bottom: 225px;
+  margin-bottom: 180px;
 }
 body#landing .hard-facts .second-section h3 {
   font-family: 'Avenir Next', sans-serif;
