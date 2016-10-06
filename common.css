@@ -1342,13 +1342,6 @@ body#educator .green-content-container table td.icon {
 body#educator .green-content-container table td.icon img {
   margin-top: 12px;
 }
-body#educator .banner-form {
-  height: 444px;
-  bottom: -145px;
-}
-body#educator .works {
-  padding-top: 85px;
-}
 .black-header {
   background-color: black;
 }
@@ -1375,7 +1368,8 @@ body#students .gradient-header {
   background-size: cover;
   background-color: black;
   background-position: center center;
-  height: 720px;
+  margin-bottom: 42px;
+  height: 729px;
   width: 100%;
   position: relative;
 }
@@ -1440,6 +1434,9 @@ body#students .gradient-header.fixed-header:after {
   left: 0;
   right: 0;
   padding: 20px 30px;
+  height: 444px;
+  bottom: -145px;
+  z-index: 2;
 }
 .banner-form input {
   height: 45px;
@@ -1587,6 +1584,9 @@ body#students .gradient-header.fixed-header:after {
   letter-spacing: 0px;
   margin-right: 30px;
   line-height: 20px;
+}
+body#students .gradient-header h6 {
+  width: 69%;
 }
 .overlap-divs {
   background: #44008D;
@@ -1843,6 +1843,7 @@ form#student .select-slider-container {
   padding: 20px;
   font-size: 16px;
   font-weight: 200;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 .button-grid {
   text-align: center;
@@ -2040,9 +2041,8 @@ form#student .select-slider-container {
 }
 .cards .card .section-header:after {
   background-color: #1A5BE1;
-  width: 80px;
   height: 1px;
-  right: 40.5%;
+  right: 40.3%;
 }
 .cards .card h4 {
   font-size: 21px;
