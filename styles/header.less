@@ -31,13 +31,16 @@ header.interior-header{
     &:after{
       display:block;
       content: '';
-      border-bottom: solid 1px white;
-      transform: scaleX(0);
-      transition: transform 250ms ease-in-out;
+      width: 0%;
+      height:1px;
+      background-color: white;
+      position: relative;
+      top:1px;
+      transition: width 250ms ease-in-out;
     }
     &:hover{
       &:after{
-        transform-origin:  0% 50%;
+        width: 100%;
       }
     }
   }
