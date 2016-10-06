@@ -1338,6 +1338,13 @@ body#educator .green-content-container table td.icon {
 body#educator .green-content-container table td.icon img {
   margin-top: 12px;
 }
+body#educator .banner-form {
+  height: 444px;
+  bottom: -145px;
+}
+body#educator .works {
+  padding-top: 85px;
+}
 .black-header {
   background-color: black;
 }
