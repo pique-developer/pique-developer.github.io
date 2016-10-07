@@ -1,4 +1,3 @@
-@import "animate.css";
 .helvetica {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -248,6 +247,12 @@ header.interior-header {
 #login.modal .modal-content .submit-button.need-account:hover {
   background-color: #67C7EF;
   color: white;
+}
+.black-header {
+  background-color: black;
+}
+body.no-fixed-header .clearfixx {
+  position: absolute;
 }
 #login.modal .modal-content.create-account .welcome:after {
   content: 'Sign Up for Pique!';
@@ -1342,16 +1347,6 @@ body#educator .green-content-container table td.icon {
 body#educator .green-content-container table td.icon img {
   margin-top: 12px;
 }
-.black-header {
-  background-color: black;
-}
-body.no-fixed-header .clearfixx {
-  position: absolute;
-}
-body#educator .hard-facts,
-body#students .hard-facts {
-  margin-top: 50px;
-}
 body#educator .gradient-header,
 body#students .gradient-header {
   background: #215edd;
@@ -1585,9 +1580,6 @@ body#students .gradient-header.fixed-header:after {
   margin-right: 30px;
   line-height: 20px;
 }
-body#students .gradient-header h6 {
-  width: 69%;
-}
 .overlap-divs {
   background: #44008D;
   text-align: center;
@@ -1638,136 +1630,6 @@ body#students .gradient-header h6 {
   margin-top: 20px;
   color: rgba(255, 255, 255, 0.9);
 }
-.blue-sections {
-  color: white !important ;
-  background: #44008D;
-  background: -moz-linear-gradient(-45deg, #44008d 0%, #125aac 100%);
-  background: -webkit-linear-gradient(-45deg, #44008d 0%, #125aac 100%);
-  background: linear-gradient(-45deg, #44008d 0%, #125aac 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#125AAC', GradientType=1);
-  font-family: 'Avenir Next';
-}
-.blue-sections .blue-section {
-  padding: 0 50px;
-  padding-top: 60px;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100%;
-  -webkit-mask-position: bottom;
-}
-.blue-sections h3 {
-  font-size: 24px;
-}
-.blue-sections .screenshot {
-  width: 50%;
-}
-.blue-sections .blue-texts {
-  width: 70%;
-  font-size: 16px;
-  line-height: 27px;
-  max-width: 690px;
-  color: white;
-  margin-bottom: 40px;
-}
-.blue-sections .blue-texts .blue-header {
-  color: white;
-}
-.blue-sections .blue-texts .button-container a {
-  display: inline-block;
-  width: 180px;
-  padding: 7px;
-  border-radius: 40px;
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 2px solid white;
-  margin-top: 25px;
-  transition: 0.2s all ease-in;
-}
-.blue-sections .blue-texts .button-container a:hover {
-  background-color: rgba(255, 255, 255, 0);
-}
-.blue-sections .blue-texts .button-container a.filled-in {
-  background-color: white;
-  color: #2213B1;
-}
-.blue-sections .blue-texts .button-container a.filled-in:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: white;
-}
-.blue-sections .blue-texts .button-container a + a {
-  margin-left: 20px;
-}
-.blue-sections #blue1 {
-  -webkit-mask-image: url('images/about/mask1.png');
-  z-index: 3;
-  position: relative;
-  background: #44008D;
-  background: -moz-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
-  background: -webkit-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
-  background: linear-gradient(45deg, #44008d 0%, #194bbc 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#194BBC', GradientType=1);
-}
-.blue-sections #blue1 .screenshot {
-  margin-top: -50px;
-}
-.blue-sections #blue1 .blue-texts {
-  margin-bottom: 0px;
-}
-.blue-sections #blue2 {
-  background-color: #2242E9;
-  -webkit-mask-image: url('images/about/mask2.png');
-  z-index: 3;
-  position: relative;
-  padding-top: 0;
-  text-align: right;
-}
-.blue-sections #blue3 {
-  position: relative;
-  z-index: 2;
-  padding-top: 0;
-  height: 446px;
-}
-.blue-sections #blue3:before {
-  content: '';
-  width: 100%;
-  height: 400px;
-  background-color: #inherit;
-  display: inline-block;
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  top: -400px;
-}
-.blue-sections #blue3 .screenshot {
-  position: absolute;
-  width: 38%;
-  right: 0;
-  top: -93px;
-  z-index: 4;
-}
-.blue-sections #blue3 .blue-texts {
-  position: absolute;
-  bottom: 20px;
-}
-.blue-sections .pull-right {
-  text-align: right;
-}
-.blue-sections .pull-left {
-  text-align: left;
-}
-.blue-sections .triangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 100px 173.2px 100px;
-  border-color: transparent transparent #007bff transparent;
-}
-.blue-sections .circle {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-}
 body#students .white-section {
   padding: 0px 122px 76px;
   text-align: center;
@@ -1781,6 +1643,9 @@ body#students .white-section .section-header {
 }
 body#students .white-section .section-header:after {
   background-color: #4E6DFF;
+}
+body#students .gradient-header h6 {
+  width: 69%;
 }
 form#student .select-slider-container {
   display: block;
@@ -1919,6 +1784,124 @@ form#student .select-slider-container {
   font-weight: 100;
   font-size: 18px;
 }
+.blue-sections {
+  color: white !important ;
+  background: #44008D;
+  background: -moz-linear-gradient(-45deg, #44008d 0%, #125aac 100%);
+  background: -webkit-linear-gradient(-45deg, #44008d 0%, #125aac 100%);
+  background: linear-gradient(-45deg, #44008d 0%, #125aac 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#125AAC', GradientType=1);
+  font-family: 'Avenir Next';
+}
+.blue-sections .blue-section {
+  padding: 0 50px;
+  padding-top: 60px;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  -webkit-mask-position: bottom;
+}
+.blue-sections h3 {
+  font-size: 24px;
+}
+.blue-sections .screenshot {
+  width: 50%;
+}
+.blue-sections .blue-texts {
+  width: 70%;
+  font-size: 16px;
+  line-height: 27px;
+  max-width: 690px;
+  color: white;
+  margin-bottom: 40px;
+}
+.blue-sections .blue-texts .blue-header {
+  color: white;
+}
+.blue-sections .blue-texts .button-container a {
+  display: inline-block;
+  width: 180px;
+  padding: 7px;
+  border-radius: 40px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid white;
+  margin-top: 25px;
+  transition: 0.2s all ease-in;
+}
+.blue-sections .blue-texts .button-container a:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+.blue-sections .blue-texts .button-container a.filled-in {
+  background-color: white;
+  color: #2213B1;
+}
+.blue-sections .blue-texts .button-container a.filled-in:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+}
+.blue-sections .blue-texts .button-container a + a {
+  margin-left: 20px;
+}
+.blue-sections #blue1 {
+  -webkit-mask-image: url('images/about/mask1.png');
+  z-index: 3;
+  position: relative;
+  background: #44008D;
+  background: -moz-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  background: -webkit-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  background: linear-gradient(45deg, #44008d 0%, #194bbc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#194BBC', GradientType=1);
+}
+.blue-sections #blue1 .screenshot {
+  margin-top: -50px;
+}
+.blue-sections #blue1 .blue-texts {
+  margin-bottom: 0px;
+}
+.blue-sections #blue2 {
+  background-color: #2242E9;
+  -webkit-mask-image: url('images/about/mask2.png');
+  z-index: 3;
+  position: relative;
+  padding-top: 0;
+  text-align: right;
+}
+.blue-sections #blue3 {
+  position: relative;
+  z-index: 2;
+  padding-top: 0;
+  height: 446px;
+}
+.blue-sections #blue3:before {
+  content: '';
+  width: 100%;
+  height: 400px;
+  background-color: #inherit;
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: -400px;
+}
+.blue-sections #blue3 .screenshot {
+  position: absolute;
+  width: 38%;
+  right: 0;
+  top: -93px;
+  z-index: 4;
+}
+.blue-sections #blue3 .blue-texts {
+  position: absolute;
+  bottom: 20px;
+}
+.blue-sections .pull-right {
+  text-align: right;
+}
+.blue-sections .pull-left {
+  text-align: left;
+}
 .dc-banner {
   width: 100%;
   height: 400px;
@@ -1967,53 +1950,6 @@ form#student .select-slider-container {
 }
 .dc-banner .team:hover {
   background-color: rgba(255, 255, 255, 0);
-}
-#studentsmodal .modal-dialog {
-  min-width: 750px;
-}
-#studentsmodal .modal-content {
-  padding: 0;
-}
-#studentsmodal .modal-body {
-  display: inline-block;
-  padding: 0;
-}
-#studentsmodal .blue-half {
-  background-color: #359DE5;
-  color: white;
-  padding: 50px;
-}
-#studentsmodal .blue-half .section-header {
-  color: white;
-}
-#studentsmodal .blue-half .section-header:after {
-  background-color: white;
-}
-#studentsmodal ul.points {
-  list-style-type: initial;
-  padding: initial;
-}
-#studentsmodal ul.points li {
-  list-style: initial;
-  margin-bottom: 20px;
-}
-#studentsmodal ul.points li h4 {
-  font-weight: 200;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-#studentsmodal .blue-half .section-header,
-#studentsmodal .white-half .section-header {
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 0px;
-}
-#studentsmodal .blue-half .section-header:after,
-#studentsmodal .white-half .section-header:after {
-  right: 36%;
-}
-#studentsmodal .white-half {
-  padding: 50px;
 }
 .cards {
   background: #1A5BE1;
