@@ -1,45 +1,4 @@
-.button-grid{
-  text-align: center;
-  padding:80px 180px;;
-  .button{
-  position: relative;
-  height: 275px;
-  display: table;
-  margin-bottom: 0;
-  cursor: pointer;
-    .cell{
-      display: table-cell;
-      vertical-align: middle;
-      font-family: 'Avenir Next', sans-serif;
-      h3{
-        font-weight: 600;
-        font-size: 25px;
-        margin-bottom: 130px;
-        color: white;
-        transition: 0.3s all ease-in;
-        letter-spacing: 1px;
-      }
-    }
-    &:hover{
 
-    }
-  }
-}
-.no-padding:first-child .button, .no-padding:nth-child(7) .button{
-  background-color: #31D26C;
-  position: relative;
-}
-.no-padding:nth-child(8) .button,.no-padding:nth-child(2) .button{
-  background-color: #51BBF1;
-}
-.no-padding:nth-child(3) .button,.no-padding:nth-child(5) .button{
-  background-color: #E1D113;
-  position: relative;
-
-}
-.no-padding:nth-child(4) .button,.no-padding:nth-child(6) .button{
-  background-color: #2BDBB4;
-}
 
 .blue-bar{
   background: #1A5BE1;
@@ -137,7 +96,8 @@
     }
   }
   #blue1{
-
+    mask:url('images/about/mask1.png');
+    mask-position: bottom;
     -webkit-mask-image: url('images/about/mask1.png');
     z-index: 3;
     position: relative;
@@ -146,6 +106,7 @@
     background: -webkit-linear-gradient(45deg,  #44008D 0%,#194BBC 100%);
     background: linear-gradient(45deg,  #44008D 0%,#194BBC 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44008D', endColorstr='#194BBC',GradientType=1 );
+
     .screenshot{
       margin-top: -50px;
     }
@@ -211,12 +172,13 @@
   .cell{
     display: table-cell;
     margin-top: 150px;
-    h1.section-header{
+    h1{
       width: 80%;
       margin: 0 auto;
       margin-top: 50px !important;
       font-weight: 400 !important;
-      letter-spacing: 2px;
+      font-family: 'Avenir Next';
+      letter-spacing: 1px;
       font-size: 28px;
       color: white;
       margin-bottom: 30px !important;
