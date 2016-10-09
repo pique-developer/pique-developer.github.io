@@ -3861,12 +3861,13 @@ body#landing .about-header button#sign-up-free {
   border: 2px solid white;
   background: transparent;
   border-radius: 40px;
-  padding: 15px 26px;
+  padding: 10px 26px;
   color: white;
   letter-spacing: 1px;
-  width: 245px;
+  width: 220px;
   font-size: 20px;
   text-align: center;
+  font-weight: 100;
   transition: 0.2s background-color ease-in;
 }
 body#landing .about-header button#sign-up-free:hover {
