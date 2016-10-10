@@ -38,6 +38,28 @@ a{
   }
 }
 
+.section-header{
+  text-align: center;
+  font-weight: 200;
+  font-size: 24px;
+  &.long{
+    border-bottom:none
+     !important;
+     position: relative;
+     display: block !important;
+
+    &:after{
+      width: 90px;
+      height: 2px;
+      content: '';
+      background-color: black;
+      /* display: inline-block; */
+      position: absolute;
+      bottom: -2px;
+      right: 47%;
+    }
+  }
+}
 // button styles
 
 .btn{

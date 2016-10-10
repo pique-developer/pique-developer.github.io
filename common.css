@@ -9,6 +9,27 @@
 a:hover {
   text-decoration: none;
 }
+.section-header {
+  text-align: center;
+  font-weight: 200;
+  font-size: 24px;
+}
+.section-header.long {
+  border-bottom: none
+     !important;
+  position: relative;
+  display: block !important;
+}
+.section-header.long:after {
+  width: 90px;
+  height: 2px;
+  content: '';
+  background-color: black;
+  /* display: inline-block; */
+  position: absolute;
+  bottom: -2px;
+  right: 47%;
+}
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.1
@@ -3005,7 +3026,9 @@ header.interior-header {
   color: white;
   margin-top: 8px;
 }
-#login.modal {
+#login.modal,
+#sign-up.modal,
+#share.modal {
   background-color: transparent;
   box-shadow: none;
   top: -19% !important;
@@ -3013,73 +3036,132 @@ header.interior-header {
   overflow-y: visible;
   max-width: 500px;
 }
-#login.modal .modal-logo-container {
+#login.modal .modal-logo-container,
+#sign-up.modal .modal-logo-container,
+#share.modal .modal-logo-container {
   width: 100px;
   margin: 0 auto;
   margin-bottom: 35px;
   display: block;
 }
-#login.modal .modal-logo-container img {
+#login.modal .modal-logo-container img,
+#sign-up.modal .modal-logo-container img,
+#share.modal .modal-logo-container img {
   width: 100%;
   margin: 0 auto;
 }
-#login.modal input {
+#login.modal input,
+#sign-up.modal input,
+#share.modal input,
+#login.modal select,
+#sign-up.modal select,
+#share.modal select {
   height: 45px;
   border: 1px solid #B2BCD3;
   box-shadow: none;
-}
-#login.modal input:focus {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(57, 118, 224, 0.6);
-}
-#login.modal input::-webkit-input-placeholder {
   color: #B2BCD3;
 }
-#login.modal input:-moz-placeholder {
+#login.modal input:focus,
+#sign-up.modal input:focus,
+#share.modal input:focus,
+#login.modal select:focus,
+#sign-up.modal select:focus,
+#share.modal select:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(57, 118, 224, 0.6);
+}
+#login.modal input::-webkit-input-placeholder,
+#sign-up.modal input::-webkit-input-placeholder,
+#share.modal input::-webkit-input-placeholder,
+#login.modal select::-webkit-input-placeholder,
+#sign-up.modal select::-webkit-input-placeholder,
+#share.modal select::-webkit-input-placeholder {
+  color: #B2BCD3;
+}
+#login.modal input:-moz-placeholder,
+#sign-up.modal input:-moz-placeholder,
+#share.modal input:-moz-placeholder,
+#login.modal select:-moz-placeholder,
+#sign-up.modal select:-moz-placeholder,
+#share.modal select:-moz-placeholder {
   /* Firefox 18- */
   color: #B2BCD3;
 }
-#login.modal input::-moz-placeholder {
+#login.modal input::-moz-placeholder,
+#sign-up.modal input::-moz-placeholder,
+#share.modal input::-moz-placeholder,
+#login.modal select::-moz-placeholder,
+#sign-up.modal select::-moz-placeholder,
+#share.modal select::-moz-placeholder {
   /* Firefox 19+ */
   color: #B2BCD3;
 }
-#login.modal input:-ms-input-placeholder {
+#login.modal input:-ms-input-placeholder,
+#sign-up.modal input:-ms-input-placeholder,
+#share.modal input:-ms-input-placeholder,
+#login.modal select:-ms-input-placeholder,
+#sign-up.modal select:-ms-input-placeholder,
+#share.modal select:-ms-input-placeholder {
   color: #B2BCD3;
 }
-#login.modal .form-group {
+#login.modal .form-group,
+#sign-up.modal .form-group,
+#share.modal .form-group {
   margin-bottom: 25px;
 }
-#login.modal .name-form-group {
+#login.modal .name-form-group,
+#sign-up.modal .name-form-group,
+#share.modal .name-form-group {
   height: 0px;
   overflow: hidden;
   transition: 0.5s height ease-in;
 }
-#login.modal .name-form-group.expanded {
+#login.modal .name-form-group.expanded,
+#sign-up.modal .name-form-group.expanded,
+#share.modal .name-form-group.expanded {
   height: 70px;
 }
-#login.modal .terms {
+#login.modal .terms,
+#sign-up.modal .terms,
+#share.modal .terms {
   height: 0px;
   overflow: hidden;
   font-size: 13px;
   line-height: 20px;
   transition: 0.5s height ease-in;
 }
-#login.modal .terms.expanded {
+#login.modal .terms.expanded,
+#sign-up.modal .terms.expanded,
+#share.modal .terms.expanded {
   height: 40px;
 }
-#login.modal .copyright {
+#login.modal .share-modal-text,
+#sign-up.modal .share-modal-text,
+#share.modal .share-modal-text {
+  color: #3162C6;
+  font-size: 16px;
+  font-family: 'Avenir Next';
+  margin: 25px;
+}
+#login.modal .copyright,
+#sign-up.modal .copyright,
+#share.modal .copyright {
   color: white;
   text-align: center;
   width: 100%;
   display: block;
   margin-top: 8px;
 }
-#login.modal .modal-content {
+#login.modal .modal-content,
+#sign-up.modal .modal-content,
+#share.modal .modal-content {
   border: none;
   box-shadow: 0 5px 33px rgba(39, 39, 39, 0.5);
   border-radius: 0;
   text-align: center;
 }
-#login.modal .modal-content .welcome {
+#login.modal .modal-content .welcome,
+#sign-up.modal .modal-content .welcome,
+#share.modal .modal-content .welcome {
   border-bottom: 1px solid #67C7EF;
   color: #67C7EF;
   padding: 8px 0;
@@ -3087,25 +3169,37 @@ header.interior-header {
   display: inline-block;
   margin-bottom: 15px;
 }
-#login.modal .modal-content .welcome:after {
+#login.modal .modal-content .welcome:after,
+#sign-up.modal .modal-content .welcome:after,
+#share.modal .modal-content .welcome:after {
   content: 'Welcome to Pique!';
 }
-#login.modal .modal-content .small-grey-text {
+#login.modal .modal-content .small-grey-text,
+#sign-up.modal .modal-content .small-grey-text,
+#share.modal .modal-content .small-grey-text {
   color: #B2BCD3;
   margin-bottom: 15px;
   display: block;
   font-size: 12px;
 }
-#login.modal .modal-content a.small-grey-text {
+#login.modal .modal-content a.small-grey-text,
+#sign-up.modal .modal-content a.small-grey-text,
+#share.modal .modal-content a.small-grey-text {
   font-size: 14px;
 }
-#login.modal .modal-content a.small-grey-text:hover {
+#login.modal .modal-content a.small-grey-text:hover,
+#sign-up.modal .modal-content a.small-grey-text:hover,
+#share.modal .modal-content a.small-grey-text:hover {
   color: #205fdc;
 }
-#login.modal .modal-content .social-icons-container {
+#login.modal .modal-content .social-icons-container,
+#sign-up.modal .modal-content .social-icons-container,
+#share.modal .modal-content .social-icons-container {
   margin-bottom: 15px;
 }
-#login.modal .modal-content .social-icons-container .social-icon {
+#login.modal .modal-content .social-icons-container .social-icon,
+#sign-up.modal .modal-content .social-icons-container .social-icon,
+#share.modal .modal-content .social-icons-container .social-icon {
   height: 50px;
   width: 50px;
   border-radius: 50px;
@@ -3116,19 +3210,29 @@ header.interior-header {
   padding-top: 12px;
   margin: 0 25px;
 }
-#login.modal .modal-content .social-icons-container .social-icon.facebook {
+#login.modal .modal-content .social-icons-container .social-icon.facebook,
+#sign-up.modal .modal-content .social-icons-container .social-icon.facebook,
+#share.modal .modal-content .social-icons-container .social-icon.facebook {
   background-color: #5576b5;
 }
-#login.modal .modal-content .social-icons-container .social-icon.twitter {
+#login.modal .modal-content .social-icons-container .social-icon.twitter,
+#sign-up.modal .modal-content .social-icons-container .social-icon.twitter,
+#share.modal .modal-content .social-icons-container .social-icon.twitter {
   background-color: #59adeb;
 }
-#login.modal .modal-content .social-icons-container .social-icon.google {
+#login.modal .modal-content .social-icons-container .social-icon.google,
+#sign-up.modal .modal-content .social-icons-container .social-icon.google,
+#share.modal .modal-content .social-icons-container .social-icon.google {
   background-color: #d7543a;
 }
-#login.modal .modal-content .submit-button + .submit-button {
+#login.modal .modal-content .submit-button + .submit-button,
+#sign-up.modal .modal-content .submit-button + .submit-button,
+#share.modal .modal-content .submit-button + .submit-button {
   margin-left: 13px;
 }
-#login.modal .modal-content .submit-button {
+#login.modal .modal-content .submit-button,
+#sign-up.modal .modal-content .submit-button,
+#share.modal .modal-content .submit-button {
   width: 48%;
   display: inline-block;
   border-radius: 50px;
@@ -3138,24 +3242,34 @@ header.interior-header {
   border: none;
   transition: 0.1s all ease-in;
 }
-#login.modal .modal-content .submit-button.log-in {
+#login.modal .modal-content .submit-button.log-in,
+#sign-up.modal .modal-content .submit-button.log-in,
+#share.modal .modal-content .submit-button.log-in {
   background-color: #3cd070;
   color: white;
   border: 1.5px solid #3cd070;
 }
-#login.modal .modal-content .submit-button.log-in:hover {
+#login.modal .modal-content .submit-button.log-in:hover,
+#sign-up.modal .modal-content .submit-button.log-in:hover,
+#share.modal .modal-content .submit-button.log-in:hover {
   background-color: #43b26a;
 }
-#login.modal .modal-content .submit-button.need-account {
+#login.modal .modal-content .submit-button.need-account,
+#sign-up.modal .modal-content .submit-button.need-account,
+#share.modal .modal-content .submit-button.need-account {
   border: none;
   color: #67C7EF;
   background-color: white;
   border: 1.5px solid #67C7EF;
 }
-#login.modal .modal-content .submit-button.need-account:after {
+#login.modal .modal-content .submit-button.need-account:after,
+#sign-up.modal .modal-content .submit-button.need-account:after,
+#share.modal .modal-content .submit-button.need-account:after {
   content: 'Need an Account?';
 }
-#login.modal .modal-content .submit-button.need-account:hover {
+#login.modal .modal-content .submit-button.need-account:hover,
+#sign-up.modal .modal-content .submit-button.need-account:hover,
+#share.modal .modal-content .submit-button.need-account:hover {
   background-color: #67C7EF;
   color: white;
 }
@@ -4173,25 +4287,6 @@ body#about-us .about-header h1 {
   font-family: 'Avenir Next', sans-serif;
   font-size: 12px;
 }
-.section-header {
-  text-align: center;
-}
-.section-header.long {
-  border-bottom: none
-     !important;
-  position: relative;
-  display: block !important;
-}
-.section-header.long:after {
-  width: 90px;
-  height: 2px;
-  content: '';
-  background-color: black;
-  /* display: inline-block; */
-  position: absolute;
-  bottom: -2px;
-  right: 47%;
-}
 .green-section {
   background-color: #3cd070;
   text-align: center;
@@ -4202,62 +4297,6 @@ body#about-us .about-header h1 {
 }
 .green-section .section-header.long:after {
   background-color: white;
-}
-body#educator .invite-us {
-  padding: 50px 122px 76px;
-  text-align: center;
-}
-body#educator .invite-us .img-section {
-  margin-top: 40px;
-}
-body#educator .invite-us .img-section .img-responsive {
-  margin: 0 auto;
-}
-body#educator .invite-us .img-section .img-caption {
-  font-family: 'Avenir Next', sans-serif;
-}
-body#educator .invite-us .invite-to-school {
-  background-color: #3cd070;
-  color: white;
-  border: none;
-  text-align: center;
-  width: 300px;
-  margin-top: 50px;
-  font-size: 17px;
-  padding: 13px;
-  font-family: 'Avenir Next', sans-serif;
-  border-radius: 28px;
-  font-weight: 100;
-  box-shadow: 6px 12px 30px #a3ecbd;
-}
-body#educator .green-content-container {
-  width: 100%;
-  max-width: 840px;
-  margin: 0px 40px;
-  padding: 20px 50px 20px 36px;
-  display: inline-block;
-  background-color: white;
-  position: relative;
-  bottom: -50px;
-  box-shadow: 0px 0px 33px #8b8e8c;
-}
-body#educator .green-content-container table {
-  font-family: 'Avenir Next', sans-serif;
-}
-body#educator .green-content-container table .bolded {
-  font-family: 'Avenir Next', sans-serif;
-  font-weight: 700;
-}
-body#educator .green-content-container table td.help-text {
-  line-height: 31px;
-  padding-bottom: 20px;
-  padding-left: 35px;
-}
-body#educator .green-content-container table td.icon {
-  vertical-align: sub;
-}
-body#educator .green-content-container table td.icon img {
-  margin-top: 12px;
 }
 body#educator .gradient-header,
 body#students .gradient-header {
@@ -4441,6 +4480,7 @@ body#students .gradient-header.fixed-header:after {
   color: #1EA4DD !important;
   font-size: 20px !important;
   font-weight: 400 !important;
+  border-bottom: #1EA4DD;
 }
 .works .section-header:after {
   background-color: #1EA4DD;

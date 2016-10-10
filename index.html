@@ -37,11 +37,12 @@
       <div class = "nav">
         <a class = "nav-link " href = "about.html">About Us</a>
         <a class = "nav-link" href = "educator.html">Educators</a>
-        <a class = "nav-link" href = "/applications">Register Scholarship</a>
         <a class = "nav-link" href = "students.html">Students</a>
+        <a class = "nav-link modal-trigger"  href = "#share">Share</a>
+
       </div>
 
-       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Sign Up</a>
+       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#sign-up">Sign Up</a>
 
     </div>
   </div>
@@ -51,8 +52,8 @@
     <div class = "">
 
       <h1>We're the Common App for Scholarships.</h1>
-      <h6>Discover, save & apply for scholarships for high school and college students in the DC area and get access to our digital tools to help students win more scholarships and more money</h6>
-      <button id = "sign-up-free">Sign Up for Free!</button>
+      <!-- <h6>Discover, save & apply for scholarships for high school and college students in the DC area and get access to our digital tools to help students win more scholarships and more money</h6> -->
+      <button class = "modal-trigger" href = "#sign-up" id = "sign-up-free">Sign Up for Free!</button>
     </div>
     </div>
 
@@ -270,7 +271,7 @@ $(window).scroll(function(event) {
         <h3 class = "blue-header">One Application. Unlimited Scholarships.</h3>
         <b>High School Seniors,</b> fill out one scholarship application and apply to unlimited scholarships. That means never request a recommendation, official transcript or pay to send our SAT or ACT test scores to a scholarship foundation again. That's the Pique way.
         <div class = "button-container">
-          <a href = "" class = "filled-in">Sign Up!</a>
+          <a class = "modal-trigger filled-in" href = "#sign-up" >Sign Up!</a>
           <a href = "students.html#how-it-works-info" class = "">Learn More</a>
         </div>
       </div>
@@ -282,7 +283,7 @@ $(window).scroll(function(event) {
         <h3 class = "blue-header">Find Applicants. Review Applications in One Place.</h3>
         <b>Scholarship Foundations</b> should not have to pay to find qualified students. We bring qualified students to you for free. Review applications, rate applicants, set up interviews, select finalists, and notify winners and their counselors. All within Pique.
         <div class = "button-container">
-          <a href = "" class = "filled-in">Sign Up!</a>
+          <a href = "#sign-up" class = "modal-trigger filled-in">Sign Up!</a>
           <a href = "" class = "">How Does It Work?</a>
         </div>
       </div>
@@ -302,7 +303,7 @@ $(window).scroll(function(event) {
         Upload one standard recommendation onto Pique for each student and never write another recommendation for that student again. And do not worry, your students will never be penalized by foundations <b>standard recommendation.</b><br><br><br> That's the Pique Way.
       </div>
       <div class = "button-container">
-        <a href = "" class = "filled-in">Sign Up!</a>
+        <a href = "#sign-up" class = "modal-trigger filled-in">Sign Up!</a>
         <a href = "educator.html" class = "">Learn More</a>
       </div>
     </div>
@@ -323,7 +324,7 @@ $(window).scroll(function(event) {
         for your child to take the exam. We have a cheaper solution.
       </div>
       <div class = "button-container">
-        <a href = "" class = "filled-in">Sign Up. Save Money.</a>
+        <a href = "#sign-up" class = "modal-trigger filled-in">Sign Up. Save Money.</a>
         <a href = "" class = "">Learn More</a>
       </div>
     </div>
@@ -384,4 +385,151 @@ $( document ).ready(function() {
     </div>
   </div>
 </footer>
+<script>
+$(document).ready(function(){
+  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+  $('.modal-trigger').leanModal({
+    starting_top: '4%', // Starting top style attribute
+      ending_top: '-10%'
+  }
+
+  );
+});
+</script>
+<!-- Modal Structure -->
+<div id="sign-up" class="modal">
+  <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
+  <div class="modal-content">
+    <div class = "welcome"></div>
+    <span class = "small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
+    <form id = "login">
+      <div class = 'row'>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="first_name" placeholder="First Name">
+          </div>
+        </div>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+      <div class = 'row'>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="city" placeholder="City">
+          </div>
+        </div>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="state" placeholder="State">
+          </div>
+        </div>
+      </div>
+      <select class="form-control">
+          <option>I am a..</option>
+          <option>Student</option>
+          <option>Scholarshipt Foundation</option>
+          <option>Teacher</option>
+          <option>Counselor</option>
+          <option>Nonprofit</option>
+          <option>Supporter</option>
+        </select>
+      <div class = "terms small-grey-text">
+        By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
+      </div>
+      <br>
+      <button type = "submit" class = "submit-button log-in">Log In</button>
+    </form>
+  </div>
+  <span class = "copyright">Pique&nbsp;&#169;</span>
+</div>
+</body>
+
+<script>
+  $('.need-account').on('click',function(e){
+    e.preventDefault();
+    $('.modal-content').toggleClass('create-account');
+    $('.name-form-group').toggleClass('expanded')
+    $('.terms').toggleClass('expanded',100);
+
+  })
+
+
+
+</script>
+<div id="sign-up" class="modal">
+  <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
+  <div class="modal-content">
+    <div class = "welcome"></div>
+    <span class = "small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
+    <form id = "login">
+      <div class = 'row'>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="first_name" placeholder="First Name">
+          </div>
+        </div>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+      <div class = 'row'>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="city" placeholder="City">
+          </div>
+        </div>
+        <div class= "col-sm-6">
+          <div class="form-group">
+            <input type="text" class="form-control" id="state" placeholder="State">
+          </div>
+        </div>
+      </div>
+      <select class="form-control">
+          <option>I am a..</option>
+          <option>Student</option>
+          <option>Scholarshipt Foundation</option>
+          <option>Teacher</option>
+          <option>Counselor</option>
+          <option>Nonprofit</option>
+          <option>Supporter</option>
+        </select>
+      <div class = "terms small-grey-text">
+        By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
+      </div>
+      <br>
+      </form>
+      <button class = "submit-button log-in modal-trigger"  href = "#share">Log In</button>
+
+  </div>
+  <span class = "copyright">Pique&nbsp;&#169;</span>
+</div>
+
+<div id="share" class="modal">
+  <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
+  <div class="modal-content">
+    <div class = "center-align heart"><img src = "images/landing/heart.jpg"></div>
+    <div class = "share-modal-text">
+      Thank for signing up the Pique!<br>
+    Help us spread the word  by sharing Pique with<br>
+     friend family let's end student debt!
+    </div>
+    <div class = "social-icons-container">
+      <a href = "" class = "facebook social-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href = "" class = "twitter social-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <a href = "" class = "google social-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    </div>
+
+  </div>
+</div>
 </body>
