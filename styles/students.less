@@ -49,6 +49,7 @@ width: auto;
 .pique-difference{
   background: #44008D;
 color: white;
+position: relative;
   padding:50px;
   display: inline-block;
   background: -moz-linear-gradient(45deg,  #44008D 0%, #194BBC 100%);
@@ -57,7 +58,17 @@ color: white;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44008D', endColorstr='#194BBC',GradientType=1 );
   #grad{
     position: absolute;
-    left: 50%;
+    left: 44.5%;
+    margin-top: 30px;
+    &.fixed-grad{
+      position: fixed;
+      top:150px;
+      z-index: 1;
+    }
+    &.end-grad{
+      position: absolute;
+      bottom: 285px;
+    }
   }
   .section-header{
     color: white !important;

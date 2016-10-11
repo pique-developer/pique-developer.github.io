@@ -204,6 +204,22 @@ with scholarships for Women going into STEM programs with a 1,000 word limit.
       }
     });
     });
+
+    $(window).scroll(function(){
+
+      var scrollpos = $(window).scrollTop();
+      console.log(scrollpos);
+      if(scrollpos >1516 && scrollpos <2321){
+        $('#grad').addClass('fixed-grad')
+        $('#grad').removeClass('end-grad')
+
+      }else{
+        $('#grad').removeClass('fixed-grad')
+      }
+      if (scrollpos >2321){
+        $('#grad').addClass('end-grad')
+      }
+  });
   </script>
   <footer>
     <div class = "row footer-links">

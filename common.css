@@ -4621,6 +4621,7 @@ form#student .select-slider-container {
 .pique-difference {
   background: #44008D;
   color: white;
+  position: relative;
   padding: 50px;
   display: inline-block;
   background: -moz-linear-gradient(45deg, #44008d 0%, #194bbc 100%);
@@ -4630,7 +4631,17 @@ form#student .select-slider-container {
 }
 .pique-difference #grad {
   position: absolute;
-  left: 50%;
+  left: 44.5%;
+  margin-top: 30px;
+}
+.pique-difference #grad.fixed-grad {
+  position: fixed;
+  top: 150px;
+  z-index: 1;
+}
+.pique-difference #grad.end-grad {
+  position: absolute;
+  bottom: 285px;
 }
 .pique-difference .section-header {
   color: white !important;
