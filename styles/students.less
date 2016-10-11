@@ -1,6 +1,9 @@
 
 
 body#students{
+  .row{
+    margin: 0;
+  }
   .white-section{
       padding: 0px 122px 76px;
       text-align: center;
@@ -32,7 +35,17 @@ width: auto;
   }
 }
 
-
+#how-it-works-info{
+  .section-header:after{
+    right: 46%;
+  }
+}
+.current-way{
+  padding:20px 50px;
+  img{
+    width: 100%;
+  }
+}
 .pique-difference{
   background: #44008D;
 color: white;
@@ -42,32 +55,67 @@ color: white;
   background: -webkit-linear-gradient(45deg,  #44008D 0%,#194BBC 100%);
   background: linear-gradient(45deg,  #44008D 0%,#194BBC 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44008D', endColorstr='#194BBC',GradientType=1 );
+  #grad{
+    position: absolute;
+    left: 50%;
+  }
   .section-header{
     color: white !important;
     font-size: 24px !important;
     font-weight: 200 !important;
     margin-top: 0 !important;
+    margin-bottom: 70px !important;
     &:after{
       background-color: white !important;
-
+      right: 45.5%;
     }
   }
   .diff-text{
-    width: 60%;
+    width: 40%;
     text-align: left;
     line-height: 24px;
     color: rgba(255,255,255,0.9);
-    margin-bottom: 100px;
     font-size: 16px;
+    height: 400px;
+    display: inline-block;
     font-weight: 200;
+    position: relative;
     &.pull-right{
       text-align: right;
+      &:before {
+        content: '';
+        background-color: #FABC3D;
+        height: 16px;
+        width: 16px;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        right: 122.65%;
+        top: 0;
+      }
+
+    }
+    &.pull-left{
+       &:after{
+         content: '';
+         background-color: #FABC3D;
+         height: 16px;
+         width: 16px;
+         display: inline-block;
+         border-radius: 50%;
+         position: absolute;
+         left: 123.5%;
+         bottom: 200px;
+      }
+
     }
     h3{
       color:white;
       font-weight: 300;
     }
-
+    img{
+      width: 90%;
+    }
   }
   .button{
     border-radius: 50px;
@@ -85,8 +133,10 @@ color: white;
     border-radius: 8px;
     color: #3845C1;
     margin-top: 20px;
+    display: inline-block;
     padding: 20px;
     font-size: 16px;
+    text-align: left;
     font-weight: 200;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
   }
