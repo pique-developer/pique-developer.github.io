@@ -4632,7 +4632,8 @@ form#student .select-slider-container {
 .pique-difference #grad {
   position: absolute;
   left: 44.5%;
-  margin-top: 30px;
+  margin-top: 96px;
+  z-index: 1;
 }
 .pique-difference #grad.fixed-grad {
   position: fixed;
