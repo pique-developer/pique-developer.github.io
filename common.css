@@ -4598,6 +4598,9 @@ body#students .white-section .section-header {
 }
 body#students .white-section .section-header:after {
   background-color: #4E6DFF;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
 }
 body#students .gradient-header h6 {
   width: 69%;
@@ -4609,8 +4612,14 @@ form#student .select-slider-container {
   text-align: center;
   width: auto;
 }
+form#student .row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
 #how-it-works-info .section-header:after {
-  right: 46%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
 }
 .current-way {
   padding: 20px 50px;
@@ -4632,7 +4641,7 @@ form#student .select-slider-container {
 .pique-difference #grad {
   position: absolute;
   left: 44.5%;
-  margin-top: 96px;
+  margin-top: 30px;
   z-index: 1;
 }
 .pique-difference #grad.fixed-grad {
@@ -4653,7 +4662,9 @@ form#student .select-slider-container {
 }
 .pique-difference .section-header:after {
   background-color: white !important;
-  right: 45.5%;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
 }
 .pique-difference .diff-text {
   width: 40%;
@@ -4661,10 +4672,14 @@ form#student .select-slider-container {
   line-height: 24px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 16px;
-  height: 400px;
+  height: 450px;
   display: inline-block;
   font-weight: 200;
   position: relative;
+  opacity: 0;
+}
+.pique-difference .diff-text.animated {
+  opacity: 1;
 }
 .pique-difference .diff-text.pull-right {
   text-align: right;
@@ -4677,19 +4692,19 @@ form#student .select-slider-container {
   display: inline-block;
   border-radius: 50%;
   position: absolute;
-  right: 122.65%;
+  right: 123%;
   top: 0;
 }
-.pique-difference .diff-text.pull-left:after {
+.pique-difference .diff-text.pull-right:after {
   content: '';
   background-color: #FABC3D;
   height: 16px;
   width: 16px;
   display: inline-block;
   border-radius: 50%;
-  position: absolute;
-  left: 123.5%;
-  bottom: 200px;
+  position: relative;
+  left: -123%;
+  bottom: -40px;
 }
 .pique-difference .diff-text h3 {
   color: white;
@@ -4731,6 +4746,9 @@ form#student .select-slider-container {
 }
 .white .section-header:after {
   background-color: #4A90E2;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
 }
 .white .button.green {
   background-color: #31D26C !important;

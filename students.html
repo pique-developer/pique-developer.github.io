@@ -145,20 +145,20 @@ That is why, we made Pique. Sign up and see how easy it is to find and apply to 
   <h3 class = "section-header long">The Pique Way</h3>
   <img src = "images/student/grad.png" id = "grad">
   <div class = "row">
-  <div class = "diff-text pull-left">
+  <div class = "diff-text pull-left" id = "request">
     <h3>Request and Save Your Documents in One Place</h3>
     Through Pique you can send a request to your teachers and counselors to upload your recommendations and official transcript. When each document is uploaded, it is saved onto your Pique account and can then be reused to apply to any scholarship on Pique. <br>
 
   </div>
-  <div class = "diff-text pull-right">
+  <div class = "diff-text pull-right" id = "student-image">
     <img src = "images/student/student1.png">
   </div>
 </div>
 <div class = "row">
-  <div class = "diff-text pull-left">
+  <div class = "diff-text pull-left" id = "screenshot">
     <img src = "images/student/screenshot.jpg">
   </div>
-  <div class = "diff-text pull-right">
+  <div class = "diff-text pull-right" id = "find">
     <h3>Find Scholarships You Can Actually Win</h3>
     All platforms give you access to a curated list of scholarships.
 Scholarships hosted on Pique are categorized into 4 categories; 'local scholarships', 'national scholarships',
@@ -167,7 +167,7 @@ Scholarships hosted on Pique are categorized into 4 categories; 'local scholarsh
 </div>
 <div class = "row">
 
-  <div class = "diff-text pull-left">
+  <div class = "diff-text pull-left" id = "reuse">
     <h3>Reuse Essays More Easily</h3>
     You do not have time to write a new essay for each new scholarship,
 we get it. Our recommendation feature recommends scholarships to
@@ -175,7 +175,7 @@ you based on previous scholarships you've applied to.
 
   </div>
 
-  <div class = "diff-text pull-right">
+  <div class = "diff-text pull-right" id = "example">
     <div class = 'essay-example'>
       <b><i>Example</i></b><br><br>
       If you applied to a 'Women in STEM' scholarship with a 1,000 word limit.
@@ -214,16 +214,41 @@ with scholarships for Women going into STEM programs with a 1,000 word limit.
 
       var scrollpos = $(window).scrollTop();
       console.log(scrollpos);
-      if(scrollpos >1516 && scrollpos <2257){
+      if(scrollpos >1536 && scrollpos <2495){
         $('#grad').addClass('fixed-grad')
         $('#grad').removeClass('end-grad')
 
       }else{
         $('#grad').removeClass('fixed-grad')
       }
-      if (scrollpos >2257){
+      if (scrollpos >2495){
         $('#grad').addClass('end-grad')
       }
+      if (scrollpos > 1122){
+        $('#request').show();
+        $('#request').addClass('animated bounceInLeft');
+      }
+      if (scrollpos > 1370){
+        $('#student-image').show();
+        $('#student-image').addClass('animated bounceInRight');
+      }
+      if (scrollpos > 1570){
+        $('#screenshot').show();
+        $('#screenshot').addClass('animated bounceInLeft');
+      }
+      if (scrollpos > 1700){
+        $('#find').show();
+        $('#find').addClass('animated bounceInRight');
+      }
+      if (scrollpos > 1950){
+        $('#reuse').show();
+        $('#reuse').addClass('animated bounceInLeft');
+      }
+      if (scrollpos > 2100){
+        $('#example').show();
+        $('#example').addClass('animated bounceInRight');
+      }
+
   });
   </script>
   <footer>
