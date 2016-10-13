@@ -1,0 +1,125 @@
+<html lang = "en">
+<head>
+<title>Pique</title>
+
+ <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon'/ >
+
+<!-- Latest compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Latest compiled and minified  Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<!-- Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+<!-- font awesome font for social icons -->
+<script src="https://use.fontawesome.com/c478d977aa.js"></script>
+<!-- Material Icon font -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- My styles -->
+<link rel="stylesheet" href="materialize.css">
+<link rel="stylesheet" href="common.css">
+
+</head>
+<body class = "about no-fixed-header" id = "provider">
+  <div class = "clearfixx">
+    <div class = "logo-container pull-left">
+      <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
+    </div>
+
+    <div class = "header-right pull-right">
+
+      <div class = "nav">
+        <a class = "nav-link " href = "about.html">About Us</a>
+        <a class = "nav-link " href = "educator.html">Educators</a>
+        <a class = "nav-link" href = "scholarship-provider.html">Scholarship Provider</a>
+        <a class = "nav-link selected" href = "students.html">Students</a>
+      </div>
+
+       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Sign Up</a>
+
+    </div>
+  </div>
+  <div class = "gradient-header">
+
+    <div class = "black-fade"></div>
+    <div class = "header-text">
+
+      <h1>Manage the Entire Scholarship Application <br>
+          Process in One Platform. For Free. </h1>
+      <h6>One platform to help at every stage of the application process from<br>
+finding qualified students to reviewing applications: </h6>
+<ul>
+<li>Find Qualified Applicants </li>
+<li>Review Applications </li>
+<li>Setup Interviews with Applicants	</li>
+<li>Notify Finalists </li>
+<li>Notify Winners and their Counselors </li>
+</ul>
+    </div>
+</div>
+
+  <script>
+    $(window).scroll(function(){
+      $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
+      $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 150);
+      var scrollpos = $(window).scrollTop();
+      console.log(scrollpos)
+      if(scrollpos >257){
+        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
+      }else{
+        $('.about-header .black').removeClass('fixed-header');
+        $(".about-header .black-fade").css("opacity",  0)
+      }
+      if(scrollpos >600){
+        $('.clearfixx').addClass('black-header')
+      }else{
+        $('.clearfixx').removeClass('black-header')
+      }
+  });
+  </script>
+
+  <footer>
+    <div class = "row footer-links">
+      <div class = "col-sm-3">
+        <a class = "footer-nav-link link-header">Company</a><br>
+        <a href = "about.html#team" class = "footer-nav-link">Team</a><br>
+        <a class = "footer-nav-link">Blog</a><br>
+        <a class = "footer-nav-link">Get Involved</a><br>
+      </div>
+      <div class = "col-sm-3">
+          <a class = "footer-nav-link link-header">Educators</a><br>
+          <a href = "educator.html" class = "footer-nav-link">Get Started</a><br>
+          <a href = "educator.html" class = "footer-nav-link">Learn More</a><br>
+      </div>
+      <div class = "col-sm-3">
+        <a class = "footer-nav-link link-header">Scholarship Foundations</a><br>
+        <a href = "about.html" class = "footer-nav-link">About</a><br>
+        <a class = "footer-nav-link">FAQ</a><br>
+        <a class = "footer-nav-link">Become a Partner</a><br>
+      </div>
+      <div class = "col-sm-3">
+        <a class = "footer-nav-link link-header">Support</a><br>
+        <a class = "footer-nav-link">FAQ</a><br>
+
+      </div>
+    </div>
+    <div class = "subfooter">
+      <div class = "pull-left">
+        <a href = "" class = "social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+  </a>
+        <a href = "" class = "social-media"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href = "" class = "social-media"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </div>
+      <div class = "pull-right">
+        Copyright 2016 Pique
+      </div>
+    </div>
+  </footer>
+</body>

@@ -5048,3 +5048,47 @@ form#student .row {
 .cards .card .button-container a + a {
   margin-left: 20px;
 }
+#provider .gradient-header {
+  background: #215edd;
+  background: -moz-linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  background: -webkit-linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  background: linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#215edd', endColorstr='#4abced', GradientType=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  background-position: center center;
+  margin-bottom: 42px;
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+#provider .gradient-header .header-text {
+  position: absolute;
+  top: 160px;
+  left: 100px;
+  color: white;
+}
+#provider .gradient-header .header-text h1 {
+  font-size: 26.5px;
+  line-height: 36px;
+}
+#provider .gradient-header .header-text h6 {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 23px;
+}
+#provider .gradient-header .header-text ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+#provider .gradient-header .header-text li {
+  padding-left: 1em;
+  text-indent: -1em;
+  line-height: 28px;
+}
+#provider .gradient-header .header-text li:before {
+  content: url('images/provider/check.png');
+  padding-right: 14px;
+}
