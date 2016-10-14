@@ -52,6 +52,7 @@ width: auto;
 }
 .current-way{
   padding:20px 50px;
+  padding-left: 87px;
   img{
     width: 100%;
   }
@@ -61,14 +62,55 @@ width: auto;
 color: white;
 position: relative;
   padding:50px;
+  text-align: center;
   display: inline-block;
   background: -moz-linear-gradient(45deg,  #44008D 0%, #194BBC 100%);
   background: -webkit-linear-gradient(45deg,  #44008D 0%,#194BBC 100%);
   background: linear-gradient(45deg,  #44008D 0%,#194BBC 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44008D', endColorstr='#194BBC',GradientType=1 );
+  .yellow-circle{
+    content: '';
+    background-color: #FABC3D;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 10px auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top:150px;
+
+    &:nth-child(2){
+      top:350px;
+    }
+    &:nth-child(3){
+      top:550px;
+    }
+    &:nth-child(4){
+      top:750px;
+    }
+    &:nth-child(5){
+      top:950px;
+    }
+    &:nth-child(6){
+      top:1150px;
+    }
+    &:nth-child(7){
+      top:1350px;
+    }
+    &:nth-child(8){
+      top:350px;
+    }
+    &:nth-child(9){
+      top:150px;
+    }
+  }
   #grad{
     position: absolute;
-    left: 44.5%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     margin-top: 30px;
     z-index: 1;
     &.fixed-grad{
@@ -103,36 +145,37 @@ position: relative;
     height: 450px;
     display: inline-block;
     font-weight: 200;
-    position: relative;
     opacity: 0;
     &.animated{
       opacity: 1;
     }
-    &.pull-right{
-      text-align: right;
-      &:before {
-        content: '';
-        background-color: #FABC3D;
-        height: 16px;
-        width: 16px;
-        display: inline-block;
-        border-radius: 50%;
-        position: absolute;
-        right: 123%;
-        top: 0;
-      }
-      &:after{
-        content: '';
-        background-color: #FABC3D;
-        height: 16px;
-        width: 16px;
-        display: inline-block;
-        border-radius: 50%;
-        position: relative;;
-        left: -123%;
-        bottom: -40px;
-      }
-    }
+    // &.pull-right{
+    //   text-align: right;
+    //   &:before {
+    //     content: '';
+    //     background-color: #FABC3D;
+    //     height: 16px;
+    //     width: 16px;
+    //     display: inline-block;
+    //     border-radius: 50%;
+    //     position: absolute;
+    //     margin: 10px auto;
+    //     left: 0;
+    //     right: 0;
+    //   }
+    //   &:after{
+    //     content: '';
+    //     background-color: #FABC3D;
+    //     height: 16px;
+    //     width: 16px;
+    //     display: inline-block;
+    //     border-radius: 50%;
+    //     position: absolute;
+    //     margin: 100px auto 0px;
+    //     left: 0;
+    //     right: 0;
+    //   }
+    // }
     &.pull-left{
 
 
@@ -143,6 +186,11 @@ position: relative;
     }
     img{
       width: 90%;
+    }
+    &#student-image{
+      &:after{
+        margin-top: 250px;
+      }
     }
   }
   .button{
