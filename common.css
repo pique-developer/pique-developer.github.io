@@ -5005,6 +5005,9 @@ form#student .row {
 .dc-banner .team:hover {
   background-color: rgba(255, 255, 255, 0);
 }
+body#landing .hard-facts .section-header {
+  margin-bottom: 45px;
+}
 .cards {
   background: #1A5BE1;
   background: -moz-linear-gradient(45deg, #1a5be1 0%, #3fb1ed 100%);
