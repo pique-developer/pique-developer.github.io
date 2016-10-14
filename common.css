@@ -3781,7 +3781,7 @@ body.about .about-header h1 {
   width: 75%;
   margin: 0 auto;
   position: absolute;
-  top: 183px;
+  top: 222px;
   left: 0;
   font-weight: 400;
   right: 0;
@@ -3970,7 +3970,7 @@ body#landing .about-header button#sign-up-free {
   /* right: 0; */
   margin: 0 auto;
   left: 0;
-  top: 323px;
+  top: 353px;
   display: inline-block;
   right: 0;
   border: 2px solid white;
