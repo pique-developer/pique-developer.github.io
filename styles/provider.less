@@ -1,4 +1,5 @@
 #provider{
+  font-family: 'Avenir Next';
   .gradient-header{
     background: #215edd;
     background: -moz-linear-gradient(45deg, #215edd 0%, #4abced 100%);
@@ -9,8 +10,7 @@
     background-size: cover;
     background-color: black;
     background-position: center center;
-    margin-bottom: 42px;
-    height: 600px;
+    height: 680px;
     width: 100%;
     position: relative;
     .header-text{
@@ -31,6 +31,7 @@
         list-style: none;
         margin-left: 0;
         padding-left: 0;
+        margin-top: 20px;
       }
 
       li {
@@ -44,9 +45,104 @@
         padding-right: 14px;
       }
     }
-
-
-
+    #filled-button{
+      background-color: white;
+      color: #4A90E2;
+      border-radius: 20px;
+      margin-top: 20px;
+      padding:8px;
+      font-size: 16px;
+      font-weight: 200;
+      width: 220px;
+    }
   }
 
+  .image-slider-section{
+    display: inline-block;
+    width: 100%;
+    .image-slider{
+      padding:50px 20px;
+      display: inline-block;
+      width: 100%;
+      .right-slider{
+        background-color: white;
+        position: relative;
+        z-index: 2;
+        .step-section{
+          padding: 10px 0px 30px;
+          display: inline-block;
+          .number{
+            height: 50px;
+            width: 50px;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 24px;
+            border-radius: 23%;
+            margin-right: 10px;
+            &#one{
+              background: #1780FF;
+              background: -moz-linear-gradient(45deg, #1780FF 0%, #09DC5C 100%);
+              background: -webkit-linear-gradient(45deg, #1780FF 0%, #09DC5C 100%);
+              background: linear-gradient(45deg, #1780FF 0%, #09DC5C 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1780FF', endColorstr='#09DC5C', GradientType=1);
+            }
+            &#two{
+              background: #215edd;
+              background: -moz-linear-gradient(45deg, #215edd 0%, #4abced 100%);
+              background: -webkit-linear-gradient(45deg, #215edd 0%, #4abced 100%);
+              background: linear-gradient(45deg, #215edd 0%, #4abced 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#215edd', endColorstr='#4abced', GradientType=1);
+            }
+            &#three{
+              background: #44008D;
+              background: -moz-linear-gradient(45deg, #44008D 0%, #0A66CD 100%);
+              background: -webkit-linear-gradient(45deg, #44008D 0%, #0A66CD 100%);
+              background: linear-gradient(45deg, #44008D 0%, #0A66CD 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#0A66CD', GradientType=1);
+            }
+          }
+          .step{
+            padding-left: 30px;
+            h3{
+              margin-top: 5px;
+              font-weight: 400;
+              margin-bottom: 20px;
+            }
+            h5{
+              font-size: 16px;
+              font-weight: 400;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .easier-section{
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 70px;
+    .col-sm-6{
+    }
+    .quarter{
+      text-align: center;
+      padding:70px;
+      min-height: 260px;
+      padding-bottom: 0px;
+      h3{
+        font-weight: 400;
+        margin-bottom: 25px;
+      }
+      h5{
+        font-size: 16px;
+        color: #505050;
+        font-weight: 400;
+        line-height: 33px;
+        margin-top: 29px;
+      }
+    }
+  }
 }
