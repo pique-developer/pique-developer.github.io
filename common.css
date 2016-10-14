@@ -4703,7 +4703,7 @@ form#student .row {
 }
 .pique-difference #grad.fixed-grad {
   position: fixed;
-  top: 150px;
+  top: 135px;
   z-index: 1;
 }
 .pique-difference #grad.end-grad {
