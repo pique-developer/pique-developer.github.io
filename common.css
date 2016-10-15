@@ -2961,8 +2961,7 @@ header.interior-header {
 }
 .nav .nav-link {
   color: #a0a0a0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 200;
+  font-family: 'Avenir Next', sans-serif;
   display: inline-block;
   padding: 5px 4px;
   margin: 10px;
@@ -3735,10 +3734,11 @@ body.about .logo-container #logo {
 }
 body.about .nav-link {
   color: white;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: 1px;
-  margin: 10px 20px;
+  margin: 10px 13px;
   font-size: 15px;
+  font-family: 'Avenir Next', sans-serif;
 }
 body.about #login-button {
   background-color: transparent;
