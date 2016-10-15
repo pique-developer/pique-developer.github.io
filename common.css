@@ -3734,7 +3734,7 @@ body.about .logo-container #logo {
 }
 body.about .nav-link {
   color: white;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0px;
   margin: 10px 13px;
   font-size: 15px;
@@ -3747,7 +3747,9 @@ body.about #login-button {
   font-weight: 200;
   letter-spacing: 1px;
   padding: 8px 25px;
+  margin: 10px 13px;
   font-size: 15px;
+  font-family: 'Avenir Next', sans-serif;
 }
 body.about #login-button:hover {
   background-color: white;
