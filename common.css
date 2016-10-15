@@ -2958,6 +2958,7 @@ header.interior-header {
 .nav {
   display: inline-block;
   float: left;
+  margin-top: 4px;
 }
 .nav .nav-link {
   color: #a0a0a0;
