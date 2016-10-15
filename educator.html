@@ -42,7 +42,7 @@
         <a class = "nav-link" href = "students.html">Students</a>
       </div>
 
-       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Sign Up</a>
+       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#sign-up">Sign Up</a>
 
     </div>
   </div>
@@ -252,7 +252,135 @@ will not be penalized for having a 'generic recommendation'. We educate scholars
 
       <button class = "invite-to-school" href = "#educator">Invite Us to your School</button>
     </div> -->
+    <script>
+    $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal({
+        starting_top: '4%', // Starting top style attribute
+          ending_top: '-10%'
+      }
 
+      );
+    });
+    </script>
+    <!-- Modal Structure -->
+    <div id="sign-up" class="modal">
+      <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
+      <div class="modal-content">
+        <div class = "welcome"></div>
+        <span class = "small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
+        <form id = "login">
+          <div class = 'row'>
+            <div class= "col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="first_name" placeholder="First Name">
+              </div>
+            </div>
+            <div class= "col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class = 'row'>
+            <div class= "col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="city" placeholder="City">
+              </div>
+            </div>
+            <div class= "col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="state" placeholder="State">
+              </div>
+            </div>
+          </div>
+          <select class="form-control">
+              <option>I am a..</option>
+              <option>Student</option>
+              <option>Scholarshipt Foundation</option>
+              <option>Teacher</option>
+              <option>Counselor</option>
+              <option>Nonprofit</option>
+              <option>Supporter</option>
+            </select>
+          <div class = "terms small-grey-text">
+            By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
+          </div>
+          <br>
+          <button type = "submit" class = "submit-button log-in">Log In</button>
+        </form>
+      </div>
+      <span class = "copyright">Pique&nbsp;&#169;</span>
+    </div>
+    </body>
+
+    <script>
+      $('.need-account').on('click',function(e){
+        e.preventDefault();
+        $('.modal-content').toggleClass('create-account');
+        $('.name-form-group').toggleClass('expanded')
+        $('.terms').toggleClass('expanded',100);
+
+      })
+
+
+
+    </script>
+    <div id="sign-up" class="modal">
+      <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
+      <div class="modal-content">
+        <div class = "welcome"></div>
+        <span class = "small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
+        <form id = "login">
+          <div class = 'row'>
+            <div class= "col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="first_name" placeholder="First Name">
+              </div>
+            </div>
+            <div class= "col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+          <div class = 'row'>
+            <div class= "col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="city" placeholder="City">
+              </div>
+            </div>
+            <div class= "col-sm-6">
+              <div class="form-group">
+                <input type="text" class="form-control" id="state" placeholder="State">
+              </div>
+            </div>
+          </div>
+          <select class="form-control">
+              <option>I am a..</option>
+              <option>Student</option>
+              <option>Scholarshipt Foundation</option>
+              <option>Teacher</option>
+              <option>Counselor</option>
+              <option>Nonprofit</option>
+              <option>Supporter</option>
+            </select>
+          <div class = "terms small-grey-text">
+            By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
+          </div>
+          <br>
+          </form>
+          <button class = "submit-button log-in modal-trigger"  href = "#share">Sign In</button>
+
+      </div>
+      <span class = "copyright">Pique&nbsp;&#169;</span>
+    </div>
     <footer>
       <div class = "row footer-links">
         <div class = "col-sm-3">
