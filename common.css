@@ -5115,9 +5115,9 @@ body#landing .hard-facts .section-header {
   line-height: 36px;
 }
 #provider .gradient-header .header-text h6 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 200;
-  line-height: 23px;
+  line-height: 29px;
 }
 #provider .gradient-header .header-text ul {
   list-style: none;
@@ -5128,7 +5128,9 @@ body#landing .hard-facts .section-header {
 #provider .gradient-header .header-text li {
   padding-left: 1em;
   text-indent: -1em;
-  line-height: 28px;
+  line-height: 33px;
+  font-size: 18px;
+  font-weight: 300;
 }
 #provider .gradient-header .header-text li:before {
   content: url('images/provider/check.png');
