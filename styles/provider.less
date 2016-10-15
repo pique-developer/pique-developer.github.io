@@ -67,7 +67,7 @@
       .right-slider{
         background-color: white;
         position: relative;
-        z-index: 2;
+        z-index: 4;
         .step-section{
           padding: 10px 0px 30px;
           display: inline-block;
@@ -114,6 +114,46 @@
               font-weight: 400;
               line-height: 24px;
             }
+          }
+        }
+      }
+
+
+      .product-window{
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 8;
+        height: 500px;
+        .product-image{
+          padding:40px;
+          width: 100%;
+          position: absolute;
+          transition: 0.7s left ease-in;
+          background-color: white;
+          img{
+            width: 100%;
+          }
+          &.negative{
+            left:-100%;
+            z-index: 1;
+            opacity: 0;
+            background-color: red;
+          }
+          &.one{
+            left: 0;
+            z-index: 3;
+            opacity: 1;
+          }
+          &.two{
+            left:100%;
+            z-index: 2;
+            opacity: 1;
+            background-color: green;
+
+          }
+          &.three{
+            left:200%
           }
         }
       }

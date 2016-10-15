@@ -38,8 +38,8 @@
       <div class = "nav">
         <a class = "nav-link " href = "about.html">About Us</a>
         <a class = "nav-link " href = "educator.html">Educators</a>
-        <a class = "nav-link" href = "scholarship-provider.html">Scholarship Provider</a>
-        <a class = "nav-link selected" href = "students.html">Students</a>
+        <a class = "nav-link selected" href = "scholarship-provider.html">Scholarship Providers</a>
+        <a class = "nav-link" href = "students.html">Students</a>
       </div>
 
        <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#login">Sign Up</a>
@@ -91,8 +91,37 @@
   <h3 class = "section-header long">The Scholarship Application Process Just Got Easier.</h3>
   <div class = "image-slider">
     <div class="col-sm-6">
-
+      <div class = "product-window">
+        <div class = "product-image one on" id = "one">
+          <img src = "images/provider/example.jpg">
+        </div>
+        <div class = "product-image two" id = "two">
+          <img src = "images/provider/example.jpg">
+        </div>
+        <div class = "product-image three" id = "three">
+          <img src = "images/provider/example.jpg">
+        </div>
+      </div>
     </div>
+    <script>
+      function rotateImages(){
+        if($('.on').is('#one')){
+          $('#one').addClass('negative').removeClass('one on');
+          $('#two').addClass('one on').removeClass('two');
+          $('#three').addClass('two').removeClass('three');
+        }else if ($('.on').is('#two')) {
+          $('#one').addClass('two').removeClass('negative');
+          $('#two').addClass('negative').removeClass('one on');
+          $('#three').addClass('one on').removeClass('two');
+        }else if ($('.on').is('#three')) {
+          $('#one').addClass('one on').removeClass('two');
+          $('#two').addClass('two on').removeClass('negative');
+          $('#three').addClass('negative').removeClass('one on');
+        }
+
+      }
+      setInterval(rotateImages, 2000);
+    </script>
     <div class="col-sm-6 right-slider">
       <div class = "clearfix">
         <div class = "step-section">
