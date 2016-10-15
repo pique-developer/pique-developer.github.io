@@ -108,19 +108,25 @@
         if($('.on').is('#one')){
           $('#one').addClass('negative').removeClass('one on');
           $('#two').addClass('one on').removeClass('two');
+          $('.step#two').addClass('header-on')
           $('#three').addClass('two').removeClass('three');
+          $('.step#one').removeClass('header-on')
         }else if ($('.on').is('#two')) {
           $('#one').addClass('two').removeClass('negative');
           $('#two').addClass('negative').removeClass('one on');
           $('#three').addClass('one on').removeClass('two');
+          $('.step#three').addClass('header-on')
+          $('.step#two').removeClass('header-on')
         }else if ($('.on').is('#three')) {
           $('#one').addClass('one on').removeClass('two');
           $('#two').addClass('two').removeClass('negative');
           $('#three').addClass('negative').removeClass('one on');
+          $('.step#three').removeClass('header-on')
+          $('.step#one').addClass('header-on')
         }
 
       }
-      setInterval(rotateImages, 2000);
+      setInterval(rotateImages, 2500);
     </script>
     <div class="col-sm-6 right-slider">
       <div class = "clearfix">
@@ -129,7 +135,7 @@
             1
           </div></div>
 
-          <div class = "col-sm-10"><div class = "step">
+          <div class = "col-sm-10"><div class = "step header-on" id = "one">
             <h3>Create an Account and Post Your Scholarship</h3>
             <h5> High School Seniors fill out one scholarhip application and apply to unlimited scholarships.
           </div></div>
@@ -141,7 +147,7 @@
             2
           </div></div>
 
-          <div class = "col-sm-10"><div class = "step">
+          <div class = "col-sm-10"><div class = "step" id = "two">
             <h3>Review Applications In-App</h3>
             <h5> High School Seniors fill out one scholarhip application and apply to unlimited scholarships.
           </div></div>
@@ -153,7 +159,7 @@
             3
           </div></div>
 
-          <div class = "col-sm-10"><div class = "step">
+          <div class = "col-sm-10"><div class = "step" id = "three">
             <h3>Select and Notify Winner In App</h3>
             <h5> High School Seniors fill out one scholarhip application and apply to unlimited scholarships.
           </div></div>

@@ -5171,6 +5171,7 @@ body#landing .hard-facts .section-header {
 #provider .image-slider-section .image-slider .right-slider .step-section {
   padding: 10px 0px 30px;
   display: inline-block;
+  cursor: pointer;
 }
 #provider .image-slider-section .image-slider .right-slider .step-section .number {
   height: 50px;
@@ -5205,16 +5206,21 @@ body#landing .hard-facts .section-header {
 }
 #provider .image-slider-section .image-slider .right-slider .step-section .step {
   padding-left: 30px;
+  transition: 0.3s color ease-in-out;
 }
 #provider .image-slider-section .image-slider .right-slider .step-section .step h3 {
   margin-top: 5px;
   font-weight: 400;
   margin-bottom: 20px;
+  transition: 0.3s color ease-in-out;
 }
 #provider .image-slider-section .image-slider .right-slider .step-section .step h5 {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+}
+#provider .image-slider-section .image-slider .right-slider .step-section .step.header-on h3 {
+  color: #4A90E2;
 }
 #provider .image-slider-section .image-slider .product-window {
   width: 100%;
@@ -5227,7 +5233,7 @@ body#landing .hard-facts .section-header {
   padding: 40px;
   width: 100%;
   position: absolute;
-  transition: 0.7s left ease-in;
+  transition: 0.7s left ease-in-out;
   background-color: white;
 }
 #provider .image-slider-section .image-slider .product-window .product-image img {
@@ -5236,8 +5242,7 @@ body#landing .hard-facts .section-header {
 #provider .image-slider-section .image-slider .product-window .product-image.negative {
   left: -100%;
   z-index: 1;
-  opacity: 0;
-  background-color: red;
+  opacity: 1;
 }
 #provider .image-slider-section .image-slider .product-window .product-image.one {
   left: 0;
@@ -5247,8 +5252,7 @@ body#landing .hard-facts .section-header {
 #provider .image-slider-section .image-slider .product-window .product-image.two {
   left: 100%;
   z-index: 2;
-  opacity: 1;
-  background-color: green;
+  opacity: 0;
 }
 #provider .image-slider-section .image-slider .product-window .product-image.three {
   left: 200%;
