@@ -22,6 +22,7 @@
 }
 
 body#blog{
+    font-family: 'Avenir Next';
   .clearfixx{
     position: fixed;
     z-index: 1;
@@ -35,7 +36,7 @@ body#blog{
     color: black;
   }
   .light{
-    display: none !important;
+    display: none ;
   }
   #login-button{
     background-color: transparent;
@@ -65,11 +66,11 @@ body#blog{
 body:not(.fp-viewing-0){
   .clearfixx{
     background-color: black;
-    .light{
+    .dark{
       display: none !important;
     }
-    .dark{
-      display: block !important;
+    .light{
+      display: inline-block !important;
     }
     .nav-link{
       color: white !important;
@@ -83,4 +84,41 @@ body:not(.fp-viewing-0){
 }
 .section{
   margin-top: 0;
+}
+
+.left-side{
+  width: 50%;
+  display: inline-block;
+  height: 100vh;
+  padding: 50px;
+  padding-top: 200px;
+  .blog-title{
+    font-family: 'Palatino';
+    font-size: 55px;
+    font-weight: bold;
+    border-bottom: 2px solid #E7B63C;
+    margin-top: 5px;
+  }
+  .blog-subtitle{
+    font-weight: 400;
+    font-family: 'Avenir Next';
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+.right-side{
+  width: 50%;
+  display: inline-block;
+  background-color: #EDEBE6;
+  float: right;
+  height: 100vh;
+  padding: 50px;
+  padding-top: 200px;
+  .scrollable-area{
+    font-size: 16px;
+line-height: 32px;
+max-height: 400px;
+overflow-y: scroll;
+margin-bottom: 20px;
+  }
 }

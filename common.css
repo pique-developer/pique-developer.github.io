@@ -5301,6 +5301,9 @@ body#landing .hard-facts .section-header {
   color: black;
   font-weight: 400;
 }
+body#blog {
+  font-family: 'Avenir Next';
+}
 body#blog .clearfixx {
   position: fixed;
   z-index: 1;
@@ -5314,7 +5317,7 @@ body#blog .nav-link {
   color: black;
 }
 body#blog .light {
-  display: none !important;
+  display: none ;
 }
 body#blog #login-button {
   background-color: transparent;
@@ -5342,11 +5345,11 @@ body#blog .bottom-number h4 {
 body:not(.fp-viewing-0) .clearfixx {
   background-color: black;
 }
-body:not(.fp-viewing-0) .clearfixx .light {
+body:not(.fp-viewing-0) .clearfixx .dark {
   display: none !important;
 }
-body:not(.fp-viewing-0) .clearfixx .dark {
-  display: block !important;
+body:not(.fp-viewing-0) .clearfixx .light {
+  display: inline-block !important;
 }
 body:not(.fp-viewing-0) .clearfixx .nav-link {
   color: white !important;
@@ -5357,4 +5360,40 @@ body:not(.fp-viewing-0) .clearfixx #login-button {
 }
 .section {
   margin-top: 0;
+}
+.left-side {
+  width: 50%;
+  display: inline-block;
+  height: 100vh;
+  padding: 50px;
+  padding-top: 200px;
+}
+.left-side .blog-title {
+  font-family: 'Palatino';
+  font-size: 55px;
+  font-weight: bold;
+  border-bottom: 2px solid #E7B63C;
+  margin-top: 5px;
+}
+.left-side .blog-subtitle {
+  font-weight: 400;
+  font-family: 'Avenir Next';
+  font-size: 18px;
+  line-height: 26px;
+}
+.right-side {
+  width: 50%;
+  display: inline-block;
+  background-color: #EDEBE6;
+  float: right;
+  height: 100vh;
+  padding: 50px;
+  padding-top: 200px;
+}
+.right-side .scrollable-area {
+  font-size: 16px;
+  line-height: 32px;
+  max-height: 400px;
+  overflow-y: scroll;
+  margin-bottom: 20px;
 }
