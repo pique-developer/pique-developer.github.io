@@ -5279,3 +5279,82 @@ body#landing .hard-facts .section-header {
   line-height: 33px;
   margin-top: 29px;
 }
+#landing-section {
+  background-color: #E7DDC3;
+  text-align: center;
+}
+#landing-section h6 {
+  font-family: 'Platino', serif;
+  font-size: 14px;
+}
+#landing-section h1 {
+  font-family: 'Platino', serif;
+  font-size: 64px;
+  color: #E7B63C;
+  letter-spacing: 20px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+#landing-section h3 {
+  font-size: 14px;
+  font-family: 'Avenir Next';
+  color: black;
+  font-weight: 400;
+}
+body#blog .clearfixx {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  padding: 10px 30px;
+}
+body#blog .logo-container #logo {
+  height: 40px;
+}
+body#blog .nav-link {
+  color: black;
+}
+body#blog .light {
+  display: none !important;
+}
+body#blog #login-button {
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+body#blog .bottom-number {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 20px;
+}
+body#blog .bottom-number h1 {
+  color: black;
+  letter-spacing: 0px;
+  margin-bottom: 0;
+}
+body#blog .bottom-number h4 {
+  font-weight: 400;
+  margin-top: -4px;
+  margin-bottom: 25px;
+}
+body:not(.fp-viewing-0) .clearfixx {
+  background-color: black;
+}
+body:not(.fp-viewing-0) .clearfixx .light {
+  display: none !important;
+}
+body:not(.fp-viewing-0) .clearfixx .dark {
+  display: block !important;
+}
+body:not(.fp-viewing-0) .clearfixx .nav-link {
+  color: white !important;
+}
+body:not(.fp-viewing-0) .clearfixx #login-button {
+  color: #E7B63C !important;
+  border: 1px solid #E7B63C !important;
+}
+.section {
+  margin-top: 0;
+}
