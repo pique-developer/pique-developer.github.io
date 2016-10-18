@@ -5361,12 +5361,15 @@ body:not(.fp-viewing-0) .clearfixx #login-button {
 .section {
   margin-top: 0;
 }
-.left-side {
-  width: 50%;
-  display: inline-block;
-  height: 100vh;
+.side {
+  width: 49%;
   padding: 50px;
   padding-top: 200px;
+  height: 100vh;
+  display: inline-block;
+}
+.left-side {
+  vertical-align: top;
 }
 .left-side .blog-title {
   font-family: 'Palatino';
@@ -5382,13 +5385,9 @@ body:not(.fp-viewing-0) .clearfixx #login-button {
   line-height: 26px;
 }
 .right-side {
-  width: 50%;
-  display: inline-block;
+  position: absolute;
+  right: 0;
   background-color: #EDEBE6;
-  float: right;
-  height: 100vh;
-  padding: 50px;
-  padding-top: 200px;
 }
 .right-side .scrollable-area {
   font-size: 16px;

@@ -63,11 +63,11 @@
 
       </div>
       <div class="section">
-        <div class = "left-side">
+        <div class = "left-side side">
           <h1 class = "blog-title">The Sankofa Bird</h1>
           <h4 class = "blog-subtitle">The Sankofa Bird and how Pique's Founder intends to make good on a high school promise </h4>
         </div>
-        <div class = "right-side">
+        <div class = "right-side side">
           <div class = "scrollable-area">
             In West African culture, the Sankofa Bird tells the story of a bird that flys forward while always looking backward. In African culture, the Sankofa Bird tells the story of a bird that flys forward while always looking backward. In African culture, the Sankofa Bird tells the story of a bird that.
         <br><br>
@@ -90,7 +90,9 @@
   </div>
   <script>
   $(document).ready(function() {
-    $('#fullpage').fullpage();
+    $('#fullpage').fullpage({
+      normalScrollElements:'.scrollable-area'
+    });
   });
 
   if($('#landing-section').is('.active')){

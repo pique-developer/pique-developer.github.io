@@ -85,13 +85,17 @@ body:not(.fp-viewing-0){
 .section{
   margin-top: 0;
 }
-
-.left-side{
-  width: 50%;
-  display: inline-block;
-  height: 100vh;
+.side{
+  width: 49%;
   padding: 50px;
   padding-top: 200px;
+  height: 100vh;
+  display: inline-block;
+}
+.left-side{
+  // height: 100vh;
+  vertical-align: top;
+  //
   .blog-title{
     font-family: 'Palatino';
     font-size: 55px;
@@ -107,13 +111,12 @@ body:not(.fp-viewing-0){
   }
 }
 .right-side{
-  width: 50%;
-  display: inline-block;
+  position: absolute;
+  right:0;
   background-color: #EDEBE6;
-  float: right;
-  height: 100vh;
-  padding: 50px;
-  padding-top: 200px;
+  // float: right;
+  // height: 100vh;
+  // padding: 50px;
   .scrollable-area{
     font-size: 16px;
 line-height: 32px;
