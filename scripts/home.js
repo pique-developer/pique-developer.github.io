@@ -1,4 +1,10 @@
 
+function appendLoginForm() {
+  return `
+
+  `
+}
+
 $(window).scroll(function(){
   $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 180);
   $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 220);

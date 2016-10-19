@@ -5,6 +5,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="materialize.css">
   <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="styles/css/home.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
@@ -224,37 +225,36 @@
     <div class="modal-content">
       <div class="welcome"></div>
       <span class="small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
+      <form class="login-form" id="login">
+        <div id="login-names">
+          <input
+            type="text"
+            id="p-login-first_name"
+            placeholder="First Name">
+          <input
+            type="text"
+            id="p-login-last_name"
+            placeholder="Last Name">
+        </div>
+        <div id="login-email">
+          <input
+            type="email"
+            id="p-login-email"
+            placeholder="Enter your email">
+        </div>
+        <div id="login-location">
+          <input
+            type="text"
+            id="p-login-city"
+            placeholder="City">
+          <input
+            type="text"
+            id="p-login-state"
+            placeholder="State">
+        </div>
 
-      <form id="login">
-        <div class='row'>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="p-login-first_name" placeholder="First Name">
-            </div>
-          </div>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="p-login-last_name" placeholder="Last Name">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" id="p-login-email" placeholder="Email">
-        </div>
-        <div class='row'>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="p-login-city" placeholder="City">
-            </div>
-          </div>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="p-login-state" placeholder="State">
-            </div>
-          </div>
-        </div>
         <select id="p-login-type" class="form-control">
-          <option>I am a..</option>
+          <option value="">I am a..</option>
           <option value="student">Student</option>
           <option value="scholarship foundation">Scholarship Foundation</option>
           <option value="teacher">Teacher</option>
@@ -262,11 +262,29 @@
           <option value="nonprofit">Nonprofit</option>
           <option value="supporter">Supporter</option>
         </select>
+        <div id="login-school" class="login-dependent">
+          <input
+            type="text"
+            id="p-login-school"
+            placeholder="Name of school">
+        </div>
+        <div id="login-nonprofit" class="login-dependent">
+          <input
+            type="text"
+            id="p-login-nonprofit"
+            placeholder="Name of non-profit">
+        </div>
+        <div id="login-employer" class="login-dependent">
+          <input
+            type="text"
+            id="p-login-employer"
+            placeholder="Name of employer">
+        </div>
         <div class="terms small-grey-text">
           By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
         </div>
-        <br>
-        <button id="p-submit" type="submit" class="submit-button log-in">Log In</button>
+        <span class="p-notify"></span>
+        <button id="p-submit" type="submit" class="submit-button log-in">Sign Up</button>
       </form>
     </div>
     <span class="copyright">Pique&nbsp;&#169;</span>

@@ -1,0 +1,80 @@
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:before {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+#sign-up.modal.open #login.login-form input {
+  padding-left: 15px;
+  border-radius: 5px;
+  outline-style: none;
+  color: #000;
+}
+
+#sign-up.modal.open #login.login-form select {
+  text-indent: 7.5px;
+  margin-bottom: 20px;
+}
+
+#sign-up.modal.open #login.login-form input:focus {
+  border: 1px solid #4570F0;
+  box-shadow: none;
+}
+
+
+#sign-up.modal.open #login.login-form #login-email,
+#sign-up.modal.open #login.login-form #login-location,
+#sign-up.modal.open #login.login-form #login-names {
+  height: 45px;
+  margin-bottom: 20px;
+}
+
+#login-location #p-login-city,
+#login-names #p-login-first_name {
+  float: left;
+  width: 48%;
+}
+
+#login-location #p-login-state,
+#login-names #p-login-last_name {
+  float: right;
+  width: 48%;
+}
+
+#sign-up.modal.open #login.login-form #login-school,
+#sign-up.modal.open #login.login-form #login-nonprofit,
+#sign-up.modal.open #login.login-form #login-employer {
+  display: none;
+  height: 45px;
+  margin-bottom: 5px;
+}
+
+#login-school #p-login-school,
+#login-nonprofit #p-login-nonprofit,
+#login-employer #p-login-employer,
+#login-email #p-login-email {
+  width: 100%;
+}
+
+.p-notify {
+  color: red;
+  margin-bottom: 15px;
+  display: block;
+  font-size: 12px;
+  height: 17px;
+}
+
+#login.modal .modal-content .welcome:after,
+#sign-up.modal .modal-content .welcome:after,
+#share.modal .modal-content .welcome:after {
+  content: 'Sign up with Pique!';
+}

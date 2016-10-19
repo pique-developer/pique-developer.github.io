@@ -3171,11 +3171,7 @@ header.interior-header {
   display: inline-block;
   margin-bottom: 15px;
 }
-#login.modal .modal-content .welcome:after,
-#sign-up.modal .modal-content .welcome:after,
-#share.modal .modal-content .welcome:after {
-  content: 'Welcome to Pique!';
-}
+
 #login.modal .modal-content .small-grey-text,
 #sign-up.modal .modal-content .small-grey-text,
 #share.modal .modal-content .small-grey-text {
