@@ -62,8 +62,63 @@ body#blog{
       margin-bottom: 25px;
     }
   }
+  .author{
+    margin-left: -15px;
+    margin-right: -15px;
+    position: absolute;
+    bottom:100px;
+    width: 100%;
+    .author-info{
+      margin-bottom: 50px;
+      display: block;
+      display: -webkit-box;
+    }
+    h1{
+      font-weight: 400;
+      font-size: 35px;
+      margin-top: 0px;
+      margin-bottom: 5px;
+    }
+      h6{
+        font-size: 12px;
+        margin-top: 2px;
+        margin-bottom: 0px;
+        span{
+          font-size: 12px !important;
+          font-style: italic;
+
+        }
+      }
+      .share-buttons{
+        width: 90%;
+        margin-top: 20px;
+      }
+      a{
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100%;
+        display: inline-block;
+        padding:5px;
+        &.google{
+          color: @google;
+          border: 1px solid @google;
+
+        }
+        &.facebook{
+          color: @facebook;
+          border: 1px solid @facebook;
+
+        }
+        &.twitter{
+          color: @twitter;
+          border: 1px solid @twitter;
+
+        }
+      }
+  }
 }
-body:not(.fp-viewing-0){
+body#blog:not(.fp-viewing-0){
   .clearfixx{
     background-color: black;
     .dark{
@@ -91,6 +146,7 @@ body:not(.fp-viewing-0){
   padding-top: 200px;
   height: 100vh;
   display: inline-block;
+  position: relative;
 }
 .left-side{
   // height: 100vh;
@@ -121,7 +177,7 @@ body:not(.fp-viewing-0){
   .scrollable-area{
     font-size: 16px;
 line-height: 32px;
-max-height: 400px;
+max-height: 64vh;
 overflow-y: scroll;
 margin-bottom: 20px;
   }

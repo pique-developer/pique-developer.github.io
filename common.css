@@ -5342,19 +5342,70 @@ body#blog .bottom-number h4 {
   margin-top: -4px;
   margin-bottom: 25px;
 }
-body:not(.fp-viewing-0) .clearfixx {
+body#blog .author {
+  margin-left: -15px;
+  margin-right: -15px;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+}
+body#blog .author .author-info {
+  margin-bottom: 50px;
+  display: block;
+  display: -webkit-box;
+}
+body#blog .author h1 {
+  font-weight: 400;
+  font-size: 35px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+body#blog .author h6 {
+  font-size: 12px;
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+body#blog .author h6 span {
+  font-size: 12px !important;
+  font-style: italic;
+}
+body#blog .author .share-buttons {
+  width: 90%;
+  margin-top: 20px;
+}
+body#blog .author a {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+  display: inline-block;
+  padding: 5px;
+}
+body#blog .author a.google {
+  color: #d7543a;
+  border: 1px solid #d7543a;
+}
+body#blog .author a.facebook {
+  color: #5576b5;
+  border: 1px solid #5576b5;
+}
+body#blog .author a.twitter {
+  color: #59adeb;
+  border: 1px solid #59adeb;
+}
+body#blog:not(.fp-viewing-0) .clearfixx {
   background-color: black;
 }
-body:not(.fp-viewing-0) .clearfixx .dark {
+body#blog:not(.fp-viewing-0) .clearfixx .dark {
   display: none !important;
 }
-body:not(.fp-viewing-0) .clearfixx .light {
+body#blog:not(.fp-viewing-0) .clearfixx .light {
   display: inline-block !important;
 }
-body:not(.fp-viewing-0) .clearfixx .nav-link {
+body#blog:not(.fp-viewing-0) .clearfixx .nav-link {
   color: white !important;
 }
-body:not(.fp-viewing-0) .clearfixx #login-button {
+body#blog:not(.fp-viewing-0) .clearfixx #login-button {
   color: #E7B63C !important;
   border: 1px solid #E7B63C !important;
 }
@@ -5367,6 +5418,7 @@ body:not(.fp-viewing-0) .clearfixx #login-button {
   padding-top: 200px;
   height: 100vh;
   display: inline-block;
+  position: relative;
 }
 .left-side {
   vertical-align: top;
@@ -5393,7 +5445,7 @@ body:not(.fp-viewing-0) .clearfixx #login-button {
 .right-side .scrollable-area {
   font-size: 16px;
   line-height: 32px;
-  max-height: 400px;
+  max-height: 64vh;
   overflow-y: scroll;
   margin-bottom: 20px;
 }
