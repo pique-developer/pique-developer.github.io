@@ -72,6 +72,8 @@ const signUp = {
         || !!formData.employer
       ) {
         firebase.database().ref().push(formData)
+        $('#sign-up').html($('#share'))
+        $('#share').css('display', 'block')
       } else {
         $('.p-notify').text('All fields are required')
       }

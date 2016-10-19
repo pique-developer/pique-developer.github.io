@@ -78,3 +78,7 @@
 #share.modal .modal-content .welcome:after {
   content: 'Sign up with Pique!';
 }
+
+#share.modal {
+  width: auto;
+}
