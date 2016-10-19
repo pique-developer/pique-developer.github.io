@@ -1,55 +1,39 @@
-<html lang = "en">
+<html lang="en">
 <head>
-<title>Pique</title>
-
- <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon'/ >
-
-<!-- Latest compiled and minified Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<!-- jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-<!-- Latest compiled and minified  Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<!-- Materialize JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-
-<!-- font awesome font for social icons -->
-<script src="https://use.fontawesome.com/c478d977aa.js"></script>
-<!-- Material Icon font -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- My styles -->
-<link rel="stylesheet" href="materialize.css">
-<link rel="stylesheet" href="common.css">
-
+  <title>Pique</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles/css/materialize.css">
+  <link rel="stylesheet" href="styles/css/common.css">
+  <link rel="stylesheet" href="styles/css/home.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="https://use.fontawesome.com/c478d977aa.js"></script>
 </head>
-<body class = "about no-fixed-header" id = "students">
-  <div class = "clearfixx">
-    <div class = "logo-container pull-left">
-      <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
+<body class="about no-fixed-header" id="students">
+  <div class="clearfixx">
+    <div class="logo-container pull-left">
+      <a href ="/" alt="Home" id="logo"><img src="images/Logo.png"></a>
     </div>
 
-    <div class = "header-right pull-right">
+    <div class="header-right pull-right">
 
-      <div class = "nav">
-        <a class = "nav-link " href = "about.html">About Us</a>
-        <a class = "nav-link " href = "educator.html">Educators</a>
-        <a class = "nav-link" href = "scholarship-provider.html">Scholarship Providers</a>
-        <a class = "nav-link selected" href = "students.html">Students</a>
+      <div class="nav">
+        <a class="nav-link " href="about.html">About Us</a>
+        <a class="nav-link " href="educator.html">Educators</a>
+        <a class="nav-link" href="scholarship-provider.html">Scholarship Providers</a>
+        <a class="nav-link selected" href="students.html">Students</a>
       </div>
 
-       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#sign-up">Sign Up</a>
+       <a class="waves-effect waves-light btn modal-trigger" id="login-button" href="#sign-up">Sign Up</a>
 
     </div>
   </div>
-  <div class = "gradient-header">
+  <div class="gradient-header">
 
-    <div class = "black-fade"></div>
-    <div class = "">
+    <div class="black-fade"></div>
+    <div class="">
 
       <h1>Save Time. Submit More Applications.<br>
 Increase Your Chances of Winning Scholarships.</h1>
@@ -57,28 +41,15 @@ Increase Your Chances of Winning Scholarships.</h1>
 That is why, we made Pique. Sign up and see how easy it is to find and apply to scholarships!</h6>
     </div>
 
-    <div class = "banner-form">
-      <form id = "student">
+    <div class="banner-form">
+      <form id="student">
 
         <br><br><br>
-        <div class = "select-slider-container">
+        <div class="select-slider-container">
 
-          <div class= "option selected" id = "educator">Sign Up!</div>
+          <div class= "option selected" id="educator">Sign Up!</div>
         </div>
-        <script>
-        $('.option').on('click',function(){
-         $('.option').toggleClass('selected')
-        })
-
-        $('#career').on('click',function(){
-          $('#career').val('1').change();
-        })
-
-        $('#not-published').on('click',function(){
-          $('#career').val('0').change();
-        })
-        </script>
-        <div class = 'row name-form-group'>
+        <div class='row name-form-group'>
           <div class= "col-sm-6">
             <div class="form-group">
               <input type="text" class="form-control" id="first_name" placeholder="First Name">
@@ -96,7 +67,7 @@ That is why, we made Pique. Sign up and see how easy it is to find and apply to 
         <div class="form-group">
           <input type="text" class="form-control" id="school" placeholder="Name of School">
         </div>
-        <div class = 'row location-form-group'>
+        <div class='row location-form-group'>
           <div class= "col-sm-6">
             <div class="form-group">
               <input type="text" class="form-control" id="city" placeholder="City">
@@ -108,76 +79,58 @@ That is why, we made Pique. Sign up and see how easy it is to find and apply to 
             </div>
           </div>
         </div>
-        <button type = "submit" class = "submit-button log-in"></button>
+        <button type="submit" class="submit-button log-in"></button>
 
       </form>
     </div>
   </div>
-  <script>
-    $(window).scroll(function(){
-      $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 150);
-      $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 150);
-      var scrollpos = $(window).scrollTop();
-      console.log(scrollpos)
-      if(scrollpos >257){
-        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-257 )*0.0105));
-      }else{
-        $('.about-header .black').removeClass('fixed-header');
-        $(".about-header .black-fade").css("opacity",  0)
-      }
-      if(scrollpos >600){
-        $('.clearfixx').addClass('black-header')
-      }else{
-        $('.clearfixx').removeClass('black-header')
-      }
-  });
-  </script>
-  <div class = "works" id = "how-it-works-info">
-    <h3 class = "section-header long">The Current Way</h3>
-    <div class = "current-way">
-      <img src = "images/student/student.jpg">
+
+  <div class="works" id="how-it-works-info">
+    <h3 class="section-header long">The Current Way</h3>
+    <div class="current-way">
+      <img src="images/student/student.jpg">
     </div>
 
   </div>
 
 
-<div class = "pique-difference">
-  <h3 class = "section-header long">The Pique Way</h3>
-  <img src = "images/student/grad.png" id = "grad">
-  <div class = "yellow-circle"></div>
-  <div class = "yellow-circle"></div>
-  <div class = "yellow-circle"></div>
-  <div class = "yellow-circle"></div>
-  <div class = "yellow-circle"></div>
-  <div class = "yellow-circle"></div>
-  <div class = "yellow-circle"></div>
-  <div class = "yellow-circle"></div>
+<div class="pique-difference">
+  <h3 class="section-header long">The Pique Way</h3>
+  <img src="images/student/grad.png" id="grad">
+  <div class="yellow-circle"></div>
+  <div class="yellow-circle"></div>
+  <div class="yellow-circle"></div>
+  <div class="yellow-circle"></div>
+  <div class="yellow-circle"></div>
+  <div class="yellow-circle"></div>
+  <div class="yellow-circle"></div>
+  <div class="yellow-circle"></div>
 
-  <div class = "row">
+  <div class="row">
 
-  <div class = "diff-text pull-left" id = "request">
+  <div class="diff-text pull-left" id="request">
     <h3>Request and Save Your Documents in One Place</h3>
     Through Pique you can send a request to your teachers and counselors to upload your recommendations and official transcript. When each document is uploaded, it is saved onto your Pique account and can then be reused to apply to any scholarship on Pique. <br>
 
   </div>
-  <div class = "diff-text pull-right" id = "student-image">
-    <img src = "images/student/student1.png">
+  <div class="diff-text pull-right" id="student-image">
+    <img src="images/student/student1.png">
   </div>
 </div>
-<div class = "row">
-  <div class = "diff-text pull-left" id = "screenshot">
-    <img src = "images/student/screenshot.jpg">
+<div class="row">
+  <div class="diff-text pull-left" id="screenshot">
+    <img src="images/student/screenshot.jpg">
   </div>
-  <div class = "diff-text pull-right" id = "find">
+  <div class="diff-text pull-right" id="find">
     <h3>Find Scholarships You Can Actually Win</h3>
     All platforms give you access to a curated list of scholarships.
 Scholarships hosted on Pique are categorized into 4 categories; 'local scholarships', 'national scholarships',
 'niche national scholarships', and 'based on previous scholarships you've applied to'.
   </div>
 </div>
-<div class = "row">
+<div class="row">
 
-  <div class = "diff-text pull-left" id = "reuse">
+  <div class="diff-text pull-left" id="reuse">
     <h3>Reuse Essays More Easily</h3>
     You do not have time to write a new essay for each new scholarship,
 we get it. Our recommendation feature recommends scholarships to
@@ -185,8 +138,8 @@ you based on previous scholarships you've applied to.
 
   </div>
 
-  <div class = "diff-text pull-right" id = "example">
-    <div class = 'essay-example'>
+  <div class="diff-text pull-right" id="example">
+    <div class='essay-example'>
       <b><i>Example</i></b><br><br>
       If you applied to a 'Women in STEM' scholarship with a 1,000 word limit.
 Your <b>'Based on Scholarships You've Previously Applied to'</b> section would be updated
@@ -198,234 +151,137 @@ with scholarships for Women going into STEM programs with a 1,000 word limit.
 </div>
 </div>
 
-<div class = "white">
-<h3 class = "section-header long ">Ready to Start Winning Scholarships?</h3>
+<div class="white">
+<h3 class="section-header long ">Ready to Start Winning Scholarships?</h3>
 
-<a href = "#student" class = "button green">Join. It's Free.</a>
+<a href="#student" class="button green">Join. It's Free.</a>
 </div>
 
-  <script>
-  $(function() {
-    $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top - 150
-          }, 1000);
-          return false;
-        }
-      }
-    });
-    });
-
-    $(window).scroll(function(){
-
-      var scrollpos = $(window).scrollTop();
-      console.log(scrollpos);
-      if(scrollpos >1587 && scrollpos <2533){
-        $('#grad').addClass('fixed-grad')
-        $('#grad').removeClass('end-grad')
-
-      }else{
-        $('#grad').removeClass('fixed-grad')
-      }
-      if (scrollpos >2533){
-        $('#grad').addClass('end-grad')
-      }
-      if (scrollpos > 1122){
-        $('#request').show();
-        $('#request').addClass('animated bounceInLeft');
-      }
-      if (scrollpos > 1370){
-        $('#student-image').show();
-        $('#student-image').addClass('animated bounceInRight');
-      }
-      if (scrollpos > 1570){
-        $('#screenshot').show();
-        $('#screenshot').addClass('animated bounceInLeft');
-      }
-      if (scrollpos > 1700){
-        $('#find').show();
-        $('#find').addClass('animated bounceInRight');
-      }
-      if (scrollpos > 1950){
-        $('#reuse').show();
-        $('#reuse').addClass('animated bounceInLeft');
-      }
-      if (scrollpos > 2100){
-        $('#example').show();
-        $('#example').addClass('animated bounceInRight');
-      }
-
-  });
-  </script>
-
-  <script>
-  $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal({
-      starting_top: '4%', // Starting top style attribute
-        ending_top: '-10%'
-    }
-
-    );
-  });
-  </script>
-  <!-- Modal Structure -->
-  <div id="sign-up" class="modal">
-    <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
-    <div class="modal-content">
-      <div class = "welcome"></div>
-      <span class = "small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
-      <form id = "login">
-        <div class = 'row'>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="first_name" placeholder="First Name">
-            </div>
-          </div>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="last_name" placeholder="Last Name">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Email">
-        </div>
-        <div class = 'row'>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="city" placeholder="City">
-            </div>
-          </div>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="state" placeholder="State">
-            </div>
-          </div>
-        </div>
-        <select class="form-control">
-            <option>I am a..</option>
-            <option>Student</option>
-            <option>Scholarshipt Foundation</option>
-            <option>Teacher</option>
-            <option>Counselor</option>
-            <option>Nonprofit</option>
-            <option>Supporter</option>
-          </select>
-        <div class = "terms small-grey-text">
-          By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
-        </div>
-        <br>
-        <button type = "submit" class = "submit-button log-in">Log In</button>
-      </form>
-    </div>
-    <span class = "copyright">Pique&nbsp;&#169;</span>
-  </div>
-  </body>
-
-  <script>
-    $('.need-account').on('click',function(e){
-      e.preventDefault();
-      $('.modal-content').toggleClass('create-account');
-      $('.name-form-group').toggleClass('expanded')
-      $('.terms').toggleClass('expanded',100);
-
-    })
-
-
-
-  </script>
-  <div id="sign-up" class="modal">
-    <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
-    <div class="modal-content">
-      <div class = "welcome"></div>
-      <span class = "small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
-      <form id = "login">
-        <div class = 'row'>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="first_name" placeholder="First Name">
-            </div>
-          </div>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="last_name" placeholder="Last Name">
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Email">
-        </div>
-        <div class = 'row'>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="city" placeholder="City">
-            </div>
-          </div>
-          <div class= "col-sm-6">
-            <div class="form-group">
-              <input type="text" class="form-control" id="state" placeholder="State">
-            </div>
-          </div>
-        </div>
-        <select class="form-control">
-            <option>I am a..</option>
-            <option>Student</option>
-            <option>Scholarshipt Foundation</option>
-            <option>Teacher</option>
-            <option>Counselor</option>
-            <option>Nonprofit</option>
-            <option>Supporter</option>
-          </select>
-        <div class = "terms small-grey-text">
-          By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
-        </div>
-        <br>
-        </form>
-        <button class = "submit-button log-in modal-trigger"  href = "#share">Sign In</button>
-
-    </div>
-    <span class = "copyright">Pique&nbsp;&#169;</span>
-  </div>
   <footer>
-    <div class = "row footer-links">
-      <div class = "col-sm-3">
-        <a class = "footer-nav-link link-header">Company</a><br>
-        <a href = "about.html#team" class = "footer-nav-link">Team</a><br>
-        <a href = "blog.html"  class = "footer-nav-link">Blog</a><br>
-        <a class = "footer-nav-link">Get Involved</a><br>
+    <div class="row footer-links">
+      <div class="col-sm-3">
+        <a class="footer-nav-link link-header">Company</a><br>
+        <a href="about.html#team" class="footer-nav-link">Team</a><br>
+        <a href="blog.html" class="footer-nav-link">Blog</a><br>
+        <a class="footer-nav-link">Get Involved</a><br>
       </div>
-      <div class = "col-sm-3">
-          <a class = "footer-nav-link link-header">Educators</a><br>
-          <a href = "educator.html" class = "footer-nav-link">Get Started</a><br>
-          <a href = "educator.html" class = "footer-nav-link">Learn More</a><br>
+      <div class="col-sm-3">
+        <a class="footer-nav-link link-header">Educators</a><br>
+        <a href="educator.html" class="footer-nav-link">Get Started</a><br>
+        <a href="educator.html" class="footer-nav-link">Learn More</a><br>
       </div>
-      <div class = "col-sm-3">
-        <a class = "footer-nav-link link-header">Scholarship Foundations</a><br>
-        <a href = "about.html" class = "footer-nav-link">About</a><br>
-        <a class = "footer-nav-link">FAQ</a><br>
-        <a class = "footer-nav-link">Become a Partner</a><br>
+      <div class="col-sm-3">
+        <a class="footer-nav-link link-header">Scholarship Foundations</a><br>
+        <a href="about.html" class="footer-nav-link">About</a><br>
+        <a class="footer-nav-link">FAQ</a><br>
+        <a class="footer-nav-link">Become a Partner</a><br>
       </div>
-      <div class = "col-sm-3">
-        <a class = "footer-nav-link link-header">Support</a><br>
-        <a class = "footer-nav-link">FAQ</a><br>
-
+      <div class="col-sm-3">
+        <a class="footer-nav-link link-header">Support</a><br>
+        <a class="footer-nav-link">FAQ</a><br>
       </div>
     </div>
-    <div class = "subfooter">
-      <div class = "pull-left">
-        <a href = "" class = "social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i>
-  </a>
-        <a href = "" class = "social-media"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a href = "" class = "social-media"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+    <div class="subfooter">
+      <div class="pull-left">
+        <a href="" class="social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        <a href="" class="social-media"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="" class="social-media"><i class="fa fa-instagram" aria-hidden="true"></i></a>
       </div>
-      <div class = "pull-right">
-        Copyright 2016 Pique
-      </div>
+      <div class="pull-right">Copyright 2016 Pique</div>
     </div>
   </footer>
+
+  <div id="sign-up" class="modal">
+    <div class="modal-logo-container center-align">
+      <img class="center-align" src="images/Logo.png">
+    </div>
+    <div class="modal-content">
+      <div class="welcome"></div>
+      <span class="small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
+      <form class="login-form" id="login">
+        <div id="login-names">
+          <input
+            type="text"
+            id="p-login-first_name"
+            placeholder="First Name">
+          <input
+            type="text"
+            id="p-login-last_name"
+            placeholder="Last Name">
+        </div>
+        <div id="login-email">
+          <input
+            type="email"
+            id="p-login-email"
+            placeholder="Enter your email">
+        </div>
+        <div id="login-location">
+          <input
+            type="text"
+            id="p-login-city"
+            placeholder="City">
+          <input
+            type="text"
+            id="p-login-state"
+            placeholder="State">
+        </div>
+
+        <select id="p-login-type" class="form-control">
+          <option value="">I am a..</option>
+          <option value="student">Student</option>
+          <option value="scholarship foundation">Scholarship Foundation</option>
+          <option value="teacher">Teacher</option>
+          <option value="counselor">Counselor</option>
+          <option value="nonprofit">Nonprofit</option>
+          <option value="supporter">Supporter</option>
+        </select>
+        <div id="login-school" class="login-dependent">
+          <input
+            type="text"
+            id="p-login-school"
+            placeholder="Name of school">
+        </div>
+        <div id="login-nonprofit" class="login-dependent">
+          <input
+            type="text"
+            id="p-login-nonprofit"
+            placeholder="Name of non-profit">
+        </div>
+        <div id="login-employer" class="login-dependent">
+          <input
+            type="text"
+            id="p-login-employer"
+            placeholder="Name of employer">
+        </div>
+        <div class="terms small-grey-text">
+          By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
+        </div>
+        <span class="p-notify"></span>
+        <button id="p-submit" type="submit" class="submit-button log-in">Sign Up</button>
+      </form>
+    </div>
+    <span class="copyright">Pique&nbsp;&#169;</span>
+  </div>
+
+  <div id="share" class="modal">
+    <div class="modal-logo-container center-align"><img class="center-align" src="images/Logo.png"></div>
+    <div class="modal-content">
+      <div class="center-align heart"><img src="images/landing/heart.jpg"></div>
+      <div class="share-modal-text">
+        Thank for signing up the Pique!<br>
+      Help us spread the word  by sharing Pique with<br>
+       friend family let's end student debt!
+      </div>
+      <div class="social-icons-container">
+        <a href="" class="facebook social-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="" class="twitter social-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="" class="google social-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/visible.min.js"></script>
+  <script src="scripts/students.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+  <script src="scripts/firebase.js"></script>
 </body>
