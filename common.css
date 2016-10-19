@@ -5308,7 +5308,7 @@ body#blog .clearfixx {
   position: fixed;
   z-index: 1;
   width: 100%;
-  padding: 10px 30px;
+  padding: 10px 50px;
 }
 body#blog .logo-container #logo {
   height: 40px;
@@ -5387,6 +5387,7 @@ body:not(.fp-viewing-0) .clearfixx #login-button {
 .right-side {
   position: absolute;
   right: 0;
+  top: 0;
   background-color: #EDEBE6;
 }
 .right-side .scrollable-area {
