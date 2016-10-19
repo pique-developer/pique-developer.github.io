@@ -82,3 +82,7 @@
 #share.modal {
   width: auto;
 }
+
+.p-dc {
+  background-image:url('../../images/about/dc.jpg')
+}
