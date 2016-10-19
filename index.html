@@ -1,536 +1,296 @@
-<html lang = "en">
+<html lang="en">
 <head>
-<title>Pique</title>
-
-
-<!-- Latest compiled and minified Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<!-- jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-<!-- Latest compiled and minified  Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<!-- Materialize JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-
-<!-- Material Icon font -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- font awesome font for social icons -->
-<script src="https://use.fontawesome.com/c478d977aa.js"></script>
-<!-- My styles -->
-<link rel="stylesheet" href="materialize.css">
-<link rel="stylesheet" href="common.css">
- <!-- <link rel="stylesheet" href="styles/animate.css"> -->
+  <title>Pique</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="materialize.css">
+  <link rel="stylesheet" href="common.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="https://use.fontawesome.com/c478d977aa.js"></script>
 </head>
-<body class = "about" id = "landing">
-  <div class = "clearfixx">
-    <div class = "logo-container pull-left">
-      <a href ="/" alt = "Home" id = "logo"><img src = "images/Logo.png"></a>
+<body class="about" id="landing">
+
+  <div class="clearfixx">
+    <div class="logo-container pull-left">
+      <a href ="/" alt="Home" id="logo"><img src="images/Logo.png"></a>
     </div>
-
-    <div class = "header-right pull-right">
-
-      <div class = "nav">
-        <a class = "nav-link " href = "about.html">About Us</a>
-        <a class = "nav-link" href = "educator.html">Educators</a>
-        <a class = "nav-link "  href = "scholarship-provider.html">Scholarship Providers</a>
-        <a class = "nav-link" href = "students.html">Students</a>
-
-
+    <div class="header-right pull-right">
+      <div class="nav">
+        <a class="nav-link " href="about.html">About Us</a>
+        <a class="nav-link" href="educator.html">Educators</a>
+        <a class="nav-link "  href="scholarship-provider.html">Scholarship Providers</a>
+        <a class="nav-link" href="students.html">Students</a>
       </div>
-
-       <a class="waves-effect waves-light btn modal-trigger" id = "login-button" href="#sign-up">Sign Up</a>
-
+       <a class="waves-effect waves-light btn modal-trigger" id="login-button" href="#sign-up">Sign Up</a>
     </div>
   </div>
-  <div class = "about-header">
 
-    <div class = "black-fade"></div>
-    <div class = "">
-
+  <div class="about-header">
+    <div class="black-fade"></div>
+    <div class="">
       <h1>We're the Common App for Scholarships.</h1>
-      <!-- <h6>Discover, save & apply for scholarships for high school and college students in the DC area and get access to our digital tools to help students win more scholarships and more money</h6> -->
-      <button class = "modal-trigger" href = "#sign-up" id = "sign-up-free">Sign Up for Free!</button>
+      <button class="modal-trigger" href="#sign-up" id="sign-up-free">Sign Up for Free!</button>
     </div>
-    </div>
-
-
-  <script>
-    $(window).scroll(function(){
-      $(".about-header h1").css("opacity", 1 - $(window).scrollTop() / 180);
-      $(".about-header h6").css("opacity", 1 - $(window).scrollTop() / 220);
-      $(".about-header button").css("opacity", 1 - $(window).scrollTop() / 260);
-      var scrollpos = $(window).scrollTop();
-      // console.log(scrollpos);
-      if(scrollpos >320){
-        $(".about-header .black-fade").css("opacity",  (($(window).scrollTop()-400 )*0.0235));
-      }else{
-        $('.about-header .black').removeClass('fixed-header');
-        $(".about-header .black-fade").css("opacity",  0)
-      }
-      if(scrollpos >440){
-        $('.clearfixx').addClass('black-header')
-      }else{
-        $('.clearfixx').removeClass('black-header')
-      }
-  });
-  </script>
-
-<!-- <div class = "university-partners">
-  <h3 class="section-header">Univeristy Partners</h3>
-  <div class = "row">
-    <div class = "col-xs-2">
-      <img class = "partner" src = "images/about/DLSU.png">
-    </div>
-    <div class = "col-xs-2">
-      <img class = "partner" src = "images/about/urc.png">
-    </div>
-    <div class = "col-xs-2">
-      <img class = "partner" src = "images/about/oklahoma.png">
-    </div>
-    <div class = "col-xs-2">
-      <img class = "partner" src = "images/about/michigan.png">
-    </div>
-    <div class = "col-xs-2">
-      <img class = "partner" src = "images/about/tsing.png">
-    </div>
-    <div class = "col-xs-2">
-      <img class = "partner" src = "images/about/winston.png">
-    </div>
-
   </div>
-</div> -->
-<div class = "clearfix">
-  <div class = "hard-facts">
-    <h3 class = "section-header long">
-      Rising Tuition. Rising Debt.
-    </h3>
-    <h2 class = "loaned">$<span class="Countl">37172
-      </span></h2>
-    <h6 class = "number-label">Average Amount Borrowed by Graduates in 2016</h6>
+
+  <div class="clearfix">
+    <div class="hard-facts">
 
 
-    <section class="hero">
-    <div class="graph-lines">
-        <?xml version="1.0" encoding="utf-8"?>
-        <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+      <h3 class="section-header long">Rising Tuition. Rising Debt.</h3>
+      <h2 class="loaned">$<span class="Countl">37172</span></h2>
+      <h6 class="number-label">Average Amount Borrowed by Graduates in 2016</h6>
 
-        <svg viewBox="0 0 1200 203"preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-    <defs>
-        <linearGradient x1="50%" y1="98.3328202%" x2="50%" y2="45.1390748%" id="linearGradient-1">
-            <stop stop-color="#0BEE84" stop-opacity="0" offset="0%"></stop>
-            <stop stop-color="#0BBA7C" stop-opacity="0.0972316576" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Pique---Educator" transform="translate(0.000000, -1102.000000)" fill="url(#linearGradient-1)">
-            <g id="The-Harsh-Facts" transform="translate(0.000000, 762.000000)">
-                <path class = "path two" d="M0,368.499999 C0,368.499999 33,358.000001 126,395.000001 C219,432.000001 359.5,395 359.5,395 C359.5,395 480.5,343.999999 615,389.5 C749.5,435.000001 854.5,417 905.5,383 C956.5,349 1002,328 1083,349 C1164,370 1223,479.000004 1244.5,376.5 C1266,273.999996 1239.5,531 1239.5,531 L1108,565.5 L956.5,573.5 L0,549.500001 L0,368.499999 Z" id="wave-2"></path>
-            </g>
-        </g>
-    </g>
-</svg>
-    </div>
-</section>
-      <section class="hero second">
-    <div class="graph-lines">
+      <section class="hero">
+        <div class="graph-lines">
           <?xml version="1.0" encoding="utf-8"?>
-        <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-
-        <svg   preserveAspectRatio="none" viewBox="0 0 1200 290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-
-    <defs>
-        <linearGradient x1="50%" y1="98.3328202%" x2="50%" y2="45.1390748%" id="linearGradient-2">
-            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
-            <stop stop-color="#1417EF" stop-opacity="0.0972316576" offset="100%"></stop>
-        </linearGradient>
-    </defs>
-    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Pique---Educator" transform="translate(0.000000, -1013.000000)" fill="url(#linearGradient-2)">
-            <g id="The-Harsh-Facts2" transform="translate(0.000000, 762.000000)">
-                <path class="path one" d="M-8.5,452.5 C-8.5,452.5 26,360.499993 134.5,348.499993 C243,336.499993 336.5,417 394,425.5 C451.5,434 520,395.475945 560,383.487969 C600,371.499993 708.5,363.499993 785,383.487969 C861.5,403.475945 950.5,411.499993 1015,383.487969 C1079.5,355.475945 1168,309.500002 1213.5,230 C1259,150.499999 1239,547.500001 1239,547.500001 L-21,547.5 L-8.5,452.5 Z" id="wave1"></path>
+          <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+          <svg viewBox="0 0 1200 203"preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <linearGradient x1="50%" y1="98.3328202%" x2="50%" y2="45.1390748%" id="linearGradient-1">
+                <stop stop-color="#0BEE84" stop-opacity="0" offset="0%"></stop>
+                <stop stop-color="#0BBA7C" stop-opacity="0.0972316576" offset="100%"></stop>
+              </linearGradient>
+            </defs>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Pique---Educator" transform="translate(0.000000, -1102.000000)" fill="url(#linearGradient-1)">
+                <g id="The-Harsh-Facts" transform="translate(0.000000, 762.000000)">
+                  <path class="path two" d="M0,368.499999 C0,368.499999 33,358.000001 126,395.000001 C219,432.000001 359.5,395 359.5,395 C359.5,395 480.5,343.999999 615,389.5 C749.5,435.000001 854.5,417 905.5,383 C956.5,349 1002,328 1083,349 C1164,370 1223,479.000004 1244.5,376.5 C1266,273.999996 1239.5,531 1239.5,531 L1108,565.5 L956.5,573.5 L0,549.500001 L0,368.499999 Z" id="wave-2"></path>
+                </g>
+              </g>
             </g>
-        </g>
-    </g>
-</svg>
+          </svg>
+        </div>
+      </section>
 
-    </div>
-</section>
-  <div class = "second-section">
-    <div class = "row">
-      <div class = "col-xs-4">
-        <h3 class = "tuition"><span class="Count">45
-  </span>%</h3>
-        <h6 class = "number-label">Increase in College Tuition this Decade</h6>
-      </div>
-      <div class = "col-xs-4">
-        <h3 class = "loan"><span class="Count">74
-  </span>%</h3>
-        <h6 class = "number-label">Increase in Student Loan Size</h6>
-      </div>
-      <div class = "col-xs-4">
-        <h3 class = "graduating"><span class="Count">70
-  </span>%</h3>
-        <h6 class = "number-label">Students Graduating in 2016 Took Out a Student Loan</h6>
+      <section class="hero second">
+        <div class="graph-lines">
+          <?xml version="1.0" encoding="utf-8"?>
+          <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+          <svg   preserveAspectRatio="none" viewBox="0 0 1200 290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <linearGradient x1="50%" y1="98.3328202%" x2="50%" y2="45.1390748%" id="linearGradient-2">
+                <stop stop-color="#FFFFFF" stop-opacity="0" offset="0%"></stop>
+                <stop stop-color="#1417EF" stop-opacity="0.0972316576" offset="100%"></stop>
+              </linearGradient>
+            </defs>
+            <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Pique---Educator" transform="translate(0.000000, -1013.000000)" fill="url(#linearGradient-2)">
+                <g id="The-Harsh-Facts2" transform="translate(0.000000, 762.000000)">
+                  <path class="path one" d="M-8.5,452.5 C-8.5,452.5 26,360.499993 134.5,348.499993 C243,336.499993 336.5,417 394,425.5 C451.5,434 520,395.475945 560,383.487969 C600,371.499993 708.5,363.499993 785,383.487969 C861.5,403.475945 950.5,411.499993 1015,383.487969 C1079.5,355.475945 1168,309.500002 1213.5,230 C1259,150.499999 1239,547.500001 1239,547.500001 L-21,547.5 L-8.5,452.5 Z" id="wave1"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <div class="second-section">
+        <div class="row">
+          <div class="col-xs-4">
+            <h3 class="tuition"><span class="Count">45 </span>%</h3>
+            <h6 class="number-label">Increase in College Tuition this Decade</h6>
+          </div>
+          <div class="col-xs-4">
+            <h3 class="loan"><span class="Count">74 </span>%</h3>
+            <h6 class="number-label">Increase in Student Loan Size</h6>
+          </div>
+          <div class="col-xs-4">
+            <h3 class="graduating"><span class="Count">70 </span>%</h3>
+            <h6 class="number-label">Students Graduating in 2016 Took Out a Student Loan</h6>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-<script>
-$(window).load(function() {
-    $('.Countl').each(function() {
-        var $this = $(this);
-        jQuery({Counter: 0}).animate({Counter: $this.text()}, {
-            duration: 1500,
-            easing: 'swing',
-            step: function() {
-                var num = Math.ceil(this.Counter).toString();
-                if(Number(num) > 999){
-                    while (/(\d+)(\d{3})/.test(num)) {
-                        num = num.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
-                    }
-                }
-                $this.text(num);
-            }
-        });
-    });
-});
-$(window).scroll(function(event) {
 
-  if($(".hero").offset().top < $(window).scrollTop() + $(window).outerHeight()) {
-      setTimeout(function () {
-        $(".path.one").attr("class", "path one grown");
-        $(".path.two").attr("class", "path two grown");
-        //
-    }, 500);
-  }
-
-  if($(".second-section").offset().top == ($(window).scrollTop() + window.innerHeight)) {
-    $('.Count').each(function() {
-        var $this = $(this);
-        jQuery({Counter: 0}).animate({Counter: $this.text()}, {
-            duration: 1500,
-            easing: 'swing',
-            step: function() {
-                var num = Math.ceil(this.Counter).toString();
-                if(Number(num) > 999){
-                    while (/(\d+)(\d{3})/.test(num)) {
-                        num = num.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
-                    }
-                }
-                $this.text(num);
-            }
-        });
-    });
-  }
-});
-
-
-
-</script>
-
+  <div class="blue-bar">
+    <h3 class="section-header long">The Process is Broken</h3>
+    <h4 class="bolded"> Everyone loses in the current scholarship application process.</h4>
+    <div class="blue-bar-text">Students spend countless hours looking and applying to scholarships.<br>Counselors and teachers spend hours writing new recommendations for each scholarship.<br>Parents spend too much money to send SAT and ACT test scores.</div>
   </div>
 
-<div class = "blue-bar">
-  <h3 class = "section-header long">The Process is Broken</h3>
-
-  <h4 class = "bolded"> Everyone loses in the current scholarship application process.</h4>
-
-  <div class = "blue-bar-text">Students spend countless hours looking and applying to scholarships.<br>Counselors and teachers spend hours writing new recommendations for each scholarship.<br>Parents spend too much money to send SAT and ACT test scores.</div>
-
-</div>
-<script src="scripts/visible.min.js"></script>
-<script>
-  $(window).scroll(function() {
-    if($('#blue1 .screenshot').visible()){
-      setTimeout(function(){
-        $('#blue1 .screenshot').show();
-      $('#blue1 .screenshot').addClass('fadeInLeft animated')
-    },1000)
-    }
-    if($('#first-card').visible()){
-      setTimeout(function(){
-        $('#blue3 .screenshot').show();
-        $('#blue3 .screenshot').addClass('fadeInRight animated')
-      },2000)
-    }
-  });
-</script>
-  <div class = "blue-sections">
-    <div class = "blue-section" id = "blue1">
-
-      <div class = "blue-texts pull-right">
-        <h3 class = "blue-header">One Application. Unlimited Scholarships.</h3>
+  <div class="blue-sections">
+    <div class="blue-section" id="blue1">
+      <div class="blue-texts pull-right">
+        <h3 class="blue-header">One Application. Unlimited Scholarships.</h3>
         <b>High School Seniors,</b> fill out one scholarship application and apply to unlimited scholarships. That means never request a recommendation, official transcript or pay to send our SAT or ACT test scores to a scholarship foundation again. That's the Pique way.
-        <div class = "button-container">
-          <a class = "modal-trigger filled-in" href = "#sign-up" >Sign Up!</a>
-          <a href = "students.html#how-it-works-info" class = "">Learn More</a>
+        <div class="button-container">
+          <a class="modal-trigger filled-in" href="#sign-up" >Sign Up!</a>
+          <a href="students.html#how-it-works-info" class="">Learn More</a>
         </div>
       </div>
-      <img class = "screenshot zero-opacity" src = "images/about/screenshot.jpg">
+      <img class="screenshot zero-opacity" src="images/about/screenshot.jpg">
     </div>
-    <div class = "blue-section" id = "blue3">
-
-      <div class = "blue-texts pull-left">
-        <h3 class = "blue-header">Find Applicants. Review Applications in One Place.</h3>
+    <div class="blue-section" id="blue3">
+      <div class="blue-texts pull-left">
+        <h3 class="blue-header">Find Applicants. Review Applications in One Place.</h3>
         <b>Scholarship Foundations</b> should not have to pay to find qualified students. We bring qualified students to you for free. Review applications, rate applicants, set up interviews, select finalists, and notify winners and their counselors. All within Pique.
-        <div class = "button-container">
-          <a href = "#sign-up" class = "modal-trigger filled-in">Sign Up!</a>
-          <a href = "" class = "">How Does It Work?</a>
+        <div class="button-container">
+          <a href="#sign-up" class="modal-trigger filled-in">Sign Up!</a>
+          <a href="" class="">How Does It Work?</a>
         </div>
       </div>
-      <img class = "screenshot zero-opacity" src = "images/about/foundation-screenshot.jpg">
-    </div>
-
-  </div>
-
-
-<div class = "cards">
-  <div class = "col-sm-6">
-    <div class = "card" id="first-card">
-      <h3 class = "section-header long">Educators</h3>
-      <img class = "icon" src = "images/landing/notepad.png">
-      <h4>One Recommendation For Each Student.<br>Done.</h4>
-      <div class = "card-text">
-        Upload one standard recommendation onto Pique for each student and never write another recommendation for that student again. And do not worry, your students will never be penalized by foundations <b>standard recommendation.</b><br><br><br> That's the Pique Way.
-      </div>
-      <div class = "button-container">
-        <a href = "#sign-up" class = "modal-trigger filled-in">Sign Up!</a>
-        <a href = "educator.html" class = "">Learn More</a>
-      </div>
+      <img class="screenshot zero-opacity" src="images/about/foundation-screenshot.jpg">
     </div>
   </div>
-  <div class = "col-sm-6">
-    <div class = "card" id="second-card">
-      <h3 class = "section-header long">Parents</h3>
-      <img class = "icon" src = "images/landing/credit-card.png">
-      <h4>Pay for One Standardized Test.<br>Done.</h4>
-      <div class = "card-text">
-        The majority of top scholarships, $10,000+, require score reports. <br>
-        That makes sense.
-        <br><br>
-        What does not make sense?<br>
-        <b>You paying a premium of $11.25</b> to the College Board or ACT Foundation to send each score report  to a schoalrship foundation and $31 to have the score report expedited.
-        <br><br>
-        We know, that's loco, especially after paying $51
-        for your child to take the exam. We have a cheaper solution.
-      </div>
-      <div class = "button-container">
 
-        <a href = "" class = "">Learn More</a>
+  <div class="cards">
+    <div class="col-sm-6">
+      <div class="card" id="first-card">
+        <h3 class="section-header long">Educators</h3>
+        <img class="icon" src="images/landing/notepad.png">
+        <h4>One Recommendation For Each Student.<br>Done.</h4>
+        <div class="card-text">
+          Upload one standard recommendation onto Pique for each student and never write another recommendation for that student again. And do not worry, your students will never be penalized by foundations <b>standard recommendation.</b><br><br><br> That's the Pique Way.
+        </div>
+        <div class="button-container">
+          <a href="#sign-up" class="modal-trigger filled-in">Sign Up!</a>
+          <a href="educator.html" class="">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card" id="second-card">
+        <h3 class="section-header long">Parents</h3>
+        <img class="icon" src="images/landing/credit-card.png">
+        <h4>Pay for One Standardized Test.<br>Done.</h4>
+        <div class="card-text">
+          The majority of top scholarships, $10,000+, require score reports. <br>
+          That makes sense.
+          <br><br>
+          What does not make sense?<br>
+          <b>You paying a premium of $11.25</b> to the College Board or ACT Foundation to send each score report  to a schoalrship foundation and $31 to have the score report expedited.
+          <br><br>
+          We know, that's loco, especially after paying $51
+          for your child to take the exam. We have a cheaper solution.
+        </div>
+        <div class="button-container">
+          <a href="" class="">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-$( window ).load(function() {
-  $("#first-card").height($("#second-card").height());
-});
-
-</script>
-
-<div class = "dc-banner" style = "background-image:url('images/about/dc.jpg')">
-  <div class = 'cell'>
-  <h1 class = "">Based in Silicon Valley. Made with DC Love!</h1>
-  <img class = "map" src = "images/about/dc_flag.png">
-  <h2>Pique is a project founded by DCPS Alumni to<br>help simplify the scholarship application process.</h2>
-  <a href = "about.html#team" class= "team">Check out our team!</a>
-</div>
-</div>
-
-
-<footer>
-  <div class = "row footer-links">
-    <div class = "col-sm-3">
-      <a class = "footer-nav-link link-header">Company</a><br>
-      <a href = "about.html#team" class = "footer-nav-link">Team</a><br>
-      <a href = "blog.html" class = "footer-nav-link">Blog</a><br>
-      <a class = "footer-nav-link">Get Involved</a><br>
-    </div>
-    <div class = "col-sm-3">
-        <a class = "footer-nav-link link-header">Educators</a><br>
-        <a href = "educator.html" class = "footer-nav-link">Get Started</a><br>
-        <a href = "educator.html" class = "footer-nav-link">Learn More</a><br>
-    </div>
-    <div class = "col-sm-3">
-      <a class = "footer-nav-link link-header">Scholarship Foundations</a><br>
-      <a href = "about.html" class = "footer-nav-link">About</a><br>
-      <a class = "footer-nav-link">FAQ</a><br>
-      <a class = "footer-nav-link">Become a Partner</a><br>
-    </div>
-    <div class = "col-sm-3">
-      <a class = "footer-nav-link link-header">Support</a><br>
-      <a class = "footer-nav-link">FAQ</a><br>
-
+  <div class="dc-banner" style="background-image:url('images/about/dc.jpg')">
+    <div class='cell'>
+      <h1 class="">Based in Silicon Valley. Made with DC Love!</h1>
+      <img class="map" src="images/about/dc_flag.png">
+      <h2>Pique is a project founded by DCPS Alumni to<br>help simplify the scholarship application process.</h2>
+      <a href="about.html#team" class= "team">Check out our team!</a>
     </div>
   </div>
-  <div class = "subfooter">
-    <div class = "pull-left">
-      <a href = "" class = "social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i>
-</a>
-      <a href = "" class = "social-media"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a href = "" class = "social-media"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-    </div>
-    <div class = "pull-right">
-      Copyright 2016 Pique
-    </div>
-  </div>
-</footer>
-<script>
-$(document).ready(function(){
-  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-  $('.modal-trigger').leanModal({
-    starting_top: '4%', // Starting top style attribute
-      ending_top: '-10%'
-  }
 
-  );
-});
-</script>
-<!-- Modal Structure -->
-<div id="sign-up" class="modal">
-  <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
-  <div class="modal-content">
-    <div class = "welcome"></div>
-    <span class = "small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
-    <form id = "login">
-      <div class = 'row'>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="first_name" placeholder="First Name">
+  <footer>
+    <div class="row footer-links">
+      <div class="col-sm-3">
+        <a class="footer-nav-link link-header">Company</a><br>
+        <a href="about.html#team" class="footer-nav-link">Team</a><br>
+        <a href="blog.html" class="footer-nav-link">Blog</a><br>
+        <a class="footer-nav-link">Get Involved</a><br>
+      </div>
+      <div class="col-sm-3">
+        <a class="footer-nav-link link-header">Educators</a><br>
+        <a href="educator.html" class="footer-nav-link">Get Started</a><br>
+        <a href="educator.html" class="footer-nav-link">Learn More</a><br>
+      </div>
+      <div class="col-sm-3">
+        <a class="footer-nav-link link-header">Scholarship Foundations</a><br>
+        <a href="about.html" class="footer-nav-link">About</a><br>
+        <a class="footer-nav-link">FAQ</a><br>
+        <a class="footer-nav-link">Become a Partner</a><br>
+      </div>
+      <div class="col-sm-3">
+        <a class="footer-nav-link link-header">Support</a><br>
+        <a class="footer-nav-link">FAQ</a><br>
+      </div>
+    </div>
+    <div class="subfooter">
+      <div class="pull-left">
+        <a href="" class="social-media"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        <a href="" class="social-media"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="" class="social-media"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+      </div>
+      <div class="pull-right">Copyright 2016 Pique</div>
+    </div>
+  </footer>
+
+  <div id="sign-up" class="modal">
+    <div class="modal-logo-container center-align">
+      <img class="center-align" src="images/Logo.png">
+    </div>
+    <div class="modal-content">
+      <div class="welcome"></div>
+      <span class="small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
+
+      <form id="login">
+        <div class='row'>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="p-login-first_name" placeholder="First Name">
+            </div>
+          </div>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="p-login-last_name" placeholder="Last Name">
+            </div>
           </div>
         </div>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+        <div class="form-group">
+          <input type="email" class="form-control" id="p-login-email" placeholder="Email">
+        </div>
+        <div class='row'>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="p-login-city" placeholder="City">
+            </div>
+          </div>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="p-login-state" placeholder="State">
+            </div>
           </div>
         </div>
-      </div>
-      <div class="form-group">
-        <input type="email" class="form-control" id="email" placeholder="Email">
-      </div>
-      <div class = 'row'>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="city" placeholder="City">
-          </div>
-        </div>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="state" placeholder="State">
-          </div>
-        </div>
-      </div>
-      <select class="form-control">
+        <select id="p-login-type" class="form-control">
           <option>I am a..</option>
-          <option>Student</option>
-          <option>Scholarshipt Foundation</option>
-          <option>Teacher</option>
-          <option>Counselor</option>
-          <option>Nonprofit</option>
-          <option>Supporter</option>
+          <option value="student">Student</option>
+          <option value="scholarship foundation">Scholarship Foundation</option>
+          <option value="teacher">Teacher</option>
+          <option value="counselor">Counselor</option>
+          <option value="nonprofit">Nonprofit</option>
+          <option value="supporter">Supporter</option>
         </select>
-      <div class = "terms small-grey-text">
-        By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
-      </div>
-      <br>
-      <button type = "submit" class = "submit-button log-in">Log In</button>
-    </form>
-  </div>
-  <span class = "copyright">Pique&nbsp;&#169;</span>
-</div>
-</body>
-
-<script>
-  $('.need-account').on('click',function(e){
-    e.preventDefault();
-    $('.modal-content').toggleClass('create-account');
-    $('.name-form-group').toggleClass('expanded')
-    $('.terms').toggleClass('expanded',100);
-
-  })
-
-
-
-</script>
-<div id="sign-up" class="modal">
-  <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
-  <div class="modal-content">
-    <div class = "welcome"></div>
-    <span class = "small-grey-text">Sign up for our emailing list to receive updates on when we're going live!</span>
-    <form id = "login">
-      <div class = 'row'>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="first_name" placeholder="First Name">
-          </div>
+        <div class="terms small-grey-text">
+          By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
         </div>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="last_name" placeholder="Last Name">
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <input type="email" class="form-control" id="email" placeholder="Email">
-      </div>
-      <div class = 'row'>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="city" placeholder="City">
-          </div>
-        </div>
-        <div class= "col-sm-6">
-          <div class="form-group">
-            <input type="text" class="form-control" id="state" placeholder="State">
-          </div>
-        </div>
-      </div>
-      <select class="form-control">
-          <option>I am a..</option>
-          <option>Student</option>
-          <option>Scholarshipt Foundation</option>
-          <option>Teacher</option>
-          <option>Counselor</option>
-          <option>Nonprofit</option>
-          <option>Supporter</option>
-        </select>
-      <div class = "terms small-grey-text">
-        By signing up, you agree to Pique Basic rules,<br>Terms of service, and Privacy Policy
-      </div>
-      <br>
+        <br>
+        <button id="p-submit" type="submit" class="submit-button log-in">Log In</button>
       </form>
-      <button class = "submit-button log-in modal-trigger"  href = "#share">Sign In</button>
-
-  </div>
-  <span class = "copyright">Pique&nbsp;&#169;</span>
-</div>
-
-<div id="share" class="modal">
-  <div class = "modal-logo-container center-align"><img class = "center-align" src = "images/Logo.png"></div>
-  <div class="modal-content">
-    <div class = "center-align heart"><img src = "images/landing/heart.jpg"></div>
-    <div class = "share-modal-text">
-      Thank for signing up the Pique!<br>
-    Help us spread the word  by sharing Pique with<br>
-     friend family let's end student debt!
     </div>
-    <div class = "social-icons-container">
-      <a href = "" class = "facebook social-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-      <a href = "" class = "twitter social-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-      <a href = "" class = "google social-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-    </div>
-
+    <span class="copyright">Pique&nbsp;&#169;</span>
   </div>
-</div>
+
+  <div id="share" class="modal">
+    <div class="modal-logo-container center-align"><img class="center-align" src="images/Logo.png"></div>
+    <div class="modal-content">
+      <div class="center-align heart"><img src="images/landing/heart.jpg"></div>
+      <div class="share-modal-text">
+        Thank for signing up the Pique!<br>
+      Help us spread the word  by sharing Pique with<br>
+       friend family let's end student debt!
+      </div>
+      <div class="social-icons-container">
+        <a href="" class="facebook social-icon"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="" class="twitter social-icon"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="" class="google social-icon"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/visible.min.js"></script>
+  <script src="scripts/home.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+  <script src="scripts/firebase.js"></script>
 </body>
