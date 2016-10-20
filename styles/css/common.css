@@ -4931,7 +4931,7 @@ form#student .row {
   width: 80%;
   margin: 0 auto;
   margin-top: 50px !important;
-  font-weight: 400 !important;
+  font-weight: 300;
   font-family: 'Avenir Next';
   letter-spacing: 1px;
   font-size: 28px;
