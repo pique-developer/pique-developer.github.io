@@ -13,6 +13,12 @@
   clear: both;
 }
 
+#landing .about-header {
+  background-image: url('../../images/01-home.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 #sign-up.modal.open #login.login-form input {
   padding-left: 15px;
   border-radius: 5px;
