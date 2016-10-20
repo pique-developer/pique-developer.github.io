@@ -11,137 +11,133 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <script src="https://use.fontawesome.com/c478d977aa.js"></script>
 </head>
-<body class="about no-fixed-header" id="provider">
+<body class = "about no-fixed-header" id = "educator">
+
   <div class="clearfixx">
     <div class="logo-container pull-left">
       <a href ="/" alt="Home" id="logo"><img src="images/Logo.png"></a>
     </div>
-
     <div class="header-right pull-right">
-
       <div class="nav">
-        <a class="nav-link " href="about.html">About Us</a>
-        <a class="nav-link " href="educator.html">Educators</a>
-        <a class="nav-link selected" href="provider.html">Scholarship Providers</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link selected" href="educators.html">Educators</a>
+        <a class="nav-link" href="providers.html">Scholarship Providers</a>
         <a class="nav-link" href="students.html">Students</a>
       </div>
-
        <a class="waves-effect waves-light btn modal-trigger" id="login-button" href="#sign-up">Sign Up</a>
-
     </div>
   </div>
-  <div class="gradient-header">
 
-    <div class="black-fade"></div>
-    <div class="header-text">
-
-      <h1>Manage the Entire Scholarship Application <br>
-          Process in One Platform. For Free. </h1>
-      <h6>One platform to help at every stage of the application process from<br>
-      finding qualified students to reviewing applications: </h6>
-      <ul>
-      <li>Find Qualified Applicants </li>
-      <li>Review Applications </li>
-      <li>Setup Interviews with Applicants	</li>
-      <li>Notify Finalists </li>
-      <li>Notify Winners and their Counselors </li>
-      </ul>
-      <a class="waves-effect waves-light btn modal-trigger" id="filled-button" href="#sign-up">Join for Free</a>
+  <div class = "gradient-header">
+    <div class = "black-fade"></div>
+    <div class = "">
+      <h1>Never Write More than One Recommendation for a Student Again.</h1>
+      <h6>Between lesson plans, reviewing last night's homework assignments, running an extra-curricular activity,
+and writing college recommendations there is simply not enough time to write a recommendation to each
+scholarship your students apply to. We get it.
+</h6>
     </div>
-</div>
 
+    <div class = "banner-form">
+      <form id = "educator">
+        <select id= "career" name = "career">
+          <option value = "0">Educator</option>
+          <option value = "1">Community Leader</option>
+        </select>
+        <br><br><br>
+        <div class = "select-slider-container">
 
-<div class="image-slider-section">
-  <h3 class="section-header long">The Scholarship Application Process Just Got Easier.</h3>
-  <div class="image-slider">
-    <div class="col-sm-6">
-      <div class="product-window">
-        <div class="product-image one on" id="one">
-          <img src="images/provider/example.jpg">
+          <div class= "option selected" id = "educator">I'm a Teacher</div>
+          <div class = "option" id = "leader">I'm a Counselor</div>
         </div>
-        <div class="product-image two" id="two">
-          <img src="images/provider/example.jpg">
+
+        <div class = 'row name-form-group'>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="first_name" placeholder="First Name">
+            </div>
+          </div>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+            </div>
+          </div>
         </div>
-        <div class="product-image three" id="three">
-          <img src="images/provider/example.jpg">
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Email">
         </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="school" placeholder="Name of School">
+        </div>
+        <div class = 'row location-form-group'>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="city" placeholder="City">
+            </div>
+          </div>
+          <div class= "col-sm-6">
+            <div class="form-group">
+              <input type="text" class="form-control" id="state" placeholder="State">
+            </div>
+          </div>
+        </div>
+        <button type = "submit" class = "submit-button log-in"></button>
+
+      </form>
+    </div>
+  </div>
+
+  <div class = "works" id = "how-it-works-info">
+    <h3 class = "section-header long">How It Works</h3>
+    <div class = "row">
+      <div class = "col-sm-4">
+        <div class = "alt-icon" id = "one"><img src = "images/educator/message.png"></div>
+        <h5>Receive a Request from a Student</h5>
+        <h6>Receive a notification via email when your
+            students request a recommendation.</h6>
+      </div>
+      <div class = "col-sm-4">
+        <div class = "alt-icon" id = "two"><img src = "images/landing/notepad.png"></div>
+        <h5>Upload Your Recommendation</h5>
+        <h6>Create a Pique account and then upload your
+recommendation onto a student's profile. </h6>
+      </div>
+      <div class = "col-sm-4">
+        <div class = "alt-icon"id = "three"><img  src = "images/educator/medal.png"></div>
+        <h5>Your Students Are Notified and You're Done!</h5>
+        <h6>Your recommendation is saved and can now be reused. That means no last minute messages from students asking for recommendations.</h6>
       </div>
     </div>
 
-    <div class="col-sm-6 right-slider">
-      <div class="clearfix">
-        <div class="step-section">
-          <div class="col-sm-1"><div class="number" id="one">
-            1
-          </div></div>
+  </div>
 
-          <div class="col-sm-10"><div class="step header-on" id="one">
-            <h3>Create an Account and Post Your Scholarship</h3>
-            <h5> High School Seniors fill out one scholarhip application and apply to unlimited scholarships.
-          </div></div>
+
+
+    </div>
+
+    <div class = "overlap-divs" id = "why-educators-cant-wait">
+      <h3 class = "section-header long">Why Educators Cannot Wait to Use Pique<h3>
+        <div class = "overlap-block overlapped">
+          <img src = "images/educator/clock.png">
+          <h2>Save Time Writing Recommendations</h2>
+          <div class = "overlap-text">
+            Our thoughts are simple; help save educators time in the scholarship application process
+and they will in turn have more time for sleep, more time to prepare tomorrow's lesson
+plan, more time to strategize ways to more effectively help students.
+          </div>
         </div>
-      </div>
-      <div class="clearfix">
-        <div class="step-section">
-          <div class="col-sm-1"><div class="number" id="two">
-            2
-          </div></div>
+        <div class = "overlap-block overlap">
+          <img src = "images/educator/checked.png">
+          <h2>Students Are Never Penalized. That's a Pique Promise.</h2>
+          <div class = "overlap-text">
+            Write a standard recommendation for your students with the peace of mind of knowing they
+will not be penalized for having a 'generic recommendation'. We educate scholarship foundations on limited time you have as an educator. Foundations that host their scholarships on Pique therefore agree to accept generic recommendations, no penalites.
 
-          <div class="col-sm-10"><div class="step" id="two">
-            <h3>Review Applications In-App</h3>
-            <h5> High School Seniors fill out one scholarhip application and apply to unlimited scholarships.
-          </div></div>
+          </div>
         </div>
-      </div>
-      <div class="clearfix">
-        <div class="step-section">
-          <div class="col-sm-1"><div class="number" id="three">
-            3
-          </div></div>
-
-          <div class="col-sm-10"><div class="step" id="three">
-            <h3>Select and Notify Winner In App</h3>
-            <h5> High School Seniors fill out one scholarhip application and apply to unlimited scholarships.
-          </div></div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 
 
-<div class="easier-section">
-  <h3 class="section-header long">Simpler. Easier. Cheaper. Better.</h3>
-  <div class="col-sm-6">
-    <div class="quarter">
-      <img src="images/provider/clock.jpg">
-      <h3>Save Time</h3>
-      <h5>Never waste time looking for qualified students. Pique partners with schools, school districts, and nonprofits in the college access space to bring qualified students to you.</h5>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="quarter">
-      <img src="images/provider/credit-card.jpg">
-      <h3>Save Money</h3>
-      <h5>Never pay a web developer or web hosting platform again. Create an account and post your scholarship in just <br><b>two minutes.</b></h5>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="quarter">
-      <img src="images/provider/chart.jpg">
-      <h3>Increase Efficiency</h3>
-      <h5>Never deal with post marked packages, receive incomplete applications or having to review applications through emails again.
-        </h5>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="quarter">
-      <img src="images/provider/grad.jpg">
-      <h3>Help Students</h3>
-      <h5>The scholarship application process is exhaustive. Join Pique and help students save time applying to scholarships so they can spend more time getting into the college of their dreams. </h5>
-    </div>
-  </div>
-</div>
 
   <footer>
     <div class="row footer-links">
@@ -267,8 +263,7 @@
   </div>
 
   <script src="scripts/visible.min.js"></script>
-  <script src="scripts/provider.js"></script>
+  <script src="scripts/educators.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
   <script src="scripts/firebase.js"></script>
 </body>
-
