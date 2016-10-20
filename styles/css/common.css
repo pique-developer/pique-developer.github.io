@@ -4839,52 +4839,7 @@ form#student .row {
   font-weight: 100;
   font-size: 18px;
 }
-.blue-sections {
-  color: white !important ;
-  background: #44008D;
-  background: -moz-linear-gradient(-45deg, #44008d 0%, #125aac 100%);
-  background: -webkit-linear-gradient(-45deg, #44008d 0%, #125aac 100%);
-  background: linear-gradient(-45deg, #44008d 0%, #125aac 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#44008D', endColorstr='#125AAC', GradientType=1);
-  font-family: 'Avenir Next';
-}
-.blue-sections .blue-section {
-  padding: 0 50px;
-  padding-top: 60px;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100%;
-  -webkit-mask-position: bottom;
-}
-.blue-sections h3 {
-  font-size: 24px;
-}
-.blue-sections .screenshot {
-  width: 50%;
-}
-.blue-sections .blue-texts {
-  width: 70%;
-  font-size: 16px;
-  line-height: 27px;
-  max-width: 690px;
-  color: white;
-  margin-bottom: 40px;
-}
-.blue-sections .blue-texts .blue-header {
-  color: white;
-}
-.blue-sections .blue-texts .button-container a {
-  display: inline-block;
-  width: 180px;
-  padding: 7px;
-  border-radius: 40px;
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 2px solid white;
-  margin-top: 25px;
-  transition: 0.2s all ease-in;
-}
+
 .blue-sections .blue-texts .button-container a:hover {
   background-color: rgba(255, 255, 255, 0);
 }

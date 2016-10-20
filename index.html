@@ -5,11 +5,11 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="styles/css/materialize.css">
   <link rel="stylesheet" href="styles/css/common.css">
-  <link rel="stylesheet" href="styles/css/home.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
   <script src="https://use.fontawesome.com/c478d977aa.js"></script>
+  <link rel="stylesheet" href="styles/css/home.css">
 </head>
 <body class="about" id="landing">
 
@@ -113,11 +113,15 @@
     <div class="blue-bar-text">Students spend countless hours looking and applying to scholarships.<br>Counselors and teachers spend hours writing new recommendations for each scholarship.<br>Parents spend too much money to send SAT and ACT test scores.</div>
   </div>
 
-  <div class="blue-sections">
+  <div id="p-scholarships" class="blue-sections">
     <div class="blue-section" id="blue1">
       <div class="blue-texts pull-right">
-        <h3 class="blue-header">One Application. Unlimited Scholarships.</h3>
-        <b>High School Seniors,</b> fill out one scholarship application and apply to unlimited scholarships. That means never request a recommendation, official transcript or pay to send our SAT or ACT test scores to a scholarship foundation again. That's the Pique way.
+        <h3>One Application. Unlimited Scholarships.</h3>
+        <div class="p-scholarships">
+          <div class="p-line"><span class="p-lead">High School Seniors, </span>fill out one scholarship application and apply to unlimited scholarships.</div>
+          <div class="p-line">That means never request a recommendation, official transcript or pay to send your</div>
+          <div class="p-line">SAT or ACT test scores to a scholarship foundation again. That's the Pique way.</div>
+        </div>
         <div class="button-container">
           <a class="modal-trigger filled-in" href="#sign-up" >Sign Up!</a>
           <a href="students.html#how-it-works-info" class="">Learn More</a>
@@ -127,8 +131,12 @@
     </div>
     <div class="blue-section" id="blue3">
       <div class="blue-texts pull-left">
-        <h3 class="blue-header">Find Applicants. Review Applications in One Place.</h3>
-        <b>Scholarship Foundations</b> should not have to pay to find qualified students. We bring qualified students to you for free. Review applications, rate applicants, set up interviews, select finalists, and notify winners and their counselors. All within Pique.
+        <h3>Find Applicants. Review Applications in One Place.</h3>
+        <div class="p-scholarships">
+          <div class="p-line"><span class="p-lead">Scholarship Foundations </span>should not have to pay to find qualified students.</div>
+          <div class="p-line">We bring qualified students to you for free. Review applications, rate applicants,</div>
+          <div class="p-line">set up interviews, select finalists, and notify winners and their counselors. All within Pique.</div>
+        </div>
         <div class="button-container">
           <a href="#sign-up" class="modal-trigger filled-in">Sign Up!</a>
           <a href="" class="">How Does It Work?</a>
