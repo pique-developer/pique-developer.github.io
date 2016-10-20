@@ -3711,13 +3711,6 @@ body#applicant header .container {
 .stuck-footer button {
   background-color: #4abced;
 }
-body.about .clearfixx {
-  position: fixed;
-  width: 100%;
-  padding: 10px 40px;
-  z-index: 40;
-  top: 10px;
-}
 body.about .about-banner {
   width: 100%;
   position: absolute;
@@ -3803,10 +3796,6 @@ body.about .about-header:after {
 body.about .about-header.fixed-header:after {
   opacity: 1;
   transition: 0.5s opacity ease-in;
-}
-body.about .black-header {
-  background-color: #132663;
-  top: 0px;
 }
 body.about .light-blue-container {
   text-align: center;
