@@ -33,21 +33,21 @@
 }
 
 .p-hero {
-  background-image: url('../../images/01-home.png');
+  background-image: url('../../images/002-hero.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   height: 600px;
   width: 100%;
   transition: 0.4s all ease-in;
-  -webkit-mask-image: url(../../images/about/mask.png);
+  -webkit-mask-image: url(../../images/c-mask.png);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100%;
   -webkit-mask-position: bottom;
 }
 
 .p-hero._about {
-  background-image: url('../../images/about/about-banner.jpg');
+  background-image: url('../../images/101-hero.jpg');
   height: 400px;
 }
 
@@ -262,7 +262,7 @@
 }
 
 .p-dc {
-  background-image:url('../../images/about/dc.jpg')
+  background-image: url('../../images/006-dc.jpg');
 }
 
 .p-dc .cell h2 {
@@ -580,4 +580,23 @@
   margin: 0 auto;
   top: -5px;
   width: 100%;
+}
+
+#team .no-padding:first-child .square {
+  background-image: url('../../images/102-brian-min.png');
+}
+#team .no-padding:nth-child(2) .square {
+  background-image: url('../../images/103-kyle-min.png');
+}
+#team .no-padding:nth-child(3) .square {
+  background-image: url('../../images/104-adam-min.png');
+}
+#team .no-padding:nth-child(4) .square {
+  background-image: url('../../images/105-nnamdi-min.png');
+}
+#team .no-padding:nth-child(5) .square {
+  background-image: url('../../images/106-kevin-min.png');
+}
+#team .no-padding:nth-child(6) .square {
+  background-image: url('../../images/107-karina-min.png');
 }
