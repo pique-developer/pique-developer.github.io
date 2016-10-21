@@ -43,9 +43,8 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 });
 
 $(window).scroll(function(){
-
   var scrollpos=$(window).scrollTop();
-  console.log(scrollpos);
+
   if(scrollpos >1587 && scrollpos <2533){
     $('#grad').addClass('fixed-grad')
     $('#grad').removeClass('end-grad')
