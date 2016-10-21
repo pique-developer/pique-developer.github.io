@@ -129,6 +129,7 @@
   }
 }
 
+.p-backdrop:after,
 .p-hero:after {
   width: 100%;
   height: 100%;
@@ -138,6 +139,8 @@
   opacity: 0;
   transition: 0.5s opacity ease-in;
 }
+
+.p-backdrop.p-fixed:after,
 .p-hero.p-fixed:after {
   opacity: 1;
   transition: 0.5s opacity ease-in;

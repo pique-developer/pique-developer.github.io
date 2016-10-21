@@ -120,7 +120,7 @@ const about = {
       $('.p-hero h1').css('opacity', 1 - $windowScrollTop / 150)
 
       if ($windowScrollTop > 139) {
-        $('.p-hero .black-fade').css('opacity', ($windowScrollTop - 139) * 0.0105)
+        $('.p-hero .p-fade').css('opacity', ($windowScrollTop - 139) * 0.0105)
       } else {
         $('.p-hero .black').removeClass('p-fixed')
         $('.p-hero .p-fade').css('opacity',  0)
