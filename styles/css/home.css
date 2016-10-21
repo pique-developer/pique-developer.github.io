@@ -13,7 +13,7 @@
   clear: both;
 }
 
-.about .clearfixx {
+.p-header {
   position: fixed;
   width: 100%;
   padding: 10px 40px;
@@ -22,16 +22,169 @@
   transition: all 0.2s ease;
 }
 
-.about .black-header {
+.p-header._educators {
+  position: absolute;
+}
+
+.p-fill {
   background-color: #132663;
   top: 0px;
   transition: all 0.4s ease;
 }
 
-#landing .about-header {
+.p-hero {
   background-image: url('../../images/01-home.png');
   background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center center;
+  height: 600px;
+  width: 100%;
+  transition: 0.4s all ease-in;
+  -webkit-mask-image: url(../../images/about/mask.png);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  -webkit-mask-position: bottom;
+}
+
+.p-hero._about {
+  background-image: url('../../images/about/about-banner.jpg');
+  height: 400px;
+}
+
+.p-hero h1 {
+  font-size: 42px;
+  text-shadow: 0px 1px 5px #949292;
+}
+
+.p-hero._about h1 {
+  top: 180px;
+}
+
+.p-hero button#sign-up-free {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  top: 383px;
+  display: inline-block;
+  right: 0;
+  border: 2px solid white;
+  background: transparent;
+  border-radius: 40px;
+  padding: 10px 26px;
+  color: white;
+  letter-spacing: 1px;
+  width: 220px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 100;
+  transition: 0.2s background-color ease-in;
+}
+.p-hero button#sign-up-free:hover {
+  background-color: white;
+  color: #0F9A7B;
+}
+.p-hero h6 {
+  position: absolute;
+  top: 252px;
+  color: white;
+  letter-spacing: 1px;
+  width: 54%;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 200;
+  margin: 0 auto;
+  left: 0;
+  line-height: 26px;
+  right: 0;
+}
+.p-fade {
+  width: 100%;
+  height: 100%;
+  background-color: #132663;
+  opacity: 0;
+}
+
+.p-hero h1 {
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Avenir Next', sans-serif;
+  color: white;
+  width: 75%;
+  margin: 0 auto;
+  position: absolute;
+  top: 252px;
+  left: 0;
+  font-weight: 400;
+  right: 0;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 991px) {
+  .about .p-hero h1 {
+    width: 100%;
+  }
+}
+
+.p-hero:after {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  content: '';
+  background: black;
+  opacity: 0;
+  transition: 0.5s opacity ease-in;
+}
+.p-hero.p-fixed:after {
+  opacity: 1;
+  transition: 0.5s opacity ease-in;
+}
+
+#landing .section-header {
+  margin-bottom: 30px;
+  margin-top: -10px;
+}
+#landing .university-partners {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+#landing .hard-facts {
+  text-align: center;
+}
+#landing .hard-facts .loaned {
+  color: #E1D113;
+  font-weight: 800;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 70px;
+  text-shadow: 5px 2px 12px rgba(225, 209, 19, 0.33);
+}
+#landing .hard-facts .second-section {
+  position: relative;
+  top: 159px;
+  margin-bottom: 180px;
+}
+#landing .hard-facts .second-section h3 {
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+}
+#landing .hard-facts .second-section .graduating {
+  color: #2BDBB4;
+}
+#landing .hard-facts .second-section .loan {
+  color: #26E98F;
+}
+#landing .hard-facts .second-section .tuition {
+  color: #51BBF1;
+}
+#landing .hard-facts .number-label {
+  color: #B2BCD3;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 15px;
+}
+#landing .blue1 {
+  background-color: #4874ec;
+  margin-top: 50px;
 }
 
 #sign-up.modal.open #login.login-form input {
@@ -353,3 +506,74 @@
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     position: absolute;
     bottom: 0; }
+
+.p-backdrop {
+  background: #215edd;
+  background: -moz-linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  background: -webkit-linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  background: linear-gradient(45deg, #215edd 0%, #4abced 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#215edd', endColorstr='#4abced', GradientType=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  background-position: center center;
+  margin-bottom: 42px;
+  height: 729px;
+  width: 100%;
+  position: relative;
+}
+
+.p-backdrop h1 {
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Avenir Next', sans-serif;
+  color: white;
+  width: 75%;
+  margin: 0 auto;
+  position: absolute;
+  top: 200px;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .p-backdrop h1 {
+    width: 100%;
+  }
+}
+
+.p-backdrop h6 {
+  position: absolute;
+  top: 287px;
+  color: white;
+  width: 54%;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 100;
+  margin: 0 auto;
+  left: 0;
+  line-height: 26px;
+  right: 0;
+  letter-spacing: 1px;
+}
+
+.row._students {
+  margin: 0;
+}
+
+.select-slider-container._students {
+  display: block;
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: auto;
+}
+
+.banner-form .select-slider-container {
+  display: inline-block;
+  position: absolute;
+  border-radius: 25px;
+  margin: 0 auto;
+  top: -5px;
+  width: 100%;
+}
