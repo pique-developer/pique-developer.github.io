@@ -105,7 +105,6 @@
 }
 
 .p-hero h1 {
-  font-size: 30px;
   text-align: center;
   font-family: 'Avenir Next', sans-serif;
   color: white;
@@ -118,6 +117,11 @@
   right: 0;
   letter-spacing: 2px;
 }
+
+.p-hero._about h1 {
+  font-size: 30px;
+}
+
 
 @media screen and (max-width: 991px) {
   .about .p-hero h1 {
