@@ -204,13 +204,13 @@ const students = {
       const animateLeftClass = 'animated bounceInLeft'
       const animateRightClass = 'animated bounceInRight'
 
-      if ($windowScrollTop > 1587 && $windowScrollTop < 2533) {
+      if ($windowScrollTop > 1647 && $windowScrollTop < 2808) {
         $('#grad').addClass('fixed-grad')
         $('#grad').removeClass('end-grad')
       } else {
         $('#grad').removeClass('fixed-grad')
       }
-      if ($windowScrollTop > 2533) {
+      if ($windowScrollTop > 2808) {
         $('#grad').addClass('end-grad')
       }
       if ($windowScrollTop > 1122) {

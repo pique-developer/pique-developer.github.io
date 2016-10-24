@@ -4444,12 +4444,12 @@ body#about-us .row,
 }
 .pique-difference #grad.fixed-grad {
   position: fixed;
-  top: 135px;
+  top: 150px;
   z-index: 1;
 }
 .pique-difference #grad.end-grad {
   position: absolute;
-  bottom: 285px;
+  bottom: 115px;
 }
 .pique-difference .section-header {
   color: white !important;
