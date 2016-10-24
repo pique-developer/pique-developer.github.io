@@ -81,4 +81,41 @@ const signUp = {
   }
 }
 
+const educatorsSignUp = {
+  init() {
+    if ($('#educators').length) {
+      educatorsSignUp.onSubmit()
+    }
+  },
+  onSubmit() {
+    $('#e-submit').on('click', e => {
+      e.preventDefault()
+      const formData = {
+        firstName: $('#e-first_name').val(),
+        lastName: $('#e-last_name').val(),
+        email: $('#e-email').val(),
+        city: $('#e-city').val(),
+        state: $('#e-state').val(),
+        school: $('#e-school').val(),
+      }
+
+      if (
+        !!formData.firstName
+        && !!formData.lastName
+        && !!formData.email
+        && !!formData.city
+        && !!formData.state
+        && !!formData.school
+      ) {
+        firebase.database().ref().push(formData)
+        $('#educator').html($('#e-share'))
+        $('#e-share').css('display', 'block')
+      } else {
+        $('.p-notify').text('All fields are required')
+      }
+    })
+  }
+}
+
 signUp.init()
+educatorsSignUp.init()

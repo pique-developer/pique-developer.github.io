@@ -603,3 +603,59 @@
 #team .no-padding:nth-child(6) .square {
   background-image: url('../../images/107-karina-min.png');
 }
+
+#e-share {
+  padding-top: 80px;
+  display: none;
+}
+
+#e-share .social-icons-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.e-confirm {
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #3162C6;
+  line-height: 24px;
+}
+
+.e-confirm img {
+  margin-bottom: 20px;
+}
+
+#e-share .social-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+  padding-top: 12px;
+  margin: 0 25px;
+}
+
+#e-share .facebook.social-icon {
+  background-color: #5576b5;
+}
+#e-share .twitter.social-icon {
+  background-color: #59adeb;
+}
+#e-share .google.social-icon {
+  background-color: #d7543a;
+}
+
+.e-footer {
+  position: relative;
+  text-align: center;
+}
+
+.e-footer .p-notify {
+  margin-top: 0px;
+  display: block;
+  font-size: 12px;
+  height: 3px;
+}
