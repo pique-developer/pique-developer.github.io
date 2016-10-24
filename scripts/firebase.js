@@ -81,13 +81,15 @@ const signUp = {
   }
 }
 
-const educatorsSignUp = {
+const inlineSignUp = {
   init() {
     if ($('#educators').length) {
-      educatorsSignUp.onSubmit()
+      inlineSignUp.onSubmit($('#educator'))
+    } else if ($('#students').length) {
+      inlineSignUp.onSubmit($('#student'))
     }
   },
-  onSubmit() {
+  onSubmit($container) {
     $('#e-submit').on('click', e => {
       e.preventDefault()
       const formData = {
@@ -108,7 +110,7 @@ const educatorsSignUp = {
         && !!formData.school
       ) {
         firebase.database().ref().push(formData)
-        $('#educator').html($('#e-share'))
+        $container.html($('#e-share'))
         $('#e-share').css('display', 'block')
       } else {
         $('.p-notify').text('All fields are required')
@@ -118,4 +120,4 @@ const educatorsSignUp = {
 }
 
 signUp.init()
-educatorsSignUp.init()
+inlineSignUp.init()
