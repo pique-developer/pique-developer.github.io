@@ -4828,9 +4828,10 @@ body#about-us .row,
   font-size: 18px;
   font-weight: 300;
 }
-#provider .gradient-header .header-text li:before {
-  content: url('../../images/provider/check.png');
+#provider .gradient-header .header-text li .check {
+  display: inline-block;
   padding-right: 14px;
+  min-width: 37px;
 }
 #provider .gradient-header #filled-button {
   background-color: white;
