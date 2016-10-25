@@ -659,3 +659,119 @@
   font-size: 12px;
   height: 3px;
 }
+
+li {
+  list-style: none;
+}
+
+.p-providers-hero {
+  position: relative;
+  padding-top: 150px;
+  width: 100%;
+  font-family: 'Avenir Next';
+}
+
+.p-checklist {
+  color: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1170px) {
+  .p-checklist {
+    text-align: left;
+    margin-left: 20px;
+  }
+}
+
+.p-checklist .p-h1 {
+  font-size: 26.5px;
+  line-height: 38px;
+  text-align: left;
+}
+
+.p-checklist .p-h6 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.p-checklist .p-subtitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.p-checklist ul {
+  padding-left: 0;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 1170px) {
+  .p-checklist ul {
+    margin-bottom: 80px;
+  }
+}
+
+.p-checklist .check {
+  display: inline-block;
+  width: 20px;
+  margin-right: 5px;
+  height: auto;
+}
+
+.p-bulletpoint {
+  font-size: 16px;
+  font-weight: 200;
+  text-align: left;
+}
+
+.p-tablet-screens {
+  display: none;
+}
+
+@media (min-width: 1170px) {
+  .p-tablet-screens {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 150px;
+  }
+}
+
+.p-provider-hero-btn {
+  text-align: center;
+}
+
+#students .banner-form {
+  box-shadow: 0px 8px 40px 0px rgba(0,0,0,0.15);
+}
+
+#provider .gradient-header {
+  height: 610px;
+}
+
+@media (min-width: 1170px) {
+  #provider .gradient-header {
+    height: 630px;
+  }
+}
+
+.p-chevron {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  left: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (min-width: 1170px) {
+  .p-chevron {
+    bottom: 20px;
+  }
+}
