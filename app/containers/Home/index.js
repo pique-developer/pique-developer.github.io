@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Header from 'components/Header'
+import Hero from './Hero'
 import DebtCounter from './DebtCounter'
 import Stats from './Stats'
 import Waves from './Waves'
+import EducatorsCard from './EducatorsCard'
 import DCBanner from './DCBanner'
 import Footer from 'components/Footer'
-import hero from './002-hero.png'
-import mask from './c-mask.png'
 import css from './style.css'
 
 export class Home extends Component {
@@ -28,17 +28,11 @@ export class Home extends Component {
     return (
       <div>
         <Header />
-        <div className={css.hero} style={{
-          backgroundImage: `url(${hero}`,
-          WebkitMaskImage: `url(${mask}`,
-        }}>
-          <div className={css.fade} />
-          <h1 className={css.h1} />
-          <button className={css.btn}>Sign Up for Free!</button>
-        </div>
+        <Hero />
         <DebtCounter />
         <Waves rise={this.state.rise}/>
         <Stats />
+        <EducatorsCard />
         <DCBanner />
         <Footer />
       </div>
