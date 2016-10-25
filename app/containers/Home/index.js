@@ -3,6 +3,7 @@ import Header from 'components/Header'
 import DebtCounter from './DebtCounter'
 import Stats from './Stats'
 import Waves from './Waves'
+import Footer from 'components/Footer'
 import hero from './002-hero.png'
 import mask from './c-mask.png'
 import css from './style.css'
@@ -37,6 +38,7 @@ export class Home extends Component {
         <DebtCounter />
         <Waves rise={this.state.rise}/>
         <Stats />
+        <Footer />
       </div>
     )
   }
