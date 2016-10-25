@@ -755,12 +755,19 @@ li {
 
 @media (min-width: 1360px) {
   .p-tablet-screens {
-    top: 180px;
+    top: 200px;
+    right: 138px;
   }
 }
 
 .p-tablet-img {
   width: 120%;
+}
+
+@media (min-width: 1360px) {
+  .p-tablet-img {
+    width: 130%;
+  }
 }
 
 .p-provider-hero-btn {
