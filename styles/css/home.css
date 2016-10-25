@@ -674,14 +674,16 @@ li {
 
 .p-providers-hero {
   position: relative;
-  padding-top: 150px;
+  padding-top: 210px;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   font-family: 'Avenir Next';
 }
 
 .p-checklist {
   color: #fff;
-  max-width: 600px;
+  max-width: 630px;
   margin: 0 auto;
   text-align: center;
   padding-left: 15px;
@@ -696,7 +698,7 @@ li {
 }
 
 .p-checklist .p-h1 {
-  font-size: 26.5px;
+  font-size: 30px;
   line-height: 38px;
   text-align: left;
 }
@@ -709,7 +711,7 @@ li {
 
 .p-checklist .p-subtitle {
   display: block;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 200;
 }
 
@@ -733,7 +735,7 @@ li {
 }
 
 .p-bulletpoint {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 200;
   text-align: left;
 }
@@ -747,8 +749,18 @@ li {
     display: block;
     position: absolute;
     right: 0;
-    top: 150px;
+    top: 260px;
   }
+}
+
+@media (min-width: 1360px) {
+  .p-tablet-screens {
+    top: 180px;
+  }
+}
+
+.p-tablet-img {
+  width: 120%;
 }
 
 .p-provider-hero-btn {
@@ -762,6 +774,8 @@ li {
 
 #provider .gradient-header {
   height: 610px;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 @media (min-width: 1170px) {
