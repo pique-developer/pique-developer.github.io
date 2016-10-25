@@ -674,7 +674,7 @@ li {
 
 .p-providers-hero {
   position: relative;
-  padding-top: 210px;
+  padding-top: 180px;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -693,7 +693,7 @@ li {
 @media (min-width: 1170px) {
   .p-checklist {
     text-align: left;
-    margin-left: 20px;
+    margin-left: 50px;
   }
 }
 
@@ -798,6 +798,11 @@ li {
   left: 0;
   text-align: center;
   cursor: pointer;
+}
+
+#provider .gradient-header #filled-button {
+  font-size: 18px;
+  margin-top: 100px;
 }
 
 @media (min-width: 1170px) {
