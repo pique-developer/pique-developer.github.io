@@ -1,0 +1,26 @@
+.svg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+}
+
+.path {
+  transform-origin: 0% 100%;
+  transform: scale(1, 0);
+  transition: transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.one {
+  composes: path;
+  transition-delay: 200ms;
+}
+
+.two {
+  composes: path;
+  transition-delay: 100ms;
+}
+
+.rise {
+  transform: scale(1, 1);
+}

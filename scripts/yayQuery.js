@@ -258,9 +258,6 @@ const students = {
   }
 }
 
-
-
-
 $(document).ready(_ => {
   home.init()
   modal.init()
