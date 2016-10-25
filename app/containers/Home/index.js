@@ -3,6 +3,7 @@ import Header from 'components/Header'
 import DebtCounter from './DebtCounter'
 import Stats from './Stats'
 import Waves from './Waves'
+import DCBanner from './DCBanner'
 import Footer from 'components/Footer'
 import hero from './002-hero.png'
 import mask from './c-mask.png'
@@ -38,6 +39,7 @@ export class Home extends Component {
         <DebtCounter />
         <Waves rise={this.state.rise}/>
         <Stats />
+        <DCBanner />
         <Footer />
       </div>
     )

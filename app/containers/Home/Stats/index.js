@@ -10,7 +10,7 @@ export const Stats = props => {
           <Counter
             total={45}
             increment={1}
-            interval={20} />%</div>
+            interval={30} />%</div>
         <h6 className={css.caption}>Increase in College Tuition this Decade</h6>
       </div>
       <div className={css.item}>
@@ -18,7 +18,7 @@ export const Stats = props => {
           <Counter
             total={74}
             increment={1}
-            interval={10} />%</div>
+            interval={30} />%</div>
         <h6 className={css.caption}>Increase in Student Loan Size</h6>
       </div>
       <div className={css.item}>
@@ -26,7 +26,7 @@ export const Stats = props => {
           <Counter
             total={70}
             increment={1}
-            interval={10} />%</div>
+            interval={30} />%</div>
         <h6 className={css.caption}>Students Graduating in 2016 Took Out a Student Loan</h6>
       </div>
     </div>
