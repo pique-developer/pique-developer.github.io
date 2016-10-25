@@ -5,11 +5,7 @@ export class Counter extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      counter: 0,
-      total: 37172,
-      num: '',
-    }
+    this.state = {counter: 0}
     this.increment = this.increment.bind(this)
   }
 
@@ -18,24 +14,23 @@ export class Counter extends Component {
   }
 
   increment() {
-    const { counter, total } = this.state
+    const { counter } = this.state
+    const { interval, increment, total } = this.props
     if (counter < total) {
-      const amount = counter + 102
-      this.setState({counter: amount, num: amount.toString()})
-      setTimeout(this.increment, 10)
+      this.setState({counter: counter + increment})
+      setTimeout(this.increment, interval)
     } else if (counter >= total) {
-      const amount = total
-      this.setState({counter: amount, num: amount.toString()})
+      this.setState({counter: total})
     }
   }
 
   render() {
+    const { transform } = this.props
+    const { counter } = this.state
     return (
-      <div className={css.root}>
-        <h3 className={css.title}>Rising Tuition. Rising Debt.</h3>
-        <h2 className={css.price}>${this.state.num.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2')}</h2>
-        <h6 className={css.label} />
-      </div>
+      <span>
+        {transform ? transform(counter) : counter}
+      </span>
     )
   }
 }

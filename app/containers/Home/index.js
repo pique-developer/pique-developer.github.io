@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import Header from 'components/Header'
+import DebtCounter from './DebtCounter'
+import Stats from './Stats'
+import Waves from './Waves'
 import hero from './002-hero.png'
 import mask from './c-mask.png'
-import Header from 'components/Header'
-import Counter from './Counter'
-import Waves from './Waves'
 import css from './style.css'
 
 export class Home extends Component {
@@ -33,8 +34,9 @@ export class Home extends Component {
           <h1 className={css.h1} />
           <button className={css.btn}>Sign Up for Free!</button>
         </div>
-        <Counter />
+        <DebtCounter />
         <Waves rise={this.state.rise}/>
+        <Stats />
       </div>
     )
   }
