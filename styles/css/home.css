@@ -551,17 +551,25 @@
 
 .p-backdrop h6 {
   position: absolute;
-  top: 287px;
+  top: 272px;
+  left: 0;
+  right: 0;
   color: white;
-  width: 54%;
+  width: 64%;
   font-size: 17px;
   text-align: center;
   font-weight: 100;
   margin: 0 auto;
-  left: 0;
-  line-height: 26px;
-  right: 0;
+  line-height: 22px;
   letter-spacing: 1px;
+}
+
+@media (min-width: 1024px) {
+  .p-backdrop h6 {
+    top: 287px;
+    line-height: 26px;
+    width: 845px;
+  }
 }
 
 .row._students {
@@ -747,6 +755,7 @@ li {
   text-align: center;
 }
 
+#educators .banner-form,
 #students .banner-form {
   box-shadow: 0px 8px 40px 0px rgba(0,0,0,0.15);
 }
