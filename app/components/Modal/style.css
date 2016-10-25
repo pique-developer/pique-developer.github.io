@@ -1,0 +1,72 @@
+.root {
+  display: none;
+  z-index: 1003;
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.open {
+  display: block;
+}
+
+.logo {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+
+.content {
+  position: relative;
+  border: none;
+  padding: 24px;
+  box-shadow: 0 5px 33px rgba(39, 39, 39, 0.5);
+  border-radius: 0;
+  text-align: center;
+}
+
+.header:after {
+  content: 'Sign up with Pique!';
+}
+
+.caption {
+  color: #B2BCD3;
+  margin-bottom: 15px;
+  display: block;
+  font-size: 12px;
+}
+
+.caption:after {
+  content: "Sign up for our emailing list to receive updates on when we're going live!";
+}
+
+.row {
+  height: 45px;
+  margin-bottom: 20px;
+}
+
+.row input {
+  padding-left: 15px;
+  border-radius: 5px;
+  outline-style: none;
+  color: #000;
+  height: 45px;
+  border: 1px solid #B2BCD3;
+  box-shadow: none;
+}
+
+.city,
+.firstname {
+  float: left;
+  width: 48%;
+}
+
+.state,
+.lastname {
+  float: right;
+  width: 48%;
+}
+
+.email {
+  width: 100%;
+}
