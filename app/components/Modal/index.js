@@ -49,6 +49,7 @@ export const Modal = props => {
             <option value="nonprofit">Nonprofit</option>
             <option value="supporter">Supporter</option>
           </select>
+
           <div id="login-school">
             <input type="text" placeholder="Name of school" />
           </div>
@@ -58,6 +59,7 @@ export const Modal = props => {
           <div id="login-employer">
             <input type="text" placeholder="Name of employer" />
           </div>
+
           <div className="terms small-grey-text">
             <div>By signing up, you agree to Pique Basic rules,</div>
             <div>Terms of service, and Privacy Policy</div>
