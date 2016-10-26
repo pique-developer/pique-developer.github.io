@@ -165,10 +165,12 @@ const modal = {
 const providers = {
   init() {
     if ($('#provider').length) {
-      setInterval(providers.startCarouselInterval, 2500)
+      providers.startCarouselInterval()
+      providers.pauseCarousel()
     }
   },
-  startCarouselInterval() {
+
+  rotateSlides() {
     if ($('.on').is('#one')) {
       $('#one').addClass('negative').removeClass('one on')
       $('#two').addClass('one on').removeClass('two')
@@ -188,7 +190,19 @@ const providers = {
       $('.step#three').removeClass('header-on')
       $('.step#one').addClass('header-on')
     }
-  }
+  },
+
+  startCarouselInterval() {
+    this.interval = setInterval(providers.rotateSlides, 2500)
+  },
+
+  clearCarouselInterval() {
+    clearInterval(this.interval)
+  },
+
+  pauseCarousel() {
+    $('.product-image').on('click', _ => providers.clearCarouselInterval())
+  },
 }
 
 const students = {
