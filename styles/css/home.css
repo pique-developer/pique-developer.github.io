@@ -767,6 +767,10 @@ li {
   font-size: 24px;
 }
 
+.about .section-header {
+  border: none;
+}
+
 .section-header.long {
   display: block;
   position: relative;
@@ -782,7 +786,6 @@ li {
   border-bottom: none;
   width: 90px;
   height: 2px;
-  background-color: #fff;
 }
 
 #provider .section-header {
@@ -807,6 +810,10 @@ li {
 #provider .image-slider-section .section-header.long:after {
   content: '';
   background-color: #000;
+}
+
+#provider .easier-section .section-header.long:after {
+  background-color: #fff;
 }
 
 @media (min-width: 1024px) {

@@ -10,6 +10,29 @@
 a:hover {
   text-decoration: none;
 }
+.section-header {
+  text-align: center;
+  font-weight: 200;
+  font-size: 24px;
+}
+.section-header.long {
+  border-bottom: none
+     !important;
+  position: relative;
+  display: block !important;
+}
+.section-header.long:after {
+  width: 90px;
+  height: 2px;
+  content: '';
+  background-color: black;
+  /* display: inline-block; */
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.1
