@@ -757,19 +757,64 @@ li {
   color: #4A90E2;
 }
 
+#provider .section-header {
+  color: #fff;
+}
+
+.section-header {
+  text-align: center;
+  font-weight: 200;
+  font-size: 24px;
+}
+
+.section-header.long {
+  display: block;
+  position: relative;
+}
+
+.section-header.long:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -10px;
+  margin: 0 auto;
+  border-bottom: none;
+  width: 90px;
+  height: 2px;
+  background-color: #fff;
+}
+
+#provider .section-header {
+  display: block;
+  text-align: center;
+  border: none;
+}
+#provider .easier-section .section-header {
+  margin-bottom: 100px;
+}
+
+#provider .image-slider-section .section-header {
+ margin-bottom: 20px;
+}
+
+#provider .image-slider-section .section-header.long {
+  color: #000;
+}
+#provider .image-slider-section .section-header.long:after {
+  content: '';
+  background-color: #000;
+}
+
 @media (min-width: 1024px) {
   #provider .section-header {
     font-size: 36px;
   }
 }
 
-.p-chevron {
-  position: absolute;
-  bottom: 20px;
-  right: 0;
-  left: 0;
-  text-align: center;
-  cursor: pointer;
+.easier-section {
+  color: #fff;
+  background: linear-gradient(45deg, #215edd 0%, #4abced 100%);
 }
 
 #provider .gradient-header #filled-button {
@@ -777,10 +822,55 @@ li {
   margin-top: 100px;
 }
 
-@media (min-width: 1170px) {
-  .p-chevron {
-    bottom: 20px;
+.easier-section {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+.p-grid {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.quarter {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1024px) {
+  .quarter {
+    display: inline-block;
+    width: 475px;
+    padding: 20px;
+    margin-bottom: auto;
   }
+}
+
+.quarter .p-h3 {
+  font-weight: 200;
+  margin-top: 20px;
+  font-size: 24px;
+}
+.quarter .p-h5 {
+  margin: 30px auto 0 auto;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 27px;
+  max-width: 410px;
+}
+
+.quarter .p-h5 span {
+  font-weight: 500;
 }
 
 .image-slider-section {

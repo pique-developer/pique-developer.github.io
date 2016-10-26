@@ -10,29 +10,6 @@
 a:hover {
   text-decoration: none;
 }
-.section-header {
-  text-align: center;
-  font-weight: 200;
-  font-size: 24px;
-}
-.section-header.long {
-  border-bottom: none
-     !important;
-  position: relative;
-  display: block !important;
-}
-.section-header.long:after {
-  width: 90px;
-  height: 2px;
-  content: '';
-  background-color: black;
-  /* display: inline-block; */
-  position: absolute;
-  bottom: -2px;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-}
 /*!
  * animate.css -http://daneden.me/animate
  * Version - 3.5.1
@@ -4929,28 +4906,7 @@ body#about-us .row,
 #provider .image-slider-section .image-slider .product-window .product-image.three {
   left: 200%;
 }
-#provider .easier-section {
-  width: 100%;
-  display: inline-block;
-  padding-bottom: 70px;
-}
-#provider .easier-section .quarter {
-  text-align: center;
-  padding: 70px;
-  min-height: 260px;
-  padding-bottom: 0px;
-}
-#provider .easier-section .quarter h3 {
-  font-weight: 400;
-  margin-bottom: 25px;
-}
-#provider .easier-section .quarter h5 {
-  font-size: 16px;
-  color: #505050;
-  font-weight: 400;
-  line-height: 33px;
-  margin-top: 29px;
-}
+
 #landing-section {
   background-color: #E7DDC3;
   text-align: center;
