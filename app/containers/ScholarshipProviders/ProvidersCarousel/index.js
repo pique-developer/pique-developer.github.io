@@ -68,7 +68,7 @@ export class ProvidersCarousel extends Component {
 
           <div className={css.details}>
             {bulletpoints.map((x, i) =>
-              <div className={css.bulletpoint}>
+              <div key={i} className={css.bulletpoint}>
                 <div className={css.bullet}>
                   <div className={css.num}>{i + 1}</div>
                 </div>
