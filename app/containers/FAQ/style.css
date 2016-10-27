@@ -1,0 +1,43 @@
+.content {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    max-width: 910px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.title {
+  font-family: 'Avenir Next', sans-serif;
+  color: #353535;
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
+.title:after {
+  content: "Have Questions? Pique Has Answers.";
+}
+
+.header {
+  margin-top: 70px;
+  margin-bottom: 90px;
+}
+
+.divider {
+  height: 2px;
+  background-color: #353535;
+  width:  90px;
+  margin: 0 auto;
+}

@@ -8,6 +8,10 @@
   background-color: transparent;
 }
 
+.hidden {
+  display: none;
+}
+
 .brand {
   float: left;
 }

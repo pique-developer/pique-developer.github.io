@@ -5,6 +5,7 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Modal from 'components/Modal'
 import Home from 'containers/Home'
+import FAQ from 'containers/FAQ'
 import { launchModal } from 'api/actions'
 import css from './style.css'
 
@@ -17,8 +18,12 @@ export class App extends Component {
           component={Header}
           onClick={this.props.launchModal} />
         <Match
-          exactly pattern="/"
+          exactly
+          pattern="/"
           component={Home} />
+        <Match
+         pattern="/faq"
+         component={FAQ} />
         <Footer />
         <Modal />
       </div>

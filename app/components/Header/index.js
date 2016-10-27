@@ -9,12 +9,14 @@ export class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      fill: false
+      fill: false,
+      hidden: false,
     }
 
     this.listenForScroll = ::this.listenForScroll
     this.applyStyleUpdates = ::this.applyStyleUpdates
     this.stopListeningForScroll = ::this.stopListeningForScroll
+    this.handleVisibility == ::this.handleVisibility
   }
 
   componentDidMount() {
@@ -30,12 +32,24 @@ export class Header extends Component {
   }
 
   applyStyleUpdates(nextProps) {
-    const { fill } = this.state
-    if (nextProps.pathname === '/' && !fill) {
+    const { fill, hidden } = this.state
+    const { pathname, isExact } = nextProps
+
+    if (pathname === '/' && !fill) {
       this.listenForScroll()
-    } else if (nextProps.pathname !== '/' && fill) {
+    } else if (pathname !== '/' && fill) {
       this.stopListeningForScroll()
     }
+
+    if (pathname !== '/faq' && hidden) {
+      this.handleVisibility(false)
+    } else if (pathname === '/faq' && isExact) {
+      this.handleVisibility(true)
+    }
+  }
+
+  handleVisibility(hidden) {
+    this.setState({ hidden })
   }
 
   handleFill(fill) {
@@ -60,10 +74,10 @@ export class Header extends Component {
   }
 
   render() {
-    const { fill } = this.state
+    const { fill, hidden } = this.state
     const { launchModal } = this.props
     return (
-      <div className={`${css.root} ${fill ? css.fill : ''}`}>
+      <div className={`${css.root} ${fill ? css.fill : hidden ? css.hidden : ''}`}>
         <div className={css.brand}>
           <Link to="/"><img className={css.img} src={logo} /></Link>
         </div>

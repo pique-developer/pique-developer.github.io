@@ -1,0 +1,74 @@
+.root {
+  position: relative;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1024px) {
+  .root {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  height: 180px;
+  width: 100%;
+  padding: 15px;
+  background-color: #F8F8F8;
+  margin-bottom: 30px;
+  vertical-align: top;
+  font-family: 'HelveticaNeue-Light', Helvetica;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 430px;
+    margin-right: 25px;
+    margin-bottom: 70px;
+  }
+}
+
+.left {
+  display: inline-block;
+  height: 100%;
+  width: 70px;
+}
+
+.copy {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 78%;
+}
+
+@media (min-width: 1024px) {
+  .copy {
+    width: 82%;
+  }
+}
+
+.question {
+  font-family: 'HelveticaNeue', Helvetica;
+  font-size: 20px;
+  color: #353535;
+  margin-bottom: 10px;
+}
+
+.answer {
+  font-family: 'HelveticaNeue-Thin', Helvetica;
+  font-size: 16px;
+  line-height: 24px;
+  color: #505050;
+  font-weight: 200;
+}
+
+.mail {
+  color: #44BCEF;
+  text-decoration: none;
+}

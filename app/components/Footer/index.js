@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'react-router/Link'
 import css from './style.css'
 
 export const Footer = props => {
@@ -6,25 +7,25 @@ export const Footer = props => {
     <footer className={css.root}>
       <div className={css.main}>
         <div className={css.col}>
-          <a className={css.header}>Company</a>
-          <a className={css.link} href="about.html#team">Team</a>
-          <a className={css.link} href="blog.html">Blog</a>
-          <a className={css.link}>Get Involved</a>
+          <span className={css.header}>Company</span>
+          <Link className={css.link} to="/about#team">Team</Link>
+          <span className={css.link}>Blog</span>
+          <span className={css.link}>Get Involved</span>
         </div>
         <div className={css.col}>
-          <a className={css.header}>Educators</a>
-          <a className={css.link} href="educator.html">Get Started</a>
-          <a className={css.link} href="educator.html">Learn More</a>
+          <span className={css.header}>Educators</span>
+          <Link className={css.link} to="/educators">Get Started</Link>
+          <Link className={css.link} to="/educators">Learn More</Link>
         </div>
         <div className={css.col}>
-          <a className={css.header}>Scholarship Foundations</a>
-          <a className={css.link} href="about.html">About</a>
-          <a className={css.link}>FAQ</a>
-          <a className={css.link}>Become a Partner</a>
+          <span className={css.header}>Scholarship Foundations</span>
+          <Link className={css.link} to="/about">About</Link>
+          <Link className={css.link} to="/faq">FAQ</Link>
+          <span className={css.link}>Become a Partner</span>
         </div>
         <div className={css.col}>
-          <a className={css.header}>Support</a>
-          <a className={css.link}>FAQ</a>
+          <span className={css.header}>Support</span>
+          <Link className={css.link} to="/faq">FAQ</Link>
         </div>
       </div>
       <div className={css.subfooter}>
@@ -33,7 +34,7 @@ export const Footer = props => {
           <a href="" className="social-media"><i className="fa fa-twitter" aria-hidden="true"></i></a>
           <a href="" className="social-media"><i className="fa fa-instagram" aria-hidden="true"></i></a>
         </div>
-        <div className={css.copyright}>Copyright 2016 Pique</div>
+        <div className={css.copyright}>Pique © 2016</div>
       </div>
     </footer>
   )
