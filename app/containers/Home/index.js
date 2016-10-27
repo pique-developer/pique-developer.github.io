@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import Header from 'components/Header'
+import { connect } from 'react-redux'
 import Hero from './Hero'
 import DebtCounter from './DebtCounter'
 import Stats from './Stats'
 import Waves from './Waves'
 import EducatorsCard from './EducatorsCard'
 import DCBanner from './DCBanner'
-import Footer from 'components/Footer'
+import { launchModal } from 'api/actions'
 import css from './style.css'
 
 export class Home extends Component {
@@ -27,18 +27,16 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <Hero />
+        <Hero onClick={this.props.launchModal}/>
         <DebtCounter />
         <Waves rise={this.state.rise}/>
         <Stats />
         <EducatorsCard />
         <DCBanner />
-        <Footer />
       </div>
     )
   }
 }
 
 
-export default Home
+export default connect(null, { launchModal })(Home)

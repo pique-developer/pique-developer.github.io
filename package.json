@@ -10,9 +10,12 @@
     "postbuild": "open index.html"
   },
   "dependencies": {
+    "firebase": "^3.5.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
     "react-router": "next",
+    "redux": "^3.6.0",
     "sanitize.css": "^4.1.0"
   },
   "devDependencies": {
@@ -42,6 +45,7 @@
     "postcss-focus": "^1.0.0",
     "postcss-loader": "^0.13.0",
     "postcss-reporter": "^1.4.1",
+    "redux-logger": "^2.7.0",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

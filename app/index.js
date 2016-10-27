@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from 'containers/App'
+import Root from 'containers/Root'
 import 'sanitize.css/sanitize.css'
 
-render(<App />, document.getElementById('app'))
+render(<Root />, document.getElementById('app'))

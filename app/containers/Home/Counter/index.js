@@ -6,11 +6,15 @@ export class Counter extends Component {
     super(props)
 
     this.state = {counter: 0}
-    this.increment = this.increment.bind(this)
+    this.increment = ::this.increment
   }
 
   componentDidMount() {
     this.increment()
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeout)
   }
 
   increment() {
@@ -18,7 +22,7 @@ export class Counter extends Component {
     const { interval, increment, total } = this.props
     if (counter < total) {
       this.setState({counter: counter + increment})
-      setTimeout(this.increment, interval)
+      this.timeout = setTimeout(this.increment, interval)
     } else if (counter >= total) {
       this.setState({counter: total})
     }

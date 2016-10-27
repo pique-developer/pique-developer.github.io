@@ -59,6 +59,7 @@ const configureWebpack = opts => ({
     alias: {
       containers: path.join(cwd, 'app', 'containers'),
       components: path.join(cwd, 'app', 'components'),
+      api:  path.join(cwd, 'app', 'api'),
       styles: path.join(cwd, 'app', 'containers', 'App', 'style.css'),
     },
   },

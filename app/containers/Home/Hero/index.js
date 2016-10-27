@@ -11,7 +11,7 @@ export const Hero = props => {
     }}>
       <div className={css.fade} />
       <h1 className={css.h1} />
-      <button className={css.btn}>Sign Up for Free!</button>
+      <button className={css.btn} onClick={props.onClick}>Sign Up for Free!</button>
     </div>
   )
 }
