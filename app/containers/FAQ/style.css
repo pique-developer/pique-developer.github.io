@@ -12,6 +12,12 @@
   }
 }
 
+.fill {
+  background-color: #132663;
+  width: 100%;
+  height: 100px;
+}
+
 .title {
   font-family: 'Avenir Next', sans-serif;
   color: #353535;
@@ -31,7 +37,7 @@
 }
 
 .header {
-  margin-top: 70px;
+  padding-top: 70px;
   margin-bottom: 90px;
 }
 

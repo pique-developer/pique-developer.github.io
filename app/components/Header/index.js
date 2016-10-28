@@ -10,7 +10,7 @@ export class Header extends Component {
     super(props)
     this.state = {
       fill: false,
-      hidden: false,
+      fixed: false,
     }
 
     this.listenForScroll = ::this.listenForScroll
@@ -33,18 +33,13 @@ export class Header extends Component {
 
   applyStyleUpdates(nextProps) {
     const { fill, hidden } = this.state
-    const { pathname, isExact } = nextProps
-
-    if (pathname === '/' && !fill) {
+    const { pathname } = nextProps
+    if (pathname === '/') {
+      this.setState({fixed: true})
       this.listenForScroll()
-    } else if (pathname !== '/' && fill) {
+    } else if (pathname !== '/') {
+      this.setState({fixed: false})
       this.stopListeningForScroll()
-    }
-
-    if (pathname !== '/faq' && hidden) {
-      this.handleVisibility(false)
-    } else if (pathname === '/faq' && isExact) {
-      this.handleVisibility(true)
     }
   }
 
@@ -74,10 +69,10 @@ export class Header extends Component {
   }
 
   render() {
-    const { fill, hidden } = this.state
+    const { fill, fixed } = this.state
     const { launchModal } = this.props
     return (
-      <div className={`${css.root} ${fill ? css.fill : hidden ? css.hidden : ''}`}>
+      <div className={`${css.root} ${fill ? css.fill : ''} ${fixed ? css.fixed : ''}`}>
         <div className={css.brand}>
           <Link to="/"><img className={css.img} src={logo} /></Link>
         </div>

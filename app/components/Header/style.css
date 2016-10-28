@@ -1,5 +1,5 @@
 .root {
-  position: fixed;
+  position: absolute;
   width: 100%;
   padding: 10px 40px;
   z-index: 40;
@@ -8,8 +8,8 @@
   background-color: transparent;
 }
 
-.hidden {
-  display: none;
+.fixed {
+  position: fixed;
 }
 
 .brand {
