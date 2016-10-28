@@ -5,7 +5,7 @@ export const FactsStatement = props => {
   return (
     <div className={css.root}>
       <div className={css.header}>The Process is Broken</div>
-      {facts.map((x, i) => <div className={i > 0 ? css.text : css.bold}>{x}</div>)}
+      {facts.map((x, i) => <div key={i} className={i > 0 ? css.text : css.bold}>{x}</div>)}
     </div>
   )
 }

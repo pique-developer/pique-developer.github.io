@@ -6,6 +6,7 @@ import Stats from './Stats'
 import Waves from './Waves'
 import FactsStatement from './FactsStatement'
 import EducatorsCard from './EducatorsCard'
+import ScholarshipsOverview from './ScholarshipsOverview'
 import DCBanner from './DCBanner'
 import { launchModal } from 'api/actions'
 import css from './style.css'
@@ -28,11 +29,12 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <Hero onClick={this.props.launchModal}/>
+        <Hero onClick={this.props.launchModal} />
         <DebtCounter />
-        <Waves rise={this.state.rise}/>
+        <Waves rise={this.state.rise} />
         <Stats />
         <FactsStatement />
+        <ScholarshipsOverview onClick={this.props.launchModal} />
         <EducatorsCard />
         <DCBanner />
       </div>
