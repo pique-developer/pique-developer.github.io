@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import mobile from './306-slide.png'
-import tablet from './307-slide.png'
-import desktop from './308-slide.png'
+import mobile from './310-slide.png'
+import tablet from './311-slide.png'
+import desktop from './312-slide.png'
 import css from './style.css'
 
 export class ProvidersCarousel extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      active: 0,
-      leaving: 1,
+      current: 0,
+      next: 1,
+      lastIndex: !props.images.length ? 0 : props.images.length - 1
     }
     this.rotateSlides = ::this.rotateSlides
+    this.nextCycle = ::this.nextCycle
     this.startCarouselInterval = ::this.startCarouselInterval
     this.clearCarouselInterval = ::this.clearCarouselInterval
   }
@@ -33,20 +35,19 @@ export class ProvidersCarousel extends Component {
     clearInterval(this.interval)
   }
 
+  nextCycle(position) {
+    return position === this.state.lastIndex ? 0 : position + 1
+  }
+
   rotateSlides() {
-    const { images } = this.props
-    const { active, leaving } = this.state
-    const lastIndex = images.length - 1
     this.setState({
-      active: active ===  lastIndex ? 0 : active + 1,
-      leaving: leaving === lastIndex ? 0 : leaving + 1,
+      current: this.nextCycle(this.state.current),
+      next: this.nextCycle(this.state.next),
     })
   }
 
   render() {
-    const { active, leaving } = this.state
-    const { images } = this.props
-
+    const { current, next } = this.state
     return (
       <div className={css.root}>
         <div className={css.title}>The Scholarship Application Process Just Got Easier.</div>
@@ -55,11 +56,11 @@ export class ProvidersCarousel extends Component {
           <div className={css.carousel}>
 
             <div className={css.slides}>
-              {images.map((x, i) =>
+              {this.props.images.map((x, i) =>
                 <div
                   key={i}
                   onClick={this.clearCarouselInterval}
-                  className={i === leaving ? css.active : i === active ? css.leaving : css.waiting}>
+                  className={`${css.slide} ${i === current ? css.current : i === next ? css.next : css.enqueue}`}>
                   <div className={css.img} style={{backgroundImage: `url(${x})`}} />
                 </div>
               )}
@@ -68,13 +69,13 @@ export class ProvidersCarousel extends Component {
 
           <div className={css.details}>
             {bulletpoints.map((x, i) =>
-              <div key={i} className={css.bulletpoint}>
+              <div key={i} className={i === current ? css.highlight : css.bulletpoint}>
                 <div className={css.bullet}>
                   <div className={css.num}>{i + 1}</div>
                 </div>
 
                 <div className={css.point}>
-                  <div className={i === active ? css.highlight : css.h3}>{x.title}</div>
+                  <div className={css.h3}>{x.title}</div>
                   <div className={css.h5}>{x.body}</div>
                 </div>
               </div>
