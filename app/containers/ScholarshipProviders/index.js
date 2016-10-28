@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ProvidersHeader from './ProvidersHeader'
 import ProvidersCarousel from './ProvidersCarousel'
 import ProvidersGrid from './ProvidersGrid'
+import ProvidersPricing from './ProvidersPricing'
 import css from './style.css'
 
 export class ScholarshipProviders extends Component {
@@ -11,6 +12,7 @@ export class ScholarshipProviders extends Component {
         <ProvidersHeader />
         <ProvidersCarousel />
         <ProvidersGrid />
+        <ProvidersPricing />
       </div>
     )
   }
