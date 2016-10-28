@@ -36,7 +36,7 @@ export class ProvidersCarousel extends Component {
   }
 
   nextCycle(position) {
-    return position === this.state.lastIndex ? 0 : position + 1
+    return position >= this.state.lastIndex ? 0 : position + 1
   }
 
   rotateSlides() {
@@ -69,7 +69,9 @@ export class ProvidersCarousel extends Component {
 
           <div className={css.details}>
             {bulletpoints.map((x, i) =>
-              <div key={i} className={i === current ? css.highlight : css.bulletpoint}>
+              <div
+                key={i}
+                className={i === current ? css.highlight : css.bulletpoint}>
                 <div className={css.bullet}>
                   <div className={css.num}>{i + 1}</div>
                 </div>

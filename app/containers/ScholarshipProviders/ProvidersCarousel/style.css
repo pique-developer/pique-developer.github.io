@@ -1,13 +1,18 @@
 .root {
   width: 100%;
-  padding-top: 110px;
+}
+
+@media (min-width: 1024px) {
+  .root {
+    padding-top: 110px;
+  }
 }
 
 .title {
   display: block;
   position: relative;
   margin: 70px auto 20px;
-  padding-bottom: 10px;
+  padding: 0 15px 10px;
   line-height: 40px;
   text-align: center;
   font-family: 'Avenir Next', sans-serif;
@@ -19,7 +24,7 @@
 
 .title:after {
   position: absolute;
-  content: '';
+  content: "";
   background-color: #000;
   right: 0;
   left: 0;
@@ -52,7 +57,7 @@
 .carousel {
   composes: clear;
   float: left;
-  width: 50%;
+  width: 100%;
   padding: 10px;
 }
 
@@ -60,8 +65,15 @@
   composes: clear;
   background-color: #fff;
   z-index: 4;
-  width: 50%;
+  width: 100%;
   float: left;
+}
+
+@media (min-width: 1024px) {
+  .carousel,
+  .details {
+    width: 50%;
+  }
 }
 
 .slides {
@@ -165,9 +177,15 @@
   display: inline-block;
   composes: clear;
   width: 83.33333333%;
-  padding: 0px 0px 30px 30px;
+  padding: 0px 0px 30px 50px;
   cursor: pointer;
   font-family: 'Avenir Next', sans-serif;
+}
+
+@media (min-width: 1024px) {
+  .point {
+    padding-bottom: 30px;
+  }
 }
 
 .h3 {
