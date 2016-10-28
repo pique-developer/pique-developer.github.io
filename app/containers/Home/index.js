@@ -4,6 +4,7 @@ import Hero from './Hero'
 import DebtCounter from './DebtCounter'
 import Stats from './Stats'
 import Waves from './Waves'
+import FactsStatement from './FactsStatement'
 import EducatorsCard from './EducatorsCard'
 import DCBanner from './DCBanner'
 import { launchModal } from 'api/actions'
@@ -31,6 +32,7 @@ export class Home extends Component {
         <DebtCounter />
         <Waves rise={this.state.rise}/>
         <Stats />
+        <FactsStatement />
         <EducatorsCard />
         <DCBanner />
       </div>

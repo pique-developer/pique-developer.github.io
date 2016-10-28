@@ -1,0 +1,46 @@
+.root {
+  background: linear-gradient(45deg, #1a5be1 0%, #44bcef 100%);
+  padding: 80px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.header {
+  position: relative;
+  font-weight: 200;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0px;
+  margin: -10px auto 40px;
+  padding-bottom: 10px;
+}
+
+.header:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  left: 0;
+  bottom: -10px;
+  margin: 0 auto;
+  border-bottom: none;
+  width: 90px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.text {
+  width: 75%;
+  line-height: 32px;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.bold {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
