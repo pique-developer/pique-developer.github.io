@@ -5,6 +5,7 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Modal from 'components/Modal'
 import Home from 'containers/Home'
+import AboutUs from 'containers/AboutUs'
 import ScholarshipProviders from 'containers/ScholarshipProviders'
 import FAQ from 'containers/FAQ'
 import { launchModal } from 'api/actions'
@@ -23,6 +24,9 @@ export class App extends Component {
           exactly
           pattern="/"
           component={Home} />
+        <Match
+          pattern="/about"
+          component={AboutUs} />
         <Match
          pattern="/providers"
          component={ScholarshipProviders} />
