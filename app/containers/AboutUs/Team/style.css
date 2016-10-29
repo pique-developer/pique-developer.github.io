@@ -1,0 +1,131 @@
+.root {
+  text-align: center;
+  margin: 0 auto 100px;
+  width: 100%;
+  max-width: 1170px;
+}
+
+.title {
+  display: block;
+  position: relative;
+  margin: 70px auto 100px;
+  padding-bottom: 10px;
+  line-height: 40px;
+  text-align: center;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  border: none;
+}
+
+.title:after {
+  position: absolute;
+  content: '';
+  right: 0;
+  left: 0;
+  bottom: -10px;
+  margin: 0 auto;
+  border-bottom: none;
+  background-color: black;
+  width: 90px;
+  height: 2px;
+}
+
+.ul {
+  width: 100%;
+  padding-left: 0;
+}
+
+.item {
+  display: inline-block;
+  position: relative;
+  z-index: 5;
+  list-style: none;
+  width: 33.33333333%;
+  height: 275px;
+  margin-bottom: -7px;
+}
+
+.square {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay {
+  display: table;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s opacity ease-in;
+}
+
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 50px;
+  opacity: 0.7;
+  transition: 0.3s all ease-in;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.position {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.education {
+  color: #31D26C;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+.item:hover .overlay .name {
+  margin-top: 0;
+  opacity: 1;
+}
+.item:first-child,
+.item:nth-child(7) {
+  background-color: #31D26C;
+  position: relative;
+}
+.item:nth-child(8),
+.item:nth-child(2) {
+  background-color: #51BBF1;
+}
+.item:nth-child(3),
+.item:nth-child(5) {
+  background-color: #E1D113;
+  position: relative;
+}
+.item:nth-child(4),
+.item:nth-child(6) {
+  background-color: #2BDBB4;
+}
+.item:nth-child(6) {
+  background-color: #DB2BD4;
+}

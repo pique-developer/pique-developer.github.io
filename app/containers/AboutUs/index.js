@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutUsHero from './AboutUsHero'
 import MissionStatement from './MissionStatement'
+import Team from './Team'
 import css from './style.css'
 
 export const AboutUs = props => {
@@ -8,6 +9,7 @@ export const AboutUs = props => {
     <div>
       <AboutUsHero />
       <MissionStatement />
+      <Team />
     </div>
   )
 }
