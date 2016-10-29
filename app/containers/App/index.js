@@ -14,6 +14,7 @@ export class App extends Component {
   render() {
     return (
       <div className={`${css.root} ${this.props.open ? css.open : ''}`}>
+        <Modal />
         <Match
           pattern="/*"
           component={Header}
@@ -29,7 +30,7 @@ export class App extends Component {
          pattern="/faq"
          component={FAQ} />
         <Footer />
-        <Modal />
+
       </div>
     )
   }
