@@ -37,6 +37,7 @@
   right: 0;
   left: 0;
   z-index: 2;
+  margin: 0 auto;
 }
 
 .timeline {
@@ -44,4 +45,25 @@
   width: 130px;
   height: 1200px;
   margin: 0 auto;
+}
+
+.top {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  left: 0;
+}
+
+.fixed {
+  position: fixed;
+  top: 190px;
+  right: 0;
+  left: 0;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 120px;
+  right: 0;
+  left: 0;
 }

@@ -25,7 +25,22 @@ const modalReducer = (state=false, action) => {
   }
 }
 
+const scrollReducer = (state=false, action) => {
+  switch (action.type) {
+
+    case 'START_LISTENING':
+      return true
+
+    case 'STOP_LISTENING':
+      return false
+
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   formSubmitted: formReducer,
   open: modalReducer,
+  scrollTop: scrollReducer,
 })

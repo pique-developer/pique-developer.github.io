@@ -13,3 +13,12 @@ export const submitForm = _ => {
   signUp()
   return {type: 'SUBMIT_FORM'}
 }
+
+export const startTimelineScroll = scrollTop => {
+  return {type: 'START_LISTENING' }
+}
+
+export const stopTimelineScroll = scrollTop => {
+  return {type: 'STOP_LISTENING' }
+}
+

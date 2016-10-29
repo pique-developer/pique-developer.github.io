@@ -14,6 +14,13 @@ import { launchModal } from 'api/actions'
 import css from './style.css'
 
 export class App extends Component {
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.pathname !== this.props.pathname) {
+      window.scrollTo(0, 0)
+    }
+  }
+
   render() {
     return (
       <div className={`${css.root} ${this.props.open ? css.open : ''}`}>
@@ -33,7 +40,8 @@ export class App extends Component {
 
 export default connect(
   state => ({
-    open: state.open
+    open: state.open,
+    scrollTop: state.scrollTop,
   }),
   { launchModal }
 )(App)
