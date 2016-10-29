@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import img1 from './003-scholarships.jpg'
 import img2 from './004-scholarships.jpg'
+import mask from './mask.png'
 import css from './style.css'
 
 export class ScholarshipsOverview extends Component {
   render() {
     return (
       <div className={css.root}>
-        {halves.map((x, i) =>
-          <div key={i} className={i === 0 ? css.fst : css.scd}>
+        <div className={css.mask} />
+        {halves.map((x, i) =>{
+        return <div key={i} className={css.half}>
+          <div className={i === 0 ? css.fst : css.scd}>
             <div className={i === 0 ? css.left : css.right}>
               <div className={css.title}>{x.title}</div>
               <div className={css.lines}>
@@ -23,9 +26,11 @@ export class ScholarshipsOverview extends Component {
                 <button className={css.btn}>{x.button}</button>
               </div>
             </div>
-            <img className={i === 0 ? css.img1 : css.img2} src={x.image} />
+              <img className={i > 0 ? css.img1 : css.img2} src={x.image} />
+            </div>
           </div>
-        )}
+
+        })}
       </div>
     )
   }
