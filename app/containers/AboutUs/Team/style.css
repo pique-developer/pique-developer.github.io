@@ -5,7 +5,7 @@
   max-width: 1170px;
 }
 
-.title {
+.header {
   display: block;
   position: relative;
   margin: 70px auto 100px;
@@ -19,7 +19,7 @@
   border: none;
 }
 
-.title:after {
+.header:after {
   position: absolute;
   content: '';
   right: 0;

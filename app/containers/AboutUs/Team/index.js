@@ -10,7 +10,7 @@ import css from './style.css'
 export const Team = props => {
   return (
     <div className={css.root}>
-      <div className={css.title}>Our Team</div>
+      <div className={css.header}>Our Team</div>
       <ul className={css.ul}>
         {team.map((x, i) =>
           <li key={i} className={css.item}>
