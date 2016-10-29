@@ -10,7 +10,7 @@ export const StudentsForm = props => {
         <div className={css.line}>Save Time. Submit More Applications.</div>
         <div className={css.line}>Increase Your Chances of Winning Scholarships.</div>
       </div>
-      <div className={css.copy}>Between lesson plans, reviewing last night's homework assignments, running an extra-curricular activity, and writing college recommendations there is simply not enough time to write a recommendation to each scholarship your students apply to. We get it.</div>
+      <div className={css.copy}>We get it, there's not enough time in the day to study for the SAT/ACTs, research and apply to colleges, keep up your grades, do community service, participate in extra-curriculars, and apply to scholarships. That is why, we made Pique. Sign up and see how easy it is to find and apply to scholarships!</div>
       <div className={css.form}>
         <Form value={formData} />
       </div>
