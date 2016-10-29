@@ -64,7 +64,7 @@
 
 .img1 {
   composes: img;
-  animation-name: fadeInRight;
+
   width: 50%;
   position: absolute;
   top: -200px;
@@ -73,10 +73,17 @@
   z-index: 5;
 }
 
+.fade1 {
+  animation-name: fadeInRight;
+}
+
+.fade2 {
+  animation-name: fadeInLeft;
+}
+
 .img2 {
   composes: img;
   position: absolute;
-  animation-name: fadeInLeft;
   width: 50%;
   left: 0;
   top: 200px;
