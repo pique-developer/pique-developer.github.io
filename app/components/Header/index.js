@@ -62,7 +62,7 @@ export class Header extends Component {
       const scrollTop = window.scrollY
       if (scrollTop > 440 && !fill) {
         this.handleFill(true)
-      } else if (scrollTop <= 440 && fill){
+      } else if (scrollTop <= 440 && fill) {
         this.handleFill(false)
       }
     })
