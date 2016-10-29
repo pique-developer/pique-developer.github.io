@@ -111,7 +111,7 @@ const prodBuild = _ => configureWebpack({
   entry: [ path.join(cwd, 'app/index.js') ],
 
   output: {
-    publicPath: '/',
+    publicPath: 'build/',
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js'
   },
@@ -133,8 +133,8 @@ const prodBuild = _ => configureWebpack({
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
     new HtmlWebpackPlugin({
       template: 'app/index.html',
-      title: 'Evan Turner | Developer',
-      filename: 'index.html',
+      title: 'Get Pique',
+      filename: '../index.html',
       appMountId: 'app',
       inject: true
     }),
