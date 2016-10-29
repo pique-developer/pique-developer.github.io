@@ -6,7 +6,9 @@ import Footer from 'components/Footer'
 import Modal from 'components/Modal'
 import Home from 'containers/Home'
 import AboutUs from 'containers/AboutUs'
+import Educators from 'containers/Educators'
 import ScholarshipProviders from 'containers/ScholarshipProviders'
+import Students from 'containers/Students'
 import FAQ from 'containers/FAQ'
 import { launchModal } from 'api/actions'
 import css from './style.css'
@@ -16,25 +18,14 @@ export class App extends Component {
     return (
       <div className={`${css.root} ${this.props.open ? css.open : ''}`}>
         <Modal />
-        <Match
-          pattern="/*"
-          component={Header}
-          onClick={this.props.launchModal} />
-        <Match
-          exactly
-          pattern="/"
-          component={Home} />
-        <Match
-          pattern="/about"
-          component={AboutUs} />
-        <Match
-         pattern="/providers"
-         component={ScholarshipProviders} />
-        <Match
-         pattern="/faq"
-         component={FAQ} />
+        <Match pattern="/*" component={Header} onClick={this.props.launchModal} />
+        <Match exactly pattern="/" component={Home} />
+        <Match pattern="/about" component={AboutUs} />
+        <Match pattern="/educators" component={Educators} />
+        <Match pattern="/providers" component={ScholarshipProviders} />
+        <Match pattern="/students" component={Students} />
+        <Match pattern="/faq" component={FAQ} />
         <Footer />
-
       </div>
     )
   }
