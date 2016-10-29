@@ -9,11 +9,12 @@ export class Form extends Component {
     super(props)
 
     this.state = {
+      value: props.value,
       firstname: '',
       lastname: '',
       city: '',
       state: '',
-      type: 'teacher',
+      type: props.value[0].type,
       establishment: '',
       error: '',
     }
@@ -57,7 +58,7 @@ export class Form extends Component {
 
   render() {
     const { type } = this.state
-    const { formSubmitted } = this.props
+    const { formSubmitted, value } = this.props
 
     return (
       <div className={css.root}>
@@ -65,12 +66,14 @@ export class Form extends Component {
         ? <ConfirmationMessage />
         : <form>
             <div className={css.type}>
-              {types.map((x, i) =>
+              {value.map((x, i) =>
                 <div
                   key={i}
-                  className={type === x.type ? `${css.option} ${css.selected}` : css.option}
+                  className={css.option}
                   onClick={_ => this.selectType(x.type)}>
+                  <div className={css.divider} />
                   {x.text}
+                  <div className={type === x.type ? css.selected : css.other} />
                 </div>
               )}
             </div>
@@ -97,11 +100,6 @@ export class Form extends Component {
     )
   }
 }
-
-const types = [
-  {text: `I'm a Teacher`, type: 'teacher'},
-  {text: `I'm a Counselor`, type: 'counselor'},
-]
 
 export default connect(
   state => ({

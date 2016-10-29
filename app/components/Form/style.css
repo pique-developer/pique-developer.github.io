@@ -3,43 +3,49 @@
 }
 
 .type {
-  display: inline-block;
+  display: flex;
   position: relative;
   border-radius: 25px;
   margin: 0 auto;
+  text-align: center;
   width: 100%;
 }
 
 .option {
   display: inline-block;
-  max-height: 50px;
-  margin: 16px 47px;
+  position: relative;
+  height: 50px;
+  width: 100%;
   text-align: center;
   color: #2971E0;
   padding: 10px;
   cursor: pointer;
-  border-bottom: 1px solid transparent;
 }
 
-.option.selected {
-  z-index: 3;
-  position: relative;
-  border-bottom: 1px solid #2971E0;
+.selected {
+  text-align: center;
+  width: 70px;
+  height: 2px;
+  margin: 0 auto;
+  margin-top: 5px;
+  transition: all 0.1s ease-in-out;
+  background-color: #2971E0;
 }
 
-.option:nth-child(2) {
-  margin: 15px 15px 15px 70px;
+.other {
+  composes: selected;
+  width: 0px;
+  background-color: transparent;
 }
 
-.option:before:nth-child(2) {
-  width: 1px;
-  height: 20px;
-  content: '';
-  background-color: #cecece;
+.option:nth-child(2) .divider {
+  position: absolute;
+  top: 10px;
+  left: 0;
   display: inline-block;
-  position: relative;
-  right: 63px;
-  top: 5px;
+  height: 25px;
+  width: 1px;
+  background-color: #cecece;
 }
 
 .row {

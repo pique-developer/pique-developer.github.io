@@ -71,6 +71,7 @@ export class Header extends Component {
   render() {
     const { fill, fixed } = this.state
     const { launchModal } = this.props
+
     return (
       <div className={`${css.root} ${fill ? css.fill : ''} ${fixed ? css.fixed : ''}`}>
         <div className={css.brand}>
@@ -80,20 +81,20 @@ export class Header extends Component {
           <div className={css.nav}>
             <Link
               className={css.link}
-              activeClassName={css.selected}
-              to="/about">About Us</Link>
+              activeClassName={css.active}
+              to="/about">About Us <div className={css.selected}/> </Link>
             <Link
               className={css.link}
-              activeClassName={css.selected}
-              to="/educators">Educators</Link>
+              activeClassName={css.active}
+              to="/educators">Educators <div className={css.selected}/> </Link>
             <Link
               className={css.link}
-              activeClassName={css.selected}
-              to="/providers">Scholarship Providers</Link>
+              activeClassName={css.active}
+              to="/providers">Scholarship Providers <div className={css.selected}/> </Link>
             <Link
               className={css.link}
-              activeClassName={css.selected}
-              to="/students">Students</Link>
+              activeClassName={css.active}
+              to="/students">Students <div className={css.selected}/> </Link>
           </div>
            <div className={css.btn} onClick={launchModal}>Sign Up</div>
         </div>
