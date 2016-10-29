@@ -7,6 +7,11 @@
   background: linear-gradient(45deg, #44008d 0%, #194bbc 100%);
 }
 
+.content {
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
 .header {
   display: block;
   position: relative;
@@ -66,4 +71,70 @@
   bottom: 120px;
   right: 0;
   left: 0;
+}
+
+.columns {
+  display: table;
+  clear: both;
+  position: absolute;
+  top: 350px;
+  right: 0;
+  left: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Avenir Next', sans-serif;
+  color: #fff;
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.right img {
+  margin-top: -100px;
+  margin-bottom: 80px;
+}
+
+.left img {
+  margin-top: 200px;
+  margin-left: -30px;
+}
+
+
+.columns:before,
+.columns:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.column {
+  max-width: 475px;
+}
+
+.left {
+  composes: column;
+  text-align: left;
+  float: left;
+}
+
+.right {
+  composes: column;
+  text-align: right;
+  float: right;
+}
+
+.title {
+  font-size: 24px;
+  max-width: 355px;
+  font-weight: 200;
+  margin-bottom: 15px;
+}
+
+.copy {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.copy span {
+  font-weight: 600;
 }

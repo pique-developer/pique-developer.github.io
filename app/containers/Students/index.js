@@ -5,6 +5,7 @@ import StudentsDiagram from './StudentsDiagram'
 import StudentsTimeline from './StudentsTimeline'
 import StudentsJoin from './StudentsJoin'
 import { startTimelineScroll, stopTimelineScroll } from 'api/actions'
+import css from './style.css'
 
 export class Students extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ export class Students extends Component {
 
   render() {
     return (
-      <div>
+      <div className={css.root}>
         <StudentsForm />
         <StudentsDiagram />
         <StudentsTimeline positioning={this.state.positioning} />

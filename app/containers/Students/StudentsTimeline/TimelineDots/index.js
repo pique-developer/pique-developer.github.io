@@ -7,7 +7,7 @@ export const TimelineDots = props => {
     <div className={css.root}>
       {dots.map((x, i) =>
         <div key={i} className={css.marker}>
-          <div className={css.dot} />
+          <div className={css.dot} style={i > 4 ? {height: '32px', width: '32px'} : {}} />
         </div>
       )}
     </div>

@@ -9,7 +9,7 @@
 
 .root:before,
 .root:after {
-  display: tablet;
+  display: table;
   clear: both;
   content: '';
 }
