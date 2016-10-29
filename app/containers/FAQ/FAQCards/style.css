@@ -1,8 +1,17 @@
 .root {
+  display: table;
+  clear: both;
   position: relative;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.root:before,
+.root:after {
+  display: tablet;
+  clear: both;
+  content: '';
 }
 
 @media (min-width: 1024px) {
@@ -18,18 +27,18 @@
   height: 180px;
   width: 100%;
   padding: 15px;
-  background-color: #F8F8F8;
   margin-bottom: 30px;
   vertical-align: top;
   font-family: 'HelveticaNeue-Light', Helvetica;
+  background-image: linear-gradient(229deg, #44BCEF 1%, #3FB1ED 11%, #1A5BE1 100%);
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+  border-radius: 3px;
 }
 
 @media (min-width: 1024px) {
   .card {
     width: 430px;
-    margin-right: 25px;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
   }
 }
 
@@ -51,24 +60,30 @@
   .copy {
     width: 82%;
   }
+  .card:nth-child(3) .copy,
+  .card:nth-child(6) .copy,
+  .card:nth-child(10) .copy {
+    width: 91%;
+  }
 }
 
 .question {
-  font-family: 'HelveticaNeue', Helvetica;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 20px;
-  color: #353535;
+  color: #fff;
+  font-weight: 200;
   margin-bottom: 10px;
 }
 
 .answer {
-  font-family: 'HelveticaNeue-Thin', Helvetica;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  color: #505050;
+  color: #fff;
   font-weight: 200;
 }
 
 .mail {
-  color: #44BCEF;
+  color: #fff;
   text-decoration: none;
 }
