@@ -18,14 +18,16 @@
   width: 100%;
   text-align: center;
   color: #2971E0;
-  padding: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 12.5px;
   cursor: pointer;
 }
 
 .selected {
   text-align: center;
   width: 70px;
-  height: 2px;
+  height: 1px;
   margin: 0 auto;
   margin-top: 5px;
   transition: all 0.1s ease-in-out;

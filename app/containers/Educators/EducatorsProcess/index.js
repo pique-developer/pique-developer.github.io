@@ -1,7 +1,7 @@
 import React from 'react'
 import img1 from './401-envelope.png'
-import img2 from './402-medal.png'
-import img3 from './403-notepad.png'
+import img2 from './403-notepad.png'
+import img3 from './402-medal.png'
 import css from './style.css'
 
 export const EducatorsProcess = props => {
