@@ -35,15 +35,11 @@ export class Header extends Component {
     const { fill, hidden } = this.state
     const { pathname } = nextProps
 
-    if (pathname === '/') {
-      this.setState({fixed: true})
-    } else {
-      this.setState({fixed: false})
-    }
-
     if (pathname === '/' || pathname === '/about') {
+      this.setState({fixed: true})
       this.listenForScroll(pathname)
     } else if (pathname !== '/' || pathname !== '/about') {
+      this.setState({fixed: false})
       this.handleOpacity(false)
       this.stopListeningForScroll(pathname)
     }
@@ -66,17 +62,14 @@ export class Header extends Component {
   listenForScroll(pathname) {
     this.listener = window.addEventListener('scroll', _ => {
       const scrollTop = window.scrollY
-      const isHomepage = pathname === '/'
-      const threshold = isHomepage ? 300 : 100
+      const threshold = pathname === '/' ? 300 : 100
       const fill = this.state.fill
       const opacity = this.props.fill
 
-      if (isHomepage) {
-        if (scrollTop > 440 && !fill) {
-          this.handleFill(true)
-        } else if (scrollTop <= 440 && fill) {
-          this.handleFill(false)
-        }
+      if (scrollTop > 440 && !fill) {
+        this.handleFill(true)
+      } else if (scrollTop <= 440 && fill) {
+        this.handleFill(false)
       }
 
       if (scrollTop > threshold && !opacity) {
