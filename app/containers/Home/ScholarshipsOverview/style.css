@@ -65,10 +65,10 @@
 .img1 {
   composes: img;
 
-  width: 50%;
+  width: 48%;
   position: absolute;
   top: -200px;
-  right: 0;
+  right: 2%;
   height: auto;
   z-index: 5;
 }
@@ -143,6 +143,7 @@
   right: 0;
   width: 180px;
   padding: 7px;
+  height: 48px;
   margin: 25px 13px 10px;
   text-align: center;
   border: 2px solid #fff;

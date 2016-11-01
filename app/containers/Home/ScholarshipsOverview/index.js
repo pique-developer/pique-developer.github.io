@@ -7,7 +7,10 @@ import css from './style.css'
 export class ScholarshipsOverview extends Component {
   constructor(props) {
     super(props)
-    this.state = {animate: false}
+    this.state = {
+      animate1: false,
+      animate2: false,
+    }
     this.listenForScroll = ::this.listenForScroll
     this.stopListening = ::this.stopListening
   }
@@ -23,8 +26,15 @@ export class ScholarshipsOverview extends Component {
   listenForScroll() {
     this.listener = window.addEventListener('scroll', _ => {
       const scrollTop = window.scrollY
-      if (scrollTop > 921 && !this.state.animate) {
-        this.setState({animate: true})
+      if (scrollTop > 1421 && !this.state.animate1) {
+        this.setState({animate1: true})
+      }
+
+      if (scrollTop > 921 && !this.state.animate2) {
+        this.setState({animate2: true})
+      }
+
+      if (this.state.animate1 && this.state.animate2) {
         this.stopListening()
       }
     })
@@ -35,7 +45,7 @@ export class ScholarshipsOverview extends Component {
   }
 
   render() {
-    const { animate } = this.state
+    const { animate1, animate2 } = this.state
     return (
       <div className={css.root}>
         <div className={css.mask} />
@@ -58,8 +68,8 @@ export class ScholarshipsOverview extends Component {
               </div>
               <img className={
                 i > 0
-                  ? animate ? `${css.img1} ${css.fade1}` : css/img1
-                  : animate ? `${css.img2} ${css.fade2}` : css.img2
+                  ? animate1 ? `${css.img1} ${css.fade1}` : css.img1
+                  : animate2 ? `${css.img2} ${css.fade2}` : css.img2
               } src={x.image} />
             </div>
           </div>

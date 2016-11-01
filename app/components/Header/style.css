@@ -10,6 +10,7 @@
 
 .fixed {
   position: fixed;
+  padding: 10px 40px 5px;
 }
 
 .brand {
@@ -28,6 +29,10 @@
 
 .links {
   float: right;
+}
+
+.fixed .links {
+  margin-top: -5px;
 }
 
 .nav {
@@ -56,6 +61,7 @@
   height: 1px;
   background-color: transparent;
   transition: all 0.2s ease-in-out;
+  margin-top: 4px;
 }
 
 .link:hover .selected,
@@ -63,6 +69,7 @@
   transition: all 0.2s ease-in-out;
   width: 100%;
   background-color: #fff;
+  margin-top: 4px;
 }
 
 .pill {
