@@ -18,6 +18,4 @@ export const EducatorsForm = props => {
   )
 }
 
-
-
 export default EducatorsForm

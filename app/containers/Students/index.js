@@ -10,35 +10,7 @@ import css from './style.css'
 export class Students extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      positioning: 'top',
-    }
-    this.startListening = ::this.startListening
-  }
 
-  componentDidMount() {
-    this.props.startTimelineScroll()
-    this.startListening()
-  }
-
-  startListening() {
-    this.listener = window.addEventListener('scroll', _ => {
-      const scrollTop = window.scrollY
-      const { positioning } = this.state
-
-      if (scrollTop <= 1435 && positioning !== 'top') {
-        return this.setState({positioning: 'top'})
-      } else if (scrollTop > 1435 && scrollTop < 2435  && positioning !== 'fixed') {
-        return this.setState({positioning: 'fixed'})
-      } else if (scrollTop >= 2435 && positioning !== 'bottom') {
-        return this.setState({positioning: 'bottom'})
-      }
-    })
-  }
-
-  componentWillUnmount() {
-    this.props.stopTimelineScroll()
-    window.removeEventListener('scroll', this.listener)
   }
 
   render() {
@@ -46,7 +18,7 @@ export class Students extends Component {
       <div className={css.root}>
         <StudentsForm />
         <StudentsDiagram />
-        <StudentsTimeline positioning={this.state.positioning} />
+        <StudentsTimeline positioning={this.props.positioning} />
         <StudentsJoin />
       </div>
     )
@@ -55,7 +27,6 @@ export class Students extends Component {
 
 export default connect(
   state => ({
-    listening: state.scrollTop
+    positioning: state.header.positioning,
   }),
-  { startTimelineScroll, stopTimelineScroll }
 )(Students)

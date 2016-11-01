@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'react-router/Link'
-import { launchModal, applyStyleToHeader } from 'api/actions'
+import { launchModal, applyStyleToHeader, updateTimelinePosition } from 'api/actions'
 import logo from './001-logo.png'
 import css from './style.css'
 
@@ -16,7 +16,8 @@ export class Header extends Component {
     this.listenForScroll = ::this.listenForScroll
     this.applyStyleUpdates = ::this.applyStyleUpdates
     this.stopListeningForScroll = ::this.stopListeningForScroll
-    this.handleOpacity == ::this.handleOpacity
+    this.handleOpacity = ::this.handleOpacity
+    this.handlePositioning = ::this.handlePositioning
   }
 
   componentDidMount() {
@@ -31,6 +32,18 @@ export class Header extends Component {
     this.stopListeningForScroll()
   }
 
+  handlePositioning(scrollTop) {
+   const { positioning, updateTimelinePosition } = this.props
+
+    if (scrollTop <= 1435 && positioning !== 'top') {
+      updateTimelinePosition({positioning: 'top'})
+    } else if (scrollTop > 1435 && scrollTop < 2435  && positioning !== 'fixed') {
+      updateTimelinePosition({positioning: 'fixed'})
+    } else if (scrollTop >= 2435 && positioning !== 'bottom') {
+      updateTimelinePosition({positioning: 'bottom'})
+    }
+  }
+
   applyStyleUpdates(nextProps) {
     const { fill, hidden } = this.state
     const { pathname } = nextProps
@@ -41,7 +54,12 @@ export class Header extends Component {
     } else if (pathname !== '/' || pathname !== '/about') {
       this.setState({fixed: false})
       this.handleOpacity(false)
-      this.stopListeningForScroll(pathname)
+      updateTimelinePosition({positioning: 'top'})
+      if (pathname === '/students') {
+        this.listenForScroll(pathname)
+      } else {
+        this.stopListeningForScroll(pathname)
+      }
     }
   }
 
@@ -66,6 +84,10 @@ export class Header extends Component {
       const fill = this.state.fill
       const opacity = this.props.fill
 
+      if (pathname === '/students') {
+        return this.handlePositioning(scrollTop)
+      }
+
       if (scrollTop > 440 && !fill) {
         this.handleFill(true)
       } else if (scrollTop <= 440 && fill) {
@@ -77,6 +99,8 @@ export class Header extends Component {
       } else if (scrollTop <= threshold && opacity) {
         this.handleOpacity(false)
       }
+
+
     })
   }
 
@@ -119,6 +143,7 @@ export default connect(
   state => ({
     fixed: state.header.fixed,
     fill: state.header.fill,
+    position: state.header.position,
   }),
-  { launchModal, applyStyleToHeader }
+  { launchModal, applyStyleToHeader, updateTimelinePosition }
 )(Header)

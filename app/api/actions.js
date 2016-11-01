@@ -25,3 +25,7 @@ export const stopTimelineScroll = scrollTop => {
 export const applyStyleToHeader = payload => {
   return {type: 'HEADER_STYLE_CHANGE', ...payload}
 }
+
+export const updateTimelinePosition = payload => {
+  return {type: 'UPDATE_TIMELINE_POSITION', ...payload}
+}

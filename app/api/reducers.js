@@ -39,8 +39,13 @@ const scrollReducer = (state=false, action) => {
   }
 }
 
-const headerReducer = (state={fixed: false, fill: false}, action) => {
+const headerReducer = (state={fixed: false, fill: false, position: 'top'}, action) => {
   switch (action.type) {
+
+    case 'UPDATE_TIMELINE_POSITION':
+      return Object.assign({}, state, {
+        positioning: action.positioning,
+      })
 
     case 'HEADER_STYLE_CHANGE':
       return Object.assign({}, state, {
