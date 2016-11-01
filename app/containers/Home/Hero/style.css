@@ -16,14 +16,23 @@
   content: '';
   background: #000;
   opacity: 0;
-  transition: 0.5s opacity ease-in;
+  transition: 0.3s opacity ease-in;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in;
+}
+
+.fill {
+  composes: overlay;
+  background-color: #132663;
 }
 
 .fade {
-  width: 100%;
-  height: 100%;
-  background-color: #132663;
-  opacity: 0;
+  composes: overlay;
+  background-color: transparent;
 }
 
 .h1 {

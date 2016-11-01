@@ -39,8 +39,23 @@ const scrollReducer = (state=false, action) => {
   }
 }
 
+const headerReducer = (state={fixed: false, fill: false}, action) => {
+  switch (action.type) {
+
+    case 'HEADER_STYLE_CHANGE':
+      return Object.assign({}, state, {
+        fill: action.fill,
+        fixed: action.fixed,
+      })
+
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   formSubmitted: formReducer,
   open: modalReducer,
   scrollTop: scrollReducer,
+  header: headerReducer,
 })

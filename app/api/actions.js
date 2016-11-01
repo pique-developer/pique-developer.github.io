@@ -22,3 +22,6 @@ export const stopTimelineScroll = scrollTop => {
   return {type: 'STOP_LISTENING' }
 }
 
+export const applyStyleToHeader = payload => {
+  return {type: 'HEADER_STYLE_CHANGE', ...payload}
+}

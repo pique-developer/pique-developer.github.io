@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'react-router/Link'
-import { launchModal } from 'api/actions'
+import { launchModal, applyStyleToHeader } from 'api/actions'
 import logo from './001-logo.png'
 import css from './style.css'
 
@@ -16,7 +16,7 @@ export class Header extends Component {
     this.listenForScroll = ::this.listenForScroll
     this.applyStyleUpdates = ::this.applyStyleUpdates
     this.stopListeningForScroll = ::this.stopListeningForScroll
-    this.handleVisibility == ::this.handleVisibility
+    this.handleOpacity == ::this.handleOpacity
   }
 
   componentDidMount() {
@@ -34,36 +34,55 @@ export class Header extends Component {
   applyStyleUpdates(nextProps) {
     const { fill, hidden } = this.state
     const { pathname } = nextProps
+
     if (pathname === '/') {
       this.setState({fixed: true})
-      this.listenForScroll()
-    } else if (pathname !== '/') {
+    } else {
       this.setState({fixed: false})
-      this.stopListeningForScroll()
     }
-  }
 
-  handleVisibility(hidden) {
-    this.setState({ hidden })
+    if (pathname === '/' || pathname === '/about') {
+      this.listenForScroll(pathname)
+    } else if (pathname !== '/' || pathname !== '/about') {
+      this.handleOpacity(false)
+      this.stopListeningForScroll(pathname)
+    }
   }
 
   handleFill(fill) {
     this.setState({ fill })
   }
 
+  handleOpacity(fill) {
+    this.props.applyStyleToHeader({ fill })
+  }
+
   stopListeningForScroll() {
     this.handleFill(false)
+    this.handleOpacity(false)
     window.removeEventListener('scroll', this.listener)
   }
 
-  listenForScroll() {
+  listenForScroll(pathname) {
     this.listener = window.addEventListener('scroll', _ => {
-      const { fill } = this.state
       const scrollTop = window.scrollY
-      if (scrollTop > 440 && !fill) {
-        this.handleFill(true)
-      } else if (scrollTop <= 440 && fill) {
-        this.handleFill(false)
+      const isHomepage = pathname === '/'
+      const threshold = isHomepage ? 300 : 100
+      const fill = this.state.fill
+      const opacity = this.props.fill
+
+      if (isHomepage) {
+        if (scrollTop > 440 && !fill) {
+          this.handleFill(true)
+        } else if (scrollTop <= 440 && fill) {
+          this.handleFill(false)
+        }
+      }
+
+      if (scrollTop > threshold && !opacity) {
+        this.handleOpacity(true)
+      } else if (scrollTop <= threshold && opacity) {
+        this.handleOpacity(false)
       }
     })
   }
@@ -103,4 +122,10 @@ export class Header extends Component {
   }
 }
 
-export default connect(null, { launchModal })(Header)
+export default connect(
+  state => ({
+    fixed: state.header.fixed,
+    fill: state.header.fill,
+  }),
+  { launchModal, applyStyleToHeader }
+)(Header)
