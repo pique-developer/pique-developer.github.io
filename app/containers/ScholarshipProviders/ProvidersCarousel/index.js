@@ -59,7 +59,6 @@ export class ProvidersCarousel extends Component {
               {this.props.images.map((x, i) =>
                 <div
                   key={i}
-                  onClick={this.clearCarouselInterval}
                   className={`${css.slide} ${i === current ? css.current : i === next ? css.next : css.enqueue}`}>
                   <div className={css.img} style={{backgroundImage: `url(${x})`}} />
                 </div>
@@ -71,7 +70,8 @@ export class ProvidersCarousel extends Component {
             {bulletpoints.map((x, i) =>
               <div
                 key={i}
-                className={i === current ? css.highlight : css.bulletpoint}>
+                className={i === current ? css.highlight : css.bulletpoint}
+                onClick={this.clearCarouselInterval}>
                 <div className={css.bullet}>
                   <div className={css.num}>{i + 1}</div>
                 </div>
