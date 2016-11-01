@@ -9,7 +9,7 @@ export const DebtCounter = props => {
       <h2 className={css.price}>
         $<Counter
           total={37172}
-          increment={102}
+          increment={302}
           interval={10}
           transform={x => x.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2')} />
       </h2>

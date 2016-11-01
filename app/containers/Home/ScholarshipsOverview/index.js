@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Link from 'react-router/Link'
 import img1 from './003-scholarships.jpg'
 import img2 from './004-scholarships.jpg'
 import mask from './mask.png'
@@ -63,7 +64,7 @@ export class ScholarshipsOverview extends Component {
                 </div>
                 <div className={i === 0 ? css.btns1 : css.btns2}>
                   <button className={css.btn} onClick={this.props.onClick}>Sign Up!</button>
-                  <button className={css.btn}>{x.button}</button>
+                  <button className={css.btn}><Link to="/students">{x.button}</Link></button>
                 </div>
               </div>
               <img className={
@@ -84,18 +85,18 @@ const halves = [{
     image: img1,
     button: `Learn More`,
     lines: [
-      {text: `fill out one scholarship application and apply to unlimited scholarships.`, lead: `High School Seniors,`},
-      {text: `That means never request a recommendation, official transcript or pay to send your`},
-      {text: `SAT or ACT test scores to a scholarship foundation again. That's the Pique way.`}
+      {text: `fill one scholarship application and apply to unlimited scholarships.`, lead: `High School Seniors,`},
+      {text: `That means never request more than one recommendation or official transcript again.`},
+      {text: `That's the Pique way.`}
     ],
   },{
     title: `Find Applicants. Review Applications in One Place.`,
     image: img2,
     button: `How Does It Work?`,
     lines: [
-      {text: `should not have to pay to find qualified students.`, lead: `Scholarship Foundations`},
-      {text: `We bring qualified students to you for free. Review applications, rate applicants,`},
-      {text: `set up interviews, select finalists, and notify winners and their counselors. All within Pique.`}
+      {text: `should never have to pay a premium to find applicants.`, lead: `Scholarship Foundations`},
+      {text: `We bring qualified students to you for just $99.99/year.`},
+      {text: `Review applications, rate applicants, select interviewees, finalists and notify winners all in-app.`}
     ],
 }]
 

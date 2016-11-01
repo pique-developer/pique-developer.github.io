@@ -10,7 +10,7 @@ export const EducatorsReasons = props => {
       <div className={css.under}>
         <img src={img1} />
         <div className={css.title}>Save Time Writing Recommendations</div>
-        <div className={css.body}>Our thoughts are simple; help save educators time in the scholarship application process and they will in turn have more time for sleep, more time to prepare tomorrow's lesson plan, more time to strategize ways to more effectively help students.</div>
+        <div className={css.body}>Our thoughts are simple; help save educators time in the scholarship application process and they will in turn have more time to prepare tomorrow’s lesson plan, review last night’s homework assignments and strategize ways to enhance the classroom environment.</div>
       </div>
       <div className={css.over}>
         <img src={img2} />

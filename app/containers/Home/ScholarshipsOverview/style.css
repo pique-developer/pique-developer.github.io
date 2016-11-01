@@ -4,7 +4,7 @@
   background: linear-gradient(-45deg, #44008d 0%, #125aac 100%);
   color: #fff;
   height: 1250px;
-  font-family: 'Avenir Next';
+  font-family: 'Avenir Next', sans-serif;
 }
 
 .mask {
@@ -84,8 +84,8 @@
 .img2 {
   composes: img;
   position: absolute;
-  width: 50%;
-  left: 0;
+  width: 48%;
+  left: 2%;
   top: 200px;
   z-index: 3;
 }
@@ -148,11 +148,17 @@
   text-align: center;
   border: 2px solid #fff;
   border-radius: 40px;
+  font-family: 'Avenir Next', sans-serif;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 300;
   letter-spacing: 0px;
   transition: all 0.2s ease-in;
   cursor: pointer;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #44008D;
 }
 
 .btn:first-child {
@@ -165,9 +171,22 @@
   color: #fff;
 }
 
+
 .btn:nth-child(2) {
   background-color: rgba(255, 255, 255, 0.15);
   color: #fff;
+}
+
+.btn:nth-child(2) a {
+  color: #fff;
+}
+
+.btn:nth-child(2):hover a {
+  color: #44008D;
+}
+
+.btn:nth-child(2):hover {
+  background-color: #fff;
 }
 
 .lines {

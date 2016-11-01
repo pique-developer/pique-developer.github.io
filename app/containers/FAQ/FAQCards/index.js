@@ -76,8 +76,8 @@ const cards = [
     height: '140px',
     float: 'right'
   },{
-    title: `How Does Pique Handle FERPA Compliance as It Related to Recommendations?`,
-    body: `Under FERPA, parents or eligible students (students over the age of 18 or a student enrolled at a college or university that saves the recommendations) have the right to review confidential letters of recommendations. Like other platforms in this space,  `,
+    title: `How Does Pique Handle FERPA Compliance as It Relates to Recommendations?`,
+    body: `Under FERPA, parents or eligible students (students over the age of 18 or students enrolled at a college or university that saves recommendations) have the right to review confidential letters of recommendations. Like other platforms in the space, Pique offers students the chance to waive their right to review recommendations submitted on their behalfs.`,
     width: '100%',
     height: '200px'
   },
