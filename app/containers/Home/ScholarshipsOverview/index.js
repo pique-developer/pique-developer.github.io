@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Link from 'react-router/Link'
 import img1 from './003-scholarships.jpg'
 import img2 from './004-scholarships.jpg'
@@ -6,47 +7,9 @@ import mask from './mask.png'
 import css from './style.css'
 
 export class ScholarshipsOverview extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      animate1: false,
-      animate2: false,
-    }
-    this.listenForScroll = ::this.listenForScroll
-    this.stopListening = ::this.stopListening
-  }
-
-  componentDidMount() {
-    this.listenForScroll()
-  }
-
-  componentWillUnmount() {
-    this.stopListening()
-  }
-
-  listenForScroll() {
-    this.listener = window.addEventListener('scroll', _ => {
-      const scrollTop = window.scrollY
-      if (scrollTop > 1421 && !this.state.animate1) {
-        this.setState({animate1: true})
-      }
-
-      if (scrollTop > 921 && !this.state.animate2) {
-        this.setState({animate2: true})
-      }
-
-      if (this.state.animate1 && this.state.animate2) {
-        this.stopListening()
-      }
-    })
-  }
-
-  stopListening() {
-    window.removeEventListener('scroll', this.listener)
-  }
 
   render() {
-    const { animate1, animate2 } = this.state
+    const { animate1, animate2 } = this.props.ui
     return (
       <div className={css.root}>
         <div className={css.mask} />
@@ -100,4 +63,8 @@ const halves = [{
     ],
 }]
 
-export default ScholarshipsOverview
+export default connect(
+  state => ({
+    ui: state.ui
+  })
+)(ScholarshipsOverview)

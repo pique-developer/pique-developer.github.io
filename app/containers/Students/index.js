@@ -13,7 +13,7 @@ export class Students extends Component {
       <div className={css.root}>
         <StudentsForm />
         <StudentsDiagram />
-        <StudentsTimeline positioning={this.props.positioning} />
+        <StudentsTimeline />
         <StudentsJoin />
       </div>
     )
@@ -22,6 +22,6 @@ export class Students extends Component {
 
 export default connect(
   state => ({
-    positioning: state.header.positioning,
+    position: state.ui.position,
   }),
 )(Students)

@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import img1 from './502-student.png'
 import img2 from './503-connections.png'
 import img3 from './504-screenshot.png'
 import TimelineDots from './TimelineDots'
 import css from './style.css'
 
-export const StudentsTimeline = ({ positioning })=> {
-  const animate = positioning !== 'top'
+export const StudentsTimeline = ({ position })=> {
+  const animate = position !== 'top'
   return (
     <div className={css.root}>
       <div className={css.header}>The Pique Way</div>
@@ -26,7 +27,7 @@ export const StudentsTimeline = ({ positioning })=> {
           </div>
         </div>
         <div className={css.timeline}>
-          <img src={img1} className={css[positioning]} />
+          <img src={img1} className={css[position]} />
           <TimelineDots value={6} />
         </div>
       </div>
@@ -34,4 +35,8 @@ export const StudentsTimeline = ({ positioning })=> {
   )
 }
 
-export default StudentsTimeline
+export default connect(
+  state => ({
+    position: state.ui.position,
+  })
+)(StudentsTimeline)

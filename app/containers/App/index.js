@@ -10,13 +10,19 @@ import Educators from 'containers/Educators'
 import ScholarshipProviders from 'containers/ScholarshipProviders'
 import Students from 'containers/Students'
 import FAQ from 'containers/FAQ'
-import { launchModal } from 'api/actions'
+import Scroll from 'components/Scroll'
+import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class App extends Component {
 
+  componentWillMount() {
+    this.props.locationChange(this.props.pathname)
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
+      this.props.locationChange(nextProps.pathname)
       window.scrollTo(0, 0)
     }
   }
@@ -24,6 +30,7 @@ export class App extends Component {
   render() {
     return (
       <div className={`${css.root} ${this.props.open ? css.open : ''}`}>
+        <Scroll />
         <Modal />
         <Match pattern="/*" component={Header} onClick={this.props.launchModal} />
         <Match exactly pattern="/" component={Home} />
@@ -41,7 +48,7 @@ export class App extends Component {
 export default connect(
   state => ({
     open: state.open,
-    scrollTop: state.scrollTop,
+    route: state.route,
   }),
-  { launchModal }
+  Actions
 )(App)

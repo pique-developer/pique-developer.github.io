@@ -10,7 +10,7 @@ export const AboutUsHero = props => {
       backgroundImage: `url(${hero}`,
       WebkitMaskImage: `url(${mask}`,
     }}>
-      <div className={props.fill ? css.fill : css.fade} />
+      <div className={props.opacity ? css.fill : css.fade} />
       <h1 className={css.h1} />
       <button className={css.btn} onClick={props.onClick}>Sign Up for Free!</button>
     </div>
@@ -19,6 +19,6 @@ export const AboutUsHero = props => {
 
 export default connect(
   state => ({
-    fill: state.header.fill
+    opacity: state.ui.opacity
   })
 )(AboutUsHero)

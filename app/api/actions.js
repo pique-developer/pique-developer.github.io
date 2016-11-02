@@ -29,3 +29,11 @@ export const applyStyleToHeader = payload => {
 export const updateTimelinePosition = payload => {
   return {type: 'UPDATE_TIMELINE_POSITION', ...payload}
 }
+
+export const locationChange = pathname => {
+  return {type: 'LOCATION_CHANGE', pathname}
+}
+
+export const styleUpdate = payload => {
+  return {type: 'STYLE_UPDATE', payload}
+}

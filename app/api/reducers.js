@@ -11,6 +11,17 @@ const formReducer = (state=false, action) => {
   }
 }
 
+const routeReducer = (state='', action) => {
+  switch (action.type) {
+
+    case 'LOCATION_CHANGE':
+      return action.pathname
+
+    default:
+      return state
+  }
+}
+
 const modalReducer = (state=false, action) => {
   switch (action.type) {
 
@@ -25,32 +36,12 @@ const modalReducer = (state=false, action) => {
   }
 }
 
-const scrollReducer = (state=false, action) => {
+const uiReducer = (state={}, action) => {
   switch (action.type) {
 
-    case 'START_LISTENING':
-      return true
-
-    case 'STOP_LISTENING':
-      return false
-
-    default:
-      return state
-  }
-}
-
-const headerReducer = (state={fixed: false, fill: false, position: 'top'}, action) => {
-  switch (action.type) {
-
-    case 'UPDATE_TIMELINE_POSITION':
+    case 'STYLE_UPDATE':
       return Object.assign({}, state, {
-        positioning: action.positioning,
-      })
-
-    case 'HEADER_STYLE_CHANGE':
-      return Object.assign({}, state, {
-        fill: action.fill,
-        fixed: action.fixed,
+        ...action.payload
       })
 
     default:
@@ -61,6 +52,6 @@ const headerReducer = (state={fixed: false, fill: false, position: 'top'}, actio
 export default combineReducers({
   formSubmitted: formReducer,
   open: modalReducer,
-  scrollTop: scrollReducer,
-  header: headerReducer,
+  route: routeReducer,
+  ui: uiReducer,
 })
