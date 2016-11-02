@@ -35,11 +35,11 @@ export class Header extends Component {
   handlePositioning(scrollTop) {
    const { positioning, updateTimelinePosition } = this.props
 
-    if (scrollTop <= 1435 && positioning !== 'top') {
+    if (scrollTop <= 1600 && positioning !== 'top') {
       updateTimelinePosition({positioning: 'top'})
-    } else if (scrollTop > 1435 && scrollTop < 2435  && positioning !== 'fixed') {
+    } else if (scrollTop > 1600 && scrollTop < 2600  && positioning !== 'fixed') {
       updateTimelinePosition({positioning: 'fixed'})
-    } else if (scrollTop >= 2435 && positioning !== 'bottom') {
+    } else if (scrollTop >= 2600 && positioning !== 'bottom') {
       updateTimelinePosition({positioning: 'bottom'})
     }
   }
@@ -99,8 +99,6 @@ export class Header extends Component {
       } else if (scrollTop <= threshold && opacity) {
         this.handleOpacity(false)
       }
-
-
     })
   }
 

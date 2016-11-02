@@ -27,6 +27,8 @@
 
 .fill {
   composes: overlay;
+  position: absolute;
+  z-index: 50;
   background-color: #132663;
 }
 

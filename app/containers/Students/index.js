@@ -8,11 +8,6 @@ import { startTimelineScroll, stopTimelineScroll } from 'api/actions'
 import css from './style.css'
 
 export class Students extends Component {
-  constructor(props) {
-    super(props)
-
-  }
-
   render() {
     return (
       <div className={css.root}>

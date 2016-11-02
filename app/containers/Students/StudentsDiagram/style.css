@@ -2,6 +2,8 @@
   position: relative;
   text-align: center;
   color: #1EA4DD;
+  max-width: 1200px;
+  margin: 0 auto 70px;
 }
 
 .header {
@@ -32,26 +34,20 @@
 
 .directions {
   position: relative;
-  height: 500px;
+  padding-right: 30px;
+  padding-left: 30px;
   width: 100%;
-  max-width: 900px;
   margin: 0 auto;
 }
 
-.root img {
-  position: absolute;
-  right: 0;
-  left: 2%;
-  top: 0;
-  width: 100%;
-  padding-right: 30px;
-  padding-left: 30px;
-  height: auto;
+@media (min-width: 1024px) {
+  .directions {
+    max-width: 1200px;
+  }
 }
 
-@media (min-width: 1024px) {
-  .root img {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
+.root img {
+  margin-left: 2.3%;
+  width: 100%;
+  height: auto;
 }

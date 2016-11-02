@@ -1,5 +1,5 @@
 import React from 'react'
-import img from './501-diagram.jpg'
+import img from './501-diagram.png'
 import css from './style.css'
 
 export const StudentsDiagram = props => {
