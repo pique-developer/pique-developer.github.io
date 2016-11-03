@@ -27,7 +27,13 @@ export class ScholarshipsOverview extends Component {
                 </div>
                 <div className={i === 0 ? css.btns1 : css.btns2}>
                   <button className={css.btn} onClick={this.props.onClick}>Sign Up!</button>
-                  <button className={css.btn}><Link to="/students">{x.button}</Link></button>
+
+                    <Link
+                      className={css.btn}
+                      to={i > 0 ? '/providers' : '/students'}>
+                      {x.button}
+                    </Link>
+
                 </div>
               </div>
               <img className={

@@ -144,6 +144,8 @@
   width: 180px;
   padding: 7px;
   height: 48px;
+  line-height: 30px;
+  text-decoration: none;
   margin: 25px 13px 10px;
   text-align: center;
   border: 2px solid #fff;
@@ -157,7 +159,8 @@
   outline: none;
 }
 
-.btn a {
+.btns1 a:hover,
+.btns2 a:hover {
   text-decoration: none;
   color: #44008D;
 }
