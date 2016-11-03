@@ -7,19 +7,10 @@ import css from './style.css'
 export const FAQ = props => {
   return (
     <div className={css.root}>
-      <div className={css.fill} />
-      <div className={css.content}>
-        <div className={css.header}>
-          <div className={css.title} />
-          <div className={css.divider} />
-        </div>
-
-        <FAQCards />
-
-      </div>
+      <FAQHeader />
+      <FAQCards />
     </div>
   )
 }
-
 
 export default FAQ

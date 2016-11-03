@@ -1,51 +1,29 @@
 .root {
-  position: relative;
-  background-color: #132663;
-  height: 80px;
-  width: 100%;
-  color: #fff;
+  padding-top: 70px;
+  margin-bottom: 90px;
 }
 
-.navbar {
-  position: relative;
-  width: 100%;
+.title {
+  font-family: 'Avenir Next', sans-serif;
+  color: #353535;
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 36px;
+  }
+}
+
+.title:after {
+  content: "Have Questions? Pique Has Answers.";
+}
+
+.divider {
+  height: 2px;
+  background-color: #353535;
+  width:  90px;
   margin: 0 auto;
-  max-width: 1100px;
-}
-
-.logo {
-  position: absolute;
-  left: 50px;
-  top: 15px;
-}
-
-.nav {
-  position: absolute;
-  right: 50px;
-  top: 20px;
-  bottom: 0;
-}
-
-.link {
-  display: inline-block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 200;
-  font-size: 14px;
-  margin-right: 40px;
-  text-decoration: none;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -webkit-touch-callout: none;
-  user-select: none;
-}
-
-.btn {
-  display: inline-block;
-  border: 1px solid #fff;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 40px;
-  padding: 10px 25px 10px;
-  font-size: 14px;
 }

@@ -39,7 +39,7 @@ export const Header = ({  fill, fixed, launchModal }) => {
 export default connect(
   state => ({
     fixed: state.ui.fixed,
-    fill: state.ui.fill,
+    fill: state.ui.fill || state.routing.route === '/faq',
   }),
   Actions
 )(Header)

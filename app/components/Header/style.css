@@ -1,7 +1,7 @@
 .root {
   position: absolute;
   width: 100%;
-  padding: 10px 40px;
+  padding: 10px 40px 5px;
   z-index: 40;
   top: 10px;
   transition: all 0.4s ease;
@@ -10,7 +10,6 @@
 
 .fixed {
   position: fixed;
-  padding: 10px 40px 5px;
 }
 
 .brand {
