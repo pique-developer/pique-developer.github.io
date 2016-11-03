@@ -14,22 +14,6 @@ export const submitForm = _ => {
   return {type: 'SUBMIT_FORM'}
 }
 
-export const startTimelineScroll = scrollTop => {
-  return {type: 'START_LISTENING' }
-}
-
-export const stopTimelineScroll = scrollTop => {
-  return {type: 'STOP_LISTENING' }
-}
-
-export const applyStyleToHeader = payload => {
-  return {type: 'HEADER_STYLE_CHANGE', ...payload}
-}
-
-export const updateTimelinePosition = payload => {
-  return {type: 'UPDATE_TIMELINE_POSITION', ...payload}
-}
-
 export const locationChange = payload => {
   return {type: 'LOCATION_CHANGE', payload}
 }

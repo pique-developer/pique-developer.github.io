@@ -2,7 +2,7 @@ import React from 'react'
 import StudentsForm from './StudentsForm'
 import StudentsDiagram from './StudentsDiagram'
 import StudentsTimeline from './StudentsTimeline'
-import StudentsJoin from './StudentsJoin'
+import StudentsPricing from './StudentsPricing'
 import css from './style.css'
 
 export const Students = props => {
@@ -11,7 +11,7 @@ export const Students = props => {
       <StudentsForm />
       <StudentsDiagram />
       <StudentsTimeline />
-      <StudentsJoin />
+      <StudentsPricing />
     </div>
   )
 }
