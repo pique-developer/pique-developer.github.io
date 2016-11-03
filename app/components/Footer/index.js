@@ -6,27 +6,15 @@ export const Footer = props => {
   return (
     <footer className={css.root}>
       <div className={css.main}>
-        <div className={css.col}>
-          <span className={css.header}>Company</span>
-          <Link className={css.link} to="/about#team">Team</Link>
-          <span className={css.link}>Blog</span>
-          <span className={css.link}>Get Involved</span>
-        </div>
-        <div className={css.col}>
-          <span className={css.header}>Educators</span>
-          <Link className={css.link} to="/educators">Get Started</Link>
-          <Link className={css.link} to="/educators">Learn More</Link>
-        </div>
-        <div className={css.col}>
-          <span className={css.header}>Scholarship Foundations</span>
-          <Link className={css.link} to="/about">About</Link>
-          <Link className={css.link} to="/faq">FAQ</Link>
-          <span className={css.link}>Become a Partner</span>
-        </div>
-        <div className={css.col}>
-          <span className={css.header}>Support</span>
-          <Link className={css.link} to="/faq">FAQ</Link>
-        </div>
+        {contents.map((x, i) =>
+          <div key={i} className={css.col}>
+            <span className={css.header}>{x.title}</span>
+            {x.links.map((x, i) => x.to
+              ? <Link key={i} className={css.link} to={x.to}>{x.text}</Link>
+              : <a key={i} className={css.link} href={x.href}>{x.text}</a>
+            )}
+          </div>
+        )}
       </div>
       <div className={css.subfooter}>
         <div className="pull-left">
@@ -39,5 +27,30 @@ export const Footer = props => {
     </footer>
   )
 }
+
+const contents = [
+  {
+    title: 'Company',
+    links: [
+      { to: '/about#team', text: 'Team'},
+      { to: '/blog', text: 'Blog'},
+      { to: '/about', text: 'Mission'},
+      { href: 'https://angel.co/pique/jobs', text: 'Careers'},
+    ]
+  },{
+    title: 'Become a Partner',
+    links: [
+      { to: '/nonprofits', text: 'Nonprofits'},
+      { to: '/providers', text: 'Scholarship Providers'},
+      { to: '/educators', text: 'Educators'},
+    ]
+  },{
+    title: 'Support',
+    links: [
+      { to: '/faq', text: 'FAQ'},
+      { href: 'mailto:support@getpique.co', text: 'Contact Us'},
+    ]
+  }
+]
 
 export default Footer
