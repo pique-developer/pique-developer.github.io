@@ -30,8 +30,8 @@ export const updateTimelinePosition = payload => {
   return {type: 'UPDATE_TIMELINE_POSITION', ...payload}
 }
 
-export const locationChange = pathname => {
-  return {type: 'LOCATION_CHANGE', pathname}
+export const locationChange = payload => {
+  return {type: 'LOCATION_CHANGE', payload}
 }
 
 export const styleUpdate = payload => {

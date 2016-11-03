@@ -4,21 +4,22 @@ import hero from './101-hero.jpg'
 import mask from './c-mask.png'
 import css from './style.css'
 
-export const AboutUsHero = props => {
+export const AboutUsHero = ({ opacityInc, opacityDec, onClick }) => {
   return (
     <div className={css.hero} style={{
       backgroundImage: `url(${hero}`,
       WebkitMaskImage: `url(${mask}`,
     }}>
-      <div className={props.opacity ? css.fill : css.fade} />
-      <h1 className={css.h1} />
-      <button className={css.btn} onClick={props.onClick}>Sign Up for Free!</button>
+      <div style={{opacity: opacityInc}} className={css.overlay} />
+      <h1 style={{opacity: opacityDec}} className={css.h1} />
+      <button style={{opacity: opacityDec}} className={css.btn} onClick={onClick}>Sign Up for Free!</button>
     </div>
   )
 }
 
 export default connect(
   state => ({
-    opacity: state.ui.opacity
+    opacityInc: state.ui.opacityInc,
+    opacityDec: state.ui.opacityDec,
   })
 )(AboutUsHero)

@@ -9,7 +9,7 @@ import css from './style.css'
 
 export const Team = props => {
   return (
-    <div className={css.root}>
+    <div className={css.root} id="team">
       <div className={css.header}>Our Team</div>
       <ul className={css.ul}>
         {team.map((x, i) =>

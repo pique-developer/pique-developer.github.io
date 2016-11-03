@@ -11,11 +11,13 @@ const formReducer = (state=false, action) => {
   }
 }
 
-const routeReducer = (state='', action) => {
+const routeReducer = (state={route: '', hash: ''}, action) => {
   switch (action.type) {
 
     case 'LOCATION_CHANGE':
-      return action.pathname
+      return Object.assign({}, state, {
+        ...action.payload
+      })
 
     default:
       return state
@@ -50,8 +52,8 @@ const uiReducer = (state={}, action) => {
 }
 
 export default combineReducers({
+  routing: routeReducer,
   formSubmitted: formReducer,
   open: modalReducer,
-  route: routeReducer,
   ui: uiReducer,
 })

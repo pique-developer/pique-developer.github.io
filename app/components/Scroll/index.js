@@ -6,6 +6,7 @@ export class Scroll extends Component {
   constructor(props) {
     super(props)
     this.resetStyles = ::this.resetStyles
+    this.resetScroll = ::this.resetScroll
     this.applyStyles = ::this.applyStyles
     this.switchView = ::this.switchView
     this.handleHeaderUI = ::this.handleHeaderUI
@@ -15,7 +16,8 @@ export class Scroll extends Component {
 
   initialUI = {
     position: 'top',
-    opacity: false,
+    opacityInc: 0,
+    opacityDec: 1,
     fill: false,
     fixed: false,
     animate1: false,
@@ -24,16 +26,22 @@ export class Scroll extends Component {
 
   componentDidMount() {
     this.switchView()
+    this.resetScroll(!!this.props.hash)
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.route !== this.props.route) {
       this.resetStyles()
+      this.resetScroll(!!nextProps.hash)
     }
   }
 
   resetStyles() {
     this.props.styleUpdate(this.initialUI)
+  }
+
+  resetScroll(hash) {
+    window.scrollTo(0, hash ? 900 : 0)
   }
 
   applyStyles(styles) {
@@ -43,9 +51,8 @@ export class Scroll extends Component {
   switchView() {
     window.addEventListener('scroll', _ => {
       const scrollTop = window.scrollY
-      const { route } = this.props
-      if (route === '/' || route === '/about') {
-        this.applyStyles({fixed: true})
+      const { route, fixed } = this.props
+      if (route === '/' || route === '/about' && !fixed) {
         this.handleHeaderUI(scrollTop)
         if (route === '/') {
           this.handleProvidersOverview(scrollTop)
@@ -58,19 +65,24 @@ export class Scroll extends Component {
 
   handleHeaderUI(scrollTop) {
     const { ui, route } = this.props
-    const opacityThreshold = route === '/' ? 300 : 100
-    const fillThreshold = route === '/' ? 440 : 240
+    const threshold = route === '/' ? 450 : 280
 
-    if (scrollTop > fillThreshold && !ui.fill) {
+    if (!ui.fixed && scrollTop) {
+      this.applyStyles({fixed: true})
+    }
+
+    if (scrollTop > threshold + 30 && !ui.fill) {
       this.applyStyles({fill: true})
-    } else if (scrollTop <= fillThreshold && ui.fill) {
+    } else if (scrollTop <= threshold + 30 && ui.fill) {
       this.applyStyles({fill: false})
     }
 
-    if (scrollTop > opacityThreshold && !ui.opacity) {
-      this.applyStyles({opacity: true})
-    } else if (scrollTop <= opacityThreshold && ui.opacity) {
-      this.applyStyles({opacity: false})
+    if (scrollTop < threshold) {
+      const opacity = scrollTop / threshold
+      this.applyStyles({
+        opacityInc: opacity,
+        opacityDec: 1 - opacity || 1
+      })
     }
   }
 
@@ -103,7 +115,8 @@ export class Scroll extends Component {
 
 export default connect(
   state => ({
-    route: state.route,
+    route: state.routing.route,
+    hash: state.routing.hash,
     ui: state.ui,
   }),
   Actions

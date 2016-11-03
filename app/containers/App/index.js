@@ -15,16 +15,24 @@ import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class App extends Component {
+  constructor(props) {
+    super(props)
+    this.updateRouteState = ::this.updateRouteState
+  }
 
-  componentWillMount() {
-    this.props.locationChange(this.props.pathname)
+  componentDidMount() {
+    this.updateRouteState(this.props)
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
-      this.props.locationChange(nextProps.pathname)
-      window.scrollTo(0, 0)
+      this.updateRouteState(nextProps)
     }
+  }
+
+  updateRouteState(props) {
+    const { pathname, location } = props
+    this.props.locationChange({ route: pathname, hash: location.hash })
   }
 
   render() {
