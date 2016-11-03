@@ -2,7 +2,7 @@ import React from 'react'
 import img from './305-check.png'
 import css from './style.css'
 
-export const Card = ({ price, annotation, list, btnText }) => {
+export const Card = ({ price, annotation, list, btnText, onClick }) => {
   return (
     <div className={css.root}>
       <div className={css.content}>
@@ -21,7 +21,7 @@ export const Card = ({ price, annotation, list, btnText }) => {
         </div>
 
       </div>
-      <div className={css.btn}>{btnText}</div>
+      <div className={css.btn} onClick={onClick}>{btnText}</div>
     </div>
   )
 }

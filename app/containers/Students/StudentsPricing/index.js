@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import * as Actions from 'api/actions'
 import Card from 'components/Card'
 import css from './style.css'
 
@@ -9,7 +11,8 @@ export const StudentsPricing = props => {
       <Card
         price={price}
         btnText={btnText}
-        list={list} />
+        list={list}
+        onClick={props.launchModal} />
     </div>
   )
 }
@@ -26,4 +29,4 @@ const list = [
   'More Easily Reuse Essays',
 ]
 
-export default StudentsPricing
+export default connect(null, Actions)(StudentsPricing)

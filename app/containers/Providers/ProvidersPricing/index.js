@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import * as Actions from 'api/actions'
 import Card from 'components/Card'
 import css from './style.css'
 
@@ -10,7 +12,8 @@ export const ProvidersPricing = props => {
         price={price}
         annotation={annotation}
         btnText={btnText}
-        list={list} />
+        list={list}
+        onClick={props.launchModal} />
     </div>
   )
 }
@@ -26,4 +29,4 @@ const list = [
   'Notify Interviewees, Finalists, and Winners In-App'
 ]
 
-export default ProvidersPricing
+export default connect(null, Actions)(ProvidersPricing)

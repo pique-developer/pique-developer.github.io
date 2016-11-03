@@ -7,7 +7,7 @@ import Modal from 'components/Modal'
 import Home from 'containers/Home'
 import AboutUs from 'containers/AboutUs'
 import Educators from 'containers/Educators'
-import ScholarshipProviders from 'containers/ScholarshipProviders'
+import Providers from 'containers/Providers'
 import Students from 'containers/Students'
 import FAQ from 'containers/FAQ'
 import Scroll from 'components/Scroll'
@@ -44,7 +44,7 @@ export class App extends Component {
         <Match exactly pattern="/" component={Home} />
         <Match pattern="/about" component={AboutUs} />
         <Match pattern="/educators" component={Educators} />
-        <Match pattern="/providers" component={ScholarshipProviders} />
+        <Match pattern="/providers" component={Providers} />
         <Match pattern="/students" component={Students} />
         <Match pattern="/faq" component={FAQ} />
         <Footer />
