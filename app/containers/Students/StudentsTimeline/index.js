@@ -46,7 +46,9 @@ export const StudentsTimeline = ({ position, animate1, animate2, animate3 })=> {
           </div>
           <div className={animate3 ? `${css.right} ${css.in}` : css.right}>
             <div className={css.card}>
+              <div className={css.example}>Example</div>
               <div className={css.copy}>If you applied to a 'Women in STEM' scholarship with a 1,000 word limit. Your 'Based on Scholarships You've Previously Applied to' section would be updated with scholarships for Women going into STEM programs with a 1,000 word limit.</div>
+              <div className={css.comment}>Cool, huh?</div>
             </div>
           </div>
         </div>

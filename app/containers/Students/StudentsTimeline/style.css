@@ -162,6 +162,7 @@
   width: 540px;
 }
 
+
 .right .img {
   right: -120%;
   top: -50px;
@@ -172,12 +173,14 @@
 
 .right .card {
   right: -120%;
-  background-color: #fff;
+  background-color: #f9f9f9;
   color: #3845C1;
   width: 475px;
   height: 270px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 7px;
+  box-shadow: 10px 12px 10px 0 rgba(0,0,0,0.5);
+  font-family: 'Avenir Next', sans-serif;
 }
 
 .right .card .copy {
@@ -186,6 +189,23 @@
   font-weight: 200;
   line-height: 25px;
   font-size: 14px;
+}
+
+.right .card .example {
+  color: #3845C1;
+  text-align: left;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.right .card .comment {
+  color: #3845C1;
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 25px;
 }
 
 .left.in .text,
