@@ -9,8 +9,13 @@
 .content {
   position: relative;
   margin: 80px auto 0;
-  max-width: 1200px;
   height: 1500px;
+  max-width: 1200px;
+}
+
+.wrap {
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .header {
@@ -186,7 +191,7 @@
 .right .card .copy {
   text-align: left;
   font-family: 'Avenir Next', sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 25px;
   font-size: 14px;
 }
