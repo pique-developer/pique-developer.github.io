@@ -10,8 +10,12 @@ export const Hero = ({ opacityInc, opacityDec, onClick }) => {
       backgroundImage: `url(${hero}`,
       WebkitMaskImage: `url(${mask}`,
     }}>
-      <div style={{opacity: opacityInc}} className={css.overlay} />
-      <h1 style={{opacity: opacityDec}} className={css.h1} />
+      <div className={css.overlay} style={{opacity: opacityInc}} />
+      <div className={css.text} style={{opacity: opacityDec}}>
+        <h1  className={css.h1} />
+        <div className={css.sub}>Discover, save & apply to scholarships with just one application.</div>
+        <div className={css.sub}>Yeah, it is that simple.</div>
+      </div>
       <button style={{opacity: opacityDec}} className={css.btn} onClick={onClick}>Sign Up for Free!</button>
     </div>
   )

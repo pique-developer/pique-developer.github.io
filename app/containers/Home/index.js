@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Hero from './Hero'
 import DebtCounter from './DebtCounter'
-import Stats from './Stats'
+import StatsCounter from './StatsCounter'
 import Waves from './Waves'
 import FactsStatement from './FactsStatement'
 import EducatorsCard from './EducatorsCard'
@@ -32,7 +32,7 @@ export class Home extends Component {
         <Hero onClick={this.props.launchModal} />
         <DebtCounter />
         <Waves rise={this.state.rise} />
-        <Stats />
+        <StatsCounter />
         <FactsStatement />
         <ScholarshipsOverview onClick={this.props.launchModal} />
         <EducatorsCard />

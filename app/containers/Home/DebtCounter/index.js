@@ -1,5 +1,5 @@
 import React from 'react'
-import Counter from 'containers/Home/Counter'
+import Counter from 'components/Counter'
 import css from './style.css'
 
 export const DebtCounter = props => {
