@@ -1,81 +1,55 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import mobile from './310-slide.png'
-import tablet from './311-slide.png'
-import desktop from './312-slide.png'
+import Carousel from 'nuka-carousel'
+import img1 from './310-slide.png'
+import img2 from './311-slide.png'
+import img3 from './312-slide.png'
 import css from './style.css'
 
 export class ProvidersCarousel extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      current: 0,
-      next: 1,
-      lastIndex: !props.images.length ? 0 : props.images.length - 1
-    }
-    this.rotateSlides = ::this.rotateSlides
-    this.nextCycle = ::this.nextCycle
-    this.startCarouselInterval = ::this.startCarouselInterval
-    this.clearCarouselInterval = ::this.clearCarouselInterval
+    this.state = {index: 0, autoplay: true}
+    this.goToSlide = ::this.goToSlide
+    this.pauseCarousel = ::this.pauseCarousel
   }
 
-  componentDidMount() {
-    this.startCarouselInterval()
+  pauseCarousel(index) {
+    this.setState({ index, autoplay: false })
   }
 
-  componentWillUnmount() {
-    this.clearCarouselInterval()
-  }
-
-  startCarouselInterval() {
-    this.interval = setInterval(this.rotateSlides, 2500)
-  }
-
-  clearCarouselInterval() {
-    clearInterval(this.interval)
-  }
-
-  nextCycle(position) {
-    return position >= this.state.lastIndex ? 0 : position + 1
-  }
-
-  rotateSlides() {
-    this.setState({
-      current: this.nextCycle(this.state.current),
-      next: this.nextCycle(this.state.next),
-    })
+  goToSlide(index) {
+    this.setState({ index })
   }
 
   render() {
-    const { current, next } = this.state
+    const { index, autoplay } = this.state
     return (
       <div className={css.root}>
         <div className={css.title}>The Scholarship Application Process Just Got Easier.</div>
-
         <div className={css.content}>
-          <div className={css.carousel}>
-
-            <div className={css.slides}>
-              {this.props.images.map((x, i) =>
-                <div
-                  key={i}
-                  className={`${css.slide} ${i === current ? css.current : i === next ? css.next : css.enqueue}`}>
-                  <div className={css.img} style={{backgroundImage: `url(${x})`}} />
-                </div>
-              )}
-            </div>
+          <div className={css.slides}>
+            <Carousel
+              wrapAround
+              autoplay={autoplay}
+              initialSlideHeight={500}
+              initialSlideWidth={680}
+              afterSlide={this.goToSlide}
+              slideIndex={index}>
+              <div className={css.bg} style={{backgroundImage: `url(${img1})`}} />
+              <div className={css.bg} style={{backgroundImage: `url(${img2})`}} />
+              <div className={css.bg} style={{backgroundImage: `url(${img3})`}} />
+            </Carousel>
           </div>
-
           <div className={css.details}>
-            {bulletpoints.map((x, i) =>
+            {details.map((x, i) =>
               <div
                 key={i}
-                className={i === current ? css.highlight : css.bulletpoint}
-                onClick={this.clearCarouselInterval}>
+                className={index === i ? css.highlight : css.bulletpoint}
+                onClick={_ => this.pauseCarousel(i)}>
                 <div className={css.bullet}>
                   <div className={css.num}>{i + 1}</div>
                 </div>
-
                 <div className={css.point}>
                   <div className={css.h3}>{x.title}</div>
                   <div className={css.h5}>{x.body}</div>
@@ -89,7 +63,7 @@ export class ProvidersCarousel extends Component {
   }
 }
 
-const bulletpoints = [
+const details = [
   {
     title: `Create an Account and Post Your Scholarship`,
     body: `First, fill out our common application and add supplemental requirements specific to your scholarship.`
@@ -102,8 +76,4 @@ const bulletpoints = [
   }
 ]
 
-export default connect(
-  state => ({
-    images: [mobile, tablet, desktop]
-  })
-)(ProvidersCarousel)
+export default ProvidersCarousel

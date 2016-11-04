@@ -9,8 +9,14 @@
 .content {
   position: relative;
   margin: 80px auto 0;
-  height: 1500px;
+  height: auto;
   max-width: 1200px;
+}
+
+@media (min-width: 1024px) {
+  .content {
+    height: 1500px;
+  }
 }
 
 .wrap {
@@ -45,11 +51,14 @@
   height: 2px;
 }
 
-.timeline img {
-  right: 0;
-  left: 0;
-  z-index: 2;
-  margin: 0 auto;
+.timeline {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .timeline {
+    display: block;
+  }
 }
 
 .timeline {
@@ -62,6 +71,14 @@
   height: 100%;
   margin: 0 auto;
 }
+
+.timeline img {
+  right: 0;
+  left: 0;
+  z-index: 2;
+  margin: 0 auto;
+}
+
 
 .top {
   position: absolute;
@@ -95,12 +112,17 @@
   padding-right: 20px;
   padding-left: 20px;
   width: 100%;
-  height: 550px;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .column {
+    height: 550px;
+  }
 }
 
 .title {
   font-size: 24px;
-  max-width: 355px;
   font-weight: 200;
   margin-bottom: 15px;
   display: inline-block;
@@ -120,67 +142,107 @@
   display: inline-block;
 }
 
+.right,
 .left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.left,
-.right {
+  display: block;
   position: relative;
-  height: 500px;
-  width: 50%;
+  height: auto;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+@media (min-width: 1024px) {
+  .left,
+  .right {
+    margin: 0 auto;
+    height: 500px;
+    width: 50%;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
 }
 
 .left .text,
-.left .img {
-  position: absolute;
-  top: 0;
-  transition: all 0.5s ease-in-out;
-}
-
+.left .img
 .right .text,
 .right .img,
 .right .card {
-  position: absolute;
-  top: 0;
-  transition: all 0.5s ease-in-out;
+  display: block;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .left .text,
+  .left .img,
+  .right .text,
+  .right .img,
+  .right .card {
+    position: absolute;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+  }
 }
 
 .left .text {
-  left: -120%;
   text-align: left;
 }
 
 .right .text {
-  right: -120%;
   text-align: right;
 }
 
-.left .img {
-  left: -120%;
-  margin-left: -60px;
-  height: auto;
-  width: 540px;
+@media (min-width: 1024px) {
+  .left .text {
+    left: -120%;
+  }
+  .right .text {
+    right: -120%;
+  }
 }
 
-
+.left .img,
 .right .img {
-  right: -120%;
-  top: -50px;
-  margin-right: -60px;
   height: auto;
-  width: 500px;
+  width: 100%;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .left .img {
+    display: block;
+    left: -120%;
+    margin-left: -60px;
+    height: auto;
+    width: 410px;
+  }
+  .right .img {
+    display: block;
+    right: -120%;
+    top: -50px;
+    margin-right: -60px;
+    height: auto;
+    width: 410px
+  }
+}
+
+@media (min-width: 1280px) {
+  .left .img {
+    width: 520px;
+  }
+  .right .img {
+    width: 500px;
+  }
 }
 
 .right .card {
-  right: -120%;
   background-color: #f9f9f9;
   color: #3845C1;
-  width: 475px;
+  width: 100%;
   height: 270px;
   padding: 20px;
   border-radius: 7px;
@@ -211,6 +273,13 @@
   font-weight: 700;
   font-size: 16px;
   margin-top: 25px;
+}
+
+@media (min-width: 1024px) {
+  .right .card {
+    right: -120%;
+    width: 475px;
+  }
 }
 
 .left.in .text,

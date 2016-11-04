@@ -51,3 +51,15 @@
   width: 100%;
   height: auto;
 }
+
+@media (min-width: 1024px) {
+  .root img {
+    width: 964px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .root img {
+    width: 100%;
+  }
+}

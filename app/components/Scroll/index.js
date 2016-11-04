@@ -89,11 +89,18 @@ export class Scroll extends Component {
 
   handleStudentsUI(scrollTop) {
     const { position, animate1, animate2, animate3 } = this.props.ui
-    if (scrollTop <= 1580 && position !== 'top') {
+    const windowWidth = window.innerWidth
+    const mobile = windowWidth < 1024
+    if (mobile) { return }
+
+    const small = windowWidth < 1280
+    const positionFixed = small ? 1490 : 1580
+    const positionBottom = small ? 2835 : 2925
+    if (scrollTop <= positionFixed && position !== 'top') {
       this.applyStyles({position: 'top'})
-    } else if (scrollTop > 1580 && scrollTop < 2925  && position !== 'fixed') {
+    } else if (scrollTop > positionFixed && scrollTop < positionBottom  && position !== 'fixed') {
       this.applyStyles({position: 'fixed'})
-    } else if (scrollTop >= 2925 && position !== 'bottom') {
+    } else if (scrollTop >= positionBottom && position !== 'bottom') {
       this.applyStyles({position: 'bottom'})
     }
 
