@@ -11,8 +11,17 @@
 }
 
 .header {
+  top: 100px;
+}
+
+@media (min-width: 720px) {
+  .header {
+    top: 150px;
+  }
+}
+
+.header {
   position: absolute;
-  top: 150px;
   left: 0;
   right: 0;
   width: 75%;
@@ -35,8 +44,26 @@
 }
 
 .copy {
+  top: 210px;
+  line-height: 23px;
+  font-size: 17px;
+}
+
+@media (min-width: 720px) {
+  .copy {
+    top: 235px;
+    line-height: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .copy {
+    top: 245px;
+  }
+}
+
+.copy {
   position: absolute;
-  top: 245px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -45,10 +72,8 @@
   padding-right: 15px;
   color: #fff;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 17px;
   font-weight: 100;
   text-align: center;
-  line-height: 26px;
   letter-spacing: 1px;
 }
 
