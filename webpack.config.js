@@ -136,6 +136,7 @@ const prodBuild = _ => configureWebpack({
       title: 'Get Pique',
       filename: '../index.html',
       appMountId: 'app',
+      favicon: 'app/favicon.png',
       inject: true
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
