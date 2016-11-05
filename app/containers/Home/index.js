@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import Hero from './Hero'
 import DebtCounter from './DebtCounter'
 import StatsCounter from './StatsCounter'
 import Waves from './Waves'
 import FactsStatement from './FactsStatement'
-import EducatorsCard from './EducatorsCard'
+import HomeEducators from './HomeEducators'
 import ScholarshipsOverview from './ScholarshipsOverview'
 import DCBanner from './DCBanner'
-import { launchModal } from 'api/actions'
-import css from './style.css'
 
 export class Home extends Component {
   constructor(props) {
@@ -29,18 +26,17 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <Hero onClick={this.props.launchModal} />
+        <Hero />
         <DebtCounter />
         <Waves rise={this.state.rise} />
         <StatsCounter />
         <FactsStatement />
-        <ScholarshipsOverview onClick={this.props.launchModal} />
-        <EducatorsCard />
+        <ScholarshipsOverview />
+        <HomeEducators />
         <DCBanner />
       </div>
     )
   }
 }
 
-
-export default connect(null, { launchModal })(Home)
+export default Home

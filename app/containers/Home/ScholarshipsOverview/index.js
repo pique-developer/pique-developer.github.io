@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'react-router/Link'
+import * as Actions from 'api/actions'
 import img1 from './003-scholarships.jpg'
 import img2 from './004-scholarships.jpg'
 import mask from './mask.png'
@@ -26,7 +27,7 @@ export class ScholarshipsOverview extends Component {
                   )}
                 </div>
                 <div className={i === 0 ? css.btns1 : css.btns2}>
-                  <button className={css.btn} onClick={this.props.onClick}>Sign Up!</button>
+                  <button className={css.btn} onClick={this.props.launchModal}>Sign Up!</button>
 
                     <Link
                       className={css.btn}
@@ -72,5 +73,6 @@ const halves = [{
 export default connect(
   state => ({
     ui: state.ui
-  })
+  }),
+  Actions
 )(ScholarshipsOverview)
