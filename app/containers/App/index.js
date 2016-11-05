@@ -9,6 +9,7 @@ import AboutUs from 'containers/AboutUs'
 import Educators from 'containers/Educators'
 import Providers from 'containers/Providers'
 import Students from 'containers/Students'
+import Nonprofits from 'containers/Nonprofits'
 import FAQ from 'containers/FAQ'
 import Scroll from 'components/Scroll'
 import * as Actions from 'api/actions'
@@ -40,13 +41,14 @@ export class App extends Component {
       <div className={`${css.root} ${this.props.open ? css.open : ''}`}>
         <Scroll />
         <Modal />
-        <Match pattern="/*" component={Header} onClick={this.props.launchModal} />
+        <Header />
         <Match exactly pattern="/" component={Home} />
         <Match pattern="/about" component={AboutUs} />
         <Match pattern="/educators" component={Educators} />
         <Match pattern="/providers" component={Providers} />
         <Match pattern="/students" component={Students} />
         <Match pattern="/faq" component={FAQ} />
+        <Match pattern="/nonprofits" component={Nonprofits} />
         <Footer />
       </div>
     )
