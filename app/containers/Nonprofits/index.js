@@ -2,7 +2,7 @@ import React from 'react'
 import NonprofitsHeader from './NonprofitsHeader'
 import NonprofitsCarousel from './NonprofitsCarousel'
 import NonprofitsPartners from './NonprofitsPartners'
-// import NonprofitsReasons from './NonprofitsReasons'
+import NonprofitsReasons from './NonprofitsReasons'
 // import css from './style.css'
 
 export const Nonprofits = props => {
@@ -11,6 +11,7 @@ export const Nonprofits = props => {
       <NonprofitsHeader />
       <NonprofitsCarousel />
       <NonprofitsPartners />
+      <NonprofitsReasons />
     </div>
   )
 }
