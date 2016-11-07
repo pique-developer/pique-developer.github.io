@@ -71,7 +71,7 @@ const cards = [
     float: 'right'
   },{
     title: `Have More Questions?`,
-    body: <span>Feel free to email us at <a className={css.mail} href="mailto:rucker.b@gmail.com">rucker.b@gmail.com</a> and we will get back to you as soon as possible!</span>,
+    body: <span>Feel free to email us at <a className={css.mail} href="mailto:support@getpique.co">support@getpique.co</a> and we will get back to you as soon as possible!</span>,
     width: '48%',
     height: '140px',
     float: 'right'

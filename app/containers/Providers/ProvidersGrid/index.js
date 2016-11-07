@@ -35,7 +35,7 @@ const grids = [
     image: img2,
   },{
     title: `Increase Efficiency`,
-    body: `Never deal with post marked packages, receive incomplete applications or having to review applications through emails again.`,
+    body: `Never deal with post marked packages, receive incomplete applications or review emailed applications again.`,
     image: img3,
   },{
     title: `Help Students`,

@@ -13,7 +13,7 @@ export const DCBanner = props => {
       <img className={css.img} src={flag} />
       <div className={css.caption}>Pique is a project founded by DCPS Alumni to</div>
       <div className={css.caption}>help simplify the scholarship application process.</div>
-      <Link to="/about#team"><div className={css.btn} /></Link>
+      <Link to="/about"><div className={css.btn} /></Link>
     </div>
   )
 }

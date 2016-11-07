@@ -64,7 +64,7 @@ const halves = [{
     image: img2,
     button: `How Does It Work?`,
     lines: [
-      {text: `should never have to pay a premium to find applicants.`, lead: `Scholarship Foundations`},
+      {text: `should never have to pay a premium to find applicants.`, lead: `Scholarship Providers`},
       {text: `We bring qualified students to you for just $99.99/year.`},
       {text: `Review applications, rate applicants, select interviewees, finalists and notify winners all in-app.`}
     ],

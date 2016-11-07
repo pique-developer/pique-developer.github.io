@@ -39,13 +39,15 @@
   border-radius: 40px;
   color: white;
   text-align: center;
-  font-size: 16px;
   background-color: rgba(255, 255, 255, 0.15);
   border: 2px solid white;
   margin-top: 25px;
   transition: 0.2s all ease-in;
   margin-bottom: 60px;
   text-decoration: none;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
   cursor: pointer;
 }
 

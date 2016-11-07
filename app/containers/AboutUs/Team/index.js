@@ -30,10 +30,10 @@ export const Team = props => {
 }
 
 const team = [
-  {name: 'Brian Rucker', position: 'Founder', education: 'Haverford College - General Assembly', image: img1},
+  {name: 'Brian Rucker', position: 'Founder', education: 'Haverford College', image: img1},
   {name: 'Kyle Schiller', position: 'Data Engineer', education: 'Carleton College', image: img2},
   {name: 'Adam Middleton', position: 'Scholarship Pipeline Developer', education: 'George Washington University', image: img3},
-  {name: 'Nnamdi Nwaezeapu', position: 'Scholarship Pipeline Developer', education: 'Education: Columbia University', image: img4},
+  {name: 'Nnamdi Nwaezeapu', position: 'Scholarship Pipeline Developer', education: 'Columbia University', image: img4},
   {name: 'Kevin Iraheta', position: 'Scholarship Pipeline Developer', education: 'Lafayette College', image: img5},
   {name: 'Karina Carmona', position: 'Front End Developer', education: 'Cal Poly SLO', image: img6},
 ]

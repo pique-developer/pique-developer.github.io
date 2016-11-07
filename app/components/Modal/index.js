@@ -60,7 +60,7 @@ export class Modal extends Component {
   options = [
     { value: 'placeholder', text: 'I am a...', type: 'school' },
     { value: 'student', text: 'Student', type: 'school' },
-    { value: 'scholarship foundation', text: 'Scholarship Foundation', type: 'school' },
+    { value: 'scholarship foundation', text: 'Scholarship Foundation', type: 'foundation' },
     { value: 'teacher', text: 'Teacher', type: 'school' },
     { value: 'counselor', text: 'Counselor', type: 'school' },
     { value: 'nonprofit', text: 'Nonprofit', type: 'nonprofit' },
@@ -71,6 +71,7 @@ export class Modal extends Component {
     school: 'Name of school',
     nonprofit: 'Name of non-profit',
     employer: 'Name of employer',
+    foundation: 'Name of foundation',
   }
 
   handleSelectUpdate(e) {

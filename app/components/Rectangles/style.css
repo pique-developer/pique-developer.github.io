@@ -52,7 +52,7 @@
 @media (min-width: 1024px) {
   .box {
     width: 60%;
-    padding: 20px 40px 35px;
+    padding: 20px 20px 35px;
   }
   .under {
     z-index: 2;

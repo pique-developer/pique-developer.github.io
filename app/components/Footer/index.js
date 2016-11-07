@@ -17,11 +17,6 @@ export const Footer = props => {
         )}
       </div>
       <div className={css.subfooter}>
-        <div className="pull-left">
-          <a href="" className="social-media"><i className="fa fa-facebook-official" aria-hidden="true"></i></a>
-          <a href="" className="social-media"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-          <a href="" className="social-media"><i className="fa fa-instagram" aria-hidden="true"></i></a>
-        </div>
         <div className={css.copyright}>Pique © 2016</div>
       </div>
     </footer>
@@ -49,6 +44,13 @@ const contents = [
     links: [
       { to: '/faq', text: 'FAQ'},
       { href: 'mailto:support@getpique.co', text: 'Contact Us'},
+    ]
+  },{
+    title: 'Let’s Get Social!',
+    links: [
+      { href: '#', text: 'Twitter'},
+      { href: '#', text: 'Instagram'},
+      { href: '#', text: 'Facebook'},
     ]
   }
 ]

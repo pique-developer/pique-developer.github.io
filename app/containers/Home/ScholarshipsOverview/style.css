@@ -1,7 +1,7 @@
 .root {
   position: relative;
   height: 100%;
-  background: linear-gradient(-45deg, #44008d 0%, #125aac 100%);
+  background: linear-gradient(45deg, #44008d 0%, #125aac 100%);
   color: #fff;
   height: 1250px;
   font-family: 'Avenir Next', sans-serif;
@@ -11,7 +11,7 @@
   display: block;
   overflow: hidden;
   position: absolute;
-  transform: skew(0deg,-15deg);
+  transform: skew(0deg,-10deg);
   background: linear-gradient(-45deg, #44008d 0%, #194bbc 100%);
   width: 100%;
   top: 0;
@@ -114,11 +114,12 @@
 }
 
 .title {
-  font-weight: 400;
+  font-weight: 100;
   font-size: 24px;
   margin-bottom: 20px;
   margin-top: 20px;
   line-height: 27px;
+  letter-spacing: 1px;
 }
 
 .btns {
@@ -148,11 +149,11 @@
   text-decoration: none;
   margin: 25px 13px 10px;
   text-align: center;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   border-radius: 40px;
   font-family: 'Avenir Next', sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 200;
   letter-spacing: 0px;
   transition: all 0.2s ease-in;
   cursor: pointer;
@@ -171,7 +172,7 @@
 }
 
 .btn:first-child:hover {
-  background-color: #44008D;
+  background-color: transparent;
   color: #fff;
 }
 
@@ -190,7 +191,8 @@
 }
 
 .btn:nth-child(2):hover {
-  background-color: #fff;
+  color: #fff;
+  background-color: transparent;
 }
 
 .lines {

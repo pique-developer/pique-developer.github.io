@@ -62,6 +62,7 @@
 }
 
 .btn {
+  font-family: 'Avenir Next', sans-serif;
   display: inline-block;
   position: absolute;
   top: 405px;
@@ -77,7 +78,7 @@
   color: white;
   letter-spacing: 1px;
   width: 220px;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   font-weight: 100;
   transition: 0.2s background-color ease-in;
