@@ -52,7 +52,13 @@ export class PaymentForm extends Component {
   }
 
   handleInputChanges(e) {
-    this.setState({[e.target.name]: e.target.value})
+    const { name, value } = e.target
+    switch (name) {
+      case 'number':
+      case 'zip':
+      case 'csc':
+        this.setState({[name]: value.replace(/\D/g, '')})
+    }
   }
 
   handleSubmit(e) {
@@ -78,13 +84,18 @@ export class PaymentForm extends Component {
             <label>Card Number</label>
             <img src={img6} />
           </div>
+
           <div className={css.row}>
-            <input className={css.full} name="number" onChange={this.handleInputChanges} value={number} type="text"/>
+            <div className={css.full}>
+              <img className={css.lock} src={img5} />
+              <input name="number" onChange={this.handleInputChanges} value={number} type="text"/>
+            </div>
           </div>
 
           <div className={css.label}>
             <label>Expiry Date</label>
           </div>
+
           <div className={css.row}>
             <select className={css.month} name="month" onChange={this.handleInputChanges} value={month}>
               {this.options.month.map((x, i) => <option key={i} value={x}>{x}</option>)}
@@ -95,11 +106,22 @@ export class PaymentForm extends Component {
           </div>
 
           <div className={css.label}>
-            <label className={css.csc}>Security Code</label>
+            <label className={css.csc}>
+              <div className={css.tip}>
+                The security code is the last 3 numbers on the back of your card. (4 numbers in the front if Amex)
+                <div className={css.arrow} />
+              </div>
+              Security Code <span>?</span>
+            </label>
             <label className={css.zip}>Zip Code</label>
           </div>
           <div className={css.row}>
-            <input className={css.csc} name="csc" onChange={this.handleInputChanges} value={csc} type="text"/>
+
+            <div className={css.csc}>
+              <img className={css.lock} src={img5} />
+              <input name="csc" onChange={this.handleInputChanges} value={csc} type="text"/>
+            </div>
+
             <input className={css.zip} name="zip" onChange={this.handleInputChanges} value={zip} type="text"/>
           </div>
 

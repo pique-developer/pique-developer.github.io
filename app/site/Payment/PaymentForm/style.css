@@ -1,11 +1,54 @@
 .root {
-  composes: box from 'site/Payment/style.css'
+  composes: box from 'site/Payment/style.css';
+  font-family: 'Avenir Next', sans-serif;
+  font-weight: 300;
 }
 
 @media (min-width: 1024px) {
   .root {
     float: right;
   }
+}
+
+.select {
+  text-indent: 7.5px;
+  margin-bottom: 20px;
+  height: 45px;
+  width: 100%;
+  border: 1px solid #B2BCD3;
+  box-shadow: none;
+  color: #B2BCD3;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  background-image: none;
+  outline-style: none;
+  border-radius: 4px;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.select option:not(:checked) {
+  color: #000;
+}
+
+.select:focus {
+  border: 1px solid #4570F0;
+  box-shadow: none;
+}
+
+.select option {
+  color: #B2BCD3;
+}
+
+.selected {
+  text-align: center;
+  width: 70px;
+  height: 1px;
+  margin: 0 auto;
+  margin-top: 5px;
+  transition: all 0.1s ease-in-out;
+  background-color: #2971E0;
 }
 
 .cc {
@@ -18,6 +61,7 @@
 }
 
 .row {
+  position: relative;
   height: 50px;
   margin-bottom: 20px;
 }
@@ -29,6 +73,8 @@
   outline-style: none;
   color: #000;
   height: 50px;
+  font-size: 15px;
+  font-family: 'Avenir Next', sans-serif;
   border: 1px solid #B2BCD3;
   box-shadow: none;
 }
@@ -54,49 +100,29 @@ input:-ms-input-placeholder {
   color: #B2BCD3;
 }
 
+.lock {
+  position: absolute;
+  top: 20px;
+}
+
+.full .lock {
+  right: 20px;
+}
+
+.csc .lock {
+  right: 40px;
+}
+
 .full {
+  position: relative;
+}
+
+.full input {
   width: 100%;
 }
 
-.select {
-  text-indent: 7.5px;
-  margin-bottom: 20px;
-  height: 45px;
-  width: 100%;
-  border: 1px solid #B2BCD3;
-  box-shadow: none;
-  color: #B2BCD3;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  background-color: #fff;
-  background-image: none;
-  outline-style: none;
-  border-radius: 4px;
-  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-
-.select option:not(:checked) {
-  color : #000;
-}
-
-.select:focus {
-  border: 1px solid #4570F0;
-  box-shadow: none;
-}
-
-.select option {
-  color: #B2BCD3;
-}
-
-.selected {
-  text-align: center;
-  width: 70px;
-  height: 1px;
-  margin: 0 auto;
-  margin-top: 5px;
-  transition: all 0.1s ease-in-out;
-  background-color: #2971E0;
+.csc {
+  position: relative;
 }
 
 .month,
@@ -123,7 +149,6 @@ input:-ms-input-placeholder {
   color: #242424;
   height: 19px;
   line-height: 19px;
-  opacity: 0.9;
   margin-bottom: 10px;
 }
 
@@ -131,6 +156,53 @@ input:-ms-input-placeholder {
   position: absolute;
   right: 10px;
   top: -5px;
+}
+
+.label span {
+  background-color: #3cd070;
+  font-size: 9px;
+  color: #fff;
+  width: 16px;
+  line-height: 16px;
+  height: 16px;
+  vertical-align: top;
+  padding: 0px 4px;
+  border-radius: 50%;
+}
+
+.tip {
+  display: none;
+}
+
+.tip .arrow {
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  left: 70px;
+  background-color: transparent;
+  height: 10px;
+  width: 15px;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #000;
+  border-left: 15px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.label .csc:hover .tip {
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  font-weight: 500;
+  top: -95px;
+  left: -30px;
+  z-index: 1;
+  padding: 5px;
+  border-radius: 4px;
+  height: 90px;
+  width: 170px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
 }
 
 .img {
@@ -144,7 +216,12 @@ input:-ms-input-placeholder {
 }
 
 .disabled {
+  cursor: pointer;
   opacity: 0.5;
+}
+
+.disabled:hover {
+  opacity: 1;
 }
 
 .cards {
@@ -163,16 +240,16 @@ input:-ms-input-placeholder {
   border-radius: 50px;
   border: none;
   transition: 0.1s all ease-in;
-  background-color: #fff;
-  color: #4570F0;
-  border: 1px solid #4570F0;
+  border: 1.5px solid #3cd070;
+  background-color: #3cd070;
+  color: #fff;
   cursor: pointer;
 }
 
 .submit:hover {
-  border: 1.5px solid #3cd070;
-  background-color: #3cd070;
-  color: #fff;
+  background-color: #fff;
+  color: #4570F0;
+  border: 1px solid #4570F0;
 }
 
 .notify {
