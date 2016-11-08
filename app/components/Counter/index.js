@@ -10,19 +10,28 @@ export class Counter extends Component {
   }
 
   componentDidMount() {
-    this.increment()
+    const { total } = this.props
+    this.increment(total)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { total } = nextProps
+    const { counter } = this.state
+    if (counter === 0 && total !== 0) {
+      this.increment(total)
+    }
   }
 
   componentWillUnmount() {
     clearTimeout(this.timeout)
   }
 
-  increment() {
+  increment(total) {
     const { counter } = this.state
-    const { interval, increment, total } = this.props
+    const { interval, increment } = this.props
     if (counter < total) {
       this.setState({counter: counter + increment})
-      this.timeout = setTimeout(this.increment, interval)
+      this.timeout = setTimeout(_ => this.increment(total), interval)
     } else if (counter >= total) {
       this.setState({counter: total})
     }

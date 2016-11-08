@@ -1,9 +1,0 @@
-.root {
-  composes: box from 'containers/Payment/style.css'
-}
-
-@media (min-width: 1024px) {
-  .root {
-    float: left;
-  }
-}
