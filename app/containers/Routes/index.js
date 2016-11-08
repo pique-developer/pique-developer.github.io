@@ -16,14 +16,14 @@ import SiteScroll from 'site/SiteScroll'
 
 export class Routes extends Component {
   site = [
-    {pattern: '/',          component: Home, exactly: true},
-    {pattern: '/about',     component: About},
-    {pattern: '/educators', component: Educators},
-    {pattern: '/providers', component: Providers},
-    {pattern: '/students',  component: Students},
-    {pattern: 'faq',        component: FAQ},
-    {pattern: 'nonprofits', component: Nonprofits},
-    {pattern: 'payment',    component: Payment},
+    {pattern: '/',           component: Home, exactly: true},
+    {pattern: '/about',      component: About},
+    {pattern: '/educators',  component: Educators},
+    {pattern: '/providers',  component: Providers},
+    {pattern: '/students',   component: Students},
+    {pattern: '/faq',        component: FAQ},
+    {pattern: '/nonprofits', component: Nonprofits},
+    {pattern: '/payment',    component: Payment},
   ]
 
   render() {

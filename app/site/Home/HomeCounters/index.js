@@ -1,14 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Stats from './Stats'
+import DebtCounter from './DebtCounter'
+import StatsCounters from './StatsCounters'
 import Waves from './waves'
 import css from './style.css'
 
 export const HomeCounters = props => {
   return (
-    <div className={css.root}>
-      <Waves animate={props.animate} />
-      <Stats animate={props.animate} />
+    <div>
+      <DebtCounter />
+      <div className={css.row}>
+        <Waves animate={props.animate} />
+        <StatsCounters animate={props.animate} />
+      </div>
     </div>
   )
 }

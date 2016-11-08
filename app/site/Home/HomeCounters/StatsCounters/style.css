@@ -1,0 +1,40 @@
+.root {
+  margin-top: 100px;
+}
+
+.stats {
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.item {
+  display: inline-block;
+  width: 33.333333333%;
+  text-align: center;
+}
+
+.caption {
+  color: #B2BCD3;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.tuition {
+  composes: stats;
+  color: #51BBF1;
+}
+
+.loan {
+  composes: stats;
+  color: #26E98F;
+}
+
+.graduating {
+  composes: stats;
+  color: #2BDBB4;
+}
