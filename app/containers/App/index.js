@@ -12,6 +12,7 @@ import Students from 'containers/Students'
 import Nonprofits from 'containers/Nonprofits'
 import FAQ from 'containers/FAQ'
 import Scroll from 'components/Scroll'
+import Payment from 'containers/Payment'
 import * as Actions from 'api/actions'
 import css from './style.css'
 
@@ -49,6 +50,7 @@ export class App extends Component {
         <Match pattern="/students" component={Students} />
         <Match pattern="/faq" component={FAQ} />
         <Match pattern="/nonprofits" component={Nonprofits} />
+        <Match pattern="/payment" component={Payment} />
         <Footer />
       </div>
     )
