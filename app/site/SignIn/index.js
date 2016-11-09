@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import LoadingIndicator from 'components/LoadingIndicator'
 import * as API from 'api'
 import * as Actions from 'api/actions'
 import css from './style.css'
@@ -36,7 +35,7 @@ export class SignIn extends Component {
     const { authenticating, loginSuccess, loginError } = this.props
     authenticating()
     API.signIn(email, password)
-      .then(x => loginSuccess({user: {...x.providerData[0]}}))
+      .then(x => loginSuccess({user: console.log(x) || {...x.providerData[0]}}))
       .catch(e => loginError({
         error: e.code === 'auth/wrong-password'
           ? 'Incorrect password'
@@ -63,14 +62,11 @@ export class SignIn extends Component {
           <div className={css.row}>
             <input className={css.full} name="password" onChange={this.handleInputChanges} value={password} onKeyPress={this.handleKeyPress} type="password" placeholder="Name of school" />
           </div>
-          {loading
-            ? <LoadingIndicator />
-            :  <div className={css.btns}>
-                <span className={css.notify}>{error}</span>
-                <button className={css.submit} onClick={this.handleSubmit}>{login ? 'Log In' : 'Sign Up'}</button>
-                <button className={css.switch} onClick={this.switchType}>{login ? 'Need an account?' : 'Have an account?'}</button>
-              </div>
-          }
+          <div className={css.btns}>
+            <span className={css.notify}>{error}</span>
+            <button className={css.submit} onClick={this.handleSubmit}>{login ? 'Log In' : 'Sign Up'}</button>
+            <button className={css.switch} onClick={this.switchType}>{login ? 'Need an account?' : 'Have an account?'}</button>
+          </div>
           <div className={css.caption} />
         </div>
       </div>

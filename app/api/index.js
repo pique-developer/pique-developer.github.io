@@ -8,6 +8,11 @@ firebase.initializeApp({
   messagingSenderId: "297637710221"
 })
 
+export const initApp = observer => {
+  return firebase.auth()
+    .onAuthStateChanged(observer)
+}
+
 export const signUp = data => {
   firebase.database().ref().push(data)
 }
