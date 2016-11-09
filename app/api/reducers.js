@@ -11,6 +11,49 @@ const formReducer = (state=false, action) => {
   }
 }
 
+const loadingReducer = (state=false, action) => {
+  switch (action.type) {
+
+    case 'AUTHENTICATING':
+      return true
+
+    case 'LOGIN_SUCCESS':
+    case 'LOGIN_ERROR':
+      return false
+
+    default:
+      return state
+  }
+}
+
+const authReducer = (state={user: false, error: ''}, action) => {
+  switch (action.type) {
+
+    case 'AUTHENTICATING':
+      return Object.assign({}, state, {
+        error: '',
+      })
+
+    case 'LOGIN_SUCCESS':
+      return Object.assign({}, state, {
+        user: action.payload.user,
+      })
+
+    case 'LOGIN_ERROR':
+      return Object.assign({}, state, {
+        error: action.payload.error,
+      })
+
+    case 'SIGNOUT':
+      return Object.assign({}, state, {
+        user: false,
+      })
+
+    default:
+      return state
+  }
+}
+
 const routeReducer = (state={route: '', hash: ''}, action) => {
   switch (action.type) {
 
@@ -54,6 +97,8 @@ const uiReducer = (state={}, action) => {
 export default combineReducers({
   routing: routeReducer,
   formSubmitted: formReducer,
+  auth: authReducer,
   open: modalReducer,
+  loading: loadingReducer,
   ui: uiReducer,
 })

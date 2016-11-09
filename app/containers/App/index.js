@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Routes from 'containers/Routes'
+import SiteRoutes from 'containers/SiteRoutes'
+import MembersRoutes from 'containers/MembersRoutes'
 import * as Actions from 'api/actions'
 import css from './style.css'
 
@@ -26,9 +27,10 @@ export class App extends Component {
   }
 
   render() {
+    const { user } = this.props
     return (
       <div className={`${css.root} ${this.props.open ? css.open : ''}`}>
-        <Routes />
+        {user ? <MembersRoutes /> : <SiteRoutes />}
       </div>
     )
   }
@@ -38,6 +40,7 @@ export default connect(
   state => ({
     open: state.open,
     route: state.route,
+    user: state.auth.user,
   }),
   Actions
 )(App)

@@ -9,12 +9,13 @@ import Students from 'site/Students'
 import Nonprofits from 'site/Nonprofits'
 import FAQ from 'site/FAQ'
 import Payment from 'site/Payment'
+import SignIn from 'site/SignIn'
 import SiteHeader from 'site/SiteHeader'
 import SiteFooter from 'site/SiteFooter'
 import SiteModal from 'components/Modal'
 import SiteScroll from 'site/SiteScroll'
 
-export class Routes extends Component {
+export class SiteRoutes extends Component {
   site = [
     {pattern: '/',           component: Home, exactly: true},
     {pattern: '/about',      component: About},
@@ -24,6 +25,7 @@ export class Routes extends Component {
     {pattern: '/faq',        component: FAQ},
     {pattern: '/nonprofits', component: Nonprofits},
     {pattern: '/payment',    component: Payment},
+    {pattern: '/signin',     component: SignIn},
   ]
 
   render() {
@@ -45,4 +47,4 @@ export default connect(
   state => ({
     ...state
   })
-)(Routes)
+)(SiteRoutes)

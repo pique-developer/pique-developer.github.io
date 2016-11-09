@@ -1,4 +1,4 @@
-import { signUp } from 'api'
+import * as API from 'api'
 
 export const launchModal = _ => {
   document.body.style.overflow = 'hidden'
@@ -10,7 +10,7 @@ export const removeModal = _ => {
 }
 
 export const submitForm = _ => {
-  signUp()
+  API.signUp()
   return {type: 'SUBMIT_FORM'}
 }
 
@@ -20,4 +20,21 @@ export const locationChange = payload => {
 
 export const styleUpdate = payload => {
   return {type: 'STYLE_UPDATE', payload}
+}
+
+export const authenticating = _ => {
+  return {type: 'AUTHENTICATING'}
+}
+
+export const loginSuccess = payload => {
+  return {type: 'LOGIN_SUCCESS', payload}
+}
+
+export const loginError = payload => {
+  return {type: 'LOGIN_ERROR', payload}
+}
+
+export const signOut = _ => {
+  API.signOut()
+  return {type: 'SIGNOUT'}
 }

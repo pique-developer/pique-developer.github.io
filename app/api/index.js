@@ -11,3 +11,12 @@ firebase.initializeApp({
 export const signUp = data => {
   firebase.database().ref().push(data)
 }
+
+export const signIn = (email, password) => {
+  return firebase.auth()
+    .signInWithEmailAndPassword(email, password)
+}
+
+export const signOut = _ => {
+  return firebase.auth().signOut()
+}
