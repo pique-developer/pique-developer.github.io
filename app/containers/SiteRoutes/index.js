@@ -9,7 +9,7 @@ import Students from 'site/Students'
 import Nonprofits from 'site/Nonprofits'
 import FAQ from 'site/FAQ'
 import Payment from 'site/Payment'
-import SignIn from 'site/SignIn'
+import Auth from 'site/Auth'
 import SiteHeader from 'site/SiteHeader'
 import SiteFooter from 'site/SiteFooter'
 import SiteModal from 'components/Modal'
@@ -25,7 +25,7 @@ export class SiteRoutes extends Component {
     {pattern: '/faq',        component: FAQ},
     {pattern: '/nonprofits', component: Nonprofits},
     {pattern: '/payment',    component: Payment},
-    {pattern: '/signin',     component: SignIn},
+    {pattern: '/signin',     component: Auth},
   ]
 
   render() {

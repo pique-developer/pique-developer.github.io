@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-const formReducer = (state=false, action) => {
+const registerReducer = (state=false, action) => {
   switch (action.type) {
 
     case 'SUBMIT_FORM':
@@ -26,7 +26,7 @@ const loadingReducer = (state=false, action) => {
   }
 }
 
-const authReducer = (state={user: false, error: ''}, action) => {
+const authReducer = (state={user: false, error: '', login: true}, action) => {
   switch (action.type) {
 
     case 'AUTHENTICATING':
@@ -37,11 +37,17 @@ const authReducer = (state={user: false, error: ''}, action) => {
     case 'LOGIN_SUCCESS':
       return Object.assign({}, state, {
         user: action.payload.user,
+        login: state.login,
       })
 
     case 'LOGIN_ERROR':
       return Object.assign({}, state, {
         error: action.payload.error,
+      })
+
+    case 'SWITCH_FORM':
+      return Object.assign({}, state, {
+        login: !state.login,
       })
 
     case 'SIGNOUT':
@@ -96,7 +102,7 @@ const uiReducer = (state={}, action) => {
 
 export default combineReducers({
   routing: routeReducer,
-  formSubmitted: formReducer,
+  formSubmitted: registerReducer,
   auth: authReducer,
   open: modalReducer,
   loading: loadingReducer,

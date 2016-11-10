@@ -13,8 +13,13 @@ export const initApp = observer => {
     .onAuthStateChanged(observer)
 }
 
-export const signUp = data => {
-  firebase.database().ref().push(data)
+export const register = data => {
+  firebase.database().ref().child('signups').push(data)
+}
+
+export const signUp = (email, password) => {
+  return firebase.auth()
+    .createUserWithEmailAndPassword(email, password)
 }
 
 export const signIn = (email, password) => {
@@ -25,3 +30,4 @@ export const signIn = (email, password) => {
 export const signOut = _ => {
   return firebase.auth().signOut()
 }
+

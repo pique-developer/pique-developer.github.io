@@ -9,11 +9,6 @@ export const removeModal = _ => {
   return {type: 'REMOVE_MODAL'}
 }
 
-export const submitForm = _ => {
-  API.signUp()
-  return {type: 'SUBMIT_FORM'}
-}
-
 export const locationChange = payload => {
   return {type: 'LOCATION_CHANGE', payload}
 }
@@ -22,8 +17,17 @@ export const styleUpdate = payload => {
   return {type: 'STYLE_UPDATE', payload}
 }
 
+export const submitForm = data => {
+  API.register(data)
+  return {type: 'SUBMIT_FORM'}
+}
+
 export const authenticating = _ => {
   return {type: 'AUTHENTICATING'}
+}
+
+export const switchForm = _ => {
+  return {type: 'SWITCH_FORM'}
 }
 
 export const loginSuccess = payload => {
