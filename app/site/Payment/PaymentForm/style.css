@@ -152,6 +152,10 @@ input:-ms-input-placeholder {
   margin-bottom: 10px;
 }
 
+.label label {
+  font-weight: 500;
+}
+
 .label img {
   position: absolute;
   right: 10px;
@@ -159,7 +163,7 @@ input:-ms-input-placeholder {
 }
 
 .label span {
-  background-color: #3cd070;
+  background-color: #26D066;
   font-size: 9px;
   color: #fff;
   width: 16px;
@@ -240,8 +244,8 @@ input:-ms-input-placeholder {
   border-radius: 50px;
   border: none;
   transition: 0.1s all ease-in;
-  border: 1.5px solid #3cd070;
-  background-color: #3cd070;
+  border: 1.5px solid #26D066;
+  background-color: #26D066;
   color: #fff;
   cursor: pointer;
 }
