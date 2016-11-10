@@ -8,7 +8,7 @@ import css from './style.css'
 export const HomeCounters = props => {
   return (
     <div>
-      <DebtCounter />
+      <DebtCounter loading={props.loading} />
       <div className={css.row}>
         <Waves animate={props.animate} />
         <StatsCounters animate={props.animate} />
@@ -19,6 +19,7 @@ export const HomeCounters = props => {
 
 export default connect(
   state => ({
-    animate: state.ui.animate3
+    loading: state.loading,
+    animate: state.ui.animate3,
   })
 )(HomeCounters)

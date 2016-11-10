@@ -16,13 +16,14 @@ export class App extends Component {
   componentWillMount() {
     const { authenticating, loginSuccess, loginError } = this.props
     authenticating()
-    API.initApp(
-      user => loginSuccess({ user }),
-      e    => loginError({error: e.message})
-    )
   }
 
   componentDidMount() {
+    const { loginSuccess, loginError } = this.props
+    API.initApp(
+      user => setTimeout(_ => loginSuccess({ user }), 1000),
+      e    => loginError({error: e.message})
+    )
     this.updateRouteState(this.props)
   }
 
@@ -42,7 +43,9 @@ export class App extends Component {
     return (
       <div className={`${css.root} ${this.props.open ? css.open : ''}`}>
         {loading ? <LoadingIndicator /> : null}
-        {user ? <MembersRoutes /> : <SiteRoutes />}
+        <div className={`${css.router} ${!loading ? css.ready : ''}`}>
+          {user ? <MembersRoutes /> : <SiteRoutes />}
+        </div>
       </div>
     )
   }
