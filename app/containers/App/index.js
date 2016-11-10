@@ -10,20 +10,15 @@ import css from './style.css'
 export class App extends Component {
   constructor(props) {
     super(props)
+    this.initAuth = ::this.initAuth
     this.updateRouteState = ::this.updateRouteState
   }
 
   componentWillMount() {
-    const { authenticating, loginSuccess, loginError } = this.props
-    authenticating()
+    this.initAuth()
   }
 
   componentDidMount() {
-    const { loginSuccess, loginError } = this.props
-    API.initApp(
-      user => setTimeout(_ => loginSuccess({ user }), 1000),
-      e    => loginError({error: e.message})
-    )
     this.updateRouteState(this.props)
   }
 
@@ -33,15 +28,24 @@ export class App extends Component {
     }
   }
 
+  initAuth() {
+    const { authenticating, loginSuccess, loginError } = this.props
+    authenticating()
+    API.initApp(
+      user => setTimeout(_ => loginSuccess({ user }), 800),
+      e    => loginError({error: e.message})
+    )
+  }
+
   updateRouteState(props) {
-    const { pathname, location } = props
-    this.props.locationChange({ route: pathname, hash: location.hash })
+    const { pathname, location, locationChange } = props
+    locationChange({ route: pathname, hash: location.hash })
   }
 
   render() {
-    const { user, loading } = this.props
+    const { user, loading, open } = this.props
     return (
-      <div className={`${css.root} ${this.props.open ? css.open : ''}`}>
+      <div className={`${css.root} ${open ? css.open : ''}`}>
         {loading ? <LoadingIndicator /> : null}
         <div className={`${css.router} ${!loading ? css.ready : ''}`}>
           {user ? <MembersRoutes /> : <SiteRoutes />}
