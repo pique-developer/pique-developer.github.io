@@ -11,7 +11,7 @@ const ApplicantCard = ({ image, name, description, rating, gpa, activities }) =>
         <div className={css.stripe}>
           <div className={css.name}>{name}</div>
           <div className={css.desc}>{description}</div>
-          <Ratings value={rating}/>
+          <Ratings className={css.rating} value={rating}/>
         </div>
         <div className={css.details}>
           <div className={css.info}>

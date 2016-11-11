@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Ratings = ({ value }) => {
+const Ratings = ({ value, className }) => {
   const stars = Array.from({length: 5}, (_, i) => i + 1 <= value)
   return (
-    <div style={{position: 'absolute', zIndex: 2, left: '150px', top: '70px'}}>
+    <div className={className}>
       {stars.map((x, i) => !!x ? <StarFill key={i} /> : <StarNoFill key={i} />)}
     </div>
   )
