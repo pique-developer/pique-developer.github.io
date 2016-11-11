@@ -17,6 +17,10 @@ export const styleUpdate = payload => {
   return {type: 'STYLE_UPDATE', payload}
 }
 
+export const initAuthState = payload => {
+  return {type: 'INIT_AUTH_STATE', payload}
+}
+
 export const submitForm = data => {
   API.register(data)
   return {type: 'SUBMIT_FORM'}

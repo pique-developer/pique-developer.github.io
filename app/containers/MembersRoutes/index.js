@@ -8,7 +8,7 @@ import SidePanel from 'members/SidePanel'
 
 export class MembersRoutes extends Component {
   routes = [
-    {pattern: '/', component: Applicants, exactly: true}
+    {pattern: '/', component: Applicants}
   ]
 
   render() {
@@ -17,7 +17,6 @@ export class MembersRoutes extends Component {
     ? <Redirect to="/" />
     : <div>
         <MembersHeader />
-        <SidePanel />
         {this.routes.map((x, i) => <Match key={i} {...x} />)}
       </div>
   }

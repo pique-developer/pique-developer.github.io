@@ -26,12 +26,18 @@ const loadingReducer = (state=false, action) => {
   }
 }
 
-const authReducer = (state={user: false, error: '', login: true}, action) => {
+const authReducer = (state={user: false, initialized: false, error: '', login: true}, action) => {
   switch (action.type) {
 
     case 'AUTHENTICATING':
       return Object.assign({}, state, {
         error: '',
+      })
+
+    case 'INIT_AUTH_STATE':
+      return Object.assign({}, state, {
+        user: action.payload.user,
+        initialized: true,
       })
 
     case 'LOGIN_SUCCESS':
@@ -43,6 +49,7 @@ const authReducer = (state={user: false, error: '', login: true}, action) => {
     case 'LOGIN_ERROR':
       return Object.assign({}, state, {
         error: action.payload.error,
+        initialized: true,
       })
 
     case 'SWITCH_FORM':

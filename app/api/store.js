@@ -6,7 +6,7 @@ export default function configureStore() {
   const middleware = [thunkmasterFlex()]
 
   if (__DEV__) {
-    // middleware.push(logger())
+    middleware.push(logger())
   }
 
   const enhancers = []

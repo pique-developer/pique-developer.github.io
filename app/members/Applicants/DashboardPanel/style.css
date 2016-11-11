@@ -1,20 +1,19 @@
 .root {
   position: relative;
-  margin-top: 30px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
   border-radius: 7px;
   background: #fff;
 }
 
 .ul {
-  display: block;;
-  margin: 0 auto;
+  display: block;
+  margin: 20px auto 0;
   padding-left: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 800px) {
   .ul {
-    display: flex;
+    margin-top: 40px;
   }
 }
 
@@ -28,14 +27,14 @@
   margin: 0 auto;
 }
 
-@media (min-width: 668px) {
+@media (min-width: 800px) {
   .li {
     display: inline-block;
     width: 33.3333333333%;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
   .li {
     height: 138px;
     width: 20%;
@@ -65,7 +64,7 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
   .copy {
     margin-top: 20px;
     min-height: 108px;

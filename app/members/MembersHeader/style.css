@@ -18,7 +18,7 @@
 
 .brand {
   float: left;
-  width: 240px
+  width: 215px;
 }
 
 .logo {
@@ -30,7 +30,8 @@
 .nav {
   position: relative;
   float: right;
-  width: calc(100% - 240px);
+  width: calc(100% - 215px);
+  max-width: 1215px;
   height: 60px;
   margin: 0 auto;
 }
@@ -44,7 +45,7 @@
 .border {
   position: absolute;
   top: 5px;
-  left: 241px;
+  left: 216px;
   width: 1px;
   background-color: #1A85FF;
   margin: 5px auto;

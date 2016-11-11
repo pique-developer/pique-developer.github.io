@@ -29,10 +29,9 @@ export class App extends Component {
   }
 
   initAuth() {
-    const { authenticating, loginSuccess, loginError } = this.props
-    authenticating()
+    const { initAuthState, loginError } = this.props
     API.initApp(
-      user => setTimeout(_ => loginSuccess({ user }), 800),
+      user => initAuthState({ user }),
       e    => loginError({error: e.message})
     )
   }
@@ -43,13 +42,16 @@ export class App extends Component {
   }
 
   render() {
-    const { user, loading, open } = this.props
+    const { user, initialized, loading, open } = this.props
     return (
       <div className={`${css.root} ${open ? css.open : ''}`}>
         {loading ? <LoadingIndicator /> : null}
-        <div className={`${css.router} ${!loading ? css.ready : ''}`}>
-          {user ? <MembersRoutes /> : <SiteRoutes />}
-        </div>
+        {initialized
+          ? <div className={`${css.router} ${!loading ? css.ready : ''}`}>
+              {user ? <MembersRoutes /> : <SiteRoutes />}
+            </div>
+          : null
+        }
       </div>
     )
   }
@@ -60,7 +62,8 @@ export default connect(
     open: state.open,
     route: state.route,
     user: state.auth.user,
-    loading: state.loading
+    loading: state.loading,
+    initialized: state.auth.initialized,
   }),
   Actions
 )(App)

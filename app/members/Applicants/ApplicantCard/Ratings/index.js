@@ -1,14 +1,10 @@
 import React from 'react'
 
-const Stars = props => {
-  const stars = [0, 0, 0, 0, 0]
-
-  if (props.nofill) {
-    stars[4] = 1
-  }
+const Ratings = ({ value }) => {
+  const stars = Array.from({length: 5}, (_, i) => i + 1 <= value)
   return (
-    <div style={{position: 'absolute', zIndex: 2, left: '160px', top: '100px'}}>
-      {stars.map((x, i) => !!x ? <StarNoFill key={i} /> : <StarFill key={i} />)}
+    <div style={{position: 'absolute', zIndex: 2, left: '150px', top: '70px'}}>
+      {stars.map((x, i) => !!x ? <StarFill key={i} /> : <StarNoFill key={i} />)}
     </div>
   )
 }
@@ -51,4 +47,4 @@ const StarNoFill = _ => (
   </svg>
 )
 
-export default Stars
+export default Ratings

@@ -1,7 +1,7 @@
 import React from 'react'
-import Banner from './Banner'
+import Match from 'react-router/Match'
 import DashboardPanel from './DashboardPanel'
-import Profiles from './Profiles'
+import NewApplicants from './NewApplicants'
 import css from './style.css'
 
 const Applicants = props => {
@@ -9,6 +9,7 @@ const Applicants = props => {
     <div className={css.root}>
       <div className={css.wrap}>
         <DashboardPanel />
+        <Match pattern="/" component={NewApplicants} exactly />
       </div>
     </div>
   )
