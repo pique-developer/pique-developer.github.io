@@ -46,3 +46,11 @@ export const signOut = _ => {
   API.signOut()
   return {type: 'SIGNOUT'}
 }
+
+export const fetchSuccess = payload => {
+  return {type: 'FETCH_SUCCESS', payload}
+}
+
+export const fetchError = payload => {
+  return {type: 'FETCH_ERROR', payload}
+}

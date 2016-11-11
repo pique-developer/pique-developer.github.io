@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Link from 'react-router/Link'
 import css from './style.css'
 
@@ -14,7 +15,7 @@ const DashboardPanel = props => {
               activeClassName={css.active}
               activeOnlyWhenExact>
               <div className={css.copy}>
-                <div className={css.num}>{x.num}</div>
+                <div className={css.num}>{props[x.key]}</div>
                 <div className={css.caption}>{x.caption}</div>
               </div>
               <div className={css.selected} />
@@ -27,11 +28,22 @@ const DashboardPanel = props => {
 }
 
 const items = [
-  { route: '/',             num: 0, caption: 'New Applicants', activeOnlyWhenExact: true},
-  { route: '/reviewed',     num: 0, caption: 'Reviewed Applicants' },
-  { route: '/interviewees', num: 0, caption: 'Interviewees' },
-  { route: '/finalists',    num: 0, caption: 'Finalists' },
-  { route: '/days-left',    num: 0, caption: 'Days Left' },
+  {route: '/',             key: 'new',          caption: 'New Applicants', activeOnlyWhenExact: true},
+  {route: '/reviewed',     key: 'reviewed',     caption: 'Reviewed Applicants'},
+  {route: '/interviewees', key: 'interviewees', caption: 'Interviewees'},
+  {route: '/finalists',    key: 'finalists',    caption: 'Finalists'},
+  {route: '/days-left',    key: 'days',         caption: 'Days Left'},
 ]
 
-export default DashboardPanel
+export default connect(
+  state => {
+    const { applicants } = state.app
+    return {
+      new: applicants.new.length,
+      reviewed: applicants.reviewed.length,
+      interviewees: applicants.interviewees.length,
+      finalists: applicants.finalists.length,
+      days: 0,
+    }
+  }
+)(DashboardPanel)

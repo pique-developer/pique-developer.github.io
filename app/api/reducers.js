@@ -107,6 +107,34 @@ const uiReducer = (state={}, action) => {
   }
 }
 
+const applicants = {
+  new: [],
+  reviewed: [],
+  interviewees: [],
+  finalists: [],
+}
+const appReducer = (state={ applicants }, action) => {
+  switch (action.type) {
+
+    case 'FETCH_SUCCESS':
+      return Object.assign({}, state, {
+        ...action.payload,
+        error: '',
+      })
+
+    case 'FETCH_ERROR':
+      return Object.assign({}, state, {
+        error: action.payload.error,
+      })
+
+    case 'SIGNOUT':
+      return { applicants }
+
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   routing: routeReducer,
   formSubmitted: registerReducer,
@@ -114,4 +142,5 @@ export default combineReducers({
   open: modalReducer,
   loading: loadingReducer,
   ui: uiReducer,
+  app: appReducer,
 })

@@ -1,18 +1,34 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import DashboardPanel from './DashboardPanel'
-import NewApplicants from './NewApplicants'
+import ApplicantProfiles from './ApplicantProfiles'
 import css from './style.css'
 
-const Applicants = props => {
+export const Applicants = ({ applicants }) => {
   return (
     <div className={css.root}>
       <div className={css.wrap}>
         <DashboardPanel />
-        <Match pattern="/" component={NewApplicants} exactly />
+        {routes.map(x =>
+          <Match key={x.key} pattern={x.pattern} exactly={x.exactly} render={props =>
+            <ApplicantProfiles {...props} items={applicants[x.key]} />
+          } />
+        )}
       </div>
     </div>
   )
 }
 
-export default Applicants
+const routes = [
+  {pattern: '/',             key: 'new', exactly: true},
+  {pattern: '/reviewed',     key: 'reviewed',   },
+  {pattern: '/interviewees', key: 'interviewees'},
+  {pattern: '/finalists',    key: 'finalists',  },
+]
+
+export default connect(
+  state => ({
+    applicants: state.app.applicants,
+  })
+)(Applicants)

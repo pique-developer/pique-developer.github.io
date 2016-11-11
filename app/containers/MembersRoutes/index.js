@@ -5,11 +5,21 @@ import Redirect from 'react-router/Redirect'
 import MembersHeader from 'members/MembersHeader'
 import Applicants from 'members/Applicants'
 import SidePanel from 'members/SidePanel'
+import * as API from 'api'
+import * as Actions from 'api/actions'
 
 export class MembersRoutes extends Component {
   routes = [
     {pattern: '/', component: Applicants}
   ]
+
+  componentDidMount() {
+    const { fetchSuccess, fetchError } = this.props
+    API.fetchApplicants({
+      next: applicants => fetchSuccess({ applicants }),
+      error: e => fetchError({error: e}),
+    })
+  }
 
   render() {
   const { route } = this.props
@@ -26,5 +36,6 @@ export default connect(
   state => ({
     user: state.auth.user,
     route: state.routing.route,
-  })
+  }),
+  Actions
 )(MembersRoutes)
