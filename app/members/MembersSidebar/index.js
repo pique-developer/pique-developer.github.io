@@ -3,7 +3,7 @@ import student from './student.png'
 import caret from './caret.png'
 import css from './style.css'
 
-const SidePanel = props => {
+const MembersSidebar = props => {
   return (
     <div className={css.root}>
       <div className={css.student}>
@@ -46,4 +46,4 @@ const SidePanel = props => {
 }
 
 
-export default SidePanel
+export default MembersSidebar

@@ -1,0 +1,12 @@
+.content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #0E5DB5;
+}
+
+.content:after {
+  display: block;
+  content: '';
+  clear: both;
+}

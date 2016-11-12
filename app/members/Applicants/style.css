@@ -1,15 +1,27 @@
 .root {
   display: inline-block;
-  position: absolute;
+  position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   padding-bottom: 40px;
   background-color: #FAFAFA;
+}
+
+@media (min-width: 1024px) {
+  .root {
+    float: right;
+    width: calc(100% - 215px);
+  }
 }
 
 .wrap {
   max-width: 1215px;
   padding-right: 15px;
   padding-left: 15px;
-  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    padding-left: 30px;
+  }
 }

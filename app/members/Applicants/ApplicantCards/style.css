@@ -1,4 +1,11 @@
 .root {
+  display: block;
+  margin: 50px auto 0;
+  width: 100%;
+  text-align: left;
+}
+
+.item {
   display: inline-block;
   position: relative;
   height: 325px;
@@ -7,13 +14,13 @@
 }
 
 @media (min-width: 800px) {
-  .root {
+  .item {
     width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
-  .root {
+  .item {
     width: 33.3333333333%;
   }
 }

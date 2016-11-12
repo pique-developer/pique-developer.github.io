@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Link from 'react-router/Link'
 import css from './style.css'
 
-const DashboardPanel = props => {
+const ApplicantsNav = props => {
   return (
     <div className={css.root}>
       <ul className={css.ul}>
@@ -46,4 +46,4 @@ export default connect(
       days: 0,
     }
   }
-)(DashboardPanel)
+)(ApplicantsNav)

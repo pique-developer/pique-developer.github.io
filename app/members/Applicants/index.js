@@ -1,18 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
-import DashboardPanel from './DashboardPanel'
-import ApplicantProfiles from './ApplicantProfiles'
+import ApplicantsNav from './ApplicantsNav'
+import ApplicantCards from './ApplicantCards'
 import css from './style.css'
 
 export const Applicants = ({ applicants }) => {
   return (
     <div className={css.root}>
       <div className={css.wrap}>
-        <DashboardPanel />
+        <ApplicantsNav />
         {routes.map(x =>
           <Match key={x.key} pattern={x.pattern} exactly={x.exactly} render={props =>
-            <ApplicantProfiles {...props} items={applicants[x.key]} />
+            <ApplicantCards {...props} items={applicants[x.key]} />
           } />
         )}
       </div>

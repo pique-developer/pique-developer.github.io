@@ -4,9 +4,10 @@ import Match from 'react-router/Match'
 import Redirect from 'react-router/Redirect'
 import MembersHeader from 'members/MembersHeader'
 import Applicants from 'members/Applicants'
-import SidePanel from 'members/SidePanel'
+import MembersSidebar from 'members/MembersSidebar'
 import * as API from 'api'
 import * as Actions from 'api/actions'
+import css from './style.css'
 
 export class MembersRoutes extends Component {
   routes = [
@@ -27,7 +28,10 @@ export class MembersRoutes extends Component {
     ? <Redirect to="/" />
     : <div>
         <MembersHeader />
-        {this.routes.map((x, i) => <Match key={i} {...x} />)}
+        <div className={css.content}>
+          <MembersSidebar />
+          {this.routes.map((x, i) => <Match key={i} {...x} />)}
+        </div>
       </div>
   }
 }
