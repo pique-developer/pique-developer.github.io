@@ -1,14 +1,9 @@
 .hero {
-  background-image: url('./002-hero.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   height: 600px;
   width: 100%;
-  webkit-mask-image: url(./c-mask.png');
-  mask-image: url('./c-mask.png');
-  mask: url('./c-mask.png');
-  -webkit-mask-image: url('./c-mask.png');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100%;
   -webkit-mask-position: bottom;

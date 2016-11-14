@@ -1,10 +1,8 @@
 .hero {
-  background-image: url('./101-hero.jpg');
   background-repeat: no-repeat;
   height: 600px;
   background-size: cover;
   background-position-x: 50%;
-  -webkit-mask-image: url('./c-mask.png');
   -webkit-mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: bottom;

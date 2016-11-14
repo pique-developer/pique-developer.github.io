@@ -85,7 +85,6 @@ const devBuild = _ => configureWebpack({
 
   output: {
     filename: '[name].js',
-    publicPath: `http://0.0.0.0:3000/`,
     chunkFilename: '[name].chunk.js',
   },
 
