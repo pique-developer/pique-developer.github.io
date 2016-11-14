@@ -8,7 +8,7 @@ const ApplicantCards = ({ items }) => {
       {items.map((x, i) =>
         <div key={i} className={css.item}>
           <div className={css.wrap}>
-            <img className={css.img} src={x.image} />
+            <div className={css.img} style={{backgroundImage: `url(${x.image})`}} />
             <div className={css.stripe}>
               <div className={css.name}>{x.name}</div>
               <div className={css.desc}>{x.description}</div>

@@ -1,16 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as Actions from 'api/actions'
-import hero from './002-hero.png'
-import mask from './c-mask.png'
 import css from './style.css'
 
 export const HomeHero = ({ opacityInc, opacityDec, launchModal }) => {
   return (
-    <div className={css.hero} style={{
-      backgroundImage: `url(${hero}`,
-      WebkitMaskImage: `url(${mask}`,
-    }}>
+    <div className={css.hero}>
       <div className={css.overlay} style={{opacity: opacityInc}} />
       <div className={css.text} style={{opacity: opacityDec}}>
         <h1  className={css.h1} />

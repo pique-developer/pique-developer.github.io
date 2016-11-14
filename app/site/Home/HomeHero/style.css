@@ -1,22 +1,17 @@
 .hero {
+  background-image: url('./002-hero.png');
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   height: 600px;
   width: 100%;
+  webkit-mask-image: url(./c-mask.png');
+  mask-image: url('./c-mask.png');
+  mask: url('./c-mask.png');
+  -webkit-mask-image: url('./c-mask.png');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100%;
   -webkit-mask-position: bottom;
-}
-
-.hero:after {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  content: '';
-  background: #000;
-  opacity: 0;
-  transition: 0.3s opacity ease-in;
 }
 
 .sub {
