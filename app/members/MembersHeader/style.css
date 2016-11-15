@@ -68,7 +68,7 @@
 .settings {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 0;
 }
 
 .ul {
@@ -80,7 +80,8 @@
 .li {
   display: inline-block;
   list-style: none;
-  height: 100%;
-  width: 65px;
+  margin-left: 30px;
+  width: 30px;
   vertical-align: middle;
+  cursor: pointer;
 }

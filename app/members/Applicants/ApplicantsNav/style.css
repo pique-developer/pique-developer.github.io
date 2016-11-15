@@ -3,6 +3,8 @@
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
   border-radius: 7px;
   background: #fff;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 .ul {
@@ -36,7 +38,7 @@
 
 @media (min-width: 1000px) {
   .li {
-    height: 138px;
+    height: 100px;
     width: 20%;
   }
 }
@@ -66,8 +68,8 @@
 
 @media (min-width: 1000px) {
   .copy {
-    margin-top: 20px;
-    min-height: 108px;
+    margin-top: 10px;
+    /* min-height: 108px; */
     border-left: 1px solid #979797;
   }
   .li:first-child .copy {
@@ -77,21 +79,20 @@
 
 @media (min-width: 1100px) {
   .copy {
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
 }
 
-
-
 .num {
-  font-size: 40px;
+  font-size: 38px;
+  line-height: 52px;
   font-weight: 400;
   color: #44BCEF;
   text-align: center;
 }
 
 .caption {
-  font-size: 16px;
+  font-size: 15px;
   color: #44BCEF;
   text-align: center;
 }

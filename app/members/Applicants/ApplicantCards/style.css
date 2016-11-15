@@ -19,7 +19,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1360px) {
   .item {
     width: 33.3333333333%;
   }
@@ -31,7 +31,7 @@
   background-color: #FFFFFF;
   border-radius: 7px;
   color: #2B2A2A;
-  max-width: 380px;
+  max-width: 360px;
   box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.50);
 }
 
@@ -67,7 +67,7 @@
   font-size: 14px;
   line-height: 30px;
   text-align: left;
-  max-width: 350px;
+  max-width: 330px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
@@ -76,11 +76,11 @@
   position: absolute;
   top: -30px;
   left: 15px;
-  height: 97px;
-  width: 97px;
+  height: 92px;
+  width: 92px;
   background-position-x: 50%;
   background-position-y: 50%;
-  background-size: 130%;
+  background-size: cover;
   border-radius: 1px;
   border: 3px solid #fff;
   z-index: 1;
@@ -128,7 +128,7 @@
   float: right;
   width: 70%;
   color: #444343;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .activity {

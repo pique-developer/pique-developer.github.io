@@ -13,8 +13,8 @@ export const HomeEducators = props => {
         <div className={css.caption}>One Recommendation For Each Student.</div>
         <div className={css.caption}>Done.</div>
         <div className={css.body}>
-          <div className={css.copy}><span>Recommenders,</span> upload one standard recommendation onto Pique for each student and</div>
-          <div className={css.copy}>Never write another recommendation for that student again. And do not worry, your</div>
+          <div className={css.copy}><span>Recommenders,</span> upload one standard recommendation onto Pique for each student.</div>
+          <div className={css.copy}>Never write another recommendation for that student again.</div>
           <div className={css.copy}>And do not worry, your students will never be penalized by foundations for a <span>‘generic recommendation’</span>.</div>
         </div>
         <div className={css.copy}>That's the Pique way.</div>

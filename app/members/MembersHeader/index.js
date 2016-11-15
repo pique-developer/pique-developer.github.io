@@ -24,9 +24,7 @@ export const MembersHeader = ({ className, signOut }) => {
         <div className={css.border} />
 
         <div className={css.nav}>
-          <div className={css.btns}>
-            <Button className={css.btn}>Create a Review Team</Button>
-          </div>
+
 
           <div className={css.settings}>
             <ul className={css.ul}>

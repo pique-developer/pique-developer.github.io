@@ -7,7 +7,9 @@ const MembersSidebar = props => {
   return (
     <div className={css.root}>
       <div className={css.student}>
-        <img className={css.img} src={student}/>
+        <div className={css.border}>
+          <img className={css.img} src={student}/>
+        </div>
         <div className={css.name} />
       </div>
 
