@@ -7,10 +7,7 @@ import css from './style.css'
 
 export const HomeHero = ({ opacityInc, opacityDec, launchModal }) => {
   return (
-    <div className={css.hero} style={{
-      backgroundImage: `url(${hero}`,
-      WebkitMaskImage: `url(${mask}`,
-    }}>
+    <div className={css.hero} style={{backgroundImage: `url(${hero})`}}>
       <div className={css.overlay} style={{opacity: opacityInc}} />
       <div className={css.text} style={{opacity: opacityDec}}>
         <h1  className={css.h1} />

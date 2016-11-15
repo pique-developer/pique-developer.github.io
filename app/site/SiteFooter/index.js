@@ -17,7 +17,7 @@ export const SiteFooter = props => {
         )}
       </div>
       <div className={css.subfooter}>
-        <div className={css.copyright}>{window.navigator.vendor}</div>
+        <div className={css.copyright}>Pique © 2016</div>
       </div>
     </footer>
   )

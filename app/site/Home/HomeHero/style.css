@@ -1,4 +1,5 @@
 .hero {
+  position: relative;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -7,6 +8,7 @@
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100%;
   -webkit-mask-position: bottom;
+  margin-bottom: 40px;
 }
 
 .sub {

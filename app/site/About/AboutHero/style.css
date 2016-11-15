@@ -6,6 +6,7 @@
   -webkit-mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: bottom;
+  margin-bottom: 80px;
 }
 
 @media (min-width: 1100px) {
