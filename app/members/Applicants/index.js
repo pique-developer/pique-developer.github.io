@@ -5,13 +5,13 @@ import ApplicantsNav from './ApplicantsNav'
 import ApplicantCards from './ApplicantCards'
 import css from './style.css'
 
-export const Applicants = ({ applicants }) => {
+export const Applicants = ({ applicants, routes }) => {
   return (
     <div className={css.root}>
       <div className={css.wrap}>
-        <ApplicantsNav />
+        <ApplicantsNav routes={routes} />
         {routes.map(x =>
-          <Match key={x.key} pattern={x.pattern} exactly={x.exactly} render={props =>
+          <Match key={x.key} pattern={x.route} exactly={x.exactly} render={props =>
             <ApplicantCards {...props} items={applicants[x.key]} />
           } />
         )}
@@ -20,12 +20,7 @@ export const Applicants = ({ applicants }) => {
   )
 }
 
-const routes = [
-  {pattern: '/',             key: 'new', exactly: true},
-  {pattern: '/reviewed',     key: 'reviewed',   },
-  {pattern: '/interviewees', key: 'interviewees'},
-  {pattern: '/finalists',    key: 'finalists',  },
-]
+
 
 export default connect(
   state => ({

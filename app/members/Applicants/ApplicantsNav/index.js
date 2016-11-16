@@ -7,7 +7,7 @@ const ApplicantsNav = props => {
   return (
     <div className={css.root}>
       <ul className={css.ul}>
-        {items.map((x, i) =>
+        {props.routes.map((x, i) =>
           <li key={i} className={css.li}>
             <Link
               className={css.link}
@@ -22,18 +22,17 @@ const ApplicantsNav = props => {
             </Link>
           </li>
         )}
+        <li className={css.li}>
+          <div className={css.copy}>
+            <div className={css.num}>0</div>
+            <div className={css.caption}>Days Left</div>
+          </div>
+          <div className={css.selected} />
+        </li>
       </ul>
     </div>
   )
 }
-
-const items = [
-  {route: '/',             key: 'new',          caption: 'New Applicants', activeOnlyWhenExact: true},
-  {route: '/reviewed',     key: 'reviewed',     caption: 'Reviewed Applicants'},
-  {route: '/interviewees', key: 'interviewees', caption: 'Interviewees'},
-  {route: '/finalists',    key: 'finalists',    caption: 'Finalists'},
-  {route: '/days-left',    key: 'days',         caption: 'Days Left'},
-]
 
 export default connect(
   state => {
@@ -43,7 +42,6 @@ export default connect(
       reviewed: applicants.reviewed.length,
       interviewees: applicants.interviewees.length,
       finalists: applicants.finalists.length,
-      days: 0,
     }
   }
 )(ApplicantsNav)
