@@ -24,16 +24,19 @@ export class SidebarDropdown extends Component {
           <img className={css.caret} src={caret} />
         </div>
         <div className={css.links}>
-          {routes.map((x, i) =>
-            <Link
-              key={i}
-              className={css.link}
-              to={x.route}
-              activeClassName={css.active}
-              activeOnlyWhenExact={x.activeOnlyWhenExact}>
-              <div className={css.caption}>{x.alias || x.caption}</div>
-            </Link>
-          )}
+          <ul className={css.ul}>
+            {routes.map((x, i) =>
+              <li key={i} className={css.li}>
+                <Link
+                  className={css.link}
+                  to={x.route}
+                  activeClassName={css.active}
+                  activeOnlyWhenExact={x.activeOnlyWhenExact}>
+                  <div className={css.caption}>{x.alias || x.caption}</div>
+                </Link>
+              </li>
+            )}
+          </ul>
         </div>
       </div>
     )

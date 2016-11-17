@@ -49,12 +49,15 @@
 }
 
 .selected {
+  transition: all 0.2s ease-in-out;
+  width: 0px;
+  margin: 0 auto;
   background-color: transparent;
 }
 
 .active .selected {
   position: absolute;
-  bottom: 1px;
+  bottom: 0px;
   left: 0;
   right: 0;
   background-color: #AF35C2;
