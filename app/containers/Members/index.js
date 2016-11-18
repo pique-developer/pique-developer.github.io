@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
-import Miss from 'react-router/Miss'
 import Redirect from 'react-router/Redirect'
 import MembersHeader from './MembersHeader'
 import Applicants from './Applicants'
@@ -12,21 +11,7 @@ import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class MembersRoutes extends Component {
-  sidebarLinks = [{
-      title: 'Applications',
-      links: [
-        {to: '/',             text: 'New', activeOnlyWhenExact: true},
-        {to: '/reviewed',     text: 'Reviewed'},
-        {to: '/interviewees', text: 'Interviewees'},
-        {to: '/finalists',    text: 'Finalists'},
-      ],
-    },{
-      title: 'Selection Committee',
-      links: [
-        {to: '/committee', text: 'Committee Page'},
-        {to: '/invite',    text: 'Invite Members'},
-      ],
-  }]
+
 
   componentDidMount() {
     const { fetchSuccess, fetchError } = this.props
@@ -39,16 +24,19 @@ export class MembersRoutes extends Component {
   render() {
     const { route } = this.props
     return route === '/signin'
-      ? <Redirect to="/" />
+      ? <Redirect to="/dashboard/new" />
       : <div>
           <MembersHeader />
           <div className={css.root}>
-            <MembersSidebar items={this.sidebarLinks} />
-            <Match pattern="/committee" component={Committee} />
-            <Match pattern="/reviewed" component={Applicants} />
-            <Match pattern="/interviewees" component={Applicants} />
-            <Match pattern="/finalists" component={Applicants} />
-            <Match pattern="/" component={Applicants} exactly />
+            <MembersSidebar />
+            <div className={css.main}>
+              <div className={css.wrap}>
+                <Match pattern="/dashboard" component={Applicants} />
+                <Match pattern="/committee" component={Committee} />
+              </div>
+            </div>
+
+
           </div>
         </div>
   }

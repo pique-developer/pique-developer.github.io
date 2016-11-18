@@ -3,7 +3,7 @@ import SidebarDropdown from './SidebarDropdown'
 import student from './student.png'
 import css from './style.css'
 
-const MembersSidebar = ({ items }) => {
+const MembersSidebar = props => {
   return (
     <div className={css.root}>
       <div className={css.backdrop} />
@@ -14,10 +14,26 @@ const MembersSidebar = ({ items }) => {
         <div className={css.name}>Charles Barkley</div>
       </div>
 
-      {items.map((x, i) => <SidebarDropdown key={i} {...x} />)}
+      {links.map((x, i) => <SidebarDropdown key={i} {...x} />)}
 
     </div>
   )
 }
+
+const links = [{
+    title: 'Applications',
+    links: [
+      {to: '/dashboard/new',          text: 'New'},
+      {to: '/dashboard/reviewed',     text: 'Reviewed'},
+      {to: '/dashboard/interviewees', text: 'Interviewees'},
+      {to: '/dashboard/finalists',    text: 'Finalists'},
+    ],
+  },{
+    title: 'Selection Committee',
+    links: [
+      {to: '/committee', text: 'Committee Page'},
+      {to: '/invite',    text: 'Invite Members'},
+    ],
+}]
 
 export default MembersSidebar

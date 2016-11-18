@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
+import Miss from 'react-router/Miss'
 import Home from './Home'
 import About from './About'
 import Educators from './Educators'

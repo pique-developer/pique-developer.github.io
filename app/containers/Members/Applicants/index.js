@@ -7,38 +7,22 @@ import css from './style.css'
 
 export const Applicants = ({ applicants }) => {
   return (
-    <div className={css.root}>
-      <div className={css.wrap}>
-        {routes.map((x, i) =>
-          <Match {...x} render={({ isExact }) =>
-            <div>
-              <ApplicantsNav links={links} />
-
-              {isExact
-                ? <ApplicantCards {...x} items={applicants[x.key]} />
-                : null
-              }
-            </div>
-          }/>
-        )}
-      </div>
+    <div>
+      <ApplicantsNav />
+      {routes.map((x, i) =>
+        <Match {...x} render={props =>
+          <ApplicantCards items={applicants[x.key]} />
+        } />
+      )}
     </div>
   )
 }
 
-const links = [
-  {to: '/',             key: 'new',          text: 'New Applicants', activeOnlyWhenExact: true},
-  {to: '/reviewed',     key: 'reviewed',     text: 'Reviewed Applicants'},
-  {to: '/interviewees', key: 'interviewees', text: 'Interviewees'},
-  {to: '/finalists',    key: 'finalists',    text: 'Finalists'},
-]
-
 const routes = [
-  {pattern: '/',             key: 'new', exactly: true},
-  {pattern: '/reviewed',     key: 'reviewed'},
-  {pattern: '/interviewees', key: 'interviewees'},
-  {pattern: '/finalists',    key: 'finalists'},
-
+  {pattern: '/dashboard/new',          key: 'new'},
+  {pattern: '/dashboard/reviewed',     key: 'reviewed'},
+  {pattern: '/dashboard/interviewees', key: 'interviewees'},
+  {pattern: '/dashboard/finalists',    key: 'finalists'},
 ]
 
 export default connect(

@@ -6,25 +6,23 @@ import css from './style.css'
 
 export const Committee = props => {
   return (
-    <div className={css.root}>
-      <div className={css.wrap}>
-        <div className={css.header} />
-        <div className={css.divider} />
-        <ul className={css.ul}>
-        {team.map((x, i) =>
-          <li key={i} className={css.li}>
-            <img className={css.img} src={x.img} />
-            <div className={css.details}>
-              <div className={css.name}>{x.name}</div>
-              <div className={css.info}>{x.position}</div>
-              <div className={css.info}>{x.company}</div>
-            </div>
-          </li>
-        )}
-        </ul>
-        <div className={css.invite}>
-          <Button className={css.btn}>Invite More Reviewers</Button>
-        </div>
+    <div>
+      <div className={css.header} />
+      <div className={css.divider} />
+      <ul className={css.ul}>
+      {team.map((x, i) =>
+        <li key={i} className={css.li}>
+          <img className={css.img} src={x.img} />
+          <div className={css.details}>
+            <div className={css.name}>{x.name}</div>
+            <div className={css.info}>{x.position}</div>
+            <div className={css.info}>{x.company}</div>
+          </div>
+        </li>
+      )}
+      </ul>
+      <div className={css.invite}>
+        <Button className={css.btn}>Invite More Reviewers</Button>
       </div>
     </div>
   )

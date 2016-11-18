@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import Link from 'react-router/Link'
 import css from './style.css'
 
-const ApplicantsNav = props => {
+const ApplicantsNav = ({ links }) => {
   return (
     <div className={css.root}>
       <ul className={css.ul}>
-        {props.links.map((x, i) =>
+        {links.map((x, i) =>
           <li key={i} className={css.li}>
             <Link
               className={css.link}
@@ -15,7 +15,7 @@ const ApplicantsNav = props => {
               activeClassName={css.active}
               activeOnlyWhenExact>
               <div className={css.copy}>
-                <div className={css.num}>{props[x.key]}</div>
+                <div className={css.num}>{x.count}</div>
                 <div className={css.caption}>{x.text}</div>
               </div>
               <div className={css.selected} />
@@ -34,14 +34,20 @@ const ApplicantsNav = props => {
   )
 }
 
+const selectApplicants = applicants => {
+  return [
+    {to: '/dashboard/new', key: 'new', text: 'New Applicants'},
+    {to: '/dashboard/reviewed', key: 'reviewed', text: 'Reviewed Applicants'},
+    {to: '/dashboard/interviewees', key: 'interviewees', text: 'Interviewees'},
+    {to: '/dashboard/finalists', key: 'finalists', text: 'Finalists'},
+  ].map(x => ({...x, count: applicants[x.key].length}))
+}
+
 export default connect(
   state => {
     const { applicants } = state.app
     return {
-      new: applicants.new.length,
-      reviewed: applicants.reviewed.length,
-      interviewees: applicants.interviewees.length,
-      finalists: applicants.finalists.length,
+      links: selectApplicants(applicants)
     }
   }
 )(ApplicantsNav)
