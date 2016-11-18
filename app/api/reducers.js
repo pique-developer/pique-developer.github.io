@@ -60,6 +60,7 @@ const authReducer = (state={user: false, initialized: false, error: '', login: t
     case 'SIGNOUT':
       return Object.assign({}, state, {
         user: false,
+        initialized: false,
       })
 
     default:
@@ -71,6 +72,11 @@ const routeReducer = (state={route: '', hash: ''}, action) => {
   switch (action.type) {
 
     case 'LOCATION_CHANGE':
+      return Object.assign({}, state, {
+        ...action.payload
+      })
+
+    case 'SIGNOUT':
       return Object.assign({}, state, {
         ...action.payload
       })

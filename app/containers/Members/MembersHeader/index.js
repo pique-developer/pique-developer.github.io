@@ -24,8 +24,6 @@ export const MembersHeader = ({ className, signOut }) => {
         <div className={css.border} />
 
         <div className={css.nav}>
-
-
           <div className={css.settings}>
             <ul className={css.ul}>
               <li className={css.li} onClick={signOut}>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
-import Miss from 'react-router/Miss'
+import Redirect from 'react-router/Redirect'
 import Home from './Home'
 import About from './About'
 import Educators from './Educators'
@@ -30,6 +30,15 @@ export class SiteRoutes extends Component {
   ]
 
   render() {
+    const { route } = this.props
+    const match = this.site
+      .map(x => x.pattern)
+      .filter(x => x === route)[0]
+
+    if (!match) {
+      return <Redirect to="/" />
+    }
+
     return (
       <div>
         <SiteScroll />
@@ -42,10 +51,8 @@ export class SiteRoutes extends Component {
   }
 }
 
-
-
 export default connect(
   state => ({
-    ...state
+    route: state.routing.route,
   })
 )(SiteRoutes)

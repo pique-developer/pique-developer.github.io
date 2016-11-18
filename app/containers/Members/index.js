@@ -35,8 +35,6 @@ export class MembersRoutes extends Component {
                 <Match pattern="/committee" component={Committee} />
               </div>
             </div>
-
-
           </div>
         </div>
   }

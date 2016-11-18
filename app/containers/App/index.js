@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Redirect from 'react-router/Redirect'
 import Site from 'containers/Site'
 import Members from 'containers/Members'
 import LoadingIndicator from 'components/LoadingIndicator'
@@ -43,6 +44,7 @@ export class App extends Component {
 
   render() {
     const { user, initialized, loading, open } = this.props
+
     return (
       <div className={`${css.root} ${open ? css.open : ''}`}>
         {loading ? <LoadingIndicator /> : null}
