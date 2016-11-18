@@ -3,10 +3,10 @@ const webpack = require('webpack')
 const cssnext = require('postcss-cssnext')
 const postcssFocus = require('postcss-focus')
 const postcssReporter = require('postcss-reporter')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const WriteFilePlugin = require('write-file-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const cwd = process.cwd()
+const WriteFilePlugin = require('write-file-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CWD = process.cwd()
 
 const configureWebpack = opts => ({
   entry: opts.entry,
@@ -14,7 +14,7 @@ const configureWebpack = opts => ({
   plugins: opts.plugins,
 
   output: Object.assign({
-    path: path.resolve(cwd, 'build'),
+    path: path.resolve(CWD, 'build'),
   }, opts.output),
 
   module: {
@@ -38,8 +38,14 @@ const configureWebpack = opts => ({
       test: /\.(jpg|png|gif)$/,
       loaders: [
         'file-loader',
-        'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
-      ],
+        [
+          'image-webpack?{',
+          'progressive:true,',
+          'optimizationLevel: 7,',
+          'interlaced: false,',
+          'pngquant:{quality: "65-90", speed: 4}}'
+        ].join(''),
+      ]
     }, {
       test: /\.html$/,
       loader: 'html-loader',
@@ -53,23 +59,20 @@ const configureWebpack = opts => ({
   },
 
   resolve: {
+    alias: {
+      containers: path.join(CWD, 'app', 'containers'),
+      components: path.join(CWD, 'app', 'components'),
+      api:        path.join(CWD, 'app', 'api'),
+    },
     modules: ['app', 'node_modules'],
     extensions: ['.js', '.jsx', '.react.js'],
-    packageMains: ['jsnext:main', 'main' ],
-    alias: {
-      containers: path.join(cwd, 'app', 'containers'),
-      components: path.join(cwd, 'app', 'components'),
-      site: path.join(cwd, 'app', 'site'),
-      members: path.join(cwd, 'app', 'members'),
-      api:  path.join(cwd, 'app', 'api'),
-      styles: path.join(cwd, 'app', 'containers', 'App', 'style.css'),
-    },
+    packageMains: ['jsnext:main', 'main'],
   },
 
   postcss: _ => [
     postcssFocus(),
-    cssnext({ browsers: ['last 2 versions', 'IE > 10'] }),
-    postcssReporter({ clearMessages: true }),
+    cssnext({browsers: ['last 2 versions', 'IE > 10']}),
+    postcssReporter({clearMessages: true}),
   ],
   devtool: opts.devtool,
   target: 'web',
@@ -80,7 +83,7 @@ const configureWebpack = opts => ({
 const devBuild = _ => configureWebpack({
   entry: [
     'webpack-hot-middleware/client',
-    path.join(cwd, 'app/index.js'),
+    path.join(CWD, 'app/index.js'),
   ],
 
   output: {
@@ -92,25 +95,34 @@ const devBuild = _ => configureWebpack({
     presets: ['react-hmre'],
   },
 
-  cssLoaders: 'style-loader!css-loader?localIdentName=[local]__[path][name]__[hash:base64:5]&modules&importLoaders=1&sourceMap!postcss-loader',
+  cssLoaders: [
+    `style-loader`,
+    `!css-loader`,
+    `?localIdentName=[local]--[path]-[hash:base64:5]`,
+    `&modules&importLoaders=1`,
+    `&sourceMap`,
+    `!postcss-loader`,
+  ].join(''),
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new WriteFilePlugin({ log: false }),
+    new WriteFilePlugin({log: false}),
     new ExtractTextPlugin('[name].[contenthash].css'),
     new HtmlWebpackPlugin({
       template: 'app/index.html',
+      appMountId: 'app',
+      favicon: 'app/favicon.png',
       inject: true,
     }),
-    new webpack.DefinePlugin({ __DEV__: true })
+    new webpack.DefinePlugin({__DEV__: true})
   ],
 
   devtool: 'inline-source-map',
 })
 
 const prodBuild = _ => configureWebpack({
-  entry: [ path.join(cwd, 'app/index.js') ],
+  entry: [path.join(CWD, 'app/index.js')],
 
   output: {
     publicPath: 'build/',
@@ -120,7 +132,7 @@ const prodBuild = _ => configureWebpack({
 
   cssLoaders: ExtractTextPlugin.extract(
     'style-loader',
-    'css-loader?modules&importLoaders=1!postcss-loader'
+    [`css-loader`, `?modules&importLoaders=1`, `!postcss-loader`].join('')
   ),
 
   plugins: [
@@ -132,14 +144,14 @@ const prodBuild = _ => configureWebpack({
     }),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+    new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
     new HtmlWebpackPlugin({
       template: 'app/index.html',
-      title: 'Get Pique',
-      filename: '../index.html',
       appMountId: 'app',
       favicon: 'app/favicon.png',
-      inject: true
+      inject: true,
+      title: 'Get Pique',
+      filename: '../index.html',
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
     new webpack.DefinePlugin({
@@ -149,4 +161,6 @@ const prodBuild = _ => configureWebpack({
   ],
 })
 
-module.exports = process.env.NODE_ENV === 'development' ? devBuild() : prodBuild()
+module.exports = process.env.NODE_ENV === 'development'
+  ? devBuild()
+  : prodBuild()

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import SiteRoutes from 'containers/SiteRoutes'
-import MembersRoutes from 'containers/MembersRoutes'
+import Site from 'containers/Site'
+import Members from 'containers/Members'
 import LoadingIndicator from 'components/LoadingIndicator'
 import * as API from 'api'
 import * as Actions from 'api/actions'
@@ -48,7 +48,7 @@ export class App extends Component {
         {loading ? <LoadingIndicator /> : null}
         {initialized
           ? <div className={`${css.router} ${!loading ? css.ready : ''}`}>
-              {user ? <MembersRoutes /> : <SiteRoutes />}
+              {user ? <Members /> : <Site />}
             </div>
           : null
         }

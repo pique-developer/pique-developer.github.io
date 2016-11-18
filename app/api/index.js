@@ -1,5 +1,5 @@
 import firebase from 'firebase'
-import img from 'site/About/AboutTeam/103-ev-min.png'
+
 firebase.initializeApp({
   apiKey: "AIzaSyDaFNc45hQOqJPoIY8eZQAaWsVftT_lHdU",
   authDomain: "get-pique.firebaseapp.com",
