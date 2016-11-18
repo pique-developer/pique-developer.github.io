@@ -41,6 +41,10 @@ export class SignUp extends Component {
     foundation: 'Name of foundation',
   }
 
+  componentDidMount() {
+    this.autoFocus.focus()
+  }
+
   handleSelectChange(e) {
     const { selectedIndex } = e.target.options
     if (selectedIndex !== 0) {
@@ -75,8 +79,9 @@ export class SignUp extends Component {
         <div className={css.header} />
         <div className={css.row}>
           <input
-            name="firstname"
             className={css.firstname}
+            name="firstname"
+            ref={i => this.autoFocus = i}
             value={firstname}
             onChange={this.handleInputChanges}
             type="text"

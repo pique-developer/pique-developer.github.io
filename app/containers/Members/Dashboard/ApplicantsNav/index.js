@@ -34,20 +34,4 @@ const ApplicantsNav = ({ links }) => {
   )
 }
 
-const selectApplicants = applicants => {
-  return [
-    {to: '/dashboard/new', key: 'new', text: 'New Applicants'},
-    {to: '/dashboard/reviewed', key: 'reviewed', text: 'Reviewed Applicants'},
-    {to: '/dashboard/interviewees', key: 'interviewees', text: 'Interviewees'},
-    {to: '/dashboard/finalists', key: 'finalists', text: 'Finalists'},
-  ].map(x => ({...x, count: applicants[x.key].length}))
-}
-
-export default connect(
-  state => {
-    const { applicants } = state.app
-    return {
-      links: selectApplicants(applicants)
-    }
-  }
-)(ApplicantsNav)
+export default ApplicantsNav

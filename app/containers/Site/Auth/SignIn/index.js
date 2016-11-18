@@ -16,6 +16,10 @@ export class SignIn extends Component {
     this.handleSubmit = ::this.handleSubmit
   }
 
+  componentDidMount() {
+    this.autoFocus.focus()
+  }
+
   handleKeyPress(e) {
     if (e.charCode === 13) {
       this.handleSubmit(e)
@@ -41,6 +45,8 @@ export class SignIn extends Component {
       }))
   }
 
+
+
   render() {
     const { email, password } = this.state
     const { switchForm, error } = this.props
@@ -48,15 +54,34 @@ export class SignIn extends Component {
       <div className={css.root}>
         <div className={css.header} />
         <div className={css.row}>
-          <input className={css.full} name="email" onChange={this.handleInputChanges} value={email} onKeyPress={this.handleKeyPress} type="email" placeholder="Enter your email" />
+          <input
+            className={css.full}
+            ref={i => this.autoFocus = i}
+            name="email"
+            onChange={this.handleInputChanges}
+            value={email}
+            onKeyPress={this.handleKeyPress}
+            type="email"
+            placeholder="Enter your email" />
         </div>
         <div className={css.row}>
-          <input className={css.full} name="password" onChange={this.handleInputChanges} value={password} onKeyPress={this.handleKeyPress} type="password" placeholder="Password" />
+          <input
+            className={css.full}
+            name="password"
+            onChange={this.handleInputChanges}
+            value={password}
+            onKeyPress={this.handleKeyPress}
+            type="password"
+            placeholder="Password" />
         </div>
         <div className={css.btns}>
           <span className={css.notify}>{error}</span>
-          <button className={css.submit} onClick={this.handleSubmit}>Log In</button>
-          <button className={css.switch} onClick={switchForm}>Need an account</button>
+          <button
+            className={css.submit}
+            onClick={this.handleSubmit}>Log In</button>
+          <button
+            className={css.switch}
+            onClick={switchForm}>Need an account</button>
         </div>
         <div className={css.caption} />
       </div>

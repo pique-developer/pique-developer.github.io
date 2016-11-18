@@ -95,6 +95,8 @@ const devBuild = _ => configureWebpack({
     presets: ['react-hmre'],
   },
 
+  devtool: 'inline-source-map',
+
   cssLoaders: [
     `style-loader`,
     `!css-loader`,
@@ -118,11 +120,20 @@ const devBuild = _ => configureWebpack({
     new webpack.DefinePlugin({__DEV__: true})
   ],
 
-  devtool: 'inline-source-map',
 })
 
 const prodBuild = _ => configureWebpack({
-  entry: [path.join(CWD, 'app/index.js')],
+  entry: {
+    main: path.join(CWD, 'app/index.js'),
+    vendor: [
+      'react',
+      'react-dom',
+      'react-router',
+      'react-redux',
+      'redux',
+      'firebase'
+    ],
+  },
 
   output: {
     publicPath: 'build/',
@@ -136,12 +147,7 @@ const prodBuild = _ => configureWebpack({
   ),
 
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      children: true,
-      minChunks: 2,
-      async: true,
-    }),
+    new webpack.optimize.CommonsChunkPlugin({names: ['vendor', 'manifest']}),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
