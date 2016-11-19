@@ -33,9 +33,3 @@
   padding-right: 15px;
   padding-left: 15px;
 }
-
-@media (min-width: 1024px) {
-  .wrap {
-    padding-left: 30px;
-  }
-}

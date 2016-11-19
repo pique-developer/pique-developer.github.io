@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import MembersHeader from './MembersHeader'
-import ApplicantsNav from './Dashboard/ApplicantsNav'
-import ApplicantCards from './Dashboard/ApplicantCards'
+import DashboardNav from './Dashboard/DashboardNav'
+import DashboardCards from './Dashboard/DashboardCards'
+import ApplicantCover from './Applicant/ApplicantCover'
+import ApplicantProfile from './Applicant/ApplicantProfile'
 import Committee from './Committee'
 import MembersSidebar from './MembersSidebar'
 import Redirect from 'components/Redirect'
@@ -30,10 +32,10 @@ export class MembersRoutes extends Component {
 
   dashboard = {
     routes: [
-      {pattern: 'new',          key: 'new'},
-      {pattern: 'reviewed',     key: 'reviewed'},
-      {pattern: 'interviewees', key: 'interviewees'},
-      {pattern: 'finalists',    key: 'finalists'},
+      {pattern: '/dashboard/new',          key: 'new'},
+      {pattern: '/dashboard/reviewed',     key: 'reviewed'},
+      {pattern: '/dashboard/interviewees', key: 'interviewees'},
+      {pattern: '/dashboard/finalists',    key: 'finalists'},
     ],
     links: [
       {to: '/dashboard/new', key: 'new', text: 'New Applicants'},
@@ -53,41 +55,55 @@ export class MembersRoutes extends Component {
 
   render() {
     const { applicants } = this.props
-    const dashboardLinks = this.dashboard.links
-      .map(x => ({...x, count: applicants[x.key].length}))
+    const { links, routes } = this.dashboard
+    const dashNav = links.map(x => ({...x, count: applicants[x.key].length}))
+    const dashRoutes = routes.map(x => ({...x, items: applicants[x.key]}))
     return (
       <Redirect
         to="/dashboard/new"
         any={['/signin', '/']}>
-
         <MembersHeader />
 
         <div className={css.root}>
-
           <MembersSidebar links={this.sidebar} />
 
-          <div className={css.main}>
-            <div className={css.wrap}>
+          <UnconstrainedContent>
+            <Match pattern="/applicant" component={ApplicantCover} />
 
-              <Match pattern="/dashboard" render={props =>
-                <div>
-                  <ApplicantsNav links={dashboardLinks} />
-                  {this.dashboard.routes.map(x =>
-                    <Match key={x.key} pattern={x.pattern} render={props =>
-                      <ApplicantCards {...props} items={applicants[x.key]} />
-                    } />
-                  )}
-                </div>
-              } />
-
+            <ConstrainedContent>
               <Match pattern="/committee" component={Committee} />
-            </div>
-          </div>
+              <Match pattern="/applicant/:id" component={ApplicantProfile} />
+              <Match pattern="/dashboard" render={props =>
+                <DashboardNav {...props} links={dashNav} />
+              } />
+              {dashRoutes.map(x =>
+                <Match key={x.key} pattern={x.pattern} render={props =>
+                  <DashboardCards {...props} items={x.items} />
+                } />
+              )}
+            </ConstrainedContent>
 
+          </UnconstrainedContent>
         </div>
       </Redirect>
     )
   }
+}
+
+const UnconstrainedContent = ({ children }) => {
+  return (
+    <div className={css.main}>
+      {children}
+    </div>
+  )
+}
+
+const ConstrainedContent = ({ children }) => {
+  return (
+    <div className={css.wrap}>
+      {children}
+    </div>
+  )
 }
 
 export default connect(

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Link from 'react-router/Link'
 import css from './style.css'
 
-const ApplicantsNav = ({ links }) => {
+const DashboardNav = ({ links }) => {
   return (
     <div className={css.root}>
       <ul className={css.ul}>
@@ -34,4 +34,4 @@ const ApplicantsNav = ({ links }) => {
   )
 }
 
-export default ApplicantsNav
+export default DashboardNav

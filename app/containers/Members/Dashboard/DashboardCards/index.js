@@ -1,19 +1,22 @@
 import React from 'react'
-import Ratings from './Ratings'
+import Link from 'react-router/Link'
+import Rating from 'components/Rating'
 import css from './style.css'
 
-const ApplicantCards = ({ items }) => {
+const DashboardCards = ({ items }) => {
   return (
     <div className={css.root}>
       {items.map((x, i) =>
         <div key={i} className={css.item}>
           <div className={css.wrap}>
-            <div className={css.img} style={{backgroundImage: `url(${x.image})`}} />
-            <div className={css.stripe}>
-              <div className={css.name}>{x.name}</div>
-              <div className={css.desc}>{x.description}</div>
-              <Ratings className={css.rating} value={x.rating}/>
-            </div>
+            <Link to={`/applicant/${x.id}`}>
+              <div className={css.img} style={{backgroundImage: `url(${x.image})`}} />
+              <div className={css.stripe}>
+                <div className={css.name}>{x.name}</div>
+                <div className={css.desc}>{x.description}</div>
+                <Rating className={css.rating} value={x.rating}/>
+              </div>
+            </Link>
             <div className={css.details}>
               <div className={css.info}>
                 <div className={css.title}>GPA</div>
@@ -35,4 +38,4 @@ const ApplicantCards = ({ items }) => {
   )
 }
 
-export default ApplicantCards
+export default DashboardCards
