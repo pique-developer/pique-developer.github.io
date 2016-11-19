@@ -14,7 +14,10 @@ const DashboardCards = ({ items }) => {
               <div className={css.stripe}>
                 <div className={css.name}>{x.name}</div>
                 <div className={css.desc}>{x.description}</div>
-                <Rating className={css.rating} value={x.rating}/>
+                <Rating
+                  className={css.rating}
+                  style={{width: '28px', height: '28px'}}
+                  value={x.rating} />
               </div>
             </Link>
             <div className={css.details}>

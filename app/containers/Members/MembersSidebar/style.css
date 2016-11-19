@@ -5,11 +5,12 @@
 @media (min-width: 1024px) {
   .root {
     display: block;
-    position: relative;
+    position: absolute;
     float: left;
     width: 215px;
-    height: 100%;
-    min-height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
     background-color: #0E5CB5;
     color: #fff;
     box-shadow: 8px 0px 30px 0px rgba(72,85,105,0.15);
