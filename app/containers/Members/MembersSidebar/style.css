@@ -5,8 +5,9 @@
 @media (min-width: 1024px) {
   .root {
     display: block;
-    position: absolute;
+    position: fixed;
     float: left;
+    padding-top: 55px;
     width: 215px;
     top: 0;
     bottom: 0;

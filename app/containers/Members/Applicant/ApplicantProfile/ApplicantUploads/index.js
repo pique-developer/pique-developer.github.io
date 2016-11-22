@@ -6,7 +6,7 @@ import css from './style.css'
 export const ApplicantUploads = props => {
   return (
     <div className={css.root}>
-      <div className={css.section}>
+      <div className={css.half}>
         <div className={css.title}>
           <Apple className={css.icon} />
           Transcripts
@@ -17,7 +17,7 @@ export const ApplicantUploads = props => {
           )}
         </div>
       </div>
-      <div className={css.section}>
+      <div className={css.half}>
         <div className={css.title}>
           <Book className={css.icon} />
           Test Scores
@@ -63,26 +63,28 @@ const UploadPreview = ({ image, caption }) => {
   )
 }
 
+const image = 'https://get-pique.github.io/images/doc.jpg'
+
 const transcripts = [
   {
-    image: 'http://cdn2.themeasuredmom.com/wp-content/uploads/2013/08/tiny-topic-mini-lesson-2-the-measured-mom-590x303.gif',
+    image,
     caption: 'Offical Transcript',
   }
 ]
 
 const testScores = [
   {
-    image: 'http://www.bigdandme.com/blog/wp-content/uploads/2013/12/Caroline-Christmas-List-001.jpg',
+    image,
     caption: '90th Percentile',
   }
 ]
 
 const recommendations = [
   {
-    image: 'http://justsomething.co/wp-content/uploads/2014/11/23-hilarious-homework-answers-3.jpg',
+    image,
     caption: 'Homework',
   },{
-    image: 'https://storage.googleapis.com/imgfave/image_cache/1350068835835440.jpg',
+    image,
     caption: 'Recommendation',
   }
 
@@ -90,7 +92,7 @@ const recommendations = [
 
 const essays = [
   {
-    image: 'http://justsomething.co/wp-content/uploads/2014/11/23-hilarious-homework-answers-3.jpg',
+    image,
     caption: 'Homework',
   }
 ]

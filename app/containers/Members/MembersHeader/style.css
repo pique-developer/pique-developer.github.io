@@ -1,6 +1,6 @@
 .root {
-  background-color: #2000E8;
-  height: 60px;
+  background-color: #140552;
+  height: 55px;
   width: 100%;
   color: #fff;
 }
@@ -17,14 +17,28 @@
 }
 
 .brand {
+  position: relative;
   float: left;
   width: 215px;
+  margin: 0 auto;
+  text-align: center;
+  height: 55px;
+  z-index: 1;
 }
 
 .logo {
-  width: 90px;
-  height: auto;
-  margin: 10px auto 0;
+  height: 45px;
+  width: 70px;
+  text-align: center;
+}
+
+.link {
+  position: absolute;
+  width: 100%;
+  top: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .nav {
@@ -32,7 +46,7 @@
   float: right;
   width: calc(100% - 215px);
   max-width: 1215px;
-  height: 60px;
+  height: 55px;
   margin: 0 auto;
 }
 
@@ -49,7 +63,7 @@
   width: 1px;
   background-color: #1A85FF;
   margin: 5px auto;
-  height: 40px;
+  height: 35px;
 }
 
 .btn {
@@ -67,21 +81,29 @@
 
 .settings {
   position: absolute;
-  top: 20px;
+  top: 18px;
   right: 0;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+  text-align: center;
 }
 
 .ul {
   display: flex;
   position: relative;
   margin: 0 auto;
+  padding-right: 15px;
 }
 
 .li {
   display: inline-block;
   list-style: none;
-  margin-left: 30px;
-  width: 30px;
+  margin-left: 20px;
+  min-width: 25px;
+  text-align: center;
   vertical-align: middle;
   cursor: pointer;
 }

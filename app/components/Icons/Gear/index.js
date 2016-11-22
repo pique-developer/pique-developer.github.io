@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Gear = props => {
+const Gear = ({ className, style }) => {
+  const size = !className ? {width: '20px', height: '21px'} : style
   return (
-    <svg width="20px" height="21px" viewBox="0 12 20 21" version="1.1">
+    <svg
+      className={className}
+      style={size}
+      viewBox="0 12 20 21"
+      version="1.1">
       <defs>
         <ellipse id="path-1" cx="10" cy="10.1152664" rx="3" ry="3.02305328"></ellipse>
         <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="8" height="8.04610656">

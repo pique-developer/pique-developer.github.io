@@ -2,9 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Link from 'react-router/Link'
 import Button from 'components/Button'
-import Gear from 'components/Icons/Gear'
-import Caret from 'components/Icons/Caret'
-import img from './100-logo.png'
+import LogoIcon from 'components/Icons/Logo'
+import GearIcon from 'components/Icons/Gear'
+import CaretIcon from 'components/Icons/Caret'
 import * as Actions from 'api/actions'
 import css from './style.css'
 
@@ -14,11 +14,9 @@ export const MembersHeader = ({ className, signOut }) => {
       <div className={css.wrap}>
 
         <div className={css.brand}>
-          <div className={css.logo}>
-            <Link className={css.link} to="/">
-              <img src={img} />
-            </Link>
-          </div>
+          <Link className={css.link} to="/">
+            <LogoIcon className={css.logo}/>
+          </Link>
         </div>
 
         <div className={css.border} />
@@ -27,10 +25,10 @@ export const MembersHeader = ({ className, signOut }) => {
           <div className={css.settings}>
             <ul className={css.ul}>
               <li className={css.li} onClick={signOut}>
-                <Gear />
+                <GearIcon className={css.icon} />
               </li>
               <li className={css.li}>
-                <Caret />
+                <CaretIcon className={css.icon} />
               </li>
             </ul>
           </div>
