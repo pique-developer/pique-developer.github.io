@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Redirect from 'react-router/Redirect'
 import Site from 'containers/Site'
-import Members from 'containers/Members'
+import Protected from 'containers/Protected'
 import LoadingIndicator from 'components/LoadingIndicator'
 import * as API from 'api'
 import * as Actions from 'api/actions'
@@ -11,12 +11,15 @@ import css from './style.css'
 export class App extends Component {
   constructor(props) {
     super(props)
-    this.initAuth = ::this.initAuth
     this.updateRouteState = ::this.updateRouteState
   }
 
   componentWillMount() {
-    this.initAuth()
+    const { initAuthState, loginError } = this.props
+    API.initApp(
+      user => initAuthState({ user }),
+      e    => loginError({error: e.message})
+    )
   }
 
   componentDidMount() {
@@ -27,14 +30,6 @@ export class App extends Component {
     if (nextProps.pathname !== this.props.pathname) {
       this.updateRouteState(nextProps)
     }
-  }
-
-  initAuth() {
-    const { initAuthState, loginError } = this.props
-    API.initApp(
-      user => initAuthState({ user }),
-      e    => loginError({error: e.message})
-    )
   }
 
   updateRouteState(props) {
@@ -50,7 +45,7 @@ export class App extends Component {
         {loading ? <LoadingIndicator /> : null}
         {initialized
           ? <div className={`${css.router} ${!loading ? css.ready : ''}`}>
-              {user ? <Members /> : <Site />}
+              {user ? <Protected /> : <Site />}
             </div>
           : null
         }

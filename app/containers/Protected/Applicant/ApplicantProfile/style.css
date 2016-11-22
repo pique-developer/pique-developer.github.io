@@ -1,0 +1,19 @@
+.root {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.board {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .board {
+    float: right;
+    width: 380px;
+  }
+}
