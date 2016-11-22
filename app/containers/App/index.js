@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Redirect from 'react-router/Redirect'
-import Site from 'containers/Site'
+import Public from 'containers/Public'
 import Protected from 'containers/Protected'
 import LoadingIndicator from 'components/LoadingIndicator'
 import * as API from 'api'
@@ -45,7 +45,7 @@ export class App extends Component {
         {loading ? <LoadingIndicator /> : null}
         {initialized
           ? <div className={`${css.router} ${!loading ? css.ready : ''}`}>
-              {user ? <Protected /> : <Site />}
+              {user ? <Protected /> : <Public />}
             </div>
           : null
         }

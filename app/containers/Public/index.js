@@ -16,7 +16,7 @@ import SiteFooter from './SiteFooter'
 import SiteScroll from './SiteScroll'
 import SiteModal from 'components/Modal'
 
-export class SiteRoutes extends Component {
+export class Public extends Component {
   site = [
     {pattern: '/',           component: Home, exactly: true},
     {pattern: '/about',      component: About},
@@ -48,4 +48,4 @@ export default connect(
   state => ({
     route: state.routing.route,
   })
-)(SiteRoutes)
+)(Public)
