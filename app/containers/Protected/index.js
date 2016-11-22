@@ -9,6 +9,7 @@ import ApplicantProfile from './Applicant/ApplicantProfile'
 import Committee from './Committee'
 import MembersSidebar from './MembersSidebar'
 import Redirect from 'components/Redirect'
+import Modal from 'components/Modal'
 import * as API from 'api'
 import * as Actions from 'api/actions'
 import css from './style.css'
@@ -60,6 +61,7 @@ export class MembersRoutes extends Component {
     const dashRoutes = routes.map(x => ({...x, items: applicants[x.key]}))
     return (
       <Redirect to="/dashboard/new" any={['/signin', '/']}>
+        <Modal />
         <MembersHeader user={user} />
 
         <div className={css.root}>

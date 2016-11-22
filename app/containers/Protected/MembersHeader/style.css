@@ -4,7 +4,7 @@
   height: 55px;
   width: 100%;
   color: #fff;
-  z-index: 1;
+  z-index: 2;
 }
 
 .wrap {
@@ -145,14 +145,19 @@
 }
 
 .dropdown {
+  display: none;
   position: absolute;
   width: 200px;
-  z-index: 2;
+  z-index: 1;
   top: 50px;
   right: 0;
   background-color: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+
+.dropdown.open {
+  display: block;
 }
 
 .tooltip {

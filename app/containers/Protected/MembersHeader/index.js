@@ -5,12 +5,31 @@ import LogoIcon from 'components/Icons/Logo'
 import * as Actions from 'api/actions'
 import css from './style.css'
 
-
 export class MembersHeader extends Component {
+  constructor(props) {
+    super(props)
+    this.signOut = :: this.signOut
+    this.closeDropdown = ::this.closeDropdown
+  }
+
+  closeDropdown() {
+    const { open, removeModal } = this.props
+    if (open) {
+      removeModal()
+    }
+  }
+
+  signOut() {
+    this.closeDropdown()
+    this.props.signOut()
+  }
+
   render() {
-    const { user, signOut } = this.props
+    const { user, open, launchModal } = this.props
     return (
-      <div className={css.root}>
+      <div
+        className={css.root}
+        onClick={this.closeDropdown}>
         <div className={css.wrap}>
 
           <div className={css.brand}>
@@ -25,16 +44,19 @@ export class MembersHeader extends Component {
             <div className={css.settings}>
               <ul className={css.ul}>
                 <li className={css.li} >
-                  <img className={css.avatar} src={user.photoURL} />
+                  <img
+                    className={css.avatar}
+                    src={user.photoURL}
+                    onClick={launchModal} />
 
-                  <div className={css.dropdown}>
+                  <div className={`${css.dropdown} ${open ? css.open : ''}`}>
                     <div className={css.point} />
                     <div className={css.nub} />
                     <ul className={css.tooltip}>
-                      <li>Profile</li>
-                      <li>Settings</li>
-                      <li>Scholarship</li>
-                      <li onClick={signOut}>Log Out</li>
+                      <li onClick={this.closeDropdown}>Profile</li>
+                      <li onClick={this.closeDropdown}>Settings</li>
+                      <li onClick={this.closeDropdown}>Scholarship</li>
+                      <li onClick={this.signOut}>Log Out</li>
                     </ul>
                   </div>
 
@@ -49,4 +71,9 @@ export class MembersHeader extends Component {
   }
 }
 
-export default connect(null, Actions)(MembersHeader)
+export default connect(
+  state => ({
+    open: state.open,
+  }),
+ Actions
+)(MembersHeader)

@@ -14,7 +14,7 @@ import Auth from './Auth'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import SiteScroll from './SiteScroll'
-import SiteModal from 'components/Modal'
+import SiteModal from './SiteModal'
 
 export class Public extends Component {
   site = [
