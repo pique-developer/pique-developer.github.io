@@ -11,7 +11,7 @@ firebase.initializeApp({
 export const initApp = observer => {
   return firebase.auth()
     .onAuthStateChanged({
-      next: user => observer.next(assignDefaultProps(user)),
+      next: user => observer.next(!!user ? assignDefaultProps(user) : false) ,
       error: observer.error
     })
 }
