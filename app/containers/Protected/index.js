@@ -7,6 +7,7 @@ import DashboardCards from './Dashboard/DashboardCards'
 import ApplicantCover from './Applicant/ApplicantCover'
 import ApplicantProfile from './Applicant/ApplicantProfile'
 import Committee from './Committee'
+import Settings from './Settings'
 import MembersSidebar from './MembersSidebar'
 import MembersModal from './MembersModal'
 import Redirect from 'components/Redirect'
@@ -72,6 +73,7 @@ export class MembersRoutes extends Component {
 
             <ConstrainedContent>
               <Match pattern="/committee" component={Committee} />
+              <Match pattern="/settings" component={Settings} />
               <Match pattern="/applicant/:id" component={ApplicantProfile} />
               <Match pattern="/dashboard" render={props =>
                 <DashboardNav {...props} links={dashNav} />

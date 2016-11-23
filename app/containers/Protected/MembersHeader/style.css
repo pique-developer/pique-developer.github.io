@@ -162,23 +162,37 @@
 
 .tooltip {
   position: relative;
-  padding: 5px;
+  padding: 5px 7.5px 7.5px;
 }
 
-.tooltip li {
+.li {
   display: block;
+  position: relative;
   list-style: none;
   color: #666;
   cursor: pointer;
+  height: 26px;
   font-family: 'HelveticaNeue', Helvetica, sans-serif;
   font-weight: 200;
   -webkit-font-smoothing: antialiased;
   text-align: left;
-  padding: 2.5px 14px;
+  padding: 5px;
+  margin-left: 0;
   font-size: 14px;
   line-height: 21px;
 }
 
-.tooltip li:hover {
+.route {
+  position: absolute;
+  text-decoration: none;
+  color: #666;
+  height: 21px;
+  width: 100%;
+  left: 5px;
+  right: 0;
+  outline: none;
+}
+
+.route:hover {
   text-decoration: underline;
 }

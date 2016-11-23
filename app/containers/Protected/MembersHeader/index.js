@@ -55,10 +55,22 @@ export class MembersHeader extends Component {
                       <div className={css.point} />
                       <div className={css.nub} />
                       <ul className={css.tooltip}>
-                        <li onClick={this.toggleDropdown}>Profile</li>
-                        <li onClick={this.toggleDropdown}>Settings</li>
-                        <li onClick={this.toggleDropdown}>Scholarship</li>
-                        <li onClick={this.signOut}>Log Out</li>
+                        <li
+                          onClick={this.toggleDropdown}
+                          className={css.li}>Profile</li>
+                        <li
+                          onClick={this.toggleDropdown}
+                          className={css.li}>
+                          <Link
+                            to='/settings'
+                            className={css.route}>Settings</Link>
+                          </li>
+                        <li
+                          onClick={this.toggleDropdown}
+                          className={css.li}>Scholarship</li>
+                        <li
+                          onClick={this.signOut}
+                          className={css.li}>Log Out</li>
                       </ul>
                     </div>
 
