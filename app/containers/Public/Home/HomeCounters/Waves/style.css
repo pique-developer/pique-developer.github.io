@@ -10,7 +10,13 @@
 }
 
 .root.rise {
-  bottom: 100px;
+  bottom: 50px;
+}
+
+@media (min-width: 1024px) {
+  .root.rise {
+    bottom: 100px;
+  }
 }
 
 .wrap {

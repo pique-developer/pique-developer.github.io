@@ -4,24 +4,40 @@
 
 .stats {
   font-family: 'Avenir Next', sans-serif;
-  font-size: 60px;
   font-weight: 800;
+  font-size: 40px;
   line-height: 1.1;
+}
+
+@media (min-width: 1024px) {
+  .stats {
+    font-size: 60px;
+
+  }
 }
 
 .item {
   display: inline-block;
   width: 33.333333333%;
+  vertical-align: top;
   text-align: center;
 }
 
 .caption {
   color: #B2BCD3;
   font-family: 'Avenir Next', sans-serif;
-  font-size: 15px;
+  font-size: 11px;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding: 0 10px;
   font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .caption {
+    font-size: 15px;
+    padding: 0;
+  }
 }
 
 .tuition {
