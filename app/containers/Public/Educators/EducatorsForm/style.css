@@ -40,14 +40,27 @@
 }
 
 .copy {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  max-width: 845px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #fff;
   top: 210px;
   line-height: 23px;
-  font-size: 17px;
+  font-size: 13px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 @media (min-width: 720px) {
   .copy {
     top: 235px;
+    font-size: 17px;
     line-height: 26px;
   }
 }
@@ -58,20 +71,7 @@
   }
 }
 
-.copy {
-  position: absolute;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  max-width: 845px;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: #fff;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  text-align: center;
-  letter-spacing: 1px;
-}
+
 
 .form {
   display: block;

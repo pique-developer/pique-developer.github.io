@@ -1,9 +1,10 @@
 .root {
   position: absolute;
   width: 100%;
-  padding: 10px 40px 5px;
+  padding: 20px 40px 5px;
   z-index: 40;
-  top: 10px;
+  top: 0px;
+  height: 75px;
   transition: all 0.4s ease;
   background-color: transparent;
 }
@@ -12,114 +13,182 @@
   position: fixed;
 }
 
-.brand {
-  float: left;
+.fill {
+  background-color: #132663;
+  padding-top: 10px;
+  transition: all 0.4s ease;
 }
 
-.img {
+.brand {
+  position: relative;
+  float: left;
+  z-index: 1;
+}
+
+.logo {
   display: inline-block;
   height: 40px;
-  width: auto;
+  width: 95px;
   margin-top: 7.5px;
-  color: #337ab7;
-  text-decoration: none;
-  background-color: transparent;
+}
+
+.mobile {
+  display: block;
+  color: #fff;
+  margin: 5px 0 0;
+  text-align: right;
+}
+
+.open .mobile {
+  margin-bottom: 20px;
+}
+
+.menu {
+  display: none;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.open {
+  background-color: #132663;
+}
+
+@media (min-width: 1024px) {
+  .open {
+    position: initial;
+  }
+}
+
+.open .menu {
+  display: block;
+}
+
+.open .links {
+  padding: 15px 15px 25px;
 }
 
 .links {
   float: right;
+  transition: all 0.4s ease;
+  padding: 15px 15px 0;
 }
 
-.nav {
-  display: none;
+.fill .links {
+  padding-top: 7.5px
 }
 
-@media (min-width: 720px) {
-  .nav {
-    display: inline-block;
+@media (min-width: 1024px) {
+  .open .links {
+    padding: 0 0 0;
+  }
+
+  .links {
+    float: right;
+    padding: 15px 0 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile,
+  .open .mobile {
+    display: none;
+  }
+  .menu,
+  .open .menu {
+    display: block;
   }
 }
 
 .nav {
-  margin: 0 20px 0 auto;
+  display: inline-block;
   padding-left: 0;
   list-style: none;
-  float: left;
+  float: right;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    float: left;
+    margin: 0 20px 0 auto;
+  }
 }
 
 .link {
-  display: inline-block;
+  display: block;
   color: #fff;
+  margin: 20px 0;
+  text-align: right;
   text-decoration: none;
   font-weight: 300;
-  letter-spacing: 0px;
-  margin: 14px 15px;
   font-size: 15px;
   font-family: 'Avenir Next', sans-serif;
-  padding: 5px 4px;
-  background-color: transparent;
-}
-
-.link .selected {
-  width: 0px;
-  height: 1px;
-  background-color: transparent;
-  transition: all 0.2s ease-in-out;
-  margin-top: 4px;
-}
-
-.link:hover .selected,
-.link.active .selected {
-  transition: all 0.2s ease-in-out;
-  width: 100%;
-  background-color: #fff;
-  margin-top: 4px;
-}
-
-.pill {
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 22px;
-  font-weight: 400;
   letter-spacing: 0px;
-  padding: 8px 25px;
-  margin: 10px 13px;
-  font-size: 15px;
-  color: #fff;
-  font-family: 'Avenir Next', sans-serif;
+  background-color: transparent;
 }
 
-.waves {
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  z-index: 1;
-  transition: all .3s ease-out;
-  line-height: 1.42857143;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  background-image: none;
-  will-change: opacity, transform;
-  user-select: none;
-  overflow: hidden;
-  white-space: nowrap;
-  touch-action: manipulation;
+@media (min-width: 1024px) {
+  .link {
+    display: inline-block;
+    text-align: center;
+    margin: 14px 15px;
+    padding: 5px 4px;
+  }
+  .link .selected {
+    width: 0px;
+    height: 1px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    margin-top: 4px;
+  }
+  .link:hover .selected,
+  .link.active .selected {
+    width: 100%;
+    background-color: #fff;
+    margin-top: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
 }
 
 .btn {
-  composes: pill;
-  composes: waves;
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 22px;
+  text-align: center;
+  font-family: 'Avenir Next', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all .3s ease-out;
+  text-align: right;
 }
 
-.btn:hover {
-  background-color: #fff;
-  color:  #205fdc;
-}
-
-
-.fill {
-  background-color: #132663;
-  top: 0px;
-  transition: all 0.4s ease;
+@media (min-width: 1024px) {
+  .btn {
+    display: inline-block;
+    padding: 8px 25px;
+    margin: 10px 13px;
+    border: 2px solid #fff;
+    text-align: center;
+  }
+  .btn:hover {
+    background-color: #fff;
+    color:  #205fdc;
+  }
 }
