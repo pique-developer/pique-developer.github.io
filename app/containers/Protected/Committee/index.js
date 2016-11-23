@@ -6,7 +6,7 @@ import css from './style.css'
 
 export const Committee = props => {
   return (
-    <div>
+    <div className={css.root}>
       <div className={css.header} />
       <div className={css.divider} />
       <ul className={css.ul}>
