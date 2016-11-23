@@ -8,7 +8,8 @@ export const MembersModal = ({ open, removeModal }) => {
   return (
     <Modal
       open={open}
-      onClick={removeModal}>
+      onClick={removeModal}
+      className={css.curtain}>
       <div className={css.modal}>
         <div className={css.title}>Invite members</div>
 

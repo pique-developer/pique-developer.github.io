@@ -1,11 +1,13 @@
 import React from 'react'
 import css from './style.css'
 
-export const Modal = ({ open, onClick, children }) => {
+export const Modal = ({ open, onClick, className, children }) => {
   return open
     ? <div className={css.root}>
         {children}
-        <div className={css.curtain} onClick={onClick} />
+        <div
+          className={`${css.curtain} ${className ? className : ''}`}
+          onClick={onClick} />
       </div>
     : null
 }
