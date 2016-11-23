@@ -1,26 +1,13 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { removeModal } from 'api/actions'
+import React from 'react'
 import css from './style.css'
 
-export class Modal extends Component {
-  render() {
-    const { open, removeModal } = this.props
-
-    return open
-      ? <div className={css.root}>
-          {this.props.children}
-          <div
-            className={css.curtain}
-            onClick={removeModal} />
-        </div>
-      : null
-  }
+export const Modal = ({ open, onClick, children }) => {
+  return open
+    ? <div className={css.root}>
+        {children}
+        <div className={css.curtain} onClick={onClick} />
+      </div>
+    : null
 }
 
-export default connect(
-  state => ({
-    open: state.open,
-  }),
-  { removeModal }
-)(Modal)
+export default Modal

@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Button from 'components/Button'
+import * as Actions from 'api/actions'
 import img from './901-av.png'
 import css from './style.css'
 
-export const Committee = props => {
+export const Committee = ({ launchModal }) => {
   return (
     <div className={css.root}>
       <div className={css.header} />
@@ -22,7 +23,9 @@ export const Committee = props => {
       )}
       </ul>
       <div className={css.invite}>
-        <Button className={css.btn}>Invite More Reviewers</Button>
+        <Button
+          className={css.btn}
+          onClick={launchModal}>Invite More Reviewers</Button>
       </div>
     </div>
   )
@@ -35,8 +38,4 @@ const team = [
   {name: 'Laura Middleton', position: 'Academic Counselor', company: 'College Prep', img: img}
 ]
 
-export default connect(
-  state => ({
-    ...state
-  })
-)(Committee)
+export default connect(null, Actions)(Committee)

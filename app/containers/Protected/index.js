@@ -8,8 +8,8 @@ import ApplicantCover from './Applicant/ApplicantCover'
 import ApplicantProfile from './Applicant/ApplicantProfile'
 import Committee from './Committee'
 import MembersSidebar from './MembersSidebar'
+import MembersModal from './MembersModal'
 import Redirect from 'components/Redirect'
-import Modal from 'components/Modal'
 import * as API from 'api'
 import * as Actions from 'api/actions'
 import css from './style.css'
@@ -27,7 +27,7 @@ export class MembersRoutes extends Component {
     title: 'Selection Committee',
     links: [
       {to: '/committee', text: 'Committee Page'},
-      {to: '/invite', text: 'Invite Members'},
+      {text: 'Invite Members'},
     ],
   }]
 
@@ -61,8 +61,8 @@ export class MembersRoutes extends Component {
     const dashRoutes = routes.map(x => ({...x, items: applicants[x.key]}))
     return (
       <Redirect to="/dashboard/new" any={['/signin', '/']}>
-        <Modal />
-        <MembersHeader user={user} />
+        <MembersModal />
+        <MembersHeader />
 
         <div className={css.root}>
           <MembersSidebar user={user} links={this.sidebar} />
@@ -106,26 +106,11 @@ const ConstrainedContent = ({ children }) => {
   )
 }
 
-const userDefaultProps = {
-  displayName: 'Charles Barkley',
-  photoURL: 'https://firebasestorage.googleapis.com/v0/b/get-pique.appspot.com/o/test%2F911-av.png?alt=media&token=f97e53b0-90cd-4c01-9a83-1958de6bfd79'
-}
-
 export default connect(
   state => {
-    const { applicants } = state.app
-    const { user } = state.auth
     return {
-      applicants,
-      user: {
-        ...user,
-        photoURL: !!user.photoURL
-          ? user.photoURL
-          : userDefaultProps.photoURL,
-        displayName: !!user.displayName
-          ? user.displayName
-          : userDefaultProps.displayName,
-      }
+      applicants: state.app.applicants,
+      user: state.auth.user,
     }
   },
   Actions

@@ -1,6 +1,5 @@
 import React from 'react'
 import SidebarDropdown from './SidebarDropdown'
-import student from './student.png'
 import css from './style.css'
 
 const MembersSidebar = ({ links, user }) => {

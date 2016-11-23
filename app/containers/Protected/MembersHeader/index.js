@@ -2,69 +2,71 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'react-router/Link'
 import LogoIcon from 'components/Icons/Logo'
+import Modal from 'components/Modal'
 import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class MembersHeader extends Component {
   constructor(props) {
     super(props)
+    this.state = {open: false}
     this.signOut = :: this.signOut
-    this.closeDropdown = ::this.closeDropdown
+    this.toggleDropdown = ::this.toggleDropdown
   }
 
-  closeDropdown() {
-    const { open, removeModal } = this.props
-    if (open) {
-      removeModal()
-    }
+  toggleDropdown() {
+    this.setState({open: !this.state.open})
   }
 
   signOut() {
-    this.closeDropdown()
+    if (this.state.open) {
+      this.toggleDropdown()
+    }
     this.props.signOut()
   }
 
   render() {
-    const { user, open, launchModal } = this.props
+    const { open } = this.state
+    const { user } = this.props
     return (
-      <div
-        className={css.root}
-        onClick={this.closeDropdown}>
-        <div className={css.wrap}>
+      <div>
+        <Modal open={open} onClick={this.toggleDropdown} />
 
-          <div className={css.brand}>
-            <Link className={css.link} to="/">
-              <LogoIcon className={css.logo}/>
-            </Link>
-          </div>
+        <div className={css.root} onClick={this.toggleDropdown}>
+          <div className={css.wrap}>
+            <div className={css.brand}>
+              <Link className={css.link} to="/">
+                <LogoIcon className={css.logo}/>
+              </Link>
+            </div>
 
-          <div className={css.border} />
+            <div className={css.border} />
 
-          <div className={css.nav}>
-            <div className={css.settings}>
-              <ul className={css.ul}>
-                <li className={css.li} >
-                  <img
-                    className={css.avatar}
-                    src={user.photoURL}
-                    onClick={launchModal} />
+            <div className={css.nav}>
+              <div className={css.settings}>
+                <ul className={css.ul}>
+                  <li className={css.li} >
+                    <img
+                      className={css.avatar}
+                      src={user.photoURL}
+                      onClick={this.toggleDropdown} />
 
-                  <div className={`${css.dropdown} ${open ? css.open : ''}`}>
-                    <div className={css.point} />
-                    <div className={css.nub} />
-                    <ul className={css.tooltip}>
-                      <li onClick={this.closeDropdown}>Profile</li>
-                      <li onClick={this.closeDropdown}>Settings</li>
-                      <li onClick={this.closeDropdown}>Scholarship</li>
-                      <li onClick={this.signOut}>Log Out</li>
-                    </ul>
-                  </div>
+                    <div className={`${css.dropdown} ${open ? css.open : ''}`}>
+                      <div className={css.point} />
+                      <div className={css.nub} />
+                      <ul className={css.tooltip}>
+                        <li onClick={this.toggleDropdown}>Profile</li>
+                        <li onClick={this.toggleDropdown}>Settings</li>
+                        <li onClick={this.toggleDropdown}>Scholarship</li>
+                        <li onClick={this.signOut}>Log Out</li>
+                      </ul>
+                    </div>
 
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     )
@@ -73,7 +75,7 @@ export class MembersHeader extends Component {
 
 export default connect(
   state => ({
-    open: state.open,
+    user: state.auth.user,
   }),
  Actions
 )(MembersHeader)

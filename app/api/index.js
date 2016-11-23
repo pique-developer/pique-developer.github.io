@@ -10,7 +10,10 @@ firebase.initializeApp({
 
 export const initApp = observer => {
   return firebase.auth()
-    .onAuthStateChanged(observer)
+    .onAuthStateChanged({
+      next: user => observer.next(assignDefaultProps(user)),
+      error: observer.error
+    })
 }
 
 export const register = data => {
@@ -29,6 +32,22 @@ export const signIn = (email, password) => {
 
 export const signOut = _ => {
   return firebase.auth().signOut()
+}
+
+function assignDefaultProps(user) {
+  const userDefaultProps = {
+    displayName: 'Charles Barkley',
+    photoURL: 'https://firebasestorage.googleapis.com/v0/b/get-pique.appspot.com/o/test%2F911-av.png?alt=media&token=f97e53b0-90cd-4c01-9a83-1958de6bfd79'
+  }
+  return {
+    ...user,
+    photoURL: !!user.photoURL
+      ? user.photoURL
+      : userDefaultProps.photoURL,
+    displayName: !!user.displayName
+      ? user.displayName
+      : userDefaultProps.displayName,
+  }
 }
 
 export const fetchApplicants = observer => {

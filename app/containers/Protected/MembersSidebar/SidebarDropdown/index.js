@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Link from 'react-router/Link'
 import CaretIcon from 'components/Icons/Caret'
+import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class SidebarDropdown extends Component {
@@ -16,7 +18,7 @@ export class SidebarDropdown extends Component {
 
   render() {
     const { open } = this.state
-    const { links, title } = this.props
+    const { links, title, launchModal } = this.props
     return (
       <div className={`${css.root} ${open ? css.open : ''}`}>
         <div className={css.dropdown} onClick={this.changeVisibility}>
@@ -27,13 +29,19 @@ export class SidebarDropdown extends Component {
           <ul className={css.ul}>
             {links.map((x, i) =>
               <li key={i} className={css.li}>
-                <Link
-                  className={css.link}
-                  to={x.to}
-                  activeClassName={css.active}
-                  activeOnlyWhenExact={x.activeOnlyWhenExact}>
-                  <div className={css.caption}>{x.text}</div>
-                </Link>
+                {x.to
+                  ? <Link
+                      className={css.link}
+                      to={x.to}
+                      activeClassName={css.active}
+                      activeOnlyWhenExact={x.activeOnlyWhenExact}>
+                      <div className={css.caption}>{x.text}</div>
+                    </Link>
+                  : <div
+                      className={css.link}
+                      onClick={launchModal}>
+                      <div className={css.caption}>{x.text}</div>
+                    </div>}
               </li>
             )}
           </ul>
@@ -43,4 +51,9 @@ export class SidebarDropdown extends Component {
   }
 }
 
-export default SidebarDropdown
+export default connect(
+  state => ({
+
+  }),
+  Actions
+)(SidebarDropdown)
