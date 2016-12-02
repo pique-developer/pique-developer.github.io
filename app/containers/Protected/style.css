@@ -29,7 +29,7 @@
   }
 }
 
-.wrap {
+.root :global .wrap {
   max-width: 1215px;
   padding-right: 15px;
   padding-left: 15px;

@@ -61,6 +61,7 @@
   height: 100%;
   text-decoration: none;
   color: #B2BCD3;
+  cursor: pointer;
 }
 
 .caption {

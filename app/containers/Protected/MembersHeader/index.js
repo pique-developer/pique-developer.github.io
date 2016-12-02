@@ -67,7 +67,7 @@ export class MembersHeader extends Component {
                           </li>
                         <li
                           onClick={this.toggleDropdown}
-                          className={css.li}>Scholarship</li>
+                          className={css.li}>Preview Scholarship</li>
                         <li
                           onClick={this.signOut}
                           className={css.li}>Log Out</li>

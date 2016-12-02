@@ -13,19 +13,19 @@ export class SettingsPassword extends Component {
           <SettingsFormRow label='Current password'>
             <input
               className={css.input}
-              type="text"/>
+              type="password"/>
           </SettingsFormRow>
           <SettingsFormRow label='New password'>
             <input
               className={css.input}
               placeholder='Must be at least 8 characters'
-              type="text"/>
+              type="password"/>
           </SettingsFormRow>
           <SettingsFormRow label='Confirm new password'>
             <input
               placeholder='Must match the new password'
               className={css.input}
-              type="text"/>
+              type="password"/>
           </SettingsFormRow>
           <SettingsFormRow label=''>
             <div className={css.save}>Save New Password</div>
