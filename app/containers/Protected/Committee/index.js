@@ -7,7 +7,7 @@ import css from './style.css'
 
 export const Committee = ({ launchModal }) => {
   return (
-    <div className={css.root}>
+    <div className={`wrap ${css.root}`}>
       <div className={css.header} />
       <div className={css.divider} />
       <ul className={css.ul}>

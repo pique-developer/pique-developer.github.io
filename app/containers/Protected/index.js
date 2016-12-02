@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import MembersHeader from './MembersHeader'
-import DashboardNav from './Dashboard/DashboardNav'
-import DashboardCards from './Dashboard/DashboardCards'
-import ApplicantCover from './Applicant/ApplicantCover'
-import ApplicantProfile from './Applicant/ApplicantProfile'
+import Dashboard from './Dashboard'
+import Applicant from './Applicant'
 import Committee from './Committee'
 import Settings from './Settings'
 import ScholarshipPost from './ScholarshipPost'
@@ -17,6 +15,12 @@ import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class MembersRoutes extends Component {
+  static defaultProps = {
+    onboardingRoutes: [
+      {pattern: '/scholarship-post', component: ScholarshipPost}
+    ]
+  }
+
   sidebar = [{
     title: 'Applications',
     links: [
@@ -33,21 +37,6 @@ export class MembersRoutes extends Component {
     ],
   }]
 
-  dashboard = {
-    routes: [
-      {pattern: '/dashboard/new',          key: 'new'},
-      {pattern: '/dashboard/reviewed',     key: 'reviewed'},
-      {pattern: '/dashboard/interviewees', key: 'interviewees'},
-      {pattern: '/dashboard/finalists',    key: 'finalists'},
-    ],
-    links: [
-      {to: '/dashboard/new', key: 'new', text: 'New Applicants'},
-      {to: '/dashboard/reviewed', key: 'reviewed', text: 'Reviewed Applicants'},
-      {to: '/dashboard/interviewees', key: 'interviewees', text: 'Interviewees'},
-      {to: '/dashboard/finalists', key: 'finalists', text: 'Finalists'},
-    ]
-  }
-
   componentDidMount() {
     const { fetchSuccess, fetchError } = this.props
     API.fetchApplicants({
@@ -57,55 +46,47 @@ export class MembersRoutes extends Component {
   }
 
   render() {
-    const { applicants, user } = this.props
-    const { links, routes } = this.dashboard
-    const dashNav = links.map(x => ({...x, count: applicants[x.key].length}))
-    const dashRoutes = routes.map(x => ({...x, items: applicants[x.key]}))
+    const { applicants, user, onboardingRoutes } = this.props
+
     return (
       <Redirect to="/dashboard/new" any={['/signin', '/']}>
         <MembersModal />
         <MembersHeader />
 
         <div className={css.root}>
-          <MembersSidebar user={user} links={this.sidebar} />
-
-          <UnconstrainedContent>
-            <Match pattern="/applicant" component={ApplicantCover} />
-            <Match pattern="/scholarship-post" component={ScholarshipPost} />
-
-            <ConstrainedContent>
-              <Match pattern="/committee" component={Committee} />
-              <Match pattern="/settings" component={Settings} />
-              <Match pattern="/applicant/:id" component={ApplicantProfile} />
-              <Match pattern="/dashboard" render={props =>
-                <DashboardNav {...props} links={dashNav} />
-              } />
-              {dashRoutes.map(x =>
-                <Match key={x.key} pattern={x.pattern} render={props =>
-                  <DashboardCards {...props} items={x.items} />
-                } />
-              )}
-            </ConstrainedContent>
-
-          </UnconstrainedContent>
+          <MatchWhenOnBoarding
+            pattern='/'
+            user={user}
+            links={this.sidebar}
+            routes={onboardingRoutes} />
+          <MatchWhenActive />
         </div>
       </Redirect>
     )
   }
 }
 
-const UnconstrainedContent = ({ children }) => {
-  return (
-    <div className={css.main}>
-      {children}
-    </div>
-  )
+const MatchWhenOnBoarding = ({ pattern, routes, ...rest }) => {
+  return <Match
+    pattern={pattern}
+    render={props => {
+    const match = routes.filter(x => x.pattern === props.location.pathname)[0]
+    if (match) {
+      const {component:Component, pattern} = match
+      return <Component {...props} />
+    } else {
+      return <MembersSidebar {...props} {...rest} />
+    }
+  }} />
 }
 
-const ConstrainedContent = ({ children }) => {
+const MatchWhenActive = props => {
   return (
-    <div className={css.wrap}>
-      {children}
+    <div className={css.main}>
+      <Match pattern='/committee' component={Committee} />
+      <Match pattern='/settings' component={Settings} />
+      <Match pattern='/applicant' component={Applicant} />
+      <Match pattern='/dashboard' component={Dashboard} />
     </div>
   )
 }

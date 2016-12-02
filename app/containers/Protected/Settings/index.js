@@ -9,7 +9,7 @@ import SettingsPassword from './SettingsPassword'
 export class Settings extends Component {
   render() {
     return (
-      <div>
+      <div className='wrap'>
         <SettingsNav />
         <Match
           pattern="/settings"

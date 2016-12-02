@@ -1,0 +1,3 @@
+.root {
+  composes: wrap from 'containers/Protected/style.css';
+}
