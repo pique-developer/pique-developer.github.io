@@ -5,17 +5,33 @@ import css from './style.css'
 export const SiteFooter = props => {
   return (
     <footer className={css.root}>
-      <div className={css.main}>
+      <div className={css.wrap}>
         {contents.map((x, i) =>
           <div key={i} className={css.col}>
-            <span className={css.header}>{x.title}</span>
-            {x.links.map((x, i) => x.to
-              ? <Link key={i} className={css.link} to={x.to}>{x.text}</Link>
-              : <a key={i} className={css.link} href={x.href}>{x.text}</a>
-            )}
-          </div>
-        )}
+            <ul className={css.ul}>
+              <li className={css.header}>{x.title}</li>
+
+              {x.links.map((x, i) =>
+                <li className={css.li}>
+                  {x.to
+                    ? <Link
+                        to={x.to}
+                        key={i}
+                        className={css.link}>
+                        {x.text}
+                      </Link>
+                    : <a
+                        href={x.href}
+                        key={i}
+                        className={css.link}>
+                        {x.text}
+                      </a>}
+                </li>)}
+
+            </ul>
+          </div>)}
       </div>
+
       <div className={css.subfooter}>
         <div className={css.copyright}>Pique © 2016</div>
       </div>
