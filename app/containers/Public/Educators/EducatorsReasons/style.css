@@ -2,6 +2,7 @@
   background: linear-gradient(45deg, #44008d 0%, #194bbc 100%);
   text-align: center;
   padding: 15px 50px 50px;
+  overflow: auto;
 }
 
 @media (min-width: 1024px) {
