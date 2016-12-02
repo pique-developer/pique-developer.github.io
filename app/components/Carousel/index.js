@@ -29,8 +29,22 @@ export class Carousel extends Component {
     const { index, autoplay } = this.state
     const { className, slides, header } = this.props
     return (
-      <div className={css.root} className={className}>
+      <div className={`${css.root} ${className ? className : ''}`}>
         <div className={css.title}>{header}</div>
+        <div className={css.stacked}>
+          {slides.map((x, i) =>
+            <div key={i}>
+              <SlideInfo
+                number={i + 1}
+                title={x.title}
+                body={x.body}
+                className={css.detail} />
+              <CarouselSlide
+                className={css.bg}
+                image={x.image} />
+            </div>)}
+        </div>
+
         <div className={css.content}>
           <NukaCarousel
             wrapAround
@@ -42,19 +56,26 @@ export class Carousel extends Component {
             slidesToScroll={1}
             decorators={[{
               position: 'TopRight',
+              style:{
+                position: 'absolute',
+                top: '0px',
+                right: '0',
+                maxWidth: '500px',
+                zIndex: 5
+              },
               component: props =>
                 <CarouselDetails
                   {...props}
                   slides={slides}
                   index={index}
+                  className={css.details}
                   onClick={this.skipToSlide} />
             }]}>
             {slides.map((x, i) =>
-              <div
+              <CarouselSlide
                 key={i}
                 className={css.bg}
-                style={{backgroundImage: `url(${x.image})`}} />
-            )}
+                image={x.image} />)}
           </NukaCarousel>
         </div>
       </div>
@@ -62,28 +83,48 @@ export class Carousel extends Component {
   }
 }
 
-const CarouselDetails = ({ slides, index, onClick, ...rest }) => {
+const SlideInfo = ({ number, title, body, onClick, className }) => {
   return (
-    <div className={css.details}>
+    <div
+      className={className}
+      onClick={onClick}>
+      <div className={css.bullet}>
+        <div className={css.num}>{number}</div>
+      </div>
+      <div className={css.point}>
+        <div className={css.h3}>{title}</div>
+        <div className={css.h5}>{body}</div>
+      </div>
+    </div>
+  )
+}
+
+
+const CarouselDetails = ({ slides, index, onClick, className, ...rest }) => {
+  return (
+    <div className={className}>
       {slides.map((x, i) =>
-        <div
+        <SlideInfo
+          number={i + 1}
+          title={x.title}
+          body={x.body}
           key={i}
-          className={index === i ? `${css.detail} ${css.active}` : css.detail}
+          className={`${css.detail} ${index === i ? css.active : ''}`}
           onClick={_ => onClick({
             previous: rest.previousSlide,
             next: rest.nextSlide,
             index: i
-          })}>
-          <div className={css.bullet}>
-            <div className={css.num}>{i + 1}</div>
-          </div>
-          <div className={css.point}>
-            <div className={css.h3}>{x.title}</div>
-            <div className={css.h5}>{x.body}</div>
-          </div>
-        </div>
+          })} />
       )}
     </div>
+  )
+}
+
+const CarouselSlide = ({ image, className }) => {
+  return (
+    <div
+      className={className}
+      style={{backgroundImage: `url(${image})`}} />
   )
 }
 
