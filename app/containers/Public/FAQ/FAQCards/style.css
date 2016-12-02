@@ -1,17 +1,15 @@
 .root {
-  display: table;
-  clear: both;
+  display: block;
   position: relative;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.root:before,
 .root:after {
-  display: table;
-  clear: both;
+  display: block;
   content: '';
+  clear: both;
 }
 
 @media (min-width: 1024px) {
@@ -24,7 +22,6 @@
 .card {
   display: inline-block;
   position: relative;
-  height: 180px;
   width: 100%;
   padding: 15px;
   margin-bottom: 30px;
@@ -42,23 +39,24 @@
   }
 }
 
-.left {
+.q {
   display: inline-block;
   height: 100%;
   width: 70px;
 }
 
 .copy {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-
   width: 78%;
+  margin: -30px auto 0 50px;
 }
 
 @media (min-width: 1024px) {
   .copy {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     width: 82%;
+    margin: auto;
   }
   .card:nth-child(3) .copy,
   .card:nth-child(6) .copy,
@@ -86,4 +84,99 @@
 .mail {
   color: #fff;
   text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .w48 {
+    width: 48%;
+  }
+
+  .w100 {
+    width: 100%;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .left {
+    float: left;
+  }
+
+  .h200 {
+    height: 200px;
+  }
+
+  .h275 {
+    height: 275px;
+  }
+
+  .h390 {
+    height: 390px;
+  }
+
+  .h185 {
+    height: 185px;
+  }
+
+  .h140 {
+    height: 140px;
+  }
+}
+
+.c-0 {
+  composes: w48;
+  composes: h200;
+  composes: right;
+}
+
+.c-1 {
+  composes: w48;
+  composes: h200;
+  composes: left;
+}
+
+.c-2 {
+  composes: w100;
+  composes: h200;
+}
+
+.c-3 {
+  composes: w48;
+  composes: h275;
+  composes: left;
+}
+
+.c-4 {
+  composes: w48;
+  composes: h275;
+  composes: right;
+}
+
+.c-5 {
+  composes: w100;
+  composes: h200;
+}
+
+.c-6 {
+  composes: w48;
+  composes: h390;
+  composes: left;
+}
+
+.c-7 {
+  composes: w48;
+  composes: h185;
+  composes: right;
+}
+
+.c-8 {
+  composes: w48;
+  composes: h140;
+  composes: right;
+}
+
+.c-9 {
+  composes: w100;
+  composes: h200;
 }

@@ -1,6 +1,12 @@
 .root {
   padding-top: 70px;
-  margin-bottom: 90px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+  .root {
+    margin-bottom: 90px;
+  }
 }
 
 .title {

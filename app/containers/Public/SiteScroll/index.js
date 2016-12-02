@@ -26,7 +26,8 @@ export class SiteScroll extends Component {
   }
 
   componentDidMount() {
-    this.switchView()
+    window.addEventListener('scroll', this.switchView)
+    window.addEventListener('touchmove', this.switchView)
     this.resetScroll(!!this.props.hash)
   }
 
@@ -50,18 +51,16 @@ export class SiteScroll extends Component {
   }
 
   switchView() {
-    window.addEventListener('scroll', _ => {
-      const scrollTop = window.scrollY
-      const { route, fixed } = this.props
-      if (route === '/' || route === '/about' && !fixed) {
-        this.handleHeaderUI(scrollTop)
-        if (route === '/') {
-          this.handleLandingUI(scrollTop)
-        }
-      } else if (route === '/students') {
-        this.handleStudentsUI(scrollTop)
+    const scrollTop = window.scrollY
+    const { route, fixed } = this.props
+    if (route === '/' || route === '/about' && !fixed) {
+      this.handleHeaderUI(scrollTop)
+      if (route === '/') {
+        this.handleLandingUI(scrollTop)
       }
-    })
+    } else if (route === '/students') {
+      this.handleStudentsUI(scrollTop)
+    }
   }
 
   handleHeaderUI(scrollTop) {
