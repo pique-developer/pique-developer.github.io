@@ -12,17 +12,15 @@ export const SiteFooter = props => {
               <li className={css.header}>{x.title}</li>
 
               {x.links.map((x, i) =>
-                <li className={css.li}>
+                <li key={i} className={css.li}>
                   {x.to
                     ? <Link
                         to={x.to}
-                        key={i}
                         className={css.link}>
                         {x.text}
                       </Link>
                     : <a
                         href={x.href}
-                        key={i}
                         className={css.link}>
                         {x.text}
                       </a>}
