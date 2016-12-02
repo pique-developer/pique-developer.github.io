@@ -24,12 +24,14 @@ export class SettingsGeneral extends Component {
               className={css.input}
               type="email"/>
           </SettingsFormRow>
-          <SettingsFormRow label='Username'>
-            <input className={css.input} type="text"/>
-          </SettingsFormRow>
           <SettingsFormRow label='Photo'>
             <img src={user.photoURL} className={css.img} />
-            <div className={css.upload}>Change</div>
+            <div className={css.upload}>
+              <label>
+                Change
+                <input type="file" accept="image/*" className={css.file} />
+              </label>
+            </div>
           </SettingsFormRow>
         </div>
 

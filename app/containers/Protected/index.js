@@ -8,7 +8,7 @@ import ApplicantCover from './Applicant/ApplicantCover'
 import ApplicantProfile from './Applicant/ApplicantProfile'
 import Committee from './Committee'
 import Settings from './Settings'
-import Applications from './Applications'
+import ScholarshipPost from './ScholarshipPost'
 import MembersSidebar from './MembersSidebar'
 import MembersModal from './MembersModal'
 import Redirect from 'components/Redirect'
@@ -66,15 +66,12 @@ export class MembersRoutes extends Component {
         <MembersModal />
         <MembersHeader />
 
-
-
         <div className={css.root}>
           <MembersSidebar user={user} links={this.sidebar} />
 
-
           <UnconstrainedContent>
             <Match pattern="/applicant" component={ApplicantCover} />
-            <Match pattern="/applications" component={Applications} />
+            <Match pattern="/scholarship-post" component={ScholarshipPost} />
 
             <ConstrainedContent>
               <Match pattern="/committee" component={Committee} />
