@@ -42,10 +42,22 @@
   composes: link from '../style.css'
 }
 
-.next {
-  composes: next from '../style.css'
+.file {
+  composes: file from '../style.css'
 }
 
-.back {
-  composes: back from '../style.css'
+.caption {
+  composes: caption from '../style.css'
+}
+
+.req {
+  composes: req from '../style.css'
+}
+
+.comment {
+  composes: comment from '../style.css'
+}
+
+.more {
+  composes: more from '../style.css'
 }

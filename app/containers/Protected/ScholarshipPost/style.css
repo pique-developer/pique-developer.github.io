@@ -115,3 +115,13 @@
   color: red;
   content: '*';
 }
+
+.more {
+  composes: link;
+  width: 80%;
+}
+
+.comment {
+  composes: info;
+  width: 60%;
+}

@@ -7,10 +7,23 @@ export class ScholarshipPostEssay extends Component {
   render() {
     return (
       <div className={css.form}>
-        <div className={css.title}>Essay Requirements</div>
+        <div className={css.title}>
+          Essay Requirements
+          <span className={css.caption}>* Required</span>
+        </div>
         <div className={css.fields}>
+
           <div className={css.row}>
-            <div className={css.label}>Essay #1 Prompt</div>
+            <div className={css.label}>Number of Essays</div>
+            <div className={css.field}>
+              <input
+                className={css.sm}
+                type="text"/>
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.req}>Essay #1 Prompt</div>
             <div className={css.field}>
               <textarea
                 className={css.tall}
@@ -18,6 +31,28 @@ export class ScholarshipPostEssay extends Component {
                 type="text" />
             </div>
           </div>
+
+          <div className={css.row}>
+            <div className={css.label} />
+            <div className={css.field}>
+              <div className={css.more}>
+                Add Another Prompt or Essay #1
+              </div>
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.req}>Essay#1 Word Limit</div>
+            <div className={css.field}>
+              <input
+                className={css.sm}
+                type="text"/>
+              <div className={css.comment}>
+                Keep in mind that ~250 words is equivalent to 1 typed page.
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <ScholarshipPostBtns
