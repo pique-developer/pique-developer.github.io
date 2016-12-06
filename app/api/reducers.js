@@ -26,7 +26,7 @@ const loadingReducer = (state=false, action) => {
   }
 }
 
-const authReducer = (state={user: false, initialized: false, error: '', login: true, isNew: true}, action) => {
+const authReducer = (state={user: false, initialized: false, error: '', login: true, isNew: false}, action) => {
   switch (action.type) {
 
     case 'AUTHENTICATING':

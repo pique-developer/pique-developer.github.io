@@ -3,14 +3,18 @@ import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import ScholarshipPostGeneral from './ScholarshipPostGeneral'
 import ScholarshipPostEssay from './ScholarshipPostEssay'
+import ScholarshipPostIntention from './ScholarshipPostIntention'
+import ScholarshipPostRequirements from './ScholarshipPostRequirements'
 import css from './style.css'
 
 export const ScholarshipPost = props => {
   return (
     <div className={css.root}>
       <div className={css.header}>Scholarship Application Post</div>
-        <Match pattern='/scholarship-post/general' component={ScholarshipPostGeneral} />
-        <Match pattern='/scholarship-post/essay' component={ScholarshipPostEssay} />
+      <Match pattern='/scholarship-post/general' component={ScholarshipPostGeneral} />
+      <Match pattern='/scholarship-post/essay' component={ScholarshipPostEssay} />
+      <Match pattern='/scholarship-post/intention' component={ScholarshipPostIntention} />
+      <Match pattern='/scholarship-post/requirements' component={ScholarshipPostRequirements} />
     </div>
   )
 }

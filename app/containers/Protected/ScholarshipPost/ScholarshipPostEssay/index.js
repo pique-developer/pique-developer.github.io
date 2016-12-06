@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import ScholarshipPostBtns from '../ScholarshipPostBtns'
 import css from './style.css'
 
 export class ScholarshipPostEssay extends Component {
@@ -18,6 +19,10 @@ export class ScholarshipPostEssay extends Component {
             </div>
           </div>
         </div>
+
+        <ScholarshipPostBtns
+          back='/scholarship-post/general'
+          next='/scholarship-post/intention' />
       </div>
     )
   }

@@ -41,3 +41,11 @@
 .link {
   composes: link from '../style.css'
 }
+
+.next {
+  composes: next from '../style.css'
+}
+
+.back {
+  composes: back from '../style.css'
+}
