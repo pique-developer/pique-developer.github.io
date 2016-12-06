@@ -144,7 +144,7 @@ const appReducer = (state={ applicants }, action) => {
 const applicationReducer = (state={
   title: '',
   description: '',
-  awardAmount: '',
+  awardAmount: [],
   minimumGPA: 0,
   minimumSATScore: 0,
   minimumACTScore: 0,

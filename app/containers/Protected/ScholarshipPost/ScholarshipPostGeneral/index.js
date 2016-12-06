@@ -8,6 +8,13 @@ export class ScholarshipPostGeneral extends Component {
   constructor(props) {
     super(props)
     this.onChange = ::this.onChange
+    this.addField = ::this.addField
+    this.removeField = ::this.removeField
+  }
+
+  state = {
+    additionFields: [],
+    fieldId: 0,
   }
 
   onChange(e) {
@@ -15,8 +22,29 @@ export class ScholarshipPostGeneral extends Component {
     this.props.updateApplication({[name]: value})
   }
 
+  addField() {
+    const { additionFields, fieldId } = this.state
+    const id = fieldId + 1
+    const name = `awardAmount-${id}`
+    this.setState({
+      fieldId: id,
+      additionFields: additionFields.concat([name])
+    })
+    this.props.updateApplication({[name]: ''})
+  }
+
+  removeField(name) {
+    const { additionFields } = this.state
+    const nextState = additionFields.filter(x => x !== name)
+    this.setState({additionFields: nextState})
+    this.props.updateApplication({[name]: undefined})
+  }
+
   render() {
-    const { title, description, minimumGPA, awardAmount, minimumSATScore, minimumACTScore, recommendationsOK, genericRecommendations } = this.props
+    const { additionFields } = this.state
+    const {
+      title, description, minimumGPA, awardAmount, minimumSATScore,
+      minimumACTScore, recommendationsOK, genericRecommendations } = this.props
     return (
       <div className={css.form}>
         <div className={css.title}>
@@ -65,9 +93,20 @@ export class ScholarshipPostGeneral extends Component {
                 defaultValue='$'
                 className={css.sm}
                 type="text"/>
-              <div className={css.link}>Add Another Award</div>
+              <div
+                onClick={this.addField}
+                className={css.link}>
+                Add Another Award
+              </div>
             </div>
           </div>
+          {additionFields.map(x =>
+            <AddAmountField
+              key={x}
+              name={x}
+              onChange={this.onChange}
+              onClick={_ => this.removeField(x)} />
+          )}
 
           <div className={css.row}>
             <div className={css.label}>Minimum GPA</div>
@@ -131,6 +170,23 @@ export class ScholarshipPostGeneral extends Component {
     )
   }
 }
+
+const AddAmountField = ({ onChange, onClick, name }) => (
+  <div className={css.row}>
+    <div className={css.label} />
+    <div className={css.field}>
+      <input
+        name={name}
+        onChange={onChange}
+        defaultValue='$'
+        className={css.sm}
+        type="text"/>
+      <div
+        onClick={onClick}
+        className={css.info}>X</div>
+    </div>
+  </div>
+)
 
 export default connect(
   state => ({
