@@ -7,10 +7,7 @@ export class ScholarshipPostEssay extends Component {
   render() {
     return (
       <div className={css.form}>
-        <div className={css.title}>
-          Essay Requirements
-          <span className={css.caption}>* Required</span>
-        </div>
+        <div className={css.title}>Essay Requirements</div>
         <div className={css.fields}>
 
           <div className={css.row}>
@@ -28,6 +25,7 @@ export class ScholarshipPostEssay extends Component {
               <textarea
                 className={css.tall}
                 rows="4"
+                placeholder="Enter your scholarship's essay prompt here"
                 type="text" />
             </div>
           </div>
@@ -46,6 +44,7 @@ export class ScholarshipPostEssay extends Component {
             <div className={css.field}>
               <input
                 className={css.sm}
+                placeholder="e.g. 100"
                 type="text"/>
               <div className={css.comment}>
                 Keep in mind that ~250 words is equivalent to 1 typed page.

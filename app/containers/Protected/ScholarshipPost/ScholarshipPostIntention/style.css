@@ -1,51 +1,65 @@
 .form {
-  composes: form from '../style.css'
+  composes: form from '../style.css';
 }
 
 .title {
-  composes: title from '../style.css'
+  composes: title from '../style.css';
 }
 
 .fields {
-  composes: fields from '../style.css'
+  composes: fields from '../style.css';
 }
 
 .row {
-  composes: row from '../style.css'
+  composes: row from '../style.css';
 }
 
 .label {
-  composes: label from '../style.css'
+  composes: label from '../style.css';
 }
 
 .field {
-  composes: field from '../style.css'
+  composes: field from '../style.css';
+  margin-bottom: 25px;
 }
 
 .input {
-  composes: input from '../style.css'
+  composes: input from '../style.css';
 }
 
 .sm {
-  composes: sm from '../style.css'
+  composes: sm from '../style.css';
 }
 
 .tall {
-  composes: tall from '../style.css'
+  composes: tall from '../style.css';
 }
 
 .info {
-  composes: info from '../style.css'
+  composes: info from '../style.css';
 }
 
 .link {
-  composes: link from '../style.css'
+  composes: link from '../style.css';
 }
 
-.next {
-  composes: next from '../style.css'
+.caption {
+  composes: caption from '../style.css';
 }
 
-.back {
-  composes: back from '../style.css'
+.more {
+  composes: more from '../style.css';
+  width: 70%;
+}
+
+.req {
+  composes: req from '../style.css';
+}
+
+.radio {
+  composes: radio from '../style.css';
+}
+
+.checkbox {
+  composes: checkbox from '../style.css';
 }

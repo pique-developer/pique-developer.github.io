@@ -32,7 +32,6 @@
 }
 
 .caption {
-  color: red;
   display: block;
   font-size: 12px;
   margin-bottom: 10px;
@@ -69,9 +68,8 @@
   box-sizing: border-box;
   width: 80%;
   border-radius: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 10px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 13px;
   border: 1px solid #e7e9eB;
 }
@@ -86,6 +84,14 @@
 .tall {
   composes: input;
   height: 100px;
+  line-height: 35px;
+
+}
+
+.input::placeholder,
+.tall::placeholder {
+  color: #a8a8a8;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .info {
@@ -103,7 +109,7 @@
 
 .file {
   composes: sm;
-  width: 18%;
+  width: 19%;
   border: none;
 }
 
@@ -124,4 +130,21 @@
 .comment {
   composes: info;
   width: 60%;
+}
+
+.radio {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.checkbox {
+  display: inline-block;
+  margin-bottom: 15px;
+  vertical-align: top;
+  font-size: 12px;
+  width: 45%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.checkbox input {
+  margin-right: 10px;
 }

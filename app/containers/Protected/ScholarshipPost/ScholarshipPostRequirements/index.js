@@ -7,16 +7,18 @@ export class ScholarshipPostRequirements extends Component {
   render() {
     return (
       <div className={css.form}>
-        <div className={css.title}>Supplemental Requirements</div>
+        <div className={css.title}>
+          Supplemental Requirements
+          <div className={css.caption}>Please list any supplemental materials and documents you require students to submit</div>
+        </div>
         <div className={css.fields}>
           <div className={css.row}>
-            <div className={css.label}>Essay #1 Prompt</div>
-            <div className={css.field}>
-              <textarea
-                className={css.tall}
-                rows="4"
-                type="text" />
-            </div>
+            <input
+              className={css.sm}
+              placeholder="Document Title"
+              type="text" />
+            <div className={css.link}>Add Another Required Document</div>
+            <div className={css.info}>Add supplemental required documents i.e. 'Parents' W-2 Form'</div>
           </div>
         </div>
 
