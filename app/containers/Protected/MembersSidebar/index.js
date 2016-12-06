@@ -1,8 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import SidebarDropdown from './SidebarDropdown'
 import css from './style.css'
 
-const MembersSidebar = ({ links, user }) => {
+const MembersSidebar = ({ user }) => {
   return (
     <div className={css.root}>
       <div className={css.backdrop} />
@@ -19,4 +20,24 @@ const MembersSidebar = ({ links, user }) => {
   )
 }
 
-export default MembersSidebar
+const links = [{
+  title: 'Applications',
+  links: [
+    {to: '/dashboard/new', text: 'New'},
+    {to: '/dashboard/reviewed', text: 'Reviewed'},
+    {to: '/dashboard/interviewees', text: 'Interviewees'},
+    {to: '/dashboard/finalists', text: 'Finalists'},
+  ],
+},{
+  title: 'Selection Committee',
+  links: [
+    {to: '/committee', text: 'Committee Page'},
+    {text: 'Invite Members'},
+  ],
+}]
+
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(MembersSidebar)

@@ -27,67 +27,69 @@ export class MembersHeader extends Component {
 
   render() {
     const { open } = this.state
-    const { user } = this.props
-    return (
-      <div>
-        <Modal open={open} onClick={this.toggleDropdown} />
+    const { user, isNew } = this.props
 
-        <div className={css.root} onClick={this.toggleDropdown}>
-          <div className={css.wrap}>
-            <div className={css.brand}>
-              <Link className={css.link} to="/">
-                <LogoIcon className={css.logo}/>
-              </Link>
-            </div>
+    return !isNew
+      ? <div>
+          <Modal open={open} onClick={this.toggleDropdown} />
 
-            <div className={css.border} />
+          <div className={css.root} onClick={this.toggleDropdown}>
+            <div className={css.wrap}>
+              <div className={css.brand}>
+                <Link className={css.link} to="/">
+                  <LogoIcon className={css.logo}/>
+                </Link>
+              </div>
 
-            <div className={css.nav}>
-              <div className={css.settings}>
-                <ul className={css.ul}>
-                  <li className={css.li} >
-                    <img
-                      className={css.avatar}
-                      src={user.photoURL}
-                      onClick={this.toggleDropdown} />
+              <div className={css.border} />
 
-                    <div className={`${css.dropdown} ${open ? css.open : ''}`}>
-                      <div className={css.point} />
-                      <div className={css.nub} />
-                      <ul className={css.tooltip}>
-                        <li
-                          onClick={this.toggleDropdown}
-                          className={css.li}>Profile</li>
-                        <li
-                          onClick={this.toggleDropdown}
-                          className={css.li}>
-                          <Link
-                            to='/settings'
-                            className={css.route}>Settings</Link>
-                          </li>
-                        <li
-                          onClick={this.toggleDropdown}
-                          className={css.li}>Preview Scholarship</li>
-                        <li
-                          onClick={this.signOut}
-                          className={css.li}>Log Out</li>
-                      </ul>
-                    </div>
+              <div className={css.nav}>
+                <div className={css.settings}>
+                  <ul className={css.ul}>
+                    <li className={css.li} >
+                      <img
+                        className={css.avatar}
+                        src={user.photoURL}
+                        onClick={this.toggleDropdown} />
 
-                  </li>
-                </ul>
+                      <div className={`${css.dropdown} ${open ? css.open : ''}`}>
+                        <div className={css.point} />
+                        <div className={css.nub} />
+                        <ul className={css.tooltip}>
+                          <li
+                            onClick={this.toggleDropdown}
+                            className={css.li}>Profile</li>
+                          <li
+                            onClick={this.toggleDropdown}
+                            className={css.li}>
+                            <Link
+                              to='/settings'
+                              className={css.route}>Settings</Link>
+                            </li>
+                          <li
+                            onClick={this.toggleDropdown}
+                            className={css.li}>Preview Scholarship</li>
+                          <li
+                            onClick={this.signOut}
+                            className={css.li}>Log Out</li>
+                        </ul>
+                      </div>
+
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    )
+      : null
   }
 }
 
 export default connect(
   state => ({
     user: state.auth.user,
+    isNew: state.auth.isNew,
   }),
  Actions
 )(MembersHeader)

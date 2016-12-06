@@ -1,0 +1,43 @@
+.form {
+  composes: form from '../style.css'
+}
+
+.title {
+  composes: title from '../style.css'
+}
+
+.fields {
+  composes: fields from '../style.css'
+}
+
+.row {
+  composes: row from '../style.css'
+}
+
+.label {
+  composes: label from '../style.css'
+}
+
+.field {
+  composes: label from '../style.css'
+}
+
+.input {
+  composes: input from '../style.css'
+}
+
+.sm {
+  composes: sm from '../style.css'
+}
+
+.tall {
+  composes: tall from '../style.css'
+}
+
+.info {
+  composes: info from '../style.css'
+}
+
+.link {
+  composes: link from '../style.css'
+}
