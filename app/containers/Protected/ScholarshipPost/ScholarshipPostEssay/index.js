@@ -4,6 +4,16 @@ import ScholarshipPostBtns from '../ScholarshipPostBtns'
 import css from './style.css'
 
 export class ScholarshipPostEssay extends Component {
+  constructor(props) {
+    super(props)
+    this.onChange = ::this.onChange
+  }
+
+  onChange(e) {
+    const { name, value } = e.target
+    this.props.updateApplication({[name]: value})
+  }
+
   render() {
     return (
       <div className={css.form}>
@@ -14,6 +24,8 @@ export class ScholarshipPostEssay extends Component {
             <div className={css.label}>Number of Essays</div>
             <div className={css.field}>
               <input
+                name="essays"
+                onChange={this.onChange}
                 className={css.sm}
                 type="text"/>
             </div>
@@ -23,6 +35,8 @@ export class ScholarshipPostEssay extends Component {
             <div className={css.req}>Essay #1 Prompt</div>
             <div className={css.field}>
               <textarea
+                name="essayPrompt"
+                onChange={this.onChange}
                 className={css.tall}
                 rows="4"
                 placeholder="Enter your scholarship's essay prompt here"
@@ -43,6 +57,8 @@ export class ScholarshipPostEssay extends Component {
             <div className={css.req}>Essay#1 Word Limit</div>
             <div className={css.field}>
               <input
+                name="essayWordLimit"
+                onChange={this.onChange}
                 className={css.sm}
                 placeholder="e.g. 100"
                 type="text"/>

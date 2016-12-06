@@ -5,9 +5,10 @@ import ScholarshipPostGeneral from './ScholarshipPostGeneral'
 import ScholarshipPostEssay from './ScholarshipPostEssay'
 import ScholarshipPostIntention from './ScholarshipPostIntention'
 import ScholarshipPostRequirements from './ScholarshipPostRequirements'
+import { updateApplication } from 'api/actions'
 import css from './style.css'
 
-export const ScholarshipPost = props => {
+export const ScholarshipPost = ({ updateApplication }) => {
   return (
     <div className={css.root}>
       <div className={css.header}>Scholarship Application Post</div>
@@ -22,5 +23,6 @@ export const ScholarshipPost = props => {
 export default connect(
   state => ({
     ...state
-  })
+  }),
+  { updateApplication }
 )(ScholarshipPost)

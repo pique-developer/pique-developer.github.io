@@ -141,6 +141,43 @@ const appReducer = (state={ applicants }, action) => {
   }
 }
 
+const applicationReducer = (state={
+  title: '',
+  description: '',
+  awardAmount: '',
+  minimumGPA: 0,
+  minimumSATScore: 0,
+  minimumACTScore: 0,
+  recommendationsOK: false,
+  genericRecommendations: 0,
+  essays: 0,
+  essayPrompt: '',
+  essayWordLimit: '',
+  schoolYearRequirement: [],
+  citizenshipRequirement: [],
+  maximumFamilyIncome: '',
+  genderRequirement: [],
+  raceRequirements: [],
+  degreeType: [],
+  areasOfStudyRequirements: '',
+  communityServiceRequirement: [],
+  locationLimitationCity: '',
+  locationLimitationState: '',
+  documentRequirement: '',
+}, action) => {
+  switch (action.type) {
+
+    case 'UPDATE_APPLICATION':
+      return {
+        ...state,
+        ...action.payload,
+      }
+
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   routing: routeReducer,
   formSubmitted: registerReducer,
@@ -149,4 +186,5 @@ export default combineReducers({
   loading: loadingReducer,
   ui: uiReducer,
   app: appReducer,
+  application: applicationReducer,
 })

@@ -4,6 +4,16 @@ import ScholarshipPostBtns from '../ScholarshipPostBtns'
 import css from './style.css'
 
 export class ScholarshipPostIntention extends Component {
+  constructor(props) {
+    super(props)
+    this.onChange = ::this.onChange
+  }
+
+  onChange(e) {
+    const { name, value } = e.target
+    this.props.updateApplication({[name]: value})
+  }
+
   render() {
     return (
       <div className={css.form}>
@@ -73,6 +83,7 @@ export class ScholarshipPostIntention extends Component {
             <div className={css.label}>Maximum Family Income</div>
             <div className={css.field}>
               <input
+                defaultValue='$'
                 className={css.sm}
                 type="text"/>
             </div>
@@ -163,6 +174,7 @@ export class ScholarshipPostIntention extends Component {
             <div className={css.label}>Areas of Study Requirements</div>
             <div className={css.field}>
               <input
+                name="areasOfStudyRequirements"
                 className={css.sm}
                 type="text"/>
               <div className={css.more}>Add Another Area of Studey Requirement</div>
@@ -193,9 +205,11 @@ export class ScholarshipPostIntention extends Component {
             <div className={css.label}>Location Scholarship is Limited To?</div>
             <div className={css.field}>
               <input
+                name="locationLimitationCity"
                 className={css.sm}
                 type="text"/>
               <input
+                name="locationLimitationState"
                 className={css.sm}
                 type="text"/>
               <div className={css.link}>Add Another Location</div>
