@@ -57,3 +57,7 @@
 .caption {
   composes: caption from '../style.css';
 }
+
+.remove {
+  composes: remove from '../style.css'
+}

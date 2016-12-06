@@ -13,7 +13,7 @@ export class ScholarshipPostGeneral extends Component {
   }
 
   state = {
-    additionFields: [],
+    additionalFields: [],
     fieldId: 0,
   }
 
@@ -23,25 +23,25 @@ export class ScholarshipPostGeneral extends Component {
   }
 
   addField() {
-    const { additionFields, fieldId } = this.state
+    const { additionalFields, fieldId } = this.state
     const id = fieldId + 1
     const name = `awardAmount-${id}`
     this.setState({
       fieldId: id,
-      additionFields: additionFields.concat([name])
+      additionalFields: additionalFields.concat([name])
     })
     this.props.updateApplication({[name]: ''})
   }
 
   removeField(name) {
-    const { additionFields } = this.state
-    const nextState = additionFields.filter(x => x !== name)
-    this.setState({additionFields: nextState})
+    const { additionalFields } = this.state
+    const nextState = additionalFields.filter(x => x !== name)
+    this.setState({additionalFields: nextState})
     this.props.updateApplication({[name]: undefined})
   }
 
   render() {
-    const { additionFields } = this.state
+    const { additionalFields } = this.state
     const {
       title, description, minimumGPA, awardAmount, minimumSATScore,
       minimumACTScore, recommendationsOK, genericRecommendations } = this.props
@@ -100,7 +100,7 @@ export class ScholarshipPostGeneral extends Component {
               </div>
             </div>
           </div>
-          {additionFields.map(x =>
+          {additionalFields.map(x =>
             <AddAmountField
               key={x}
               name={x}

@@ -13,7 +13,7 @@ export class ScholarshipPostEssay extends Component {
   }
 
   state = {
-    additionFields: [],
+    additionalFields: [],
     fieldId: 0,
   }
 
@@ -23,25 +23,25 @@ export class ScholarshipPostEssay extends Component {
   }
 
   addField() {
-    const { additionFields, fieldId } = this.state
+    const { additionalFields, fieldId } = this.state
     const id = fieldId + 1
     const name = `essay-${id}`
     this.setState({
       fieldId: id,
-      additionFields: additionFields.concat([name])
+      additionalFields: additionalFields.concat([name])
     })
     this.props.updateApplication({[name]: ''})
   }
 
   removeField(name) {
-    const { additionFields } = this.state
-    const nextState = additionFields.filter(x => x !== name)
-    this.setState({additionFields: nextState})
+    const { additionalFields } = this.state
+    const nextState = additionalFields.filter(x => x !== name)
+    this.setState({additionalFields: nextState})
     this.props.updateApplication({[name]: undefined})
   }
 
   render() {
-    const { additionFields } = this.state
+    const { additionalFields } = this.state
     return (
       <div className={css.form}>
         <div className={css.title}>Essay Requirements</div>
@@ -100,7 +100,7 @@ export class ScholarshipPostEssay extends Component {
             </div>
           </div>
 
-          {additionFields.map((x, i) =>
+          {additionalFields.map((x, i) =>
             <AdditionalEssays
               key={x}
               name={x}
