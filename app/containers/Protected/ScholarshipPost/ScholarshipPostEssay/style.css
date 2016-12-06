@@ -19,7 +19,7 @@
 }
 
 .field {
-  composes: label from '../style.css'
+  composes: field from '../style.css'
 }
 
 .input {

@@ -1,8 +1,9 @@
 .root {
   position: relative;
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  padding-bottom: 40px;
   background-image: linear-gradient(-229deg, rgba(23,127,255,0.80) 1%, rgba(18,159,199,0.80) 27%, rgba(5,250,39,0.80) 100%);
 }
 
@@ -26,13 +27,20 @@
 }
 
 .title {
-  margin: 50px auto;
-  padding-bottom: 15px;
+  margin: 25px auto;
   border-bottom: 1px solid #eee;
 }
 
+.caption {
+  color: red;
+  display: block;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .fields {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .row {
@@ -53,16 +61,17 @@
 
 .field {
   display: inline-block;
-  width: 50%;
+  width: 60%;
 }
 
 .input {
   height: 35px;
   box-sizing: border-box;
-  width: 100%;
+  width: 80%;
   border-radius: 3px;
   padding-left: 6px;
   padding-right: 6px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   border: 1px solid #e7e9eB;
 }
@@ -70,10 +79,9 @@
 .sm {
   composes: input;
   display: inline-block;
-  width: 30%;
+  width: 20%;
   margin-right: 50px;
 }
-
 
 .tall {
   composes: input;
@@ -82,9 +90,10 @@
 
 .info {
   display: inline-block;
-  font-size: 12px;
-  width: 30%;
+  font-size: 11px;
+  width: 35%;
   color: #ccc;
+  vertical-align: top;
 }
 
 .link {
@@ -92,3 +101,17 @@
   color: rgba(23,127,255,0.80);
 }
 
+.file {
+  composes: sm;
+  width: 18%;
+  border: none;
+}
+
+.req {
+ composes: label;
+}
+
+.req:after {
+  color: red;
+  content: '*';
+}
