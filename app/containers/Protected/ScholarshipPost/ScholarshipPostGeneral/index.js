@@ -183,7 +183,7 @@ const AddAmountField = ({ onChange, onClick, name }) => (
         type="text"/>
       <div
         onClick={onClick}
-        className={css.info}>X</div>
+        className={css.remove}>X</div>
     </div>
   </div>
 )

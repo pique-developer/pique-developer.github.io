@@ -1,12 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ScholarshipPostBtns from '../ScholarshipPostBtns'
+import { updateApplication } from 'api/actions'
 import css from './style.css'
 
 export class ScholarshipPostIntention extends Component {
   constructor(props) {
     super(props)
     this.onChange = ::this.onChange
+    this.addField = ::this.addField
+    this.removeField = ::this.removeField
+  }
+
+  state = {
+    locationLimitations: [],
+    areasOfStudy: [],
+    fieldId: 0,
   }
 
   onChange(e) {
@@ -14,7 +23,27 @@ export class ScholarshipPostIntention extends Component {
     this.props.updateApplication({[name]: value})
   }
 
+  addField(prefix) {
+    const { fieldId } = this.state
+    const fields = this.state[prefix]
+    const id = fieldId + 1
+    const name = `${prefix}-${id}`
+    this.setState({
+      fieldId: id,
+      [prefix]: fields.concat([name])
+    })
+    this.props.updateApplication({[name]: ''})
+  }
+
+  removeField(name, prefix) {
+    const fields = this.state[prefix]
+    const nextState = fields.filter(x => x !== name)
+    this.setState({[prefix]: nextState})
+    this.props.updateApplication({[name]: undefined})
+  }
+
   render() {
+    const { areasOfStudy, locationLimitations } = this.state
     return (
       <div className={css.form}>
         <div className={css.title}>
@@ -177,9 +206,19 @@ export class ScholarshipPostIntention extends Component {
                 name="areasOfStudyRequirements"
                 className={css.sm}
                 type="text"/>
-              <div className={css.more}>Add Another Area of Studey Requirement</div>
+              <div
+                onClick={_ => this.addField('areasOfStudy')}
+                className={css.more}>Add Another Area of Study Requirement</div>
             </div>
           </div>
+
+          {areasOfStudy.map(x =>
+            <AdditionalAreasOfStudy
+              key={x}
+              name={x}
+              onChange={this.onChange}
+              onClick={_ => this.removeField(x, 'areasOfStudy')} />
+          )}
 
           <div className={css.row}>
             <div className={css.label}>Community Service Requirement</div>
@@ -212,9 +251,21 @@ export class ScholarshipPostIntention extends Component {
                 name="locationLimitationState"
                 className={css.sm}
                 type="text"/>
-              <div className={css.link}>Add Another Location</div>
+              <div
+                onClick={_ => this.addField('locationLimitations')}
+                className={css.link}>
+                Add Another Location
+              </div>
             </div>
           </div>
+          {locationLimitations.map(x =>
+            <AdditionalLocationLimitations
+              key={x}
+              name={x}
+              onChange={this.onChange}
+              onClick={_ => this.removeField(x, 'locationLimitations')} />
+          )}
+
           </div>
         </div>
 
@@ -226,8 +277,46 @@ export class ScholarshipPostIntention extends Component {
   }
 }
 
+const AdditionalAreasOfStudy = ({ onChange, onClick, name }) => (
+  <div className={css.row}>
+    <div className={css.label} />
+    <div className={css.field}>
+      <input
+        name={name}
+        onChange={onChange}
+        className={css.sm}
+        type="text"/>
+      <div
+        onClick={onClick}
+        className={css.remove}>X</div>
+    </div>
+  </div>
+)
+
+const AdditionalLocationLimitations = ({ onChange, onClick, name }) => (
+  <div className={css.row}>
+    <div className={css.label} />
+    <div className={css.field}>
+      <input
+        name={`${name}City`}
+        onChange={onChange}
+        className={css.sm}
+        type="text"/>
+      <input
+        name={`${name}State`}
+        onChange={onChange}
+        className={css.sm}
+        type="text"/>
+      <div
+        onClick={onClick}
+        className={css.remove}>X</div>
+    </div>
+  </div>
+)
+
 export default connect(
   state => ({
     ...state
-  })
+  }),
+  { updateApplication }
 )(ScholarshipPostIntention)

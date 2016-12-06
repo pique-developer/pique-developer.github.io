@@ -105,6 +105,7 @@
 .link {
   composes: info;
   color: rgba(23,127,255,0.80);
+  cursor: pointer;
 }
 
 .file {
@@ -147,4 +148,10 @@
 
 .checkbox input {
   margin-right: 10px;
+}
+
+.remove {
+  composes: info;
+  display: inline;
+  cursor: pointer;
 }

@@ -54,3 +54,7 @@
 .req {
   composes: req from '../style.css';
 }
+
+.remove {
+  composes: remove from '../style.css'
+}

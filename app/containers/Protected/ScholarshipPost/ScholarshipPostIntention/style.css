@@ -63,3 +63,7 @@
 .checkbox {
   composes: checkbox from '../style.css';
 }
+
+.remove {
+  composes: remove from '../style.css'
+}
