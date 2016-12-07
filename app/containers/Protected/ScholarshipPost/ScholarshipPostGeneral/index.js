@@ -5,46 +5,13 @@ import { updateApplication } from 'api/actions'
 import css from './style.css'
 
 export class ScholarshipPostGeneral extends Component {
-  constructor(props) {
-    super(props)
-    this.onChange = ::this.onChange
-    this.addField = ::this.addField
-    this.removeField = ::this.removeField
-  }
-
-  state = {
-    additionalFields: [],
-    fieldId: 0,
-  }
-
-  onChange(e) {
-    const { name, value } = e.target
-    this.props.updateApplication({[name]: value})
-  }
-
-  addField() {
-    const { additionalFields, fieldId } = this.state
-    const id = fieldId + 1
-    const name = `awardAmount-${id}`
-    this.setState({
-      fieldId: id,
-      additionalFields: additionalFields.concat([name])
-    })
-    this.props.updateApplication({[name]: ''})
-  }
-
-  removeField(name) {
-    const { additionalFields } = this.state
-    const nextState = additionalFields.filter(x => x !== name)
-    this.setState({additionalFields: nextState})
-    this.props.updateApplication({[name]: undefined})
-  }
 
   render() {
-    const { additionalFields } = this.state
+    const { awardAmounts } = this.props
     const {
-      title, description, minimumGPA, awardAmount, minimumSATScore,
-      minimumACTScore, recommendationsOK, genericRecommendations } = this.props
+      onChange, onGroupChange, addField, removeField,
+      title, description, minGPA, minSATScore, minACTScore,
+      recommendations, genericRecommendations } = this.props
     return (
       <div className={css.form}>
         <div className={css.title}>
@@ -58,7 +25,7 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.field}>
               <input
                 name="title"
-                onChange={this.onChange}
+                onChange={onChange}
                 className={css.input}
                 type="text"/>
             </div>
@@ -71,7 +38,7 @@ export class ScholarshipPostGeneral extends Component {
                 name="description"
                 className={css.tall}
                 rows="4"
-                onChange={this.onChange}
+                onChange={onChange}
                 placeholder="Describe your scholarship"
                 type="text" />
             </div>
@@ -88,24 +55,26 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.req}>Award Amount</div>
             <div className={css.field}>
               <input
-                name='awardAmount'
-                onChange={this.onChange}
-                defaultValue='$'
+                name={awardAmounts.name}
+                onChange={onChange}
+                value={awardAmounts.value}
                 className={css.sm}
                 type="text"/>
               <div
-                onClick={this.addField}
+                onClick={_ => addField('awardAmounts')}
                 className={css.link}>
                 Add Another Award
               </div>
             </div>
           </div>
-          {additionalFields.map(x =>
+
+          {awardAmounts.children.map((x, i) =>
             <AddAmountField
-              key={x}
-              name={x}
-              onChange={this.onChange}
-              onClick={_ => this.removeField(x)} />
+              key={i}
+              name={x.name}
+              value={x.value}
+              onChange={e => onGroupChange(e, 'awardAmounts')}
+              onClick={_ => removeField(x.name, 'awardAmounts')} />
           )}
 
           <div className={css.row}>
@@ -113,7 +82,7 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.field}>
               <input
                 name='minimumGPA'
-                onChange={this.onChange}
+                onChange={onChange}
                 className={css.sm}
                 type="text"/>
               <div className={css.info}>All GPAs are unweighted</div>
@@ -126,13 +95,13 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.field}>
               <input
                 name='minimumSATScore'
-                onChange={this.onChange}
+                onChange={onChange}
                 className={css.sm}
                 placeholder="SAT Score"
                 type="text"/>
               <input
                 name='minimumACTScore'
-                onChange={this.onChange}
+                onChange={onChange}
                 className={css.sm}
                 placeholder="ACT Score"
                 type="text"/>
@@ -144,7 +113,7 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.field}>
               <input
                 name="recommendationsOK"
-                onChange={this.onChange}
+                onChange={onChange}
                 className={css.sm}
                 type="text"/>
               <div className={css.link}>Why accept a Generic Recommendation?</div>
@@ -156,7 +125,7 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.field}>
               <input
                 name="genericRecommendations"
-                onChange={this.onChange}
+                onChange={onChange}
                 className={css.sm}
                 placeholder="0"
                 type="text"/>
@@ -171,14 +140,14 @@ export class ScholarshipPostGeneral extends Component {
   }
 }
 
-const AddAmountField = ({ onChange, onClick, name }) => (
+const AddAmountField = ({ onChange, onClick, name, value }) => (
   <div className={css.row}>
     <div className={css.label} />
     <div className={css.field}>
       <input
         name={name}
         onChange={onChange}
-        defaultValue='$'
+        value={value}
         className={css.sm}
         type="text"/>
       <div

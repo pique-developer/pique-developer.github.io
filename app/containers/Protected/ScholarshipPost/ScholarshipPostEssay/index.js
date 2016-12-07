@@ -86,7 +86,7 @@ export class ScholarshipPostEssay extends Component {
           </div>
 
           <div className={css.row}>
-            <div className={css.req}>Essay#1 Word Limit</div>
+            <div className={css.req}>Essay #1 Word Limit</div>
             <div className={css.field}>
               <input
                 name="essayWordLimit"

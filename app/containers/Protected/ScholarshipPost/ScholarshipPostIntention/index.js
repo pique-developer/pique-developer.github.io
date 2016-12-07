@@ -5,45 +5,10 @@ import { updateApplication } from 'api/actions'
 import css from './style.css'
 
 export class ScholarshipPostIntention extends Component {
-  constructor(props) {
-    super(props)
-    this.onChange = ::this.onChange
-    this.addField = ::this.addField
-    this.removeField = ::this.removeField
-  }
-
-  state = {
-    locationLimitations: [],
-    areasOfStudy: [],
-    fieldId: 0,
-  }
-
-  onChange(e) {
-    const { name, value } = e.target
-    this.props.updateApplication({[name]: value})
-  }
-
-  addField(prefix) {
-    const { fieldId } = this.state
-    const fields = this.state[prefix]
-    const id = fieldId + 1
-    const name = `${prefix}-${id}`
-    this.setState({
-      fieldId: id,
-      [prefix]: fields.concat([name])
-    })
-    this.props.updateApplication({[name]: ''})
-  }
-
-  removeField(name, prefix) {
-    const fields = this.state[prefix]
-    const nextState = fields.filter(x => x !== name)
-    this.setState({[prefix]: nextState})
-    this.props.updateApplication({[name]: undefined})
-  }
-
   render() {
-    const { areasOfStudy, locationLimitations } = this.state
+    const {
+      locations, areasOfStudy,
+      onChange, onGroupChange, addField, removeField } = this.props
     return (
       <div className={css.form}>
         <div className={css.title}>
@@ -207,17 +172,18 @@ export class ScholarshipPostIntention extends Component {
                 className={css.sm}
                 type="text"/>
               <div
-                onClick={_ => this.addField('areasOfStudy')}
+                onClick={_ => addField('areasOfStudy')}
                 className={css.more}>Add Another Area of Study Requirement</div>
             </div>
           </div>
 
-          {areasOfStudy.map(x =>
+          {areasOfStudy.children.map(x =>
             <AdditionalAreasOfStudy
-              key={x}
-              name={x}
-              onChange={this.onChange}
-              onClick={_ => this.removeField(x, 'areasOfStudy')} />
+              key={x.name}
+              name={x.name}
+              value={x.value}
+              onChange={e => onGroupChange(e, 'areasOfStudy')}
+              onClick={_ => removeField(x.name, 'areasOfStudy')} />
           )}
 
           <div className={css.row}>
@@ -240,30 +206,22 @@ export class ScholarshipPostIntention extends Component {
             </div>
           </div>
 
-          <div className={css.row}>
-            <div className={css.label}>Location Scholarship is Limited To?</div>
-            <div className={css.field}>
-              <input
-                name="locationLimitationCity"
-                className={css.sm}
-                type="text"/>
-              <input
-                name="locationLimitationState"
-                className={css.sm}
-                type="text"/>
-              <div
-                onClick={_ => this.addField('locationLimitations')}
-                className={css.link}>
-                Add Another Location
-              </div>
-            </div>
-          </div>
-          {locationLimitations.map(x =>
+          {locations.children.map((x, i) =>
             <AdditionalLocationLimitations
-              key={x}
-              name={x}
-              onChange={this.onChange}
-              onClick={_ => this.removeField(x, 'locationLimitations')} />
+              key={x.name}
+              name={x.name}
+              value={x.value}
+              first={i === 0}
+              onChange={onGroupChange}>
+              {i === 0
+                ? <div
+                    onClick={_ => addField('locations')}
+                    className={css.link}>Add Another Location</div>
+                : <div
+                    onClick={_ => removeField(x.name, 'locations')}
+                    className={css.remove}>X</div>}
+            </AdditionalLocationLimitations>
+
           )}
 
           </div>
@@ -277,13 +235,14 @@ export class ScholarshipPostIntention extends Component {
   }
 }
 
-const AdditionalAreasOfStudy = ({ onChange, onClick, name }) => (
+const AdditionalAreasOfStudy = ({ onChange, onClick, name, value }) => (
   <div className={css.row}>
     <div className={css.label} />
     <div className={css.field}>
       <input
         name={name}
         onChange={onChange}
+        value={value}
         className={css.sm}
         type="text"/>
       <div
@@ -293,26 +252,30 @@ const AdditionalAreasOfStudy = ({ onChange, onClick, name }) => (
   </div>
 )
 
-const AdditionalLocationLimitations = ({ onChange, onClick, name }) => (
-  <div className={css.row}>
-    <div className={css.label} />
-    <div className={css.field}>
-      <input
-        name={`${name}City`}
-        onChange={onChange}
-        className={css.sm}
-        type="text"/>
-      <input
-        name={`${name}State`}
-        onChange={onChange}
-        className={css.sm}
-        type="text"/>
-      <div
-        onClick={onClick}
-        className={css.remove}>X</div>
+const AdditionalLocationLimitations = ({ onChange, onClick, name, value, first, children }) => {
+  return (
+    <div className={css.row}>
+      {first
+        ? <div className={css.label}>Location Scholarship is Limited To?</div>
+        : <div className={css.label} />}
+      <div className={css.field}>
+        <input
+          name={`${name}.city`}
+          onChange={e => onChange(e, 'locations')}
+          value={value.city}
+          className={css.sm}
+          type="text"/>
+        <input
+          name={`${name}.state`}
+          onChange={e => onChange(e, 'locations')}
+          value={value.state}
+          className={css.sm}
+          type="text"/>
+        {children}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export default connect(
   state => ({
