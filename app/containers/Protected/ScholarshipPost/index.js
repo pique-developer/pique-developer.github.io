@@ -50,7 +50,6 @@ export class ScholarshipPost extends Component {
     degreeType: [],
     areasOfStudy: {
       name: 'areasOfStudy',
-      value: '',
       children: [{name: 'areasOfStudy0', value: ''}],
     },
     communityService: '',
@@ -63,7 +62,12 @@ export class ScholarshipPost extends Component {
 
   onChange(e) {
     const { name, value } = e.target
-    this.setState({[name]: {name, value, children: this.state[name].children }})
+    const children = this.state[name].children
+    if (children) {
+      this.setState({[name]: {name, value, children: this.state[name].children }})
+    } else {
+      this.setState({[name]: value})
+    }
   }
 
   onGroupChange(e, prefix) {
@@ -74,14 +78,20 @@ export class ScholarshipPost extends Component {
       this.setState({
         [prefix]: {
           ...this.state[prefix],
-          children: items.map(x => x.name === targetName ? { ...x, value: { ...x.value, [valueName]: value }} : x)
+          children: items.map(x =>
+            x.name === targetName
+              ? { ...x, value: { ...x.value, [valueName]: value }}
+              : x)
         }
       })
     } else {
       this.setState({
         [prefix]: {
           ...this.state[prefix],
-          children: items.map(x => x.name === name ? { ...x, value} : x)
+          children: items.map(x =>
+            x.name === name
+              ? { ...x, value}
+              : x)
         }
       })
     }
@@ -114,6 +124,7 @@ export class ScholarshipPost extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className={css.root}>
         <div className={css.header}>Scholarship Application Post</div>

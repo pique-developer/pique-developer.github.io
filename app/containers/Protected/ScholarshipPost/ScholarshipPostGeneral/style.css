@@ -58,3 +58,7 @@
 .remove {
   composes: remove from '../style.css'
 }
+
+.radio {
+  composes: radio from '../style.css';
+}

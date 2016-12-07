@@ -81,7 +81,7 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.label}>Minimum GPA</div>
             <div className={css.field}>
               <input
-                name='minimumGPA'
+                name='minGPA'
                 onChange={onChange}
                 className={css.sm}
                 type="text"/>
@@ -94,13 +94,13 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.label}>Minimum Composite Test Scores</div>
             <div className={css.field}>
               <input
-                name='minimumSATScore'
+                name='minSATScore'
                 onChange={onChange}
                 className={css.sm}
                 placeholder="SAT Score"
                 type="text"/>
               <input
-                name='minimumACTScore'
+                name='minACTScore'
                 onChange={onChange}
                 className={css.sm}
                 placeholder="ACT Score"
@@ -111,11 +111,22 @@ export class ScholarshipPostGeneral extends Component {
           <div className={css.row}>
             <div className={css.label}>Generic Recommendations OK?</div>
             <div className={css.field}>
+              <label className={css.radio}>
               <input
-                name="recommendationsOK"
+                name="recommendations"
+                value="true"
                 onChange={onChange}
-                className={css.sm}
-                type="text"/>
+                type="radio"/>
+                Yes
+              </label>
+              <label className={css.radio}>
+              <input
+                name="recommendations"
+                value="false"
+                onChange={onChange}
+                type="radio"/>
+                No
+                </label>
               <div className={css.link}>Why accept a Generic Recommendation?</div>
             </div>
           </div>

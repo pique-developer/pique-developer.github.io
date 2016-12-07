@@ -134,7 +134,17 @@
 }
 
 .radio {
+  display: inline-block;
+  height: 35px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  width: 10%;
+  font-size: 11px;
+  margin-right: 25px;
+  color: #ccc;
+}
+
+.radio input {
+  margin-right: 10px;
 }
 
 .checkbox {
