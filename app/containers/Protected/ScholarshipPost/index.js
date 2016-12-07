@@ -51,7 +51,7 @@ export class ScholarshipPost extends Component {
     areasOfStudy: {
       name: 'areasOfStudy',
       value: '',
-      children: [],
+      children: [{name: 'areasOfStudy0', value: ''}],
     },
     communityService: '',
     locations: {

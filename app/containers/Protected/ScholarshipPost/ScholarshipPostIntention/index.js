@@ -164,26 +164,21 @@ export class ScholarshipPostIntention extends Component {
             </div>
           </div>
 
-          <div className={css.row}>
-            <div className={css.label}>Areas of Study Requirements</div>
-            <div className={css.field}>
-              <input
-                name="areasOfStudyRequirements"
-                className={css.sm}
-                type="text"/>
-              <div
-                onClick={_ => addField('areasOfStudy')}
-                className={css.more}>Add Another Area of Study Requirement</div>
-            </div>
-          </div>
-
-          {areasOfStudy.children.map(x =>
+          {areasOfStudy.children.map((x, i) =>
             <AdditionalAreasOfStudy
               key={x.name}
               name={x.name}
               value={x.value}
-              onChange={e => onGroupChange(e, 'areasOfStudy')}
-              onClick={_ => removeField(x.name, 'areasOfStudy')} />
+              first={i === 0}
+              onChange={e => onGroupChange(e, 'areasOfStudy')}>
+              {i === 0
+                ? <div
+                    onClick={_ => addField('areasOfStudy')}
+                    className={css.more}>Add Another Area of Study Requirement</div>
+                : <div
+                    onClick={_ => removeField(x.name, 'areasOfStudy')}
+                    className={css.remove}>X</div>}
+            </AdditionalAreasOfStudy>
           )}
 
           <div className={css.row}>
@@ -235,22 +230,24 @@ export class ScholarshipPostIntention extends Component {
   }
 }
 
-const AdditionalAreasOfStudy = ({ onChange, onClick, name, value }) => (
-  <div className={css.row}>
-    <div className={css.label} />
-    <div className={css.field}>
-      <input
-        name={name}
-        onChange={onChange}
-        value={value}
-        className={css.sm}
-        type="text"/>
-      <div
-        onClick={onClick}
-        className={css.remove}>X</div>
+const AdditionalAreasOfStudy = ({ onChange, onClick, name, value, first, children }) => {
+  return (
+    <div className={css.row}>
+      {first
+        ? <div className={css.label}>Areas of Study Requirements</div>
+        : <div className={css.label} />}
+      <div className={css.field}>
+        <input
+          name={name}
+          onChange={onChange}
+          value={value}
+          className={css.sm}
+          type="text"/>
+        {children}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 const AdditionalLocationLimitations = ({ onChange, onClick, name, value, first, children }) => {
   return (
