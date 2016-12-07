@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'react-router/Link'
 import css from './style.css'
 
-export const ScholarshipPostBtns = ({ back, next }) => {
+export const ScholarshipPostBtns = ({ back, next, submit, onClick }) => {
   return (
     <div className={css.root}>
       {back
@@ -14,8 +14,13 @@ export const ScholarshipPostBtns = ({ back, next }) => {
         ? <Link
             to={next}
             className={css.next}>Next</Link>
-        : null
-      }
+        : null}
+      {submit
+        ? <Link
+            to={submit}
+            onClick={onClick}
+            className={css.next}>Post Scholarship</Link>
+        : null}
     </div>
   )
 }

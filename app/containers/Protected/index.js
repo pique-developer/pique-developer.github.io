@@ -49,7 +49,7 @@ export default connect(
     return {
       applicants: state.app.applicants,
       user: state.auth.user,
-      isNew: true,
+      isNew: state.auth.isNew,
     }
   },
   Actions

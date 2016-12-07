@@ -63,6 +63,12 @@ const authReducer = (state={user: false, initialized: false, error: '', login: t
         initialized: false,
       })
 
+    case 'SUBMIT_APPLICATION':
+      return {
+        ...state,
+        isNew: false,
+      }
+
     default:
       return state
   }

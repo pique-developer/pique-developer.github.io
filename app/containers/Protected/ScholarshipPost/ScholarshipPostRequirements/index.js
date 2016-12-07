@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ScholarshipPostBtns from '../ScholarshipPostBtns'
-import { updateApplication } from 'api/actions'
+import { updateApplication, submitApplication } from 'api/actions'
 import css from './style.css'
 
 export class ScholarshipPostRequirements extends Component {
@@ -78,7 +78,10 @@ export class ScholarshipPostRequirements extends Component {
 
         </div>
 
-        <ScholarshipPostBtns back='/scholarship-post/intention' />
+        <ScholarshipPostBtns
+          back='/scholarship-post/intention'
+          onClick={this.props.submitApplication}
+          submit='/dashboard/new' />
       </div>
     )
   }
@@ -88,5 +91,5 @@ export default connect(
   state => ({
     ...state
   }),
-  { updateApplication }
+  { updateApplication, submitApplication }
 )(ScholarshipPostRequirements)

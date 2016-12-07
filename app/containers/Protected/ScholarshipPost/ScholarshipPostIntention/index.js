@@ -5,6 +5,20 @@ import { updateApplication } from 'api/actions'
 import css from './style.css'
 
 export class ScholarshipPostIntention extends Component {
+  constructor(props) {
+    super(props)
+    this.onChange = ::this.onChange
+  }
+
+  state = {
+    areas: 1,
+  }
+
+  onChange(e) {
+    const { selectedIndex } = e.target.options
+    this.setState({areas: selectedIndex})
+  }
+
   render() {
     const {
       locations, areasOfStudy,
@@ -25,6 +39,9 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="schoolYear"
+                    value="High School Freshman"
+                    onChange={onChange}
                     type="checkbox"/>
                     High School Freshman
                 </label>
@@ -32,6 +49,9 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="schoolYear"
+                    value="High School Junior"
+                    onChange={onChange}
                     type="checkbox"/>
                     High School Junior
                 </label>
@@ -39,6 +59,9 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="schoolYear"
+                    value="High School Sophmore"
+                    onChange={onChange}
                     type="checkbox"/>
                     High School Sophmore
                 </label>
@@ -46,6 +69,9 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="schoolYear"
+                    value="High School Senior"
+                    onChange={onChange}
                     type="checkbox"/>
                     High School Senior
                 </label>
@@ -57,16 +83,20 @@ export class ScholarshipPostIntention extends Component {
             <div className={css.req}>U.S. Citizenship Requirement</div>
             <div className={css.field}>
               <div className={css.checkbox}>
-                <label>
+                <label className={css.radio}>
                   <input
-                    type="checkbox"/>
+                    name="citizenship"
+                    value="true"
+                    onChange={onChange}
+                    type="radio"/>
                     Yes
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
+                  </label>
+                  <label className={css.radio}>
                   <input
-                    type="checkbox"/>
+                    name="citizenship"
+                    value="false"
+                    onChange={onChange}
+                    type="radio"/>
                     No
                 </label>
               </div>
@@ -185,16 +215,20 @@ export class ScholarshipPostIntention extends Component {
             <div className={css.label}>Community Service Requirement</div>
             <div className={css.field}>
               <div className={css.checkbox}>
-                <label>
+                <label className={css.radio}>
                   <input
-                    type="checkbox"/>
+                    name="communityService"
+                    value="true"
+                    onChange={onChange}
+                    type="radio"/>
                     Yes
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
+                  </label>
+                  <label className={css.radio}>
                   <input
-                    type="checkbox"/>
+                    name="communityService"
+                    value="false"
+                    onChange={onChange}
+                    type="radio"/>
                     No
                 </label>
               </div>

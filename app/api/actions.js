@@ -58,3 +58,7 @@ export const fetchError = payload => {
 export const updateApplication = payload => {
   return {type: 'UPDATE_APPLICATION', payload}
 }
+
+export const submitApplication = payload => {
+  return {type: 'SUBMIT_APPLICATION', payload}
+}
