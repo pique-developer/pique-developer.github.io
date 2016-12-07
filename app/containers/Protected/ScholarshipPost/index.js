@@ -123,10 +123,18 @@ export class ScholarshipPost extends Component {
   }
 
   render() {
-    console.log(this.state)
+    const { pathname } = this.props.location
+
     return (
       <div className={css.root}>
         <div className={css.header}>Scholarship Application Post</div>
+        <div className={css.breadcrumbs}>
+          {routes.map(x =>
+            <div
+              className={pathname === x.pattern ? css.active : css.page}
+              key={x.name}>{x.name}</div>
+          )}
+        </div>
         {routes.map(({ component:Component, pattern }) =>
           <Match
             key={pattern}
@@ -146,10 +154,23 @@ export class ScholarshipPost extends Component {
 }
 
 const routes = [
-  {pattern: '/scholarship-post/general', component: ScholarshipPostGeneral},
-  {pattern: '/scholarship-post/essay', component: ScholarshipPostEssay},
-  {pattern: '/scholarship-post/intention', component: ScholarshipPostIntention},
-  {pattern: '/scholarship-post/requirements', component: ScholarshipPostRequirements},
+  {
+    pattern: '/scholarship-post/general',
+    component: ScholarshipPostGeneral,
+    name: 'General Scholarship Details',
+  },{
+    pattern: '/scholarship-post/essay',
+    component: ScholarshipPostEssay,
+    name: 'Essay Requirements',
+  },{
+    pattern: '/scholarship-post/intention',
+    component: ScholarshipPostIntention,
+    name: 'Who is this scholarship intended for?',
+  },{
+    pattern: '/scholarship-post/requirements',
+    component: ScholarshipPostRequirements,
+    name: 'Supplemental Requirements',
+  }
 ]
 
 export default connect(
