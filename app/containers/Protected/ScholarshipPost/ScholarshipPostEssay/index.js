@@ -8,40 +8,20 @@ export class ScholarshipPostEssay extends Component {
   constructor(props) {
     super(props)
     this.onChange = ::this.onChange
-    this.addField = ::this.addField
-    this.removeField = ::this.removeField
   }
 
   state = {
-    additionalFields: [],
-    fieldId: 0,
+    essays: 1,
   }
 
   onChange(e) {
-    const { name, value } = e.target
-    this.props.updateApplication({[name]: value})
-  }
-
-  addField() {
-    const { additionalFields, fieldId } = this.state
-    const id = fieldId + 1
-    const name = `essay-${id}`
-    this.setState({
-      fieldId: id,
-      additionalFields: additionalFields.concat([name])
-    })
-    this.props.updateApplication({[name]: ''})
-  }
-
-  removeField(name) {
-    const { additionalFields } = this.state
-    const nextState = additionalFields.filter(x => x !== name)
-    this.setState({additionalFields: nextState})
-    this.props.updateApplication({[name]: undefined})
+    const { selectedIndex } = e.target.options
+    this.setState({essays: selectedIndex})
   }
 
   render() {
-    const { additionalFields } = this.state
+    const { essays } = this.state
+    const { onChange } = this.props
     return (
       <div className={css.form}>
         <div className={css.title}>Essay Requirements</div>
@@ -50,11 +30,16 @@ export class ScholarshipPostEssay extends Component {
           <div className={css.row}>
             <div className={css.label}>Number of Essays</div>
             <div className={css.field}>
-              <input
+              <select
                 name="essays"
                 onChange={this.onChange}
                 className={css.sm}
-                type="text"/>
+                type="text">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
             </div>
           </div>
 
@@ -63,7 +48,7 @@ export class ScholarshipPostEssay extends Component {
             <div className={css.field}>
               <textarea
                 name="essayPrompt"
-                onChange={this.onChange}
+                onChange={onChange}
                 className={css.tall}
                 rows="4"
                 placeholder="Enter your scholarship's essay #1 prompt here"
@@ -77,11 +62,6 @@ export class ScholarshipPostEssay extends Component {
               <div className={css.link}>
                 Add Another Prompt or Essay #1
               </div>
-              <div
-                onClick={this.addField}
-                className={css.link}>
-                Add Another Required Essay
-              </div>
             </div>
           </div>
 
@@ -90,7 +70,7 @@ export class ScholarshipPostEssay extends Component {
             <div className={css.field}>
               <input
                 name="essayWordLimit"
-                onChange={this.onChange}
+                onChange={onChange}
                 className={css.sm}
                 placeholder="e.g. 100"
                 type="text"/>
@@ -100,15 +80,14 @@ export class ScholarshipPostEssay extends Component {
             </div>
           </div>
 
-          {additionalFields.map((x, i) =>
+          {Array.from({length: essays}).map((x, i) =>
             <AdditionalEssays
-              key={x}
+              key={i}
               name={x}
               num={i + 2}
-              onChange={this.onChange}
+              onChange={onChange}
               onClick={_ => this.removeField(x)} />
           )}
-
         </div>
 
         <ScholarshipPostBtns
@@ -138,9 +117,6 @@ const AdditionalEssays = ({ onChange, onClick, name, num }) => (
       <div className={css.field}>
         <div className={css.link}>
           {`Add Another Prompt or Essay #${num}`}
-        </div>
-        <div className={css.link}>
-          Add Another Required Essay
         </div>
       </div>
     </div>
