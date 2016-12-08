@@ -150,27 +150,36 @@ const appReducer = (state={ applicants }, action) => {
 const applicationReducer = (state={
   title: '',
   description: '',
-  awardAmount: [],
-  minimumGPA: 0,
   photoURL: '',
-  minimumSATScore: 0,
-  minimumACTScore: 0,
-  recommendationsOK: false,
-  genericRecommendations: 0,
-  essays: 0,
-  essayPrompt: '',
-  essayWordLimit: '',
-  schoolYearRequirement: [],
-  citizenshipRequirement: [],
-  maximumFamilyIncome: '',
-  genderRequirement: [],
-  raceRequirements: [],
-  degreeType: [],
-  areasOfStudyRequirements: '',
-  communityServiceRequirement: [],
-  locationLimitationCity: '',
-  locationLimitationState: '',
-  documentRequirement: '',
+  minGPA: '',
+  minSATScore: '',
+  minACTScore: '',
+  recommendationsAmount: '',
+  communityService: '',
+  citizenship: '',
+  maxFamilyIncome: '',
+  genericRecommendations: '',
+  schoolYear: {
+    freshman: false,
+    sophmore: false,
+    senior: false,
+    junior: false,
+  },
+  genderRequirement: {
+    male: false,
+    female: false
+  },
+  ethnicity: {
+    blackAfricanAmerican: false,
+    whiteCaucasian: false,
+    asianPacificIslander: false,
+    hispanicLatino: false,
+    nativeAmerican: false,
+  },
+  degreeType: {
+    twoYear: false,
+    fourYear: false,
+  }
 }, action) => {
   switch (action.type) {
 

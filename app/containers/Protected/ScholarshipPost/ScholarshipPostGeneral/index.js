@@ -10,6 +10,7 @@ export class ScholarshipPostGeneral extends Component {
     super(props)
     this.showImageOutput = ::this.showImageOutput
     this.launchFilePicker = ::this.launchFilePicker
+    this.updateForm = ::this.updateForm
   }
 
   state = {image: ''}
@@ -39,12 +40,16 @@ export class ScholarshipPostGeneral extends Component {
     this.props.onPhotoUpload(Blob.url)
   }
 
+  updateForm(nextState) {
+    this.props.onUpdate(nextState)
+  }
+
   render() {
     const {
-      awardAmounts, photoURL,
+      awardAmounts, photoURL, recommendationsAmount,
       onChange, onGroupChange, addField, removeField,
       title, description, minGPA, minSATScore, minACTScore,
-      recommendations, genericRecommendations } = this.props
+      genericRecommendations } = this.props
     return (
       <div className={css.form}>
         <div className={css.title}>
@@ -148,20 +153,22 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.label}>Generic Recommendations OK?</div>
             <div className={css.field}>
               <label className={css.radio}>
-              <input
-                name="recommendations"
-                value="true"
-                onChange={onChange}
-                type="radio"/>
-                Yes
-              </label>
-              <label className={css.radio}>
-              <input
-                name="recommendations"
-                value="false"
-                onChange={onChange}
-                type="radio"/>
-                No
+                <input
+                  name="genericRecommendations"
+                  value="true"
+                  onChange={_ => this.updateForm({genericRecommendations: true})}
+                  checked={genericRecommendations === true}
+                  type="radio"/>
+                  Yes
+                </label>
+                <label className={css.radio}>
+                <input
+                  name="genericRecommendations"
+                  value="false"
+                  onChange={_ => this.updateForm({genericRecommendations: false})}
+                  checked={genericRecommendations === false}
+                  type="radio"/>
+                  No
                 </label>
               <div className={css.link}>Why accept a Generic Recommendation?</div>
             </div>
@@ -171,9 +178,10 @@ export class ScholarshipPostGeneral extends Component {
             <div className={css.label}>Number of Generic Recommendations</div>
             <div className={css.field}>
               <input
-                name="genericRecommendations"
+                name="recommendationsAmount"
                 onChange={onChange}
                 className={css.sm}
+                value={recommendationsAmount}
                 placeholder="0"
                 type="text"/>
               <div className={css.info}>Skip if you do not require a recommendation</div>
@@ -204,9 +212,4 @@ const AddAmountField = ({ onChange, onClick, name, value }) => (
   </div>
 )
 
-export default connect(
-  state => ({
-    ...state.application
-  }),
-  { updateApplication }
-)(ScholarshipPostGeneral)
+export default connect(null, { updateApplication })(ScholarshipPostGeneral)

@@ -16,6 +16,7 @@ export class ScholarshipPost extends Component {
     this.addField = ::this.addField
     this.removeField = ::this.removeField
     this.onPhotoUpload = ::this.onPhotoUpload
+    this.onUpdate = ::this.onUpdate
   }
 
   static defaultProps = {
@@ -29,32 +30,48 @@ export class ScholarshipPost extends Component {
 
   state = {
     id: 0,
-    title: '',
-    description: '',
+    essays: [this.props.essays],
     awardAmounts: {
       name: 'awardAmounts',
       value: '$',
       children: [],
     },
+    title: '',
+    description: '',
     photoURL: '',
-    minGPA: 0,
-    minSATScore: 0,
-    minACTScore: 0,
-    recommendations: false,
-    genericRecommendations: 0,
-    count: 0,
-    essays: [this.props.essays],
-    schoolYear: [],
-    citizenship: [],
+    minGPA: '',
+    minSATScore: '',
+    minACTScore: '',
+    recommendationsAmount: '',
+    genericRecommendations: '',
+    schoolYear: {
+      freshman: false,
+      sophmore: false,
+      senior: false,
+      junior: false,
+    },
+    citizenship: '',
     maxFamilyIncome: '',
-    gender: [],
-    race: [],
-    degreeType: [],
+    genderRequirement: {
+      male: false,
+      female: false
+    },
+    ethnicity: {
+      blackAfricanAmerican: false,
+      whiteCaucasian: false,
+      asianPacificIslander: false,
+      hispanicLatino: false,
+      nativeAmerican: false,
+    },
+    degreeType: {
+      twoYear: false,
+      fourYear: false,
+    },
+    communityService: '',
     areasOfStudy: {
       name: 'areasOfStudy',
       children: [{name: 'areasOfStudy0', value: ''}],
     },
-    communityService: '',
     locations: {
       name: 'locations',
       children: [{name: 'locations0', value: {city: '', state: ''}}],
@@ -65,6 +82,10 @@ export class ScholarshipPost extends Component {
   onPhotoUpload(url) {
     this.setState({photoURL: url})
     this.props.updateUserInfo({photoURL: url})
+  }
+
+  onUpdate(data) {
+    this.setState(data)
   }
 
   onChange(e) {
@@ -151,6 +172,7 @@ export class ScholarshipPost extends Component {
                 {...props}
                 {...this.state}
                 onChange={this.onChange}
+                onUpdate={this.onUpdate}
                 onPhotoUpload={this.onPhotoUpload}
                 onGroupChange={this.onGroupChange}
                 addField={this.addField}

@@ -7,22 +7,29 @@ import css from './style.css'
 export class ScholarshipPostIntention extends Component {
   constructor(props) {
     super(props)
-    this.onChange = ::this.onChange
+    this.onCheckboxChange = ::this.onCheckboxChange
+    this.updateForm = ::this.updateForm
   }
 
   state = {
     areas: 1,
   }
 
-  onChange(e) {
-    const { selectedIndex } = e.target.options
-    this.setState({areas: selectedIndex})
+  onCheckboxChange(e) {
+    const { name, value } = e.target
+    const group = this.props[name]
+    this.updateForm({[name]: {...group, [value]: !group[value]} })
+  }
+
+  updateForm(nextState) {
+    this.props.onUpdate(nextState)
   }
 
   render() {
     const {
-      locations, areasOfStudy,
-      onChange, onGroupChange, addField, removeField } = this.props
+      locations, areasOfStudy, schoolYear, genderRequirement, citizenship,
+      ethnicity, degreeType, communityService, onChange, onGroupChange,
+      addField, removeField } = this.props
     return (
       <div className={css.form}>
         <div className={css.title}>
@@ -40,8 +47,9 @@ export class ScholarshipPostIntention extends Component {
                 <label>
                   <input
                     name="schoolYear"
-                    value="High School Freshman"
-                    onChange={onChange}
+                    value="freshman"
+                    checked={schoolYear.freshman}
+                    onChange={this.onCheckboxChange}
                     type="checkbox"/>
                     High School Freshman
                 </label>
@@ -50,8 +58,9 @@ export class ScholarshipPostIntention extends Component {
                 <label>
                   <input
                     name="schoolYear"
-                    value="High School Junior"
-                    onChange={onChange}
+                    value="junior"
+                    checked={schoolYear.junior}
+                    onChange={this.onCheckboxChange}
                     type="checkbox"/>
                     High School Junior
                 </label>
@@ -60,8 +69,9 @@ export class ScholarshipPostIntention extends Component {
                 <label>
                   <input
                     name="schoolYear"
-                    value="High School Sophmore"
-                    onChange={onChange}
+                    value="sophmore"
+                    checked={schoolYear.sophmore}
+                    onChange={this.onCheckboxChange}
                     type="checkbox"/>
                     High School Sophmore
                 </label>
@@ -70,8 +80,9 @@ export class ScholarshipPostIntention extends Component {
                 <label>
                   <input
                     name="schoolYear"
-                    value="High School Senior"
-                    onChange={onChange}
+                    value="senior"
+                    checked={schoolYear.senior}
+                    onChange={this.onCheckboxChange}
                     type="checkbox"/>
                     High School Senior
                 </label>
@@ -86,7 +97,8 @@ export class ScholarshipPostIntention extends Component {
                 <input
                   name="citizenship"
                   value="true"
-                  onChange={onChange}
+                  onChange={_ => this.updateForm({citizenship: true})}
+                  checked={citizenship === true}
                   type="radio"/>
                   Yes
                 </label>
@@ -94,7 +106,8 @@ export class ScholarshipPostIntention extends Component {
                 <input
                   name="citizenship"
                   value="false"
-                  onChange={onChange}
+                  onChange={_ => this.updateForm({citizenship: false})}
+                  checked={citizenship === false}
                   type="radio"/>
                   No
               </label>
@@ -117,6 +130,10 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="genderRequirement"
+                    value="female"
+                    checked={genderRequirement.female}
+                    onChange={this.onCheckboxChange}
                     type="checkbox"/>
                     Female
                 </label>
@@ -124,6 +141,10 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="genderRequirement"
+                    value="male"
+                    checked={genderRequirement.male}
+                    onChange={this.onCheckboxChange}
                     type="checkbox"/>
                     Male
                 </label>
@@ -137,6 +158,10 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="ethnicity"
+                    value="blackAfricanAmerican"
+                    onChange={this.onCheckboxChange}
+                    checked={ethnicity.blackAfricanAmerican}
                     type="checkbox"/>
                     Black/African American
                 </label>
@@ -144,6 +169,10 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="ethnicity"
+                    value="whiteCaucasian"
+                    onChange={this.onCheckboxChange}
+                    checked={ethnicity.whiteCaucasian}
                     type="checkbox"/>
                     White/Caucasian
                 </label>
@@ -151,6 +180,10 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="ethnicity"
+                    value="asianPacificIslander"
+                    onChange={this.onCheckboxChange}
+                    checked={ethnicity.asianPacificIslander}
                     type="checkbox"/>
                     Asian/Pacific Islander
                 </label>
@@ -158,6 +191,10 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="ethnicity"
+                    value="hispanicLatino"
+                    onChange={this.onCheckboxChange}
+                    checked={ethnicity.hispanicLatino}
                     type="checkbox"/>
                     Hispanic/Latino
                 </label>
@@ -165,12 +202,15 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="ethnicity"
+                    value="nativeAmerican"
+                    onChange={this.onCheckboxChange}
+                    checked={ethnicity.nativeAmerican}
                     type="checkbox"/>
                     Native American
                 </label>
               </div>
             </div>
-
 
           <div className={css.row}>
             <div className={css.label}>Degree/Program Type Sought</div>
@@ -178,6 +218,10 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="degreeType"
+                    value="twoYear"
+                    onChange={this.onCheckboxChange}
+                    checked={degreeType.twoYear}
                     type="checkbox"/>
                     2 Year Program
                 </label>
@@ -185,6 +229,10 @@ export class ScholarshipPostIntention extends Component {
               <div className={css.checkbox}>
                 <label>
                   <input
+                    name="degreeType"
+                    value="fourYear"
+                    onChange={this.onCheckboxChange}
+                    checked={degreeType.fourYear}
                     type="checkbox"/>
                     4 Year Program
                 </label>
@@ -192,33 +240,34 @@ export class ScholarshipPostIntention extends Component {
             </div>
           </div>
 
-          <div className={css.row}>
-            <div className={css.label}>Areas of Study Requirements</div>
-            <div className={css.field}>
-              <select
-                name="essays"
-                onChange={this.onChange}
-                className={css.sm}>
-                <option value="1"></option>
-                <option value="2">Microsoft Notepad</option>
-                <option value="3">One Annual Push-Up</option>
-                <option value="4">Toodles (McBoodles a plus but not required)</option>
-                <option value="5">Dinner Enjoyment</option>
-              </select>
-              <div
-                onClick={_ => addField('areasOfStudy')}
-                className={css.more}>Add Another Area of Study Requirement</div>
-            </div>
-          </div>
-
           {areasOfStudy.children.map((x, i) =>
-            <AdditionalAreasOfStudy
-              key={x.name}
-              name={x.name}
-              value={x.value}
-              first={i === 0}
-              onChange={e => onGroupChange(e, 'areasOfStudy')}>
-            </AdditionalAreasOfStudy>
+            <div key={x.name} className={css.row}>
+              {i > 0
+                  ? <div className={css.label} />
+                  : <div className={css.label}>Areas of Study Requirements</div>}
+              <div className={css.field}>
+                <select
+                  name={x.name}
+                  value={x.value}
+                  onChange={e => onGroupChange(e, 'areasOfStudy')}
+                  className={css.sm}>
+                  <option value="">Choose area</option>
+                  <option value="Microsoft Notepad">Microsoft Notepad</option>
+                  <option value="One Annual Push-Up">One Annual Push-Up</option>
+                  <option value="Toodles (McBoodles a plus but not required)">Toodles (McBoodles a plus but not required)</option>
+                  <option value="Dinner Enjoyment">Dinner Enjoyment</option>
+                </select>
+                {i > 0
+                  ? <div
+                      onClick={_ => removeField(x.name, 'areasOfStudy')}
+                      className={css.remove}>X</div>
+                  : <div
+                      onClick={_ => addField('areasOfStudy')}
+                      className={css.more}>
+                      Add Another Area of Study Requirement
+                    </div>}
+              </div>
+            </div>
           )}
 
           <div className={css.row}>
@@ -228,7 +277,8 @@ export class ScholarshipPostIntention extends Component {
                 <input
                   name="communityService"
                   value="true"
-                  onChange={onChange}
+                  onChange={_ => this.updateForm({communityService: true})}
+                  checked={communityService === true}
                   type="radio"/>
                   Yes
                 </label>
@@ -236,7 +286,8 @@ export class ScholarshipPostIntention extends Component {
                 <input
                   name="communityService"
                   value="false"
-                  onChange={onChange}
+                  onChange={_ => this.updateForm({communityService: false})}
+                  checked={communityService === false}
                   type="radio"/>
                   No
               </label>
@@ -270,25 +321,6 @@ export class ScholarshipPostIntention extends Component {
       </div>
     )
   }
-}
-
-const AdditionalAreasOfStudy = ({ onChange, onClick, name, value, children }) => {
-  return (
-    <div className={css.row}>
-      <div className={css.label} />
-      <div className={css.field}>
-        <input
-          name={name}
-          onChange={onChange}
-          value={value}
-          className={css.sm}
-          type="text"/>
-          <div
-            onClick={_ => removeField(x.name, 'areasOfStudy')}
-            className={css.remove}>X</div>
-      </div>
-    </div>
-  )
 }
 
 const AdditionalLocationLimitations = ({ onChange, onClick, name, value, first, children }) => {
