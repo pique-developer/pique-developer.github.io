@@ -15,6 +15,7 @@ export class ScholarshipPost extends Component {
     this.onGroupChange = ::this.onGroupChange
     this.addField = ::this.addField
     this.removeField = ::this.removeField
+    this.onPhotoUpload = ::this.onPhotoUpload
   }
 
   static defaultProps = {
@@ -35,6 +36,7 @@ export class ScholarshipPost extends Component {
       value: '$',
       children: [],
     },
+    photoURL: '',
     minGPA: 0,
     minSATScore: 0,
     minACTScore: 0,
@@ -58,6 +60,10 @@ export class ScholarshipPost extends Component {
       children: [{name: 'locations0', value: {city: '', state: ''}}],
     },
     documents: [this.props.documents]
+  }
+
+  onPhotoUpload(url) {
+    this.setState({photoURL: url})
   }
 
   onChange(e) {
@@ -144,6 +150,7 @@ export class ScholarshipPost extends Component {
                 {...props}
                 {...this.state}
                 onChange={this.onChange}
+                onPhotoUpload={this.onPhotoUpload}
                 onGroupChange={this.onGroupChange}
                 addField={this.addField}
                 removeField={this.removeField} />} />

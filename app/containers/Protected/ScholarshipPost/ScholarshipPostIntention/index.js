@@ -82,24 +82,22 @@ export class ScholarshipPostIntention extends Component {
           <div className={css.row}>
             <div className={css.req}>U.S. Citizenship Requirement</div>
             <div className={css.field}>
-              <div className={css.checkbox}>
-                <label className={css.radio}>
-                  <input
-                    name="citizenship"
-                    value="true"
-                    onChange={onChange}
-                    type="radio"/>
-                    Yes
-                  </label>
-                  <label className={css.radio}>
-                  <input
-                    name="citizenship"
-                    value="false"
-                    onChange={onChange}
-                    type="radio"/>
-                    No
+              <label className={css.radio}>
+                <input
+                  name="citizenship"
+                  value="true"
+                  onChange={onChange}
+                  type="radio"/>
+                  Yes
                 </label>
-              </div>
+                <label className={css.radio}>
+                <input
+                  name="citizenship"
+                  value="false"
+                  onChange={onChange}
+                  type="radio"/>
+                  No
+              </label>
             </div>
           </div>
 
@@ -193,6 +191,21 @@ export class ScholarshipPostIntention extends Component {
               </div>
             </div>
           </div>
+          <div className={css.row}>
+            <div className={css.label}>Areas of Study Requirements</div>
+            <div className={css.field}>
+              <select
+                name="essays"
+                onChange={this.onChange}
+                className={css.sm}>
+                  <option value="1"></option>
+                  <option value="2">Microsoft Notepad</option>
+                  <option value="3">One Annual Push-Up</option>
+                  <option value="4">Toodles (McBoodles a plus but not required)</option>
+                  <option value="5">Dinner Enjoyment</option>
+                </select>
+            </div>
+          </div>
 
           {areasOfStudy.children.map((x, i) =>
             <AdditionalAreasOfStudy
@@ -214,24 +227,22 @@ export class ScholarshipPostIntention extends Component {
           <div className={css.row}>
             <div className={css.label}>Community Service Requirement</div>
             <div className={css.field}>
-              <div className={css.checkbox}>
-                <label className={css.radio}>
-                  <input
-                    name="communityService"
-                    value="true"
-                    onChange={onChange}
-                    type="radio"/>
-                    Yes
-                  </label>
-                  <label className={css.radio}>
-                  <input
-                    name="communityService"
-                    value="false"
-                    onChange={onChange}
-                    type="radio"/>
-                    No
+              <label className={css.radio}>
+                <input
+                  name="communityService"
+                  value="true"
+                  onChange={onChange}
+                  type="radio"/>
+                  Yes
                 </label>
-              </div>
+                <label className={css.radio}>
+                <input
+                  name="communityService"
+                  value="false"
+                  onChange={onChange}
+                  type="radio"/>
+                  No
+              </label>
             </div>
           </div>
 
@@ -264,12 +275,10 @@ export class ScholarshipPostIntention extends Component {
   }
 }
 
-const AdditionalAreasOfStudy = ({ onChange, onClick, name, value, first, children }) => {
+const AdditionalAreasOfStudy = ({ onChange, onClick, name, value, children }) => {
   return (
     <div className={css.row}>
-      {first
-        ? <div className={css.label}>Areas of Study Requirements</div>
-        : <div className={css.label} />}
+      <div className={css.label} />
       <div className={css.field}>
         <input
           name={name}

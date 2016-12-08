@@ -10,13 +10,11 @@ export class ScholarshipPostEssay extends Component {
     this.onChange = ::this.onChange
   }
 
-  state = {
-    essays: 1,
-  }
+  state = {essays: 1}
 
   onChange(e) {
     const { selectedIndex } = e.target.options
-    this.setState({essays: selectedIndex})
+    this.setState({essays: selectedIndex + 1})
   }
 
   render() {
@@ -33,8 +31,7 @@ export class ScholarshipPostEssay extends Component {
               <select
                 name="essays"
                 onChange={this.onChange}
-                className={css.sm}
-                type="text">
+                className={css.sm}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -43,48 +40,11 @@ export class ScholarshipPostEssay extends Component {
             </div>
           </div>
 
-          <div className={css.row}>
-            <div className={css.req}>Essay #1 Prompt</div>
-            <div className={css.field}>
-              <textarea
-                name="essayPrompt"
-                onChange={onChange}
-                className={css.tall}
-                rows="4"
-                placeholder="Enter your scholarship's essay #1 prompt here"
-                type="text" />
-            </div>
-          </div>
-
-          <div className={css.row}>
-            <div className={css.label} />
-            <div className={css.field}>
-              <div className={css.link}>
-                Add Another Prompt or Essay #1
-              </div>
-            </div>
-          </div>
-
-          <div className={css.row}>
-            <div className={css.req}>Essay #1 Word Limit</div>
-            <div className={css.field}>
-              <input
-                name="essayWordLimit"
-                onChange={onChange}
-                className={css.sm}
-                placeholder="e.g. 100"
-                type="text"/>
-              <div className={css.comment}>
-                Keep in mind that ~250 words is equivalent to 1 typed page.
-              </div>
-            </div>
-          </div>
-
           {Array.from({length: essays}).map((x, i) =>
             <AdditionalEssays
               key={i}
               name={x}
-              num={i + 2}
+              num={i + 1}
               onChange={onChange}
               onClick={_ => this.removeField(x)} />
           )}

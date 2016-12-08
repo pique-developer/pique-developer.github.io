@@ -44,6 +44,10 @@
 
 .file {
   composes: file from '../style.css';
+  vertical-align: top;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  outline: none;
 }
 
 .caption {
@@ -61,4 +65,10 @@
 
 .radio {
   composes: radio from '../style.css';
+}
+
+.img {
+  display: inline-block;
+  height: 80px;
+  width: 80px;
 }
