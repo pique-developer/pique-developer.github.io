@@ -34,6 +34,12 @@ export const signOut = _ => {
   return firebase.auth().signOut()
 }
 
+export const updateUserProfile = data => {
+  return firebase.auth()
+    .currentUser
+    .updateProfile({...data})
+}
+
 function assignDefaultProps(user) {
   const userDefaultProps = {
     displayName: 'Charles Barkley',

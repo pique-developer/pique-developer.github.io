@@ -152,6 +152,7 @@ const applicationReducer = (state={
   description: '',
   awardAmount: [],
   minimumGPA: 0,
+  photoURL: '',
   minimumSATScore: 0,
   minimumACTScore: 0,
   recommendationsOK: false,
@@ -173,6 +174,7 @@ const applicationReducer = (state={
 }, action) => {
   switch (action.type) {
 
+    case 'UPDATE_USER_INFO':
     case 'UPDATE_APPLICATION':
       return {
         ...state,

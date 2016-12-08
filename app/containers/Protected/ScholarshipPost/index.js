@@ -5,7 +5,7 @@ import ScholarshipPostGeneral from './ScholarshipPostGeneral'
 import ScholarshipPostEssay from './ScholarshipPostEssay'
 import ScholarshipPostIntention from './ScholarshipPostIntention'
 import ScholarshipPostRequirements from './ScholarshipPostRequirements'
-import { updateApplication } from 'api/actions'
+import { updateApplication, updateUserInfo } from 'api/actions'
 import css from './style.css'
 
 export class ScholarshipPost extends Component {
@@ -64,6 +64,7 @@ export class ScholarshipPost extends Component {
 
   onPhotoUpload(url) {
     this.setState({photoURL: url})
+    this.props.updateUserInfo({photoURL: url})
   }
 
   onChange(e) {
@@ -184,5 +185,5 @@ export default connect(
   state => ({
     ...state
   }),
-  { updateApplication }
+  { updateApplication, updateUserInfo }
 )(ScholarshipPost)

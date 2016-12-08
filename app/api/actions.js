@@ -62,3 +62,8 @@ export const updateApplication = payload => {
 export const submitApplication = payload => {
   return {type: 'SUBMIT_APPLICATION', payload}
 }
+
+export const updateUserInfo = payload => {
+  API.updateUserProfile(payload)
+  return {type: 'UPDATE_USER_INFO', payload}
+}
