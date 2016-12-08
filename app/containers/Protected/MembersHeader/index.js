@@ -36,7 +36,7 @@ export class MembersHeader extends Component {
           <div className={css.root} onClick={this.toggleDropdown}>
             <div className={css.wrap}>
               <div className={css.brand}>
-                <Link className={css.link} to="/">
+                <Link className={css.link} to="/dashboard/new">
                   <LogoIcon className={css.logo}/>
                 </Link>
               </div>

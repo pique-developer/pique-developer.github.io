@@ -191,6 +191,7 @@ export class ScholarshipPostIntention extends Component {
               </div>
             </div>
           </div>
+
           <div className={css.row}>
             <div className={css.label}>Areas of Study Requirements</div>
             <div className={css.field}>
@@ -198,12 +199,15 @@ export class ScholarshipPostIntention extends Component {
                 name="essays"
                 onChange={this.onChange}
                 className={css.sm}>
-                  <option value="1"></option>
-                  <option value="2">Microsoft Notepad</option>
-                  <option value="3">One Annual Push-Up</option>
-                  <option value="4">Toodles (McBoodles a plus but not required)</option>
-                  <option value="5">Dinner Enjoyment</option>
-                </select>
+                <option value="1"></option>
+                <option value="2">Microsoft Notepad</option>
+                <option value="3">One Annual Push-Up</option>
+                <option value="4">Toodles (McBoodles a plus but not required)</option>
+                <option value="5">Dinner Enjoyment</option>
+              </select>
+              <div
+                onClick={_ => addField('areasOfStudy')}
+                className={css.more}>Add Another Area of Study Requirement</div>
             </div>
           </div>
 
@@ -214,13 +218,6 @@ export class ScholarshipPostIntention extends Component {
               value={x.value}
               first={i === 0}
               onChange={e => onGroupChange(e, 'areasOfStudy')}>
-              {i === 0
-                ? <div
-                    onClick={_ => addField('areasOfStudy')}
-                    className={css.more}>Add Another Area of Study Requirement</div>
-                : <div
-                    onClick={_ => removeField(x.name, 'areasOfStudy')}
-                    className={css.remove}>X</div>}
             </AdditionalAreasOfStudy>
           )}
 
@@ -286,7 +283,9 @@ const AdditionalAreasOfStudy = ({ onChange, onClick, name, value, children }) =>
           value={value}
           className={css.sm}
           type="text"/>
-        {children}
+          <div
+            onClick={_ => removeField(x.name, 'areasOfStudy')}
+            className={css.remove}>X</div>
       </div>
     </div>
   )

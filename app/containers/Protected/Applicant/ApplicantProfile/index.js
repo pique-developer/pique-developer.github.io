@@ -13,8 +13,8 @@ export class ApplicantProfile extends Component {
         <ApplicantHeader {...this.props} />
         <ApplicantUploads />
         <div className={css.board}>
-          <ApplicantComments />
           <ApplicantQuestionnaire {...this.props} />
+          <ApplicantComments />
         </div>
       </div>
     )
