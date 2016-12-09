@@ -33,7 +33,7 @@ export class MembersHeader extends Component {
       ? <div>
           <Modal open={open} onClick={this.toggleDropdown} />
 
-          <div className={css.root} onClick={this.toggleDropdown}>
+          <div className={css.root}>
             <div className={css.wrap}>
               <div className={css.brand}>
                 <Link className={css.link} to="/dashboard/new">
@@ -44,7 +44,9 @@ export class MembersHeader extends Component {
               <div className={css.border} />
 
               <div className={css.nav}>
-                <div className={css.settings}>
+                <div
+                  onClick={this.toggleDropdown}
+                  className={css.settings}>
                   <ul className={css.ul}>
                     <li className={css.li} >
                       <img
