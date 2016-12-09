@@ -20,7 +20,7 @@ export class ScholarshipPost extends Component {
   }
 
   static defaultProps = {
-    awardAmounts: {value: '$'},
+    awardAmounts: {value: ''},
     essayPrompts: {value: ''},
     essays: {prompts: [''], wordLimit: ''},
     locations: { value: {city: '', state: ''} },
@@ -152,7 +152,7 @@ export class ScholarshipPost extends Component {
 
   render() {
     const { pathname } = this.props.location
-
+    console.log(this.state)
     return (
       <div className={css.root}>
         <div className={css.header}>Scholarship Application Post</div>

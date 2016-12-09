@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import filepicker from 'filepicker-js'
 import ScholarshipPostBtns from '../ScholarshipPostBtns'
+import { CurrencyInput } from '../ScholarshipPostInputs'
 import { updateApplication } from 'api/actions'
 import css from './style.css'
 
@@ -95,12 +96,11 @@ export class ScholarshipPostGeneral extends Component {
           <div className={css.row}>
             <div className={css.req}>Award Amount</div>
             <div className={css.field}>
-              <input
+              <CurrencyInput
                 name={awardAmounts.name}
                 onChange={onChange}
                 value={awardAmounts.value}
-                className={css.sm}
-                type="text"/>
+                className={css.sm} />
               <div
                 onClick={_ => addField('awardAmounts')}
                 className={css.link}>
@@ -199,12 +199,12 @@ const AddAmountField = ({ onChange, onClick, name, value }) => (
   <div className={css.row}>
     <div className={css.label} />
     <div className={css.field}>
-      <input
+      <CurrencyInput
         name={name}
         onChange={onChange}
         value={value}
         className={css.sm}
-        type="text"/>
+        type="text" />
       <div
         onClick={onClick}
         className={css.remove}>X</div>

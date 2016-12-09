@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ScholarshipPostBtns from '../ScholarshipPostBtns'
+import { CurrencyInput } from '../ScholarshipPostInputs/CurrencyInput'
 import { updateApplication } from 'api/actions'
 import css from './style.css'
 
@@ -28,8 +29,8 @@ export class ScholarshipPostIntention extends Component {
   render() {
     const {
       locations, areasOfStudy, schoolYear, genderRequirement, citizenship,
-      ethnicity, degreeType, communityService, onChange, onGroupChange,
-      addField, removeField } = this.props
+      ethnicity, degreeType, communityService, maxFamilyIncome, onChange,
+      onGroupChange, onUpdate, addField, removeField } = this.props
     return (
       <div className={css.form}>
         <div className={css.title}>
@@ -117,8 +118,10 @@ export class ScholarshipPostIntention extends Component {
           <div className={css.row}>
             <div className={css.label}>Maximum Family Income</div>
             <div className={css.field}>
-              <input
-                defaultValue='$'
+              <CurrencyInput
+                name="maxFamilyIncome"
+                onChange={onChange}
+                value={maxFamilyIncome}
                 className={css.sm}
                 type="text"/>
             </div>
