@@ -1,43 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import filepicker from 'filepicker-js'
 import ScholarshipPostBtns from '../ScholarshipPostBtns'
-import { CurrencyInput } from '../ScholarshipPostInputs'
+import { CurrencyInput, FilePickerInput } from '../ScholarshipPostInputs'
 import { updateApplication } from 'api/actions'
 import css from './style.css'
 
 export class ScholarshipPostGeneral extends Component {
   constructor(props) {
     super(props)
-    this.showImageOutput = ::this.showImageOutput
-    this.launchFilePicker = ::this.launchFilePicker
+    this.onUploadSuccess = ::this.onUploadSuccess
     this.updateForm = ::this.updateForm
   }
 
-  state = {image: ''}
-
-  componentDidMount() {
-    filepicker.setKey('Aw4WfTTq8QxmplkGIzrYgz')
-  }
-
-  launchFilePicker() {
-    const options = {
-      container: 'modal',
-      mimetype: 'image/*',
-      backgroundUpload: true,
-      imageDim: [450,450],
-      cropDim: [400,400],
-      cropRatio: [1/1],
-      cropForce: true
-    }
-    filepicker.pick(
-      options,
-      this.showImageOutput,
-      e => console.error(`Error: ${e.toString()}`)
-    )
-  }
-
-  showImageOutput(Blob) {
+  onUploadSuccess(Blob) {
     this.props.onPhotoUpload(Blob.url)
   }
 
@@ -86,9 +61,9 @@ export class ScholarshipPostGeneral extends Component {
           <div className={css.row}>
             <div className={css.req}>Scholarship Photo</div>
             <div className={css.field}>
-              <button
+              <FilePickerInput
                 className={css.file}
-                onClick={this.launchFilePicker}>Choose file</button>
+                onSuccess={this.onUploadSuccess} />
               <img src={photoURL} className={css.img} />
             </div>
           </div>
