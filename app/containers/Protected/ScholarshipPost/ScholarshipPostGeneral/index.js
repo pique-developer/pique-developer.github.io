@@ -68,29 +68,26 @@ export class ScholarshipPostGeneral extends Component {
             </div>
           </div>
 
-          <div className={css.row}>
-            <div className={css.req}>Award Amount</div>
-            <div className={css.field}>
-              <CurrencyInput
-                name={awardAmounts.name}
-                onChange={onChange}
-                value={awardAmounts.value}
-                className={css.sm} />
-              <div
-                onClick={_ => addField('awardAmounts')}
-                className={css.link}>
-                Add Another Award
+          {awardAmounts.inputs.map((x, i) =>
+            <div key={x.name} className={css.row}>
+              {i > 0
+                ? <div className={css.label} />
+                : <div className={css.req}>Award Amount</div>}
+              <div className={css.field}>
+                <CurrencyInput
+                  name={x.name}
+                  onChange={e => onGroupChange(e, 'awardAmounts')}
+                  value={x.value}
+                  className={css.sm} />
+              {i > 0
+                ? <div
+                    onClick={_ => removeField(x.name, 'awardAmounts')}
+                    className={css.remove}>X</div>
+                : <div
+                    onClick={_ => addField('awardAmounts')}
+                    className={css.link}>Add Another Award</div>}
               </div>
             </div>
-          </div>
-
-          {awardAmounts.children.map((x, i) =>
-            <AddAmountField
-              key={i}
-              name={x.name}
-              value={x.value}
-              onChange={e => onGroupChange(e, 'awardAmounts')}
-              onClick={_ => removeField(x.name, 'awardAmounts')} />
           )}
 
           <div className={css.row}>
@@ -169,22 +166,5 @@ export class ScholarshipPostGeneral extends Component {
     )
   }
 }
-
-const AddAmountField = ({ onChange, onClick, name, value }) => (
-  <div className={css.row}>
-    <div className={css.label} />
-    <div className={css.field}>
-      <CurrencyInput
-        name={name}
-        onChange={onChange}
-        value={value}
-        className={css.sm}
-        type="text" />
-      <div
-        onClick={onClick}
-        className={css.remove}>X</div>
-    </div>
-  </div>
-)
 
 export default connect(null, { updateApplication })(ScholarshipPostGeneral)

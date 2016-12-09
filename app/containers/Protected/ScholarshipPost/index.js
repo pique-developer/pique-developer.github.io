@@ -33,8 +33,7 @@ export class ScholarshipPost extends Component {
     essays: [this.props.essays],
     awardAmounts: {
       name: 'awardAmounts',
-      value: '$',
-      children: [],
+      inputs: [{name: 'awardAmounts0', value: ''}],
     },
     title: '',
     description: '',
@@ -70,11 +69,11 @@ export class ScholarshipPost extends Component {
     communityService: '',
     areasOfStudy: {
       name: 'areasOfStudy',
-      children: [{name: 'areasOfStudy0', value: ''}],
+      inputs: [{name: 'areasOfStudy0', value: ''}],
     },
     locations: {
       name: 'locations',
-      children: [{name: 'locations0', value: {city: '', state: ''}}],
+      inputs: [{name: 'locations0', value: {city: '', state: ''}}],
     },
     documents: [this.props.documents]
   }
@@ -90,9 +89,9 @@ export class ScholarshipPost extends Component {
 
   onChange(e) {
     const { name, value } = e.target
-    const children = this.state[name].children
-    if (children) {
-      this.setState({[name]: {name, value, children: this.state[name].children }})
+    const inputs = this.state[name].inputs
+    if (inputs) {
+      this.setState({[name]: {name, value, inputs: this.state[name].inputs }})
     } else {
       this.setState({[name]: value})
     }
@@ -100,13 +99,13 @@ export class ScholarshipPost extends Component {
 
   onGroupChange(e, prefix) {
     const { name, value } = e.target
-    const items = this.state[prefix].children
+    const items = this.state[prefix].inputs
     if (prefix === 'locations') {
       const [targetName, valueName] = name.split('.')
       this.setState({
         [prefix]: {
           ...this.state[prefix],
-          children: items.map(x =>
+          inputs: items.map(x =>
             x.name === targetName
               ? { ...x, value: { ...x.value, [valueName]: value }}
               : x)
@@ -116,7 +115,7 @@ export class ScholarshipPost extends Component {
       this.setState({
         [prefix]: {
           ...this.state[prefix],
-          children: items.map(x =>
+          inputs: items.map(x =>
             x.name === name
               ? { ...x, value}
               : x)
@@ -127,25 +126,25 @@ export class ScholarshipPost extends Component {
 
   addField(prefix) {
     const { id } = this.state
-    const items = this.state[prefix].children
+    const items = this.state[prefix].inputs
     const props = this.props[prefix]
     const uniqueId = id + 1
     this.setState({
       id: uniqueId,
       [prefix]: {
         ...this.state[prefix],
-        children: items.concat([{name: `${prefix}${uniqueId}`, ...props}])
+        inputs: items.concat([{name: `${prefix}${uniqueId}`, ...props}])
       }
     })
   }
 
   removeField(name, prefix) {
-    const items = this.state[prefix].children
+    const items = this.state[prefix].inputs
     const nextState = items.filter(x => x.name !== name)
     this.setState({
       [prefix]: {
         ...this.state[prefix],
-        children: nextState
+        inputs: nextState
       }
     })
   }

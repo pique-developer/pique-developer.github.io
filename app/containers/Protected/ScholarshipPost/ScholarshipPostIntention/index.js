@@ -243,7 +243,7 @@ export class ScholarshipPostIntention extends Component {
             </div>
           </div>
 
-          {areasOfStudy.children.map((x, i) =>
+          {areasOfStudy.inputs.map((x, i) =>
             <div key={x.name} className={css.row}>
               {i > 0
                   ? <div className={css.label} />
@@ -297,7 +297,7 @@ export class ScholarshipPostIntention extends Component {
             </div>
           </div>
 
-          {locations.children.map((x, i) =>
+          {locations.inputs.map((x, i) =>
             <AdditionalLocationLimitations
               key={x.name}
               name={x.name}
