@@ -1,2 +1,2 @@
 export CurrencyInput from './CurrencyInput'
-export FilePickerInput from './FilePickerInput'
+export CheckboxInputGroup from './CheckboxInputGroup'

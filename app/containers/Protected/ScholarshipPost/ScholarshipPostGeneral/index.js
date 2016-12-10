@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import ScholarshipPostBtns from '../ScholarshipPostBtns'
-import { CurrencyInput, FilePickerInput } from '../ScholarshipPostInputs'
-import { updateApplication } from 'api/actions'
+import { CurrencyInput } from '../ScholarshipPostInputs'
+import FilePicker from 'components/FilePicker'
 import css from './style.css'
 
 export class ScholarshipPostGeneral extends Component {
@@ -61,7 +60,7 @@ export class ScholarshipPostGeneral extends Component {
           <div className={css.row}>
             <div className={css.req}>Scholarship Photo</div>
             <div className={css.field}>
-              <FilePickerInput
+              <FilePicker
                 className={css.file}
                 onSuccess={this.onUploadSuccess} />
               <img src={photoURL} className={css.img} />
@@ -167,4 +166,4 @@ export class ScholarshipPostGeneral extends Component {
   }
 }
 
-export default connect(null, { updateApplication })(ScholarshipPostGeneral)
+export default ScholarshipPostGeneral

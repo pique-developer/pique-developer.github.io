@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ScholarshipPostBtns from '../ScholarshipPostBtns'
-import { CurrencyInput } from '../ScholarshipPostInputs/CurrencyInput'
+import { CurrencyInput, CheckboxInputGroup } from '../ScholarshipPostInputs'
 import { updateApplication } from 'api/actions'
 import css from './style.css'
 
@@ -28,8 +28,8 @@ export class ScholarshipPostIntention extends Component {
 
   render() {
     const {
-      locations, areasOfStudy, schoolYear, genderRequirement, citizenship,
-      ethnicity, degreeType, communityService, maxFamilyIncome, onChange,
+      locations, areasOfStudy, schoolYears, genderRequirements, genderRequirement, citizenship,
+      ethnicities, degreeTypes, communityService, maxFamilyIncome, onChange,
       onGroupChange, onUpdate, addField, removeField } = this.props
     return (
       <div className={css.form}>
@@ -42,52 +42,11 @@ export class ScholarshipPostIntention extends Component {
 
           <div className={css.row}>
             <div className={css.req}>School Year Requirement</div>
-
             <div className={css.field}>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="schoolYear"
-                    value="freshman"
-                    checked={schoolYear.freshman}
-                    onChange={this.onCheckboxChange}
-                    type="checkbox"/>
-                    High School Freshman
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="schoolYear"
-                    value="junior"
-                    checked={schoolYear.junior}
-                    onChange={this.onCheckboxChange}
-                    type="checkbox"/>
-                    High School Junior
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="schoolYear"
-                    value="sophmore"
-                    checked={schoolYear.sophmore}
-                    onChange={this.onCheckboxChange}
-                    type="checkbox"/>
-                    High School Sophmore
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="schoolYear"
-                    value="senior"
-                    checked={schoolYear.senior}
-                    onChange={this.onCheckboxChange}
-                    type="checkbox"/>
-                    High School Senior
-                </label>
-              </div>
+              <CheckboxInputGroup
+                {...schoolYears}
+                onChange={onUpdate}
+                className={css.checkbox} />
             </div>
           </div>
 
@@ -122,124 +81,37 @@ export class ScholarshipPostIntention extends Component {
                 name="maxFamilyIncome"
                 onChange={onChange}
                 value={maxFamilyIncome}
-                className={css.sm}
-                type="text"/>
+                className={css.sm} />
             </div>
           </div>
 
           <div className={css.row}>
             <div className={css.label}>Gender Requirement</div>
             <div className={css.field}>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="genderRequirement"
-                    value="female"
-                    checked={genderRequirement.female}
-                    onChange={this.onCheckboxChange}
-                    type="checkbox"/>
-                    Female
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="genderRequirement"
-                    value="male"
-                    checked={genderRequirement.male}
-                    onChange={this.onCheckboxChange}
-                    type="checkbox"/>
-                    Male
-                </label>
-              </div>
+              <CheckboxInputGroup
+                {...genderRequirements}
+                onChange={onUpdate}
+                className={css.checkbox} />
             </div>
           </div>
 
           <div className={css.row}>
             <div className={css.label}>Race/Ethnicity Requirements</div>
             <div className={css.field}>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="ethnicity"
-                    value="blackAfricanAmerican"
-                    onChange={this.onCheckboxChange}
-                    checked={ethnicity.blackAfricanAmerican}
-                    type="checkbox"/>
-                    Black/African American
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="ethnicity"
-                    value="whiteCaucasian"
-                    onChange={this.onCheckboxChange}
-                    checked={ethnicity.whiteCaucasian}
-                    type="checkbox"/>
-                    White/Caucasian
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="ethnicity"
-                    value="asianPacificIslander"
-                    onChange={this.onCheckboxChange}
-                    checked={ethnicity.asianPacificIslander}
-                    type="checkbox"/>
-                    Asian/Pacific Islander
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="ethnicity"
-                    value="hispanicLatino"
-                    onChange={this.onCheckboxChange}
-                    checked={ethnicity.hispanicLatino}
-                    type="checkbox"/>
-                    Hispanic/Latino
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="ethnicity"
-                    value="nativeAmerican"
-                    onChange={this.onCheckboxChange}
-                    checked={ethnicity.nativeAmerican}
-                    type="checkbox"/>
-                    Native American
-                </label>
-              </div>
+              <CheckboxInputGroup
+                {...ethnicities}
+                onChange={onUpdate}
+                className={css.checkbox} />
             </div>
+          </div>
 
           <div className={css.row}>
             <div className={css.label}>Degree/Program Type Sought</div>
             <div className={css.field}>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="degreeType"
-                    value="twoYear"
-                    onChange={this.onCheckboxChange}
-                    checked={degreeType.twoYear}
-                    type="checkbox"/>
-                    2 Year Program
-                </label>
-              </div>
-              <div className={css.checkbox}>
-                <label>
-                  <input
-                    name="degreeType"
-                    value="fourYear"
-                    onChange={this.onCheckboxChange}
-                    checked={degreeType.fourYear}
-                    type="checkbox"/>
-                    4 Year Program
-                </label>
-              </div>
+              <CheckboxInputGroup
+                {...degreeTypes}
+                onChange={onUpdate}
+                className={css.checkbox} />
             </div>
           </div>
 
@@ -314,8 +186,6 @@ export class ScholarshipPostIntention extends Component {
             </AdditionalLocationLimitations>
 
           )}
-
-          </div>
         </div>
 
         <ScholarshipPostBtns

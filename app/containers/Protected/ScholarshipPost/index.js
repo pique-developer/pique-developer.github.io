@@ -30,43 +30,56 @@ export class ScholarshipPost extends Component {
 
   state = {
     id: 0,
+    citizenship: '',
+    communityService: '',
+    description: '',
+    genericRecommendations: '',
+    maxFamilyIncome: '',
+    minGPA: '',
+    minSATScore: '',
+    minACTScore: '',
+    photoURL: '',
+    recommendationsAmount: '',
+    title: '',
+    documents: [this.props.documents],
     essays: [this.props.essays],
     awardAmounts: {
       name: 'awardAmounts',
       inputs: [{name: 'awardAmounts0', value: ''}],
     },
-    title: '',
-    description: '',
-    photoURL: '',
-    minGPA: '',
-    minSATScore: '',
-    minACTScore: '',
-    recommendationsAmount: '',
-    genericRecommendations: '',
-    schoolYear: {
-      freshman: false,
-      sophmore: false,
-      senior: false,
-      junior: false,
+    schoolYears: {
+      name: 'schoolYears',
+      inputs: [
+        {name: 'freshman', value: false, text: 'High School Freshman'},
+        {name: 'sophmore', value: false, text: 'High School Sophmore'},
+        {name: 'junior',   value: false, text: 'High School Junior'},
+        {name: 'senior',   value: false, text: 'High School Senior'},
+      ]
     },
-    citizenship: '',
-    maxFamilyIncome: '',
-    genderRequirement: {
-      male: false,
-      female: false
+    genderRequirements: {
+      name: 'genderRequirements',
+      inputs: [
+        {name: 'male',   value: false, text: 'Male'},
+        {name: 'female', value: false, text: 'Female'}
+      ]
     },
-    ethnicity: {
-      blackAfricanAmerican: false,
-      whiteCaucasian: false,
-      asianPacificIslander: false,
-      hispanicLatino: false,
-      nativeAmerican: false,
+    ethnicities: {
+      name: 'ethnicities',
+      inputs: [
+        {name: 'blackAfricanAmerican', value: false, text: 'Black/African American'},
+        {name: 'whiteCaucasian',       value: false, text: 'White/Caucasian'},
+        {name: 'asianPacificIslander', value: false, text: 'Asian/Pacific Islander'},
+        {name: 'hispanicLatino',       value: false, text: 'Hispanic/Latino'},
+        {name: 'nativeAmerican',       value: false, text: 'Native American'},
+      ]
     },
-    degreeType: {
-      twoYear: false,
-      fourYear: false,
+    degreeTypes: {
+      name: 'degreeTypes',
+      inputs: [
+        {name: 'twoYear',  value: false, text: ' 2 Year Program'},
+        {name: 'fourYear', value: false, text: ' 4 Year Program'},
+      ]
     },
-    communityService: '',
     areasOfStudy: {
       name: 'areasOfStudy',
       inputs: [{name: 'areasOfStudy0', value: ''}],
@@ -75,7 +88,6 @@ export class ScholarshipPost extends Component {
       name: 'locations',
       inputs: [{name: 'locations0', value: {city: '', state: ''}}],
     },
-    documents: [this.props.documents]
   }
 
   onPhotoUpload(url) {
