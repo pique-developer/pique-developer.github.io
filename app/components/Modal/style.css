@@ -3,7 +3,7 @@
   top: 0;
   width: 100%;
   min-height: 100vh;
-  z-index: 2;
+  z-index: 3;
   transform: scaleX(1);
 }
 
