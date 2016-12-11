@@ -36,7 +36,10 @@ export class MembersModal extends Component {
             type="text" />
 
           <div className={`${!share ? css.hide : ''}`}>
-            <input className={css.input} type="text" />
+            <input
+              className={css.extra}
+              placeholder="blah, blah, blah"
+              type="text" />
           </div>
 
           <div className={css.done}>

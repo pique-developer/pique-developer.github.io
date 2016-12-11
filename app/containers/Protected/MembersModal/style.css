@@ -60,6 +60,11 @@
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
+.extra {
+  composes: input;
+  min-height: 46px;
+}
+
 .hide {
   display: none;
 }
