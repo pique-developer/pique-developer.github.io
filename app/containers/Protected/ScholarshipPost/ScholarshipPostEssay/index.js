@@ -8,13 +8,73 @@ export class ScholarshipPostEssay extends Component {
   constructor(props) {
     super(props)
     this.onChange = ::this.onChange
+    this.createEssay = ::this.createEssay
+    this.removePrompt = ::this.removePrompt
+    this.addPrompt = ::this.addPrompt
   }
 
-  state = {essays: 1}
+  static defaultProps = {
+    essay: {prompts: [], value: ''},
+    prompt: {value: ''}
+  }
+
+  state = {
+    essays: [],
+    id: 0,
+  }
+
+  componentDidMount() {
+    this.createEssay()
+  }
+
+  createEssay() {
+    const { essays, id } = this.state
+    const uniqueId = id + 1
+    this.setState({
+      id: uniqueId,
+      essays: essays.concat([{
+        name: `essays${uniqueId}`,
+        inputs: [{name: `prompt${uniqueId}`, value: ''}]
+      }])
+    })
+  }
+
+  addPrompt(name) {
+    const { essays, id } = this.state
+    const uniqueId = id + 1
+    this.setState({
+      id: uniqueId,
+      essays: essays.map(x => x.name === name
+        ? {...x, inputs: x.inputs.concat([{name: `prompt${uniqueId}`, value: ''}])}
+        : x)
+    })
+  }
+
+  removePrompt(name) {
+    const { essays } = this.state
+    this.setState({
+      essays: essays.map(x => ({
+        ...x,
+        inputs: x.inputs.filter(y => y.name !== name)
+      }))
+    })
+  }
 
   onChange(e) {
+    const { essays } = this.state
     const { selectedIndex } = e.target.options
-    this.setState({essays: selectedIndex + 1})
+    const requestedVal = selectedIndex + 1
+    const currentVal = essays.length
+
+    if (requestedVal === currentVal) {
+      return
+    } else if (requestedVal > currentVal) {
+      Array.from({length: requestedVal - currentVal}).map(this.createEssay)
+    } else if (requestedVal < currentVal) {
+      this.setState({
+        essays: essays.filter((_, i) => i + 1 <= requestedVal)
+      })
+    }
   }
 
   render() {
@@ -40,13 +100,63 @@ export class ScholarshipPostEssay extends Component {
             </div>
           </div>
 
-          {Array.from({length: essays}).map((x, i) =>
-            <AdditionalEssays
-              key={i}
-              name={x}
-              num={i + 1}
-              onChange={onChange}
-              onClick={_ => this.removeField(x)} />
+          {essays.map((x, i) =>
+            <div key={x.name}>
+              {x.inputs.map((y, j) =>
+                <div key={y.name}>
+                  <div className={css.row}>
+                    {j > 0
+                      ? <div className={css.label} />
+                      : <div className={css.req}>{`Essay #${i + 1} Prompt`}</div>}
+                    <div className={css.field}>
+                      <textarea
+                        name={y.name}
+                        onChange={onChange}
+                        className={css.tall}
+                        rows="4"
+                        placeholder={`Enter your scholarship's essay #${i + 1} prompt here`}
+                        type="text" />
+                    </div>
+                  </div>
+                  {j > 0
+                    ? <div className={css.row}>
+                        <div className={css.label} />
+                        <div className={css.field}>
+                          <div
+                            onClick={_ => this.removePrompt(y.name)}
+                            className={css.link}>Delete</div>
+                        </div>
+                      </div>
+                    : null}
+                </div>
+              )}
+
+              <div className={css.row}>
+                <div className={css.label} />
+                <div className={css.field}>
+                  <div
+                    onClick={_ => this.addPrompt(x.name)}
+                    className={css.link}>
+                    {`Add Another Prompt for Essay #${i + 1}`}
+                  </div>
+                </div>
+              </div>
+
+              <div className={css.row}>
+                <div className={css.req}>{`Essay #${i + 1} Word Limit`}</div>
+                <div className={css.field}>
+                  <input
+                    name="essayWordLimit"
+                    onChange={onChange}
+                    className={css.sm}
+                    placeholder="e.g. 100"
+                    type="text"/>
+                  <div className={css.comment}>
+                    Keep in mind that ~250 words is equivalent to 1 typed page.
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
         </div>
 
@@ -81,20 +191,7 @@ const AdditionalEssays = ({ onChange, onClick, name, num }) => (
       </div>
     </div>
 
-    <div className={css.row}>
-      <div className={css.req}>{`Essay #${num} Word Limit`}</div>
-      <div className={css.field}>
-        <input
-          name="essayWordLimit"
-          onChange={onChange}
-          className={css.sm}
-          placeholder="e.g. 100"
-          type="text"/>
-        <div className={css.comment}>
-          Keep in mind that ~250 words is equivalent to 1 typed page.
-        </div>
-      </div>
-    </div>
+
   </div>
 )
 

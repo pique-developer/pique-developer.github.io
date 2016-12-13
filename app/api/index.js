@@ -1,11 +1,11 @@
 import firebase from 'firebase'
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDaFNc45hQOqJPoIY8eZQAaWsVftT_lHdU",
-  authDomain: "get-pique.firebaseapp.com",
-  databaseURL: "https://get-pique.firebaseio.com",
-  storageBucket: "get-pique.appspot.com",
-  messagingSenderId: "297637710221"
+  apiKey: 'AIzaSyBlwBDc0fn1CkYnw966lgS-dT0GunHyXPo',
+  authDomain: 'get-pique.firebaseapp.com',
+  databaseURL: 'https://get-pique.firebaseio.com',
+  storageBucket: 'get-pique.appspot.com',
+  messagingSenderId: '297637710221'
 })
 
 export const initApp = observer => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ScholarshipPostBtns from '../ScholarshipPostBtns'
-import { CurrencyInput, CheckboxInputGroup } from '../ScholarshipPostInputs'
+import { CurrencyInput, CheckboxInputGroup, LocationInput } from '../ScholarshipPostInputs'
 import { updateApplication } from 'api/actions'
 import css from './style.css'
 
@@ -28,9 +28,11 @@ export class ScholarshipPostIntention extends Component {
 
   render() {
     const {
-      locations, areasOfStudy, schoolYears, genderRequirements, genderRequirement, citizenship,
-      ethnicities, degreeTypes, communityService, maxFamilyIncome, onChange,
-      onGroupChange, onUpdate, addField, removeField } = this.props
+      locations, areasOfStudy, schoolYears, genderRequirements,
+      genderRequirement, citizenship, ethnicities, degreeTypes,
+      communityService, maxFamilyIncome, onChange, onGroupChange, onUpdate,
+      addField, removeField
+    } = this.props
     return (
       <div className={css.form}>
         <div className={css.title}>
@@ -169,23 +171,13 @@ export class ScholarshipPostIntention extends Component {
             </div>
           </div>
 
-          {locations.inputs.map((x, i) =>
-            <AdditionalLocationLimitations
-              key={x.name}
-              name={x.name}
-              value={x.value}
-              first={i === 0}
-              onChange={onGroupChange}>
-              {i === 0
-                ? <div
-                    onClick={_ => addField('locations')}
-                    className={css.link}>Add Another Location</div>
-                : <div
-                    onClick={_ => removeField(x.name, 'locations')}
-                    className={css.remove}>X</div>}
-            </AdditionalLocationLimitations>
+          <div className={css.row}>
+            <div className={css.label}>Location Scholarship is Limited To?</div>
+            <div className={css.field}>
+              <LocationInput className={css.sm} />
+            </div>
+          </div>
 
-          )}
         </div>
 
         <ScholarshipPostBtns

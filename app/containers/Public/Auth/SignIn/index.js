@@ -41,7 +41,7 @@ export class SignIn extends Component {
       .catch(e => loginError({
         error: e.code === 'auth/wrong-password'
           ? 'Incorrect password'
-          : e.message
+          : console.log(e) || e.message
       }))
   }
 

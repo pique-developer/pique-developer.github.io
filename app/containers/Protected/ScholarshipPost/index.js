@@ -42,7 +42,12 @@ export class ScholarshipPost extends Component {
     recommendationsAmount: '',
     title: '',
     documents: [this.props.documents],
-    essays: [this.props.essays],
+    essays: {
+      name: 'essays',
+      inputs: [
+        {name: 'essays0', value: ''},
+      ]
+    },
     awardAmounts: {
       name: 'awardAmounts',
       inputs: [{name: 'awardAmounts0', value: ''}],
