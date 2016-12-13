@@ -61,3 +61,8 @@
 .more {
   composes: more from '../style.css';
 }
+
+.prompt {
+  composes: row;
+  margin-bottom: 10px;
+}

@@ -104,7 +104,7 @@ export class ScholarshipPostEssay extends Component {
             <div key={x.name}>
               {x.inputs.map((y, j) =>
                 <div key={y.name}>
-                  <div className={css.row}>
+                  <div className={css.prompt}>
                     {j > 0
                       ? <div className={css.label} />
                       : <div className={css.req}>{`Essay #${i + 1} Prompt`}</div>}
