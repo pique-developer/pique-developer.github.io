@@ -9,7 +9,7 @@ const MatchWhenReturning = ({ component:Component, isNew, ...rest }) => {
       render={props => isNew === false
         ? <Component {...props} />
         : <Redirect
-            to={{pathname: '/scholarship-post/general',
+            to={{pathname: '/student-questionnaire',
             state: {from: props.location}}} />} />
   )
 }

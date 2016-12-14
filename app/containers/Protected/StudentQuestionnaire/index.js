@@ -1,0 +1,198 @@
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import FilePicker from 'components/FilePicker'
+import ScholarshipPostBtns from '../ScholarshipPost/ScholarshipPostBtns'
+import { CheckboxInputGroup } from '../ScholarshipPost/ScholarshipPostInputs'
+import { submitApplication } from 'api/actions'
+import css from './style.css'
+
+export class StudentQuestionnaire extends Component {
+  constructor(props) {
+    super(props)
+    this.onUploadSuccess = ::this.onUploadSuccess
+  }
+
+  state = {
+    photoURL: '',
+    citizenStatus: {
+      name: 'citizenStatus',
+      inputs: [
+        {name: 'us', value: false, text: 'US Citizen'},
+        {name: 'international', value: false, text: 'International Citizen'},
+        {name: 'daca',   value: false, text: 'DACA'},
+      ]
+    },
+    scholarshipTypes: {
+      name: 'scholarshipTypes',
+      inputs: [
+        {name: 'meritedBased', value: false, text: 'Merit Based'},
+        {name: 'needBased', value: false, text: 'Need Based'},
+      ]
+    },
+    genderRequirements: {
+      name: 'genderRequirements',
+      inputs: [
+        {name: 'male',   value: false, text: 'Male'},
+        {name: 'female', value: false, text: 'Female'},
+        {noAnswer: 'noAnswer', value: false, text: `I'd prefer not to answer`},
+      ]
+    },
+    ethnicities: {
+      name: 'ethnicities',
+      inputs: [
+        {name: 'blackAfricanAmerican', value: false, text: 'Black/African American'},
+        {name: 'whiteCaucasian',       value: false, text: 'White/Caucasian'},
+        {name: 'asianPacificIslander', value: false, text: 'Asian/Pacific Islander'},
+        {name: 'hispanicLatino',       value: false, text: 'Hispanic/Latino'},
+        {name: 'nativeAmerican',       value: false, text: 'Native American'},
+      ]
+    },
+    degreeTypes: {
+      name: 'degreeTypes',
+      inputs: [
+        {name: 'twoYear',  value: false, text: ' 2 Year Program'},
+        {name: 'fourYear', value: false, text: ' 4 Year Program'},
+      ]
+    },
+  }
+
+  onUploadSuccess(Blob) {
+    this.setState({photoURL: Blob.url})
+  }
+
+  render() {
+    const {
+      photoURL, citizenStatus, scholarshipTypes, genderRequirements,
+      ethnicities, degreeTypes
+    } = this.state
+    return (
+      <div className={css.root}>
+        <div className={css.header}>Student Questionnaire</div>
+        <div className={css.form}>
+          <div className={css.title}>
+            General Scholarship Details
+            <span className={css.caption}>* Required</span>
+          </div>
+
+          <div className={css.fields}>
+            <div className={css.row}>
+              <div className={css.req}>Intro</div>
+              <div className={css.field}>
+                <input
+                  name="intro"
+                  className={css.input}
+                  type="text"/>
+              </div>
+            </div>
+
+            <div className={css.row}>
+              <div className={css.req}>About Me</div>
+              <div className={css.field}>
+                <textarea
+                  name="about"
+                  className={css.tall}
+                  rows="4"
+                  placeholder="Describe yourself in 100 words. This is your chance to show scholarship providers what makes you different. Have fun and give it your all!"
+                  type="text" />
+              </div>
+            </div>
+
+            <div className={css.row}>
+              <div className={css.req}>Profile Picture</div>
+              <div className={css.field}>
+                <FilePicker
+                  className={css.file}
+                  onSuccess={this.onUploadSuccess} />
+                <img src={photoURL} className={css.img} />
+              </div>
+            </div>
+          </div>
+
+
+          <div className={css.row}>
+            <div className={css.label}>GPA</div>
+            <div className={css.field}>
+              <input
+                name='minGPA'
+                className={css.sm}
+                placeholder='0.0'
+                type="text"/>
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.label}>Standardized Test Scores</div>
+            <div className={css.field}>
+              <input
+                name='minSATScore'
+                className={css.sm}
+                placeholder="SAT Score"
+                type="text"/>
+              <input
+                name='minACTScore'
+                className={css.sm}
+                placeholder="ACT Score"
+                type="text"/>
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.label}>US Citizen Status</div>
+            <div className={css.field}>
+              <CheckboxInputGroup
+                {...citizenStatus}
+                className={css.checkbox} />
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.label}>Scholarship Types</div>
+            <div className={css.field}>
+              <CheckboxInputGroup
+                {...scholarshipTypes}
+                className={css.checkbox} />
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.label}>Degree/Program Type Sought</div>
+            <div className={css.field}>
+              <CheckboxInputGroup
+                {...degreeTypes}
+                className={css.checkbox} />
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.label}>Gender Requirement</div>
+            <div className={css.field}>
+              <CheckboxInputGroup
+                {...genderRequirements}
+                className={css.checkbox} />
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.label}>Race/Ethnicity Requirements</div>
+            <div className={css.field}>
+              <CheckboxInputGroup
+                {...ethnicities}
+                className={css.checkbox} />
+            </div>
+          </div>
+
+          <ScholarshipPostBtns
+            onClick={this.props.submitApplication}
+            submit='/dashboard/new' />
+        </div>
+      </div>
+    )
+  }
+}
+
+export default connect(
+  state => ({
+    user: state.user
+  }),
+  { submitApplication }
+)(StudentQuestionnaire)

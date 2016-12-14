@@ -23,8 +23,8 @@ export class CheckboxInputGroup extends Component {
     const { inputs, className } = this.props
     return (
       <div>
-        {inputs.map(x =>
-          <div key={x.name} className={className}>
+        {inputs.map((x, i) =>
+          <div key={i} className={className}>
             <label>
               <input
                 name={x.name}

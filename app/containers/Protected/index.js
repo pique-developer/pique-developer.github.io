@@ -8,6 +8,7 @@ import MatchWhenNew from './MatchWhenNew'
 import MatchWhenReturning from './MatchWhenReturning'
 import AppRoutes from './AppRoutes'
 import ScholarshipPost from './ScholarshipPost'
+import StudentQuestionnaire from './StudentQuestionnaire'
 import * as API from 'api'
 import * as Actions from 'api/actions'
 import css from './style.css'
@@ -33,7 +34,7 @@ export class MembersRoutes extends Component {
           <MatchWhenNew
             pattern='/'
             isNew={isNew}
-            component={ScholarshipPost} />
+            component={StudentQuestionnaire} />
           <MatchWhenReturning
             pattern='/'
             isNew={isNew}
