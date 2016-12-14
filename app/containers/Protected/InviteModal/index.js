@@ -4,7 +4,7 @@ import Modal from 'components/Modal'
 import * as Actions from 'api/actions'
 import css from './style.css'
 
-export class MembersModal extends Component {
+export class InviteModal extends Component {
   constructor(props) {
     super(props)
     this.onChange = ::this.onChange
@@ -56,4 +56,4 @@ export default connect(
     open: state.open,
   }),
   Actions
-)(MembersModal)
+)(InviteModal)

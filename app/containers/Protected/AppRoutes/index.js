@@ -5,11 +5,10 @@ import Dashboard from '../Dashboard'
 import Applicant from '../Applicant'
 import Committee from '../Committee'
 import Settings from '../Settings'
-import MembersSidebar from '../MembersSidebar'
+import AppSidebar from '../AppSidebar'
 import css from './style.css'
 
 const AppRoutes = props => {
-  console.log(props)
   return (
     <div>
       <Match pattern='/applicant' component={Applicant} />
@@ -20,7 +19,6 @@ const AppRoutes = props => {
   )
 }
 
-
 const MatchWithSidebar = ({ component:Component, pattern }) => {
   return (
     <Match pattern={pattern} render={props =>
@@ -28,7 +26,7 @@ const MatchWithSidebar = ({ component:Component, pattern }) => {
         <div className={css.main}>
           <Component {...props} />
         </div>
-        <MembersSidebar {...props} />
+        <AppSidebar {...props} />
       </div>
     } />
   )

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import Redirect from 'react-router/Redirect'
-import MembersHeader from './MembersHeader'
-import MembersModal from './MembersModal'
+import AppHeader from './AppHeader'
+import InviteModal from './InviteModal'
 import MatchWhenNew from './MatchWhenNew'
 import MatchWhenReturning from './MatchWhenReturning'
 import AppRoutes from './AppRoutes'
@@ -26,8 +26,8 @@ export class MembersRoutes extends Component {
     const { isNew, applicants, user } = this.props
     return (
       <div>
-        <MembersModal />
-        <MembersHeader />
+        <AppHeader />
+        <InviteModal />
 
         <div className={css.root}>
           <MatchWhenNew

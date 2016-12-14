@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import SidebarDropdown from './SidebarDropdown'
 import css from './style.css'
 
-const MembersSidebar = ({ user }) => {
+const AppSidebar = ({ user }) => {
   return (
     <div className={css.root}>
       <div className={css.backdrop} />
@@ -40,4 +40,4 @@ export default connect(
   state => ({
     user: state.auth.user
   })
-)(MembersSidebar)
+)(AppSidebar)
