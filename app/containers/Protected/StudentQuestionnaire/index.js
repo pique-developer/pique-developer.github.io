@@ -14,6 +14,8 @@ export class StudentQuestionnaire extends Component {
 
   state = {
     photoURL: '',
+    communityService: '',
+    communityServiceHours: '',
     citizenStatus: {
       name: 'citizenStatus',
       inputs: [
@@ -54,6 +56,18 @@ export class StudentQuestionnaire extends Component {
         {name: 'fourYear', value: false, text: ' 4 Year Program'},
       ]
     },
+    areasOfStudy: {
+      name: 'areasOfStudy',
+      inputs: [{name: 'areasOfStudy0', value: ''}],
+    },
+    communityService: {
+      name: 'communityService',
+      inputs: [
+        {name: 'male',   value: false, text: 'Male'},
+        {name: 'female', value: false, text: 'Female'},
+        {noAnswer: 'noAnswer', value: false, text: `I'd prefer not to answer`},
+      ]
+    },
   }
 
   onUploadSuccess(Blob) {
@@ -63,7 +77,7 @@ export class StudentQuestionnaire extends Component {
   render() {
     const {
       photoURL, citizenStatus, scholarshipTypes, genderRequirements,
-      ethnicities, degreeTypes
+      ethnicities, degreeTypes, areasOfStudy, communityService
     } = this.state
     return (
       <div className={css.root}>
@@ -181,7 +195,80 @@ export class StudentQuestionnaire extends Component {
             </div>
           </div>
 
+          {areasOfStudy.inputs.map((x, i) =>
+            <div className={css.row}>
+              {i > 0
+                ? <div className={css.label} />
+                : <div className={css.label}>Intended Field of Study</div>}
+              <div className={css.field}>
+                <input
+                  name='fieldOfStudy'
+                  className={css.sm}
+                  type="text"/>
+                {i > 0
+                  ? <div
+                      onClick={_ => _}
+                      className={css.remove}>X</div>
+                  : <div
+                      onClick={_ => _}
+                      className={css.link}>Add Another Intended Area of Study Requirement</div>}
+              </div>
+            </div>
+          )}
+
+          <div className={css.row}>
+            <div className={css.label}>Community Service Requirement</div>
+            <div className={css.field}>
+              <label className={css.radio}>
+                <input
+                  name="communityService"
+                  value="true"
+                  onChange={_ => this.updateForm({communityService: true})}
+                  checked={communityService === true}
+                  type="radio"/>
+                  Yes
+                </label>
+                <label className={css.radio}>
+                <input
+                  name="communityService"
+                  value="false"
+                  onChange={_ => this.updateForm({communityService: false})}
+                  checked={communityService === false}
+                  type="radio"/>
+                  No
+              </label>
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.label}>Number of Community Service Hours</div>
+            <div className={css.field}>
+              <input
+                name='communityServiceHours'
+                className={css.sm}
+                type="text"/>
+            </div>
+          </div>
+
+          <div className={css.row}>
+            <div className={css.label}>Enter Your Location</div>
+            <div className={css.field}>
+              <input
+                name='city'
+                placeholder="City"
+                className={css.sm}
+                type="text"/>
+              <input
+                name='state'
+                placeholder="State"
+                className={css.sm}
+                type="text"/>
+            </div>
+          </div>
+
+
           <ScholarshipPostBtns
+            text="Get Started!"
             onClick={this.props.submitApplication}
             submit='/dashboard/new' />
         </div>

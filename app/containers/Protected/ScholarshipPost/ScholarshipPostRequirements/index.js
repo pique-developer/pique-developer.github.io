@@ -80,6 +80,7 @@ export class ScholarshipPostRequirements extends Component {
 
         <ScholarshipPostBtns
           back='/scholarship-post/intention'
+          text="Post Scholarship"
           onClick={this.props.submitApplication}
           submit='/dashboard/new' />
       </div>
