@@ -195,7 +195,7 @@ export class StudentQuestionnaire extends Component {
           </div>
 
           {areasOfStudy.inputs.map((x, i) =>
-            <div className={css.row}>
+            <div key={i} className={css.row}>
               {i > 0
                 ? <div className={css.label} />
                 : <div className={css.label}>Intended Field of Study</div>}
