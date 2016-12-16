@@ -25,7 +25,7 @@ export class InviteModal extends Component {
         open={open}
         onClick={removeModal}
         className={css.curtain}>
-        <div className={css.modal}>
+        <div className={`${css.modal} ${share ? css.share : ''}`}>
           <div className={css.title}>Invite members</div>
           <div className={css.label}>People</div>
 
@@ -35,11 +35,12 @@ export class InviteModal extends Component {
             placeholder="Enter email addresses..."
             type="text" />
 
-          <div className={`${!share ? css.hide : ''}`}>
-            <input
+          <div className={css.hide}>
+            <textarea
               className={css.extra}
               placeholder="blah, blah, blah"
-              type="text" />
+              type="text"
+              rows="5" />
           </div>
 
           <div className={css.done}>

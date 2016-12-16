@@ -122,7 +122,6 @@ export class StudentQuestionnaire extends Component {
             </div>
           </div>
 
-
           <div className={css.row}>
             <div className={css.label}>GPA</div>
             <div className={css.field}>
