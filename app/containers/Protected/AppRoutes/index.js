@@ -11,7 +11,7 @@ import css from './style.css'
 const AppRoutes = props => {
   return (
     <div>
-      <Match pattern='/applicant' component={Applicant} />
+      <Match pattern='/applicant/:id' component={Applicant} />
       {routesWithSidebar.map(x =>
         <MatchWithSidebar key={x.pattern} {...x} />
       )}
