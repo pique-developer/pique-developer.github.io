@@ -14,6 +14,10 @@ import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class MembersRoutes extends Component {
+  constructor(props) {
+    super(props)
+    this.getNewUserForm = ::this.getNewUserForm
+  }
 
   componentDidMount() {
     const { fetchSuccess, fetchError } = this.props
@@ -23,22 +27,40 @@ export class MembersRoutes extends Component {
     })
   }
 
+  getNewUserForm() {
+    const { type } = this.props.user
+    switch (type) {
+      case 'provider':
+        return {
+          component: ScholarshipPost,
+          pathname: '/scholarship-post/general',
+        }
+      case 'student':
+      default:
+        return {
+          component: StudentQuestionnaire,
+          pathname: '/student-questionnaire',
+        }
+    }
+  }
+
   render() {
-    const { isNew, applicants, user } = this.props
+    const { isNew } = this.props
+    const { component, pathname } = this.getNewUserForm()
     return (
       <div>
         <AppHeader />
         <InviteModal />
-
         <div className={css.root}>
           <MatchWhenNew
             pattern='/'
             isNew={isNew}
-            component={StudentQuestionnaire} />
+            component={component} />
           <MatchWhenReturning
             pattern='/'
             isNew={isNew}
-            component={AppRoutes} />
+            component={AppRoutes}
+            pathname={pathname} />
         </div>
       </div>
     )

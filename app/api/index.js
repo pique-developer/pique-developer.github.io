@@ -8,12 +8,21 @@ firebase.initializeApp({
   messagingSenderId: '297637710221'
 })
 
+const DEFAULT_NAME = 'Charles Barkley'
+const DEFAULT_PHOTO = 'https://firebasestorage.googleapis.com/v0/b/get-pique.appspot.com/o/test%2F911-av.png?alt=media&token=f97e53b0-90cd-4c01-9a83-1958de6bfd79'
+
 export const initApp = observer => {
   return firebase.auth()
     .onAuthStateChanged({
-      next: user => observer.next(!!user ? assignDefaultProps(user) : false) ,
+      next: user => !!user
+          ? authStatePopulated(observer, user)
+          : observer.next(false),
       error: observer.error
     })
+}
+
+function authStatePopulated(observer, user) {
+  fetchUser(user).then(x => observer.next(x))
 }
 
 export const register = data => {
@@ -30,6 +39,33 @@ export const signIn = (email, password) => {
     .signInWithEmailAndPassword(email, password)
 }
 
+function filterProviderData(user) {
+  return {...user.providerData[0], uid: user.uid}
+}
+
+function fetchUser(user) {
+  const userProps = filterProviderData(user)
+  const uid = firebase.auth().currentUser.uid || userProps.uid
+  return firebase
+    .database()
+    .ref()
+    .child(`users/${uid}`)
+    .once('value')
+    .then(x => x.val())
+    .then(x => !!x ? x : createUser(userProps))
+}
+
+function createUser({ displayName, email, photoURL, uid }) {
+  displayName = !!displayName ? displayName : DEFAULT_NAME
+  photoURL = !!photoURL ? photoURL : DEFAULT_PHOTO
+  return firebase
+    .database()
+    .ref()
+    .child(`users/${uid}`)
+    .update({ displayName, email, photoURL, uid })
+    .then(_ => ({ displayName, email, photoURL, uid }))
+}
+
 export const signOut = _ => {
   return firebase.auth().signOut()
 }
@@ -41,18 +77,14 @@ export const updateUserProfile = data => {
 }
 
 function assignDefaultProps(user) {
-  const userDefaultProps = {
-    displayName: 'Charles Barkley',
-    photoURL: 'https://firebasestorage.googleapis.com/v0/b/get-pique.appspot.com/o/test%2F911-av.png?alt=media&token=f97e53b0-90cd-4c01-9a83-1958de6bfd79'
-  }
   return {
     ...user,
     photoURL: !!user.photoURL
       ? user.photoURL
-      : userDefaultProps.photoURL,
+      : DEFAULT_PHOTO,
     displayName: !!user.displayName
       ? user.displayName
-      : userDefaultProps.displayName,
+      : DEFAULT_NAME,
   }
 }
 

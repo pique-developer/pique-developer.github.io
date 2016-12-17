@@ -17,7 +17,7 @@ const loadingReducer = (state=false, action) => {
     case 'AUTHENTICATING':
       return true
 
-    case 'LOGIN_SUCCESS':
+    case 'INIT_AUTH_STATE':
     case 'LOGIN_ERROR':
       return false
 
@@ -60,6 +60,7 @@ const authReducer = (state={user: false, initialized: false, error: '', login: t
     case 'SIGNOUT':
       return Object.assign({}, state, {
         user: false,
+        isNew: true,
         initialized: false,
       })
 

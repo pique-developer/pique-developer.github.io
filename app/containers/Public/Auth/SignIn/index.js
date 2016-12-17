@@ -37,15 +37,12 @@ export class SignIn extends Component {
     const { authenticating, loginSuccess, loginError } = this.props
     authenticating()
     API.signIn(email, password)
-      .then(x => loginSuccess({user: {...x.providerData[0]}}))
       .catch(e => loginError({
         error: e.code === 'auth/wrong-password'
           ? 'Incorrect password'
-          : console.log(e) || e.message
+          : console.error(e) || e.message
       }))
   }
-
-
 
   render() {
     const { email, password } = this.state
