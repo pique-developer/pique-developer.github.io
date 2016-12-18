@@ -1,0 +1,33 @@
+.root {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 50px 0;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.root:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.title {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, san-serif;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 40px;
+  padding: 0 15px;
+}
+
+.overview {
+  width: 60%;
+  float: left;
+}
+
+.details {
+  width: 40%;
+  float: right;
+}

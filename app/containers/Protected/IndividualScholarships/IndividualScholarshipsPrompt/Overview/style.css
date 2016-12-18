@@ -1,0 +1,16 @@
+.root {
+  padding: 0 15px;
+}
+
+.copy {
+  max-width: 520px;
+  margin-bottom: 50px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 23px;
+  color: #777777;
+}
+
+.text {
+  margin-bottom: 30px;
+}
