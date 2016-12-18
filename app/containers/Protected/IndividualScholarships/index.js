@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import img from './banner.png'
+import IndividualScholarshipsBanner from './IndividualScholarshipsBanner'
+import IndividualScholarshipsHeader from './IndividualScholarshipsHeader'
+
 import css from './style.css'
 
 export class IndividualScholarships extends Component {
@@ -10,17 +12,10 @@ export class IndividualScholarships extends Component {
   render() {
     return (
       <div className={css.root}>
-        <div
-          style={{backgroundImage: `url(${img})`}}
-          className={css.bg}>
-          <div className={css.logo}>
-
-          </div>
-        </div>
-        <div className={css.content}>
-          <div className={css.header}>MLK Scholarships</div>
-        </div>
+        <IndividualScholarshipsBanner />
+        <IndividualScholarshipsHeader />
       </div>
+
     )
   }
 }

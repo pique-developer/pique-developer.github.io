@@ -1,0 +1,23 @@
+.btn {
+  padding: 12px 60px;
+  line-height: 2px;
+  font-size: 17px;
+  width: 160px;
+  text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 200;
+  border-radius: 8px;
+  outline: none;
+}
+
+.fill {
+  composes: btn;
+  color: #fff;
+  background-color: #1698FB;
+}
+
+.nofill {
+  composes: btn;
+  color: #1698FB;
+  background-color: transparent;
+}
