@@ -22,7 +22,6 @@ export class AppRoutes extends Component {
   render() {
     return (
       <div>
-
         <MatchWithFullPage
           routes={[
             {pattern: '/individual-scholarships', component: IndividualScholarships},
