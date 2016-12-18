@@ -1,40 +1,58 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import Redirect from 'react-router/Redirect'
-import Dashboard from '../Dashboard'
+import MatchWhenNew from './MatchWhenNew'
+import MatchWhenReturning from './MatchWhenReturning'
+import MatchWithSidebar from './MatchWithSidebar'
+import MatchWithFullPage from './MatchWithFullPage'
 import Applicant from '../Applicant'
+import Dashboard from '../Dashboard'
 import Committee from '../Committee'
 import Settings from '../Settings'
-import AppSidebar from '../AppSidebar'
+import IndividualScholarships from '../IndividualScholarships'
+import ScholarshipDiscovery from '../ScholarshipDiscovery'
 import css from './style.css'
 
-const AppRoutes = props => {
-  return (
-    <div>
-      <Match pattern='/applicant/:id' component={Applicant} />
-      {routesWithSidebar.map(x =>
-        <MatchWithSidebar key={x.pattern} {...x} />
-      )}
-    </div>
-  )
-}
+export class AppRoutes extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-const MatchWithSidebar = ({ component:Component, pattern }) => {
-  return (
-    <Match pattern={pattern} render={props =>
+  render() {
+    return (
       <div>
-        <div className={css.main}>
-          <Component {...props} />
-        </div>
-        <AppSidebar {...props} />
+
+        <MatchWithFullPage
+          routes={[
+            {pattern: '/individual-scholarships', component: IndividualScholarships},
+            {pattern: '/scholarship-discovery', component: ScholarshipDiscovery},
+            {pattern: '/applicant/:id', component: Applicant}
+          ]} />
+
+        <MatchWithSidebar
+          routes={[
+            {pattern: '/dashboard', component: Dashboard},
+            {pattern: '/settings', component: Settings},
+            {pattern: '/committee', component: Committee},
+          ]}
+          className={css.main} />
+
+        <Match pattern='/' exactly render={props =>
+          <Redirect to='/dashboard/new' />
+        } />
+        <Match pattern='/signin' exactly render={props =>
+          <Redirect to='/dashboard/new' />
+        } />
       </div>
-    } />
-  )
+    )
+  }
 }
 
-const routesWithSidebar = [
-  {pattern: '/dashboard', component: Dashboard},
-  {pattern: '/settings', component: Settings},
-  {pattern: '/committee', component: Committee},
-]
-export default AppRoutes
+export default connect(
+  state => ({
+    applicants: state.app.applicants,
+    user: state.auth.user,
+    isNew: state.auth.isNew,
+  })
+)(AppRoutes)

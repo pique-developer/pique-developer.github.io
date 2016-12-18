@@ -5,7 +5,7 @@ import ScholarshipPostGeneral from './ScholarshipPostGeneral'
 import ScholarshipPostEssay from './ScholarshipPostEssay'
 import ScholarshipPostIntention from './ScholarshipPostIntention'
 import ScholarshipPostRequirements from './ScholarshipPostRequirements'
-import { updateApplication, updateUserInfo } from 'api/actions'
+import { updateApplication, updateUserInfo, onboardingRoute } from 'api/actions'
 import css from './style.css'
 
 export class ScholarshipPost extends Component {
@@ -93,6 +93,16 @@ export class ScholarshipPost extends Component {
       name: 'locations',
       inputs: [{name: 'locations0', value: {city: '', state: ''}}],
     },
+  }
+
+  componentDidMount() {
+    this.props.onboardingRoute()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.removeNav) {
+      this.props.onboardingRoute()
+    }
   }
 
   onPhotoUpload(url) {
@@ -220,7 +230,8 @@ const routes = [
 
 export default connect(
   state => ({
-    ...state
+    ...state,
+    removeNav: state.ui.removeNav,
   }),
-  { updateApplication, updateUserInfo }
+  { updateApplication, updateUserInfo, onboardingRoute }
 )(ScholarshipPost)

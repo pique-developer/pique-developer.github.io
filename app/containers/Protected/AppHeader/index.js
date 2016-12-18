@@ -28,53 +28,51 @@ export class AppHeader extends Component {
 
   render() {
     const { open } = this.state
-    const { user, isNew } = this.props
+    const { user } = this.props
 
-    return !isNew
-      ? <div className={css.root}>
-          <div className={`${css.modal} ${open ? css.open : ''}`}>
-            <div className={css.curtain} onClick={this.toggleDropdown} />
+    return (
+      <div className={css.root}>
+        <div className={`${css.modal} ${open ? css.open : ''}`}>
+          <div className={css.curtain} onClick={this.toggleDropdown} />
+        </div>
+
+        <div className={css.wrap}>
+          <div className={css.brand}>
+            <Link className={css.link} to="/dashboard/new">
+              <LogoIcon className={css.logo}/>
+            </Link>
           </div>
 
-          <div className={css.wrap}>
-            <div className={css.brand}>
-              <Link className={css.link} to="/dashboard/new">
-                <LogoIcon className={css.logo}/>
-              </Link>
-            </div>
+          <div className={css.border} />
 
-            <div className={css.border} />
+          <div className={css.nav}>
+            <div
+              onClick={this.toggleDropdown}
+              className={css.settings}>
+              <ul className={css.ul}>
+                <li className={css.li} >
+                  <img
+                    className={css.avatar}
+                    src={user.photoURL}
+                    onClick={this.toggleDropdown} />
 
-            <div className={css.nav}>
-              <div
-                onClick={this.toggleDropdown}
-                className={css.settings}>
-                <ul className={css.ul}>
-                  <li className={css.li} >
-                    <img
-                      className={css.avatar}
-                      src={user.photoURL}
-                      onClick={this.toggleDropdown} />
-
-                    <HeaderMenu
-                      open={open}
-                      onClick={this.toggleDropdown}
-                      signOut={this.signOut} />
-                  </li>
-                </ul>
-              </div>
+                  <HeaderMenu
+                    open={open}
+                    onClick={this.toggleDropdown}
+                    signOut={this.signOut} />
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-
-      : null
+      </div>
+    )
   }
 }
 
 export default connect(
   state => ({
     user: state.auth.user,
-    isNew: state.auth.isNew,
   }),
  Actions
 )(AppHeader)

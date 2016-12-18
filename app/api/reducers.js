@@ -110,6 +110,18 @@ const modalReducer = (state=false, action) => {
 const uiReducer = (state={}, action) => {
   switch (action.type) {
 
+    case 'LOCATION_CHANGE':
+      return {
+        ...state,
+        removeNav: false,
+      }
+
+    case 'ONBOARDING_ROUTE':
+      return {
+        ...state,
+        removeNav: true,
+      }
+
     case 'STYLE_UPDATE':
       return Object.assign({}, state, {
         ...action.payload
@@ -148,40 +160,7 @@ const appReducer = (state={ applicants }, action) => {
   }
 }
 
-const applicationReducer = (state={
-  title: '',
-  description: '',
-  photoURL: '',
-  minGPA: '',
-  minSATScore: '',
-  minACTScore: '',
-  recommendationsAmount: '',
-  communityService: '',
-  citizenship: '',
-  maxFamilyIncome: '',
-  genericRecommendations: '',
-  schoolYear: {
-    freshman: false,
-    sophmore: false,
-    senior: false,
-    junior: false,
-  },
-  genderRequirement: {
-    male: false,
-    female: false
-  },
-  ethnicity: {
-    blackAfricanAmerican: false,
-    whiteCaucasian: false,
-    asianPacificIslander: false,
-    hispanicLatino: false,
-    nativeAmerican: false,
-  },
-  degreeType: {
-    twoYear: false,
-    fourYear: false,
-  }
-}, action) => {
+const applicationReducer = (state={}, action) => {
   switch (action.type) {
 
     case 'UPDATE_USER_INFO':

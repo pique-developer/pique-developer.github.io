@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import FilePicker from 'components/FilePicker'
 import ScholarshipPostBtns from '../ScholarshipPost/ScholarshipPostBtns'
 import { CheckboxInputGroup } from '../ScholarshipPost/ScholarshipPostInputs'
-import { submitApplication } from 'api/actions'
+import { submitApplication, onboardingRoute } from 'api/actions'
 import css from './style.css'
 
 export class StudentQuestionnaire extends Component {
@@ -68,6 +68,10 @@ export class StudentQuestionnaire extends Component {
         {noAnswer: 'noAnswer', value: false, text: `I'd prefer not to answer`},
       ]
     },
+  }
+
+  componentDidMount() {
+    this.props.onboardingRoute()
   }
 
   onUploadSuccess(Blob) {
@@ -280,5 +284,5 @@ export default connect(
   state => ({
     user: state.user
   }),
-  { submitApplication }
+  { submitApplication, onboardingRoute }
 )(StudentQuestionnaire)

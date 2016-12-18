@@ -67,3 +67,7 @@ export const updateUserInfo = payload => {
   API.updateUserProfile(payload)
   return {type: 'UPDATE_USER_INFO', payload}
 }
+
+export const onboardingRoute = _ => {
+  return {type: 'ONBOARDING_ROUTE'}
+}
