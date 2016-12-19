@@ -1,0 +1,12 @@
+.root {
+  width: 100%;
+  max-width: 520px;
+}
+
+.copy {
+  font-family: 'Helvetica Neue', Helvetica, san-serif;
+  font-size: 16px;
+  line-height: 26px;
+  color: #777777;
+  margin-bottom: 40px;
+}

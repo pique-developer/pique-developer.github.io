@@ -1,0 +1,25 @@
+.root {
+  padding: 0 15px;
+  margin: 0 auto;
+  max-width: 1050px;
+}
+
+.title {
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, san-serif;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 40px;
+}
+
+
+.section {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    display: inline-block;
+    width: 50%;
+  }
+}
