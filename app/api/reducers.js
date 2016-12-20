@@ -138,7 +138,14 @@ const applicants = {
   interviewees: [],
   finalists: [],
 }
-const appReducer = (state={ applicants }, action) => {
+const scholarships = {
+  all: [],
+  national: [],
+  niche: [],
+  local: [],
+  based: [],
+}
+const appReducer = (state={ applicants, scholarships }, action) => {
   switch (action.type) {
 
     case 'FETCH_SUCCESS':

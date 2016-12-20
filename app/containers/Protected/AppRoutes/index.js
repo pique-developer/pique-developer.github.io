@@ -10,8 +10,10 @@ import Applicant from '../Applicant'
 import Dashboard from '../Dashboard'
 import Committee from '../Committee'
 import Settings from '../Settings'
+import AppSidebar from 'containers/Protected/AppSidebar'
+import StudentSidebar from 'containers/Protected/StudentSidebar'
 import IndividualScholarships from '../IndividualScholarships'
-import ScholarshipDiscovery from '../ScholarshipDiscovery'
+import Discovery from '../Discovery'
 import css from './style.css'
 
 export class AppRoutes extends Component {
@@ -25,7 +27,7 @@ export class AppRoutes extends Component {
         <MatchWithFullPage
           routes={[
             {pattern: '/individual-scholarships', component: IndividualScholarships},
-            {pattern: '/scholarship-discovery', component: ScholarshipDiscovery},
+
             {pattern: '/applicant/:id', component: Applicant}
           ]} />
 
@@ -35,7 +37,15 @@ export class AppRoutes extends Component {
             {pattern: '/settings', component: Settings},
             {pattern: '/committee', component: Committee},
           ]}
-          className={css.main} />
+          className={css.main}
+          sidebar={AppSidebar} />
+
+        <MatchWithSidebar
+          routes={[
+            {pattern: '/discovery', component: Discovery},
+          ]}
+          className={css.main}
+          sidebar={StudentSidebar} />
 
         <Match pattern='/' exactly render={props =>
           <Redirect to='/dashboard/new' />

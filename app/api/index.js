@@ -88,7 +88,7 @@ function assignDefaultProps(user) {
   }
 }
 
-export const fetchApplicants = observer => {
+export const fetchData = observer => {
   return firebase
     .database()
     .ref('test')
@@ -96,7 +96,7 @@ export const fetchApplicants = observer => {
     .once('value')
     .then(x => x.val())
     .then(convertMapToList)
-    .then(createFakeApplicants)
+    .then(createTestData)
     .then(x => observer.next(x))
     .catch(e => observer.error(e.message))
 }
@@ -106,11 +106,20 @@ function convertMapToList(data) {
     .reduce((acc, x) => acc.concat(data[x]), [])
 }
 
-function createFakeApplicants(data) {
+function createTestData(data) {
   return {
-    new: data,
-    reviewed: data.slice(2, -1),
-    interviewees: data.slice(0, -1),
-    finalists: data.slice(3, -1),
+    applicants: {
+      new: data,
+      reviewed: data.slice(2, -1),
+      interviewees: data.slice(0, -1),
+      finalists: data.slice(3, -1),
+    },
+    scholarships: {
+      all: data,
+      national: data.slice(2, -1),
+      niche: data.slice(0, -1),
+      local: data.slice(3, -1),
+      based: data.slice(0, 3),
+    }
   }
 }

@@ -1,0 +1,66 @@
+.root {
+  display: block;
+  margin: 50px auto 0;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.item {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px
+}
+
+@media (min-width: 1024px) {
+  .item {
+    width: 33.3333333333%;
+  }
+}
+
+.card {
+  height: 420px;
+  width: 100%;
+  max-width: 320px;
+  background-color: #fff;
+  box-shadow: 0 8px 40px 0 rgba(72,85,105,0.15);
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.body {
+  margin: 30px 0;
+  padding: 0 15px 15px;
+}
+
+.title {
+  font-size: 18px;
+  color: #000;
+  line-height: 22px;
+  font-weight: 400;
+  margin-bottom:  15px;
+}
+
+.copy {
+  font-weight: 200;
+  font-size: 12px;
+  color: #2A2C30;
+  line-height: 20px;
+}
+
+.copy span {
+  color: #B2BCD3;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 200;
+}
+
+.img {
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+}

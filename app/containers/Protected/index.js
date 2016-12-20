@@ -11,8 +11,8 @@ import css from './style.css'
 export class MembersRoutes extends Component {
   componentDidMount() {
     const { fetchSuccess, fetchError } = this.props
-    API.fetchApplicants({
-      next: applicants => fetchSuccess({ applicants }),
+    API.fetchData({
+      next: fetchSuccess,
       error: error => fetchError({ error }),
     })
   }
@@ -36,6 +36,7 @@ export default connect(
   state => {
     return {
       applicants: state.app.applicants,
+      scholarships: state.app.scholarships,
       user: state.auth.user,
       isNew: state.auth.isNew,
       removeNav: state.ui.removeNav,
