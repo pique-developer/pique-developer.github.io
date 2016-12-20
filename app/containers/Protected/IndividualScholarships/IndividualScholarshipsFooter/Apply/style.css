@@ -1,12 +1,23 @@
 .root {
-  width: 100%;
-  max-width: 520px;
+
+}
+
+.row {
+  composes: row from '../style.css';
+}
+
+.label {
+  composes: label from '../style.css';
+}
+
+.field {
+  composes: field from '../style.css';
+}
+
+.input {
+  composes: input from '../style.css';
 }
 
 .copy {
-  font-family: 'Helvetica Neue', Helvetica, san-serif;
-  font-size: 16px;
-  line-height: 26px;
-  color: #777777;
-  margin-bottom: 40px;
+  composes: copy from '../style.css';
 }

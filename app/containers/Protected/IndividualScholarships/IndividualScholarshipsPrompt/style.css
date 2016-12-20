@@ -22,11 +22,24 @@
 }
 
 .overview {
-  width: 60%;
-  float: left;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .overview {
+    width: 60%;
+    float: left;
+  }
 }
 
 .details {
+  display: none;
   width: 40%;
   float: right;
+}
+
+@media (min-width: 1024px) {
+  .details {
+    display: block;
+  }
 }

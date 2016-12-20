@@ -5,11 +5,11 @@ import css from './style.css'
 export const ButtonFill = ({ text, to, className }) => {
   return (
     <div className={css.root}>
-      <Link
-        to={to || '/'}
-        className={`${css.fill} ${className ? className : ''}`}>
-        {text}
-      </Link>
+      <div className={`${css.fill} ${className ? className : ''}`}>
+      {to
+        ? <Link to={to} className={css.link}>{text}</Link>
+        : <a className={css.link}>{text}</a>}
+      </div>
     </div>
   )
 }
@@ -17,11 +17,11 @@ export const ButtonFill = ({ text, to, className }) => {
 export const ButtonNoFill = ({ text, to, className }) => {
   return (
     <div className={css.root}>
-      <Link
-        to={to || '/'}
-        className={`${css.nofill} ${className ? className : ''}`}>
-        {text}
-      </Link>
+      <div className={`${css.nofill} ${className ? className : ''}`}>
+      {to
+        ? <Link to={to} className={className}>{text}</Link>
+        : <a className={css.link}>{text}</a>}
+      </div>
     </div>
   )
 }

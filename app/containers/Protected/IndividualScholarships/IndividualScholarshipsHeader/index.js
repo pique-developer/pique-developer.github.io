@@ -21,7 +21,9 @@ export class IndividualScholarshipsHeader extends Component {
         </div>
 
         <div className={css.btns}>
-          <ButtonFill to='/' text='Save' />
+          <ButtonFill
+            className={css.btn}
+            text='Save' />
         </div>
       </div>
     )

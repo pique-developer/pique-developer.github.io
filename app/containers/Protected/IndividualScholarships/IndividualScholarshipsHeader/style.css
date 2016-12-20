@@ -20,6 +20,11 @@
   color: #777777;
   margin-bottom: 40px;
   padding: 0 15px;
+  max-width: 600px;
+}
+
+.btn {
+  composes: btn from 'containers/Protected/IndividualScholarships/style.css';
 }
 
 .more {
@@ -28,6 +33,6 @@
 }
 
 .btns {
-  margin: 0 auto;
+  margin: 0 auto 50px;
   text-align: center;
 }

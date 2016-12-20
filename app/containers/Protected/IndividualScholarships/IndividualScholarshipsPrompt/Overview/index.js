@@ -21,9 +21,13 @@ export class IndividualScholarshipsOverview extends Component {
           <div className={css.text}>{copy2}</div>
         </div>
 
-        <div>
-          <ButtonNoFill text='Save' />
-          <ButtonFill text='Apply Now' />
+        <div className={css.btns}>
+          <ButtonNoFill
+            className={css.btn}
+            text='Save' />
+          <ButtonFill
+            className={css.btn}
+            text='Apply Now' />
         </div>
       </div>
     )
