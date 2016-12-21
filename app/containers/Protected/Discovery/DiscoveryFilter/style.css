@@ -1,8 +1,50 @@
 .root {
-  height: 60px;
   width: 100%;
+  color: #000000;
+  margin: 40px auto 0;
+  max-width: 1000px;
+}
+
+.bar {
+  height: 60px;
   background-color: #fff;
   box-shadow: 0 8px 40px 0 rgba(72,85,105,0.15);
   font-size: 12.5px;
-  color: #000000;
+}
+
+.caption {
+  color: #B2BCD4;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.field {
+  display: inline-block;
+  min-width: 180px;
+  line-height: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 3px;
+  border-left: 1px solid #E7E7E7;
+}
+
+.label {
+  margin: 0 10px;
+}
+
+.field:nth-child(1) {
+  border-left: none;
+}
+
+.field select {
+  float: right;
+  margin: 20px 20px 0;
+  color: #4FD580;
+}
+
+.range,
+.field input[type="range" i] {
+  margin-left: 10px;
+  background-color: #31D36C;
+  color: #31D36C;
 }

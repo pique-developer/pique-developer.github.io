@@ -61,6 +61,7 @@
 }
 
 .img {
+  position: relative;
   height: 150px;
   width: 100%;
   background-size: cover;
@@ -89,4 +90,10 @@
 .svg {
   vertical-align: text-bottom;
   margin-right: 5px;
+}
+
+.save {
+  position: absolute;
+  bottom: -45px;
+  right: 0;
 }
