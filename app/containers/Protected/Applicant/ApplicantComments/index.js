@@ -5,6 +5,7 @@ import css from './style.css'
 export const ApplicantComments = props => {
   return (
     <div className={css.root}>
+      <div className={css.header}>Committee Review: Interview Review</div>
       <div className={css.comments}>
       {comments.map((x, i) =>
         <div key={i} className={css.comment}>

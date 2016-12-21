@@ -24,3 +24,23 @@
     width: 380px;
   }
 }
+
+.header {
+  height: 45px;
+  position: relative;
+  border-radius: 3px;
+  width: 100%;
+  font-size: 18px;
+  color: #fff;
+  padding-left: 30px;
+  line-height: 45px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(229deg, #44BCEF 1%, #3FB2EE 11%, #195AE1 100%);
+}
+
+.box {
+  height: 800px;
+  width: 100%;
+  border: 1px solid #979797;
+  margin-bottom: 10px;
+}

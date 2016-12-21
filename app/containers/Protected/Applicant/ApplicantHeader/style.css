@@ -15,34 +15,33 @@
   background-position-x: 50%;
   height: 160px;
   width: 160px;
-  margin-right: 25px;
+  margin-right: 10px;
   top: -60px;
+  border: 6px solid #FFFBFB;
 }
 
 .info {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin: 20px auto;
+  margin: 5px auto;
 }
 
 .name {
-  font-weight: 200;
-  letter-spacing: 1px;
-  font-size: 36px;
-  line-height: 40px;
-  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
 }
 
 .desc {
   font-weight: 200;
   font-size: 16px;
-  line-height: 17px;
-  margin-bottom: 10px;
+  line-height: 26px;
 }
 
 .location {
   color: #a0a0a0;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 16px;
+  line-height: 26px;
   margin-bottom: 10px;
 }
 

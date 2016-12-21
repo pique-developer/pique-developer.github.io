@@ -23,10 +23,9 @@ const StudentSidebar = ({ user }) => {
 const links = [{
   title: 'Scholarships',
   links: [
-    {to: '/discovery/all',      text: 'All Scholarships'},
-    {to: '/discovery/national', text: 'National Scholarships'},
-    {to: '/discovery/niche',    text: 'Niche National Scholarships'},
-    {to: '/discovery/local',    text: 'Local Scholarships'},
+    {to: '/discovery/all', text: 'Recommendations'},
+    {to: '/discovery/all', text: 'Saved'},
+    {to: '/discovery/all', text: 'Applied'},
   ],
 },{
   title: 'Request Documents',

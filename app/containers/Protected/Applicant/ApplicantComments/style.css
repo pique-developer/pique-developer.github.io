@@ -11,6 +11,14 @@
   border-radius: 3px;
 }
 
+.header {
+  composes: header from '../style.css';
+}
+
+.box {
+  composes: box from '../style.css';
+}
+
 .name {
   display: inline-block;
   font-size: 14px;
@@ -24,6 +32,8 @@
 }
 
 .comments {
+  composes: box from '../style.css';
+  height: auto;
   width: 100%;
   background-color: white;
   box-shadow: 0px 2px 7px #d9d9da;

@@ -6,6 +6,10 @@ import css from './style.css'
 export const ApplicantUploads = props => {
   return (
     <div className={css.root}>
+      <div className={css.header}>About</div>
+      <div className={css.box}>
+
+      </div>
       <div className={css.half}>
         <div className={css.title}>
           <Apple className={css.icon} />
