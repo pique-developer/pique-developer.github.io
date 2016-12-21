@@ -113,7 +113,6 @@ function convertMapToList(data) {
 }
 
 function createTestData({ applicants, scholarships }) {
-  console.log()
   return {
     applicants: {
       new: applicants,
@@ -124,9 +123,9 @@ function createTestData({ applicants, scholarships }) {
     scholarships: {
       all: scholarships,
       national: scholarships.slice(0, 2),
-      niche: scholarships.slice(0, 1),
+      niche: scholarships.slice(-1),
       local: scholarships,
-      based: scholarships.slice(-1),
+      based: scholarships.slice(1, 2),
     }
   }
 }

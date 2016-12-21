@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import DiscoveryNav from './DiscoveryNav'
 import DiscoveryCards from './DiscoveryCards'
+import DiscoveryFilter from './DiscoveryFilter'
 import css from './style.css'
 
 export class Discovery extends Component {
@@ -59,7 +60,7 @@ export class Discovery extends Component {
           pattern='/discovery'
           render={props =>
             <DiscoveryNav {...props} links={links} />} />
-
+        <DiscoveryFilter />
         {routes.map(x =>
           <Match
             pattern={x.pattern}

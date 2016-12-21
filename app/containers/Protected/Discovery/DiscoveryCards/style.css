@@ -24,6 +24,7 @@
 }
 
 .card {
+  position: relative;
   height: 420px;
   width: 100%;
   max-width: 320px;
@@ -63,4 +64,29 @@
   height: 150px;
   width: 100%;
   background-size: cover;
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  left: 15px;
+}
+
+.row {
+  line-height: 30px;
+  font-size: 12px;
+  color: #B2BCD4;
+}
+
+.row span {
+  color: #44D378;
+  font-size: 24px;
+  line-height: 29px;
+  margin-right: 5px;
+}
+
+.svg {
+  vertical-align: text-bottom;
+  margin-right: 5px;
 }
