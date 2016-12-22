@@ -55,22 +55,22 @@ export class Discovery extends Component {
     const { links, routes } = this.state
     return (
       <div className={css.root}>
-      <div className='wrap'>
-        <Match
-          pattern='/discovery'
-          render={props =>
-            <DiscoveryNav {...props} links={links} />} />
-        <DiscoveryFilter />
-        {routes.map(x =>
+        <div className='wrap'>
           <Match
-            pattern={x.pattern}
-            key={x.key}
+            pattern='/discovery'
             render={props =>
-              <DiscoveryCards
-                {...props}
-                items={x.items}
-                key={x.key} />} />)}
-      </div>
+              <DiscoveryNav {...props} links={links} />} />
+          <DiscoveryFilter />
+          {routes.map(x =>
+            <Match
+              pattern={x.pattern}
+              key={x.key}
+              render={props =>
+                <DiscoveryCards
+                  {...props}
+                  items={x.items}
+                  key={x.key} />} />)}
+        </div>
       </div>
     )
   }

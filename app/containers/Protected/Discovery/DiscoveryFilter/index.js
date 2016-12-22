@@ -7,6 +7,7 @@ export class DiscoveryFilter extends Component {
     return (
       <div className={css.root}>
         <div className={css.caption}>Filter Even More for a Better Search</div>
+
         <div className={css.bar}>
           <div className={css.field}>
             <label className={css.label}>US Citizen</label>
@@ -40,9 +41,12 @@ export class DiscoveryFilter extends Component {
           </div>
           <div className={css.field}>
             <label className={css.label}>Word Limit</label>
-            <input
-              className={css.range}
-              type="range" />
+            <select className={css.input}>
+              <option value="250">250</option>
+              <option value="250">500</option>
+              <option value="250">750</option>
+              <option value="250">1000</option>
+            </select>
           </div>
         </div>
       </div>

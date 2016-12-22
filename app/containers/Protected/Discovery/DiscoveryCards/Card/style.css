@@ -1,7 +1,8 @@
 .root {
   display: inline-block;
   position: relative;
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -15,6 +16,7 @@
   height: 420px;
   width: 100%;
   max-width: 320px;
+  margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 8px 40px 0 rgba(72,85,105,0.15);
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
@@ -83,4 +85,5 @@
   position: absolute;
   bottom: -45px;
   right: 0;
+  cursor: pointer;
 }
