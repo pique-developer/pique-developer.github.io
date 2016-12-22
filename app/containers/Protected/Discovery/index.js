@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
+import Redirect from 'react-router/Redirect'
 import DiscoveryNav from './DiscoveryNav'
 import DiscoveryCards from './DiscoveryCards'
 import DiscoveryFilter from './DiscoveryFilter'
@@ -14,18 +15,18 @@ export class Discovery extends Component {
 
   static defaultProps = {
     routes: [
-      {pattern: '/discovery/all',      key: 'all'},
-      {pattern: '/discovery/national', key: 'national'},
-      {pattern: '/discovery/niche',    key: 'niche'},
-      {pattern: '/discovery/local',    key: 'local'},
-      {pattern: '/discovery/based',    key: 'based'},
+      {pattern: '/all',      key: 'all'},
+      {pattern: '/national', key: 'national'},
+      {pattern: '/niche',    key: 'niche'},
+      {pattern: '/local',    key: 'local'},
+      {pattern: '/based',    key: 'based'},
     ],
     links: [
-      {to: '/discovery/all',      key: 'all',      text: 'All Scholarships'},
-      {to: '/discovery/national', key: 'national', text: 'National Scholarships'},
-      {to: '/discovery/niche',    key: 'niche',    text: 'Niche National Scholarships'},
-      {to: '/discovery/local',    key: 'local',    text: 'Local Scholarships'},
-      {to: '/discovery/based',    key: 'based',    text: 'Based on Previous Applications'},
+      {to: '/all',      key: 'all',      text: 'All Scholarships'},
+      {to: '/national', key: 'national', text: 'National Scholarships'},
+      {to: '/niche',    key: 'niche',    text: 'Niche National Scholarships'},
+      {to: '/local',    key: 'local',    text: 'Local Scholarships'},
+      {to: '/based',    key: 'based',    text: 'Based on Previous Applications'},
     ]
   }
 
@@ -39,45 +40,60 @@ export class Discovery extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.scholarships !== this.props.scholarships) {
+    if (nextProps.scholarships !== this.props.scholarships
+      || nextProps.parentRoute !== this.props.parentRoute) {
       this.computeRoutingState(nextProps)
     }
   }
 
-  computeRoutingState({ links, routes, scholarships }) {
+  computeRoutingState({ links, routes, scholarships, parentRoute }) {
     this.setState({
-      links: links.map(x => ({...x, count: scholarships[x.key].length})),
-      routes: routes.map(x => ({...x, items: scholarships[x.key]}))
+      links: links.map(x => ({
+        ...x,
+        to:`/discovery/${parentRoute}${x.to}`,
+        count: scholarships[x.key].length,
+      })),
+      routes: routes.map(x => ({
+        ...x,
+        pattern:`/discovery/${parentRoute}${x.pattern}`,
+        items: scholarships[x.key]
+      }))
     })
   }
 
   render() {
+    const { parentRoute } = this.props
     const { links, routes } = this.state
-    return (
-      <div className={css.root}>
-        <div className='wrap'>
-          <Match
-            pattern='/discovery'
-            render={props =>
-              <DiscoveryNav {...props} links={links} />} />
-          <DiscoveryFilter />
-          {routes.map(x =>
+    return !!parentRoute
+      ? <div className={css.root}>
+          <div className='wrap'>
             <Match
-              pattern={x.pattern}
-              key={x.key}
-              render={props =>
-                <DiscoveryCards
-                  {...props}
-                  items={x.items}
-                  key={x.key} />} />)}
+              pattern='/discovery'
+              render={props => <DiscoveryNav {...props} links={links} />} />
+            <DiscoveryFilter />
+            {routes.map(x =>
+              <Match
+                pattern={x.pattern}
+                key={x.key}
+                render={props =>
+                  <DiscoveryCards {...props} items={x.items} key={x.key} />
+                } />)}
+          </div>
         </div>
-      </div>
-    )
+      : <Redirect to='/discovery/recommended/all' />
   }
 }
 
+function updateParentRoute(pathname) {
+  return ['recommended', 'saved', 'applied']
+    .filter(x => pathname.includes(x))[0]
+}
+
 export default connect(
-  state => ({
-    scholarships: state.app.scholarships,
-  })
+  state => {
+    return {
+      scholarships: state.app.scholarships,
+      parentRoute: updateParentRoute(state.routing.route)
+    }
+  }
 )(Discovery)

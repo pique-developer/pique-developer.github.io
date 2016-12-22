@@ -23,9 +23,9 @@ const StudentSidebar = ({ user }) => {
 const links = [{
   title: 'Scholarships',
   links: [
-    {to: '/discovery/all', text: 'Recommendations'},
-    {to: '/discovery/all', text: 'Saved'},
-    {to: '/discovery/all', text: 'Applied'},
+    {to: '/discovery/recommended/all', key: 'recommended', text: 'Recommended'},
+    {to: '/discovery/saved/all',       key: 'saved',       text: 'Saved'},
+    {to: '/discovery/applied/all',     key: 'applied',     text: 'Applied'},
   ],
 },{
   title: 'Request Documents',

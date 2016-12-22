@@ -33,8 +33,7 @@ export class SidebarDropdown extends Component {
                   ? <Link
                       className={css.link}
                       to={x.to}
-                      activeClassName={css.active}
-                      activeOnlyWhenExact={x.activeOnlyWhenExact}>
+                      activeClassName={css.active}>
                       <div className={css.caption}>{x.text}</div>
                     </Link>
                   : <div
