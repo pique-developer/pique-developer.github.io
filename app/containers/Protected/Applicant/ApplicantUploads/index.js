@@ -3,6 +3,7 @@ import Apple from 'components/Icons/Apple'
 import Book from 'components/Icons/Book'
 import ApplicantAbout from './About'
 import ApplicantDocuments from './Documents'
+import ApplicantPreview from './Preview'
 import css from './style.css'
 
 export const ApplicantUploads = props => {
@@ -60,48 +61,5 @@ export const ApplicantUploads = props => {
     </div>
   )
 }
-
-const UploadPreview = ({ image, caption }) => {
-  return (
-    <div className={css.grid}>
-      <div className={css.preview} style={{backgroundImage: `url(${image})`}}/>
-      <div className={css.caption}>{caption}</div>
-    </div>
-  )
-}
-
-const image = 'https://get-pique.github.io/images/doc.jpg'
-
-const transcripts = [
-  {
-    image,
-    caption: 'Offical Transcript',
-  }
-]
-
-const testScores = [
-  {
-    image,
-    caption: '90th Percentile',
-  }
-]
-
-const recommendations = [
-  {
-    image,
-    caption: 'Homework',
-  },{
-    image,
-    caption: 'Recommendation',
-  }
-
-]
-
-const essays = [
-  {
-    image,
-    caption: 'Homework',
-  }
-]
 
 export default ApplicantUploads
