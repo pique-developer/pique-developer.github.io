@@ -19,7 +19,6 @@
   .root {
     padding: 0;
     float: left;
-    width: 50%;
     max-width: 575px;
   }
 }
@@ -51,7 +50,7 @@
 
 .grid {
   display: inline-block;
-  width: 245px;
+  width: 215px;
   height: 134px;
   margin: 0 20px 20px 0;
   border: 2px solid #e2eaf3;
@@ -59,8 +58,8 @@
 
 @media (min-width: 1210px) {
   .half {
-    width: 47%;
     display: inline-block;
+    width: 50%;
   }
 }
 

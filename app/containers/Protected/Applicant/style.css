@@ -1,7 +1,7 @@
 .root {
   height: 100%;
   width: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 70px;
   overflow: auto;
 }
 
@@ -39,8 +39,22 @@
 }
 
 .box {
-  height: 800px;
   width: 100%;
   border: 1px solid #979797;
   margin-bottom: 10px;
+}
+
+.copy {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #2B2A2A;
+  line-height: 23px;
+  font-size: 14px;
+}
+
+.placeholder {
+  composes: copy;
+  line-height: 25px;
+  font-style: italic;
+  color: #988F8F;
 }

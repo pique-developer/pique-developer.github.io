@@ -15,7 +15,7 @@ export const Applicant = props => {
       <ApplicantCover />
       <div className={css.profile}>
         <ApplicantHeader {...props} />
-        <ApplicantUploads />
+        <ApplicantUploads {...props} />
         <div className={css.board}>
           <ApplicantQuestionnaire {...props} />
           <ApplicantComments />
@@ -26,12 +26,14 @@ export const Applicant = props => {
   )
 }
 
+function getProfile(group, id) {
+  return group.filter(x => x.id === id)[0]
+}
+
 export default connect(
   (state, ownProps) => {
-    const profile = state.app.applicants.new
-      .filter(x => x.id === ownProps.params.id)[0]
     return {
-      ...profile
+      ...getProfile(state.app.applicants.new, ownProps.params.id)
     }
   }
 )(Applicant)
