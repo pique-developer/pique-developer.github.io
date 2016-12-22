@@ -35,12 +35,32 @@
 .wrap {
   position: relative;
   max-width: 1400px;
+  margin: 0 auto 0 0;
 }
 
 .wrap:after {
   display: block;
   content: '';
   clear: both;
+}
+
+@media (min-width: 1024px) {
+  .compact {
+    margin: 0 auto;
+  }
+
+  .compact {
+    max-width: 980px;
+  }
+
+  .compact .brand {
+    width: auto;
+    margin: 0 auto 0 15px;
+  }
+
+  .compact .border {
+    background-color: transparent;
+  }
 }
 
 .curtain {

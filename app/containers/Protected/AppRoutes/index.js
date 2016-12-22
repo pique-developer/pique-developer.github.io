@@ -27,7 +27,6 @@ export class AppRoutes extends Component {
         <MatchWithFullPage
           routes={[
             {pattern: '/individual-scholarships', component: IndividualScholarships},
-
             {pattern: '/applicant/:id', component: Applicant}
           ]} />
 

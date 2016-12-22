@@ -10,9 +10,28 @@ import css from './style.css'
 export class AppHeader extends Component {
   constructor(props) {
     super(props)
-    this.state = {open: false}
     this.signOut = :: this.signOut
     this.toggleDropdown = ::this.toggleDropdown
+    this.updateLayoutOnLocationChange = ::this.updateLayoutOnLocationChange
+  }
+
+  state = {
+    open: false,
+    compact: false
+  }
+
+  componentDidMount() {
+    this.updateLayoutOnLocationChange(this.props.compact)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.updateLayoutOnLocationChange(nextProps.compact)
+  }
+
+  updateLayoutOnLocationChange(compact) {
+    if (compact !== this.state.compact) {
+      this.setState({ compact })
+    }
   }
 
   toggleDropdown() {
@@ -27,7 +46,7 @@ export class AppHeader extends Component {
   }
 
   render() {
-    const { open } = this.state
+    const { open, compact } = this.state
     const { user } = this.props
 
     return (
@@ -36,7 +55,7 @@ export class AppHeader extends Component {
           <div className={css.curtain} onClick={this.toggleDropdown} />
         </div>
 
-        <div className={css.wrap}>
+        <div className={`${css.wrap} ${compact ? css.compact : ''}`}>
           <div className={css.brand}>
             <Link className={css.link} to="/dashboard/new">
               <LogoIcon className={css.logo}/>
@@ -70,9 +89,16 @@ export class AppHeader extends Component {
   }
 }
 
+function setCompact(pathname) {
+  return pathname.startsWith('/applicant/')
+}
+
 export default connect(
-  state => ({
-    user: state.auth.user,
-  }),
+  state => {
+    return {
+      user: state.auth.user,
+      compact: setCompact(state.routing.route),
+    }
+  },
  Actions
 )(AppHeader)
