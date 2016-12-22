@@ -15,8 +15,7 @@ export class IndividualScholarships extends Component {
       <div className={css.root}>
         <IndividualScholarshipsBanner />
         <IndividualScholarshipsHeader />
-        <IndividualScholarshipsPrompt number={1} />
-        <IndividualScholarshipsPrompt number={2} />
+        <IndividualScholarshipsPrompt />
         <IndividualScholarshipsFooter />
       </div>
 

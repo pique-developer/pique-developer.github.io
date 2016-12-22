@@ -38,10 +38,10 @@ class DiscoveryCards extends Component {
           </div>
           <div className={css.footer}>
             <div className={css.row}>
-              <TimerIcon className={css.svg} /> <span>31</span> days to apply
+              <TimerIcon className={css.svg} /> <span className={css.time}>31</span> days to apply
             </div>
             <div className={css.row}>
-              <RewardIcon className={css.svg} /> <span>$1,000</span> in total
+              <RewardIcon className={css.svg2} /> <span className={css.money}>$1,000</span> in total
             </div>
           </div>
         </div>

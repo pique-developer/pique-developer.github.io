@@ -81,6 +81,20 @@
   margin-right: 5px;
 }
 
+.svg2 {
+  composes: svg;
+  border: 1px solid #44D378;
+  border-radius: 50%;
+}
+
+.time {
+  color: #F69423;
+}
+
+.money {
+  color: #44D378;
+}
+
 .save {
   position: absolute;
   bottom: -45px;
