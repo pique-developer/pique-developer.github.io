@@ -21,6 +21,11 @@
   padding: 0 15px;
 }
 
+.border {
+  border: 1px solid #EFEFEF;
+  margin-bottom: 30px;
+}
+
 .overview {
   width: 100%;
 }
