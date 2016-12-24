@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TimerIcon from 'components/Icons/Timer'
+import TimerImage from 'components/Icons/Timer'
 import RewardIcon from 'components/Icons/Reward'
 import SaveFillIcon from 'components/Icons/SaveFill'
 import SaveNoFillIcon from 'components/Icons/SaveNoFill'
@@ -38,7 +38,7 @@ class DiscoveryCards extends Component {
           </div>
           <div className={css.footer}>
             <div className={css.row}>
-              <TimerIcon className={css.svg} /> <span className={css.time}>31</span> days to apply
+              <TimerImage className={css.svg} /> <span className={css.time}>31</span> days to apply
             </div>
             <div className={css.row}>
               <RewardIcon className={css.svg2} /> <span className={css.money}>$1,000</span> in total
