@@ -1,3 +1,6 @@
+require('events').EventEmitter.prototype._maxListeners = 100; 
+// temporary, but this should be fixed sometime
+
 const path = require('path')
 const webpack = require('webpack')
 const cssnext = require('postcss-cssnext')
