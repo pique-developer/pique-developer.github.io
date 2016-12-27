@@ -18,14 +18,16 @@
 @media (min-width: 1024px) {
   .root {
     padding: 0;
-    float: left;
-    max-width: 575px;
+    /* float: left; */
+    margin: 0 auto;
+    /* max-width: 575px; */
   }
 }
 
 @media (min-width: 1210px) {
   .root {
-    width: 58%;
+    /* width: 58%; */
+    width: 800px;
   }
 }
 

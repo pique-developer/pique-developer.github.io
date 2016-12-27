@@ -8,6 +8,7 @@
 @media (min-width: 1024px) {
   .root {
     height: 760px;
+    overflow-y: hidden;
   }
 }
 
