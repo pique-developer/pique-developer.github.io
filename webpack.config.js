@@ -20,6 +20,11 @@ const configureWebpack = opts => ({
     path: path.resolve(CWD, 'build'),
   }, opts.output),
 
+  node: {
+    fs: 'empty',
+    net: 'empty'
+  },
+
   module: {
     loaders: [{
       test: /\.js$/,
@@ -160,7 +165,7 @@ const prodBuild = _ => configureWebpack({
       favicon: 'app/favicon.png',
       inject: true,
       title: 'Get Pique',
-      filename: '../index.html',
+      filename: '../build/index.html',
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
     new webpack.DefinePlugin({
