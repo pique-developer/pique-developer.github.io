@@ -30,17 +30,17 @@ const transcripts = [
 const testScores = [
   {
     image,
-    caption: '90th Percentile',
+    caption: 'Test Score',
   }
 ]
 
 const recommendations = [
   {
     image,
-    caption: 'Homework',
+    caption: 'Recommendation #1',
   },{
     image,
-    caption: 'Recommendation',
+    caption: 'Recommendation #2',
   }
 
 ]
@@ -48,7 +48,7 @@ const recommendations = [
 const essays = [
   {
     image,
-    caption: 'Homework',
+    caption: 'Community Service Essay',
   }
 ]
 
