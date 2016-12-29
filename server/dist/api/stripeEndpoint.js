@@ -3,8 +3,11 @@
 var express = require('express');
 var router = express.Router();
 
-var config = require('./../../../config/get-pique-stripe.json');
-var stripe = require('stripe')(config.test_secret_key);
+var stripe_test_secret_key = 
+  process.env.NODE_ENV == 'production' ? 
+  process.env.stripe_test_secret_key : 
+  require('./../../../config.json').stripe_test_secret_key;
+var stripe = require('stripe')(stripe_test_secret_key);
 
 router.post('/charge', function (req, res) {
   var token = request.body.stripeToken;

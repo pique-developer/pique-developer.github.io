@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router()
 
-var config = require('./../../../config/get-pique-stripe.json')
-var stripe = require('stripe')(config.test_secret_key)
+const stripe_test_secret_key = 
+  process.env.NODE_ENV == 'production' ? 
+  process.env.stripe_test_secret_key : 
+  require('./../../../config.json').stripe_test_secret_key
+const stripe = require('stripe')(stripe_test_secret_key)
 
 router.post('/charge', (req, res) => {
   const token = request.body.stripeToken
