@@ -3,7 +3,7 @@
 var express = require('express');
 var router = express.Router();
 
-var config = require('./../../../config/get-pique-stripe.json');
+var config = require('./../../../../config/get-pique-stripe.json');
 var stripe = require('stripe')(config.test_secret_key);
 
 router.post('/charge', function (req, res) {
