@@ -13,7 +13,7 @@
     "build-server": "babel ./server/src -d ./server/dist",
     "build-client": "webpack --progress -p",
     "prebuild": "npm run clean",
-    "build": "npm run build-client && npm run build-server",
+    "build": "NODE_ENV=production npm run build-client && npm run build-server",
     "postbuild": "node ./scripts/cross-browser-open.js ./build/index.html"
   },
   "dependencies": {

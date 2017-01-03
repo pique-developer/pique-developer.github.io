@@ -1,4 +1,4 @@
-require('events').EventEmitter.prototype._maxListeners = 100; 
+require('events').EventEmitter.prototype._maxListeners = 100;
 // temporary, but this should be fixed sometime
 
 const path = require('path')
@@ -144,7 +144,6 @@ const prodBuild = _ => configureWebpack({
   },
 
   output: {
-    publicPath: 'build/',
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js'
   },
@@ -165,7 +164,6 @@ const prodBuild = _ => configureWebpack({
       favicon: 'app/favicon.png',
       inject: true,
       title: 'Get Pique',
-      filename: '../build/index.html',
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
     new webpack.DefinePlugin({
