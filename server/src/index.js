@@ -1,19 +1,20 @@
 import 'babel-polyfill';
 const path = require('path');
-const fs = require('fs')
 const express = require('express');
+const bodyParser = require('body-parser')
+const stripeEndpoint = require('./api/stripeEndpoint')
+
 const app = express();
 
-const bodyParser = require('body-parser')
-app.use(bodyParser.json())
-// app.use('/build', express.static('build'))
+const publicPath = '/'
+const outputPath = path.resolve(__dirname, '..', '..', 'build')
 
-const stripeEndpoint = require('./api/stripeEndpoint')
+app.use(publicPath, express.static(outputPath))
+app.use(bodyParser.json())
 app.use('/api/stripe', stripeEndpoint)
 
 app.get('*', (req, res) => {
-  const filepath = path.join(__dirname, '..', '..', 'build', 'index.html')
-  res.sendFile(fs.readFileSync(filepath).toString())
+  res.sendFile(path.resolve(outputPath, 'index.html'))
 })
 
 app.listen(process.env.PORT || 5000)

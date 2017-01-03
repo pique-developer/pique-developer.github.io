@@ -3,20 +3,21 @@
 require('babel-polyfill');
 
 var path = require('path');
-var fs = require('fs');
 var express = require('express');
+var bodyParser = require('body-parser');
+var stripeEndpoint = require('./api/stripeEndpoint');
+
 var app = express();
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
-// app.use('/build', express.static('build'))
+var publicPath = '/';
+var outputPath = path.resolve(__dirname, '..', '..', 'build');
 
-var stripeEndpoint = require('./api/stripeEndpoint');
+app.use(publicPath, express.static(outputPath));
+app.use(bodyParser.json());
 app.use('/api/stripe', stripeEndpoint);
 
 app.get('*', function (req, res) {
-  var filepath = path.join(__dirname, '..', '..', 'build', 'index.html');
-  res.sendFile(fs.readFileSync(filepath).toString());
+  res.sendFile(path.resolve(outputPath, 'index.html'));
 });
 
 app.listen(process.env.PORT || 5000);
