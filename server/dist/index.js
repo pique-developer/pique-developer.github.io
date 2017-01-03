@@ -7,15 +7,15 @@ var fs = require('fs');
 var express = require('express');
 var app = express();
 
-// const bodyParser = require('body-parser')
-// app.use(bodyParser.json())
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 // app.use('/build', express.static('build'))
 
 var stripeEndpoint = require('./api/stripeEndpoint');
 app.use('/api/stripe', stripeEndpoint);
 
 app.get('*', function (req, res) {
-  var filepath = path.join(process.cwd(), 'build', 'index.html');
+  var filepath = path.join(__dirname, '..', '..', 'build', 'index.html');
   res.sendFile(fs.readFileSync(filepath).toString());
 });
 
