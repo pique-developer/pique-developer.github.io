@@ -24,6 +24,7 @@
     "express": "^4.14.0",
     "filepicker-js": "^2.4.18",
     "firebase": "^3.6.3",
+    "mongoose": "^4.7.6",
     "nuka-carousel": "^2.0.3",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -31,6 +32,7 @@
     "react-router": "4.0.0-alpha.6",
     "redux": "^3.6.0",
     "sanitize.css": "^4.1.0",
+    "shortid": "^2.2.6",
     "stripe": "^4.14.0"
   },
   "devDependencies": {
