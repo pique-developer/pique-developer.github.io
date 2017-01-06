@@ -30,8 +30,8 @@ export const authenticating = _ => {
   return {type: 'AUTHENTICATING'}
 }
 
-export const switchForm = _ => {
-  return {type: 'SWITCH_FORM'}
+export const isLoading = payload => {
+  return {type: 'LOADING', payload}
 }
 
 export const loginSuccess = payload => {

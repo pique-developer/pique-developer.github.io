@@ -39,7 +39,6 @@ export class App extends Component {
 
   render() {
     const { user, initialized, loading, open } = this.props
-
     return (
       <div className={`${css.root} ${open ? css.open : ''}`}>
         {loading ? <LoadingIndicator /> : null}

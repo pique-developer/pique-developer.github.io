@@ -14,6 +14,9 @@ const registerReducer = (state=false, action) => {
 const loadingReducer = (state=false, action) => {
   switch (action.type) {
 
+    case 'LOADING':
+      return action.payload
+
     case 'AUTHENTICATING':
       return true
 
@@ -26,7 +29,7 @@ const loadingReducer = (state=false, action) => {
   }
 }
 
-const authReducer = (state={user: false, initialized: false, error: '', login: true, isNew: true}, action) => {
+const authReducer = (state={user: false, initialized: false, error: '', isNew: true}, action) => {
   switch (action.type) {
 
     case 'AUTHENTICATING':
@@ -43,18 +46,12 @@ const authReducer = (state={user: false, initialized: false, error: '', login: t
     case 'LOGIN_SUCCESS':
       return Object.assign({}, state, {
         user: action.payload.user,
-        login: state.login,
       })
 
     case 'LOGIN_ERROR':
       return Object.assign({}, state, {
         error: action.payload.error,
         initialized: true,
-      })
-
-    case 'SWITCH_FORM':
-      return Object.assign({}, state, {
-        login: !state.login,
       })
 
     case 'SIGNOUT':

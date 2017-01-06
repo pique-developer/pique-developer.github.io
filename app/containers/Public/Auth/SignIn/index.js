@@ -1,94 +1,77 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import * as API from 'api'
-import * as Actions from 'api/actions'
+import React, { Component, PropTypes } from 'react'
 import css from './style.css'
 
 export class SignIn extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      email: '',
-      password: '',
-    }
-    this.handleInputChanges = ::this.handleInputChanges
-    this.handleKeyPress = ::this.handleKeyPress
-    this.handleSubmit = ::this.handleSubmit
+  static propTypes = {
+    email: PropTypes.string,
+    password: PropTypes.string
   }
 
-  componentDidMount() {
-    this.autoFocus.focus()
-  }
-
-  handleKeyPress(e) {
-    if (e.charCode === 13) {
-      this.handleSubmit(e)
+  handleKeyPress = e => {
+    if (e.charCode == 13) {
+      e.preventDefault()
+      this.props.handleSubmit()
     }
   }
 
-  handleInputChanges(e) {
-    const { name, value } = e.target
-    this.setState({[name]: value})
-  }
-
-  handleSubmit(e) {
+  handleClick = e => {
     e.preventDefault()
-    const { email, password } = this.state
-    const { authenticating, loginSuccess, loginError } = this.props
-    authenticating()
-    API.signIn(email, password)
-      .catch(e => loginError({
-        error: e.code === 'auth/wrong-password'
-          ? 'Incorrect password'
-          : console.error(e) || e.message
-      }))
+    this.props.handleSubmit()
+  }
+
+  handleChange = ({ target }) => {
+    this.props.handleChange({[target.name]: target.value})
   }
 
   render() {
-    const { email, password } = this.state
-    const { switchForm, error } = this.props
+    const { email, password, toggleForm, error } = this.props
     return (
       <div className={css.root}>
         <div className={css.header} />
-        <div className={css.row}>
-          <input
-            className={css.full}
-            ref={i => this.autoFocus = i}
-            name="email"
-            onChange={this.handleInputChanges}
-            value={email}
-            onKeyPress={this.handleKeyPress}
-            type="email"
-            placeholder="Enter your email" />
-        </div>
-        <div className={css.row}>
-          <input
-            className={css.full}
-            name="password"
-            onChange={this.handleInputChanges}
-            value={password}
-            onKeyPress={this.handleKeyPress}
-            type="password"
-            placeholder="Password" />
-        </div>
-        <div className={css.btns}>
-          <span className={css.notify}>{error}</span>
-          <button
-            className={css.submit}
-            onClick={this.handleSubmit}>Log In</button>
-          <button
-            className={css.switch}
-            onClick={switchForm}>Need an account</button>
-        </div>
-        <div className={css.caption} />
+        <form onKeyPress={this.handleKeyPress}>
+
+          <div className={css.row}>
+            <input
+              className={css.full}
+              ref={i => this.autoFocus = i}
+              name="email"
+              onChange={this.handleChange}
+              value={email}
+              onKeyPress={this.handleKeyPress}
+              type="email"
+              placeholder="Enter your email" />
+          </div>
+
+          <div className={css.row}>
+            <input
+              className={css.full}
+              name="password"
+              onChange={this.handleChange}
+              value={password}
+              onKeyPress={this.handleKeyPress}
+              type="password"
+              placeholder="Password" />
+          </div>
+
+          <div className={css.btns}>
+            <span className={css.notify}>{error}</span>
+            <button
+              onClick={this.handleSubmit}
+              className={css.submit}>
+              Log In
+            </button>
+            <button
+              className={css.switch}
+              type="button"
+              onClick={toggleForm}>
+              Need an account
+            </button>
+          </div>
+          <div className={css.caption} />
+        </form>
       </div>
     )
   }
 }
 
-export default connect(
-  state => ({
-    error: state.auth.error,
-  }),
-  Actions)
-(SignIn)
+export default SignIn
