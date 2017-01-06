@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import axios from 'axios'
 import { firebaseAuth } from 'api'
 import { isLoading } from 'api/actions'
 import SignIn from './SignIn'
@@ -54,7 +55,8 @@ export class Auth extends Component {
       ? this.showErrorMessage({message: 'All fields are required.'})
       : firebaseAuth()
           .createUserWithEmailAndPassword(data.email, data.password)
-          .then(x => console.log(x))
+          .then(this.requestUserAccount)
+          .catch(this.showErrorMessage)
   }
 
   submitSignIn = ({ email, password }) => {
@@ -65,6 +67,10 @@ export class Auth extends Component {
 
   showErrorMessage = ({ message }) => {
     this.setState({error: message})
+  }
+
+  requestUserAccount = data => {
+    axios.post('/users/create', data)
   }
 
   render() {

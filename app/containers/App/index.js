@@ -17,10 +17,10 @@ export class App extends Component {
 
   componentWillMount() {
     const { initAuthState, loginError } = this.props
-    API.initApp({
-      next: user => initAuthState({ user }),
-      error: e   => loginError({error: e.message})
-    })
+    // API.initApp({
+    //   next: user => initAuthState({ user }),
+    //   error: e   => loginError({error: e.message})
+    // })
   }
 
   componentDidMount() {
