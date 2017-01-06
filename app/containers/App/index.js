@@ -9,9 +9,10 @@ import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class App extends Component {
-  constructor(props) {
-    super(props)
-    this.updateRouteState = ::this.updateRouteState
+
+  updateRouteState = props => {
+    const { pathname, location, locationChange } = props
+    locationChange({ route: pathname, hash: location.hash })
   }
 
   componentWillMount() {
@@ -30,11 +31,6 @@ export class App extends Component {
     if (nextProps.pathname !== this.props.pathname) {
       this.updateRouteState(nextProps)
     }
-  }
-
-  updateRouteState(props) {
-    const { pathname, location, locationChange } = props
-    locationChange({ route: pathname, hash: location.hash })
   }
 
   render() {
