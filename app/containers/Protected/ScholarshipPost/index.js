@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import axios from 'axios'
 import Match from 'react-router/Match'
 import ScholarshipPostGeneral from './ScholarshipPostGeneral'
 import ScholarshipPostEssay from './ScholarshipPostEssay'
@@ -124,6 +125,12 @@ export class ScholarshipPost extends Component {
     }
   }
 
+  onSubmit = e => {
+    e.preventDefault()
+    const { id, ...rest } = this.state
+    axios.post('/providers/post', rest)
+  }
+
   onGroupChange(e, prefix) {
     const { name, value } = e.target
     const items = this.state[prefix].inputs
@@ -201,6 +208,7 @@ export class ScholarshipPost extends Component {
                 onPhotoUpload={this.onPhotoUpload}
                 onGroupChange={this.onGroupChange}
                 addField={this.addField}
+                onSubmit={this.onSubmit}
                 removeField={this.removeField} />} />
         )}
       </div>

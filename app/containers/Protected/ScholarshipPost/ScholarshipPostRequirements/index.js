@@ -33,6 +33,10 @@ export class ScholarshipPostRequirements extends Component {
     this.props.updateApplication({[name]: ''})
   }
 
+  onSubmit = e => {
+    this.props.onSubmit(e)
+  }
+
   removeField(name) {
     const { additionalFields } = this.state
     const nextState = additionalFields.filter(x => x !== name)
@@ -81,8 +85,8 @@ export class ScholarshipPostRequirements extends Component {
         <ScholarshipPostBtns
           back='/scholarship-post/intention'
           text="Post Scholarship"
-          onClick={this.props.submitApplication}
-          submit='/dashboard/new' />
+          onClick={this.onSubmit}
+          submit />
       </div>
     )
   }

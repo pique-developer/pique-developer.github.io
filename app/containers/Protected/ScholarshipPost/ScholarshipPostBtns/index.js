@@ -16,10 +16,9 @@ export const ScholarshipPostBtns = ({ back, next, submit, text, onClick }) => {
             className={css.next}>Next</Link>
         : null}
       {submit
-        ? <Link
-            to={submit}
+        ? <div
             onClick={onClick}
-            className={css.next}>{text || 'Submit'}</Link>
+            className={css.next}>{text || 'Submit'}</div>
         : null}
     </div>
   )
