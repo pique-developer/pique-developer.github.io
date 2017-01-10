@@ -9,9 +9,12 @@ import css from './style.css'
 export class Payment extends Component {
 
   onToken = token => {
-    fetch('/api/stripe', {
+    fetch('/api/stripe/create-scholarship-provider', {
       method: 'POST',
-      body: JSON.stringify(token),
+      body: JSON.stringify({
+        token: token,
+        uid: 'DUMMY_VALUE_HERE'
+      }),
     })
     .then(x => x.json())
     .then(x => console.log(`Supperz, ${x.email}`))
@@ -26,7 +29,7 @@ export class Payment extends Component {
           <div className={css.stripe}>
             <StripeCheckout
               token={this.onToken}
-              amount={9900}
+              amount={15500}
               image={logo}
               name='Pique'
               description='Scholarship Provider'
