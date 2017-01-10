@@ -128,7 +128,7 @@ export class ScholarshipPost extends Component {
   onSubmit = e => {
     e.preventDefault()
     const { id, ...rest } = this.state
-    axios.post('/providers/post', rest)
+    axios.post('/api/providers/scholarship-post', rest)
   }
 
   onGroupChange(e, prefix) {

@@ -30,6 +30,9 @@ app.use('/api/stripe', stripeEndpoint);
 var usersEndpoint = require('./api/usersEndpoint');
 app.use('/api/users', usersEndpoint);
 
+var providersEndpoint = require('./api/providersEndpoint');
+app.use('/api/providers', providersEndpoint);
+
 app.get('*', function (req, res) {
   res.sendFile(path.resolve(outputPath, 'index.html'));
 });

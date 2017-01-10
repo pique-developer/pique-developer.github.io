@@ -27,6 +27,9 @@ app.use('/api/stripe', stripeEndpoint)
 const usersEndpoint = require('./api/usersEndpoint')
 app.use('/api/users', usersEndpoint)
 
+const providersEndpoint = require('./api/providersEndpoint')
+app.use('/api/providers', providersEndpoint)
+
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(outputPath, 'index.html'))
 })
