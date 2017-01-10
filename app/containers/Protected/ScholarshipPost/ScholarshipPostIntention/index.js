@@ -127,7 +127,7 @@ export class ScholarshipPostIntention extends Component {
                   name={x.name}
                   value={x.value}
                   onChange={e => onGroupChange(e, 'areasOfStudy')}
-                  className={css.sm}>
+                  className={css.md}>
                   <option value="">Choose area</option>
                   <option value="Microsoft Notepad">Microsoft Notepad</option>
                   <option value="One Annual Push-Up">One Annual Push-Up</option>
@@ -140,7 +140,7 @@ export class ScholarshipPostIntention extends Component {
                       className={css.remove}>X</div>
                   : <div
                       onClick={_ => addField('areasOfStudy')}
-                      className={css.more}>
+                      className={css.third}>
                       Add Another Area of Study Requirement
                     </div>}
               </div>
@@ -175,6 +175,7 @@ export class ScholarshipPostIntention extends Component {
             <div className={css.label}>Location Scholarship is Limited To?</div>
             <div className={css.field}>
               <LocationInput className={css.sm} />
+              <div className={css.info}>Skip if this is a national scholarship</div>
             </div>
           </div>
 

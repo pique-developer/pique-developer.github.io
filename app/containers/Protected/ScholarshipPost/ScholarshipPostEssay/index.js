@@ -152,7 +152,7 @@ export class ScholarshipPostEssay extends Component {
                     placeholder="e.g. 100"
                     type="text"/>
                   <div className={css.comment}>
-                    Keep in mind that ~250 words is equivalent to 1 typed page.
+                    Keep in mind that ~250 words is equivalent to  one typed page, double spaced
                   </div>
                 </div>
               </div>

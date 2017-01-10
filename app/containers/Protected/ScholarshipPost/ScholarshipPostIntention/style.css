@@ -1,3 +1,12 @@
+.sm {
+  composes: sm from '../style.css';
+}
+
+.md {
+  composes: sm from '../style.css';
+  width: 50%;
+}
+
 .form {
   composes: form from '../style.css';
 }
@@ -27,10 +36,6 @@
   composes: input from '../style.css';
 }
 
-.sm {
-  composes: sm from '../style.css';
-}
-
 .tall {
   composes: tall from '../style.css';
 }
@@ -49,7 +54,11 @@
 
 .more {
   composes: more from '../style.css';
-  width: 70%;
+}
+
+.third {
+  composes: more from '../style.css';
+  width: 35%;
 }
 
 .req {

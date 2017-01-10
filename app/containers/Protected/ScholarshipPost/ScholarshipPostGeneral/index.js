@@ -121,7 +121,7 @@ export class ScholarshipPostGeneral extends Component {
           </div>
 
           <div className={css.row}>
-            <div className={css.label}>Generic Recommendations OK?</div>
+            <div className={css.label}>Accept Standard Recommendations?</div>
             <div className={css.field}>
               <label className={css.radio}>
                 <input
@@ -146,7 +146,7 @@ export class ScholarshipPostGeneral extends Component {
           </div>
 
           <div className={css.row}>
-            <div className={css.label}>Number of Generic Recommendations</div>
+            <div className={css.label}>Number of Required Recommendations</div>
             <div className={css.field}>
               <input
                 name="recommendationsAmount"

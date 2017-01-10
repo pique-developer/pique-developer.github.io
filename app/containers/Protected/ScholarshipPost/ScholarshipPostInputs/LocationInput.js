@@ -14,13 +14,11 @@ export class LocationInput extends Component {
   render() {
     const { className } = this.props
     return (
-      <div>
-        <input
-          name="location"
-          className={className}
-          onChange={this.onChange}
-          type="text"  />
-      </div>
+      <input
+        name="location"
+        className={className}
+        onChange={this.onChange}
+        type="text"  />
     )
   }
 }
