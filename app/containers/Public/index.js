@@ -10,7 +10,6 @@ import Providers from './Providers'
 import Students from './Students'
 import Nonprofits from './Nonprofits'
 import FAQ from './FAQ'
-import Payment from './Payment'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import SiteScroll from './SiteScroll'
@@ -27,7 +26,6 @@ export class Public extends Component {
       {pattern: '/students',   component: Students},
       {pattern: '/faq',        component: FAQ},
       {pattern: '/nonprofits', component: Nonprofits},
-      {pattern: '/payment',    component: Payment},
     ]
   }
 

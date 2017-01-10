@@ -4811,6 +4811,10 @@ react-router@4.0.0-alpha.6:
     query-string "4.2.3"
     react-broadcast "^0.1.2"
 
+react-stripe-checkout@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/react-stripe-checkout/-/react-stripe-checkout-2.2.5.tgz#1369fb44f522cfa21ba451d6be97d1a2b86ff84a"
+
 react-transform-catch-errors@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-transform-catch-errors/-/react-transform-catch-errors-1.0.2.tgz#1b4d4a76e97271896fc16fe3086c793ec88a9eeb"

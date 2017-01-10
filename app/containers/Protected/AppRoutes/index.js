@@ -14,6 +14,7 @@ import AppSidebar from 'containers/Protected/AppSidebar'
 import StudentSidebar from 'containers/Protected/StudentSidebar'
 import IndividualScholarships from '../IndividualScholarships'
 import Discovery from '../Discovery'
+import Payment from '../Payment'
 import css from './style.css'
 
 export class AppRoutes extends Component {
@@ -27,7 +28,8 @@ export class AppRoutes extends Component {
         <MatchWithFullPage
           routes={[
             {pattern: '/individual-scholarships', component: IndividualScholarships},
-            {pattern: '/applicant/:id', component: Applicant}
+            {pattern: '/applicant/:id', component: Applicant},
+            {pattern: '/payment',    component: Payment},
           ]} />
 
         <MatchWithSidebar
