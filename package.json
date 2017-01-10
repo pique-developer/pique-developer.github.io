@@ -26,6 +26,7 @@
     "filepicker-js": "^2.4.18",
     "firebase": "^3.6.3",
     "firebase-admin": "^4.0.4",
+    "jsonschema": "^1.1.1",
     "mongoose": "^4.7.6",
     "nuka-carousel": "^2.0.3",
     "react": "^15.4.1",
