@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 const stripeEndpoint = require('./api/stripeEndpoint')
 app.use('/api/stripe', stripeEndpoint)
 
-const usersEndpoint = require('./api/users')
+const usersEndpoint = require('./api/usersEndpoint')
 app.use('/api/users', usersEndpoint)
 
 app.get('*', (req, res) => {

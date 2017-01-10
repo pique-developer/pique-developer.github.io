@@ -70,7 +70,7 @@ export class Auth extends Component {
   }
 
   requestUserAccount = data => {
-    axios.post('/users/create', data)
+    axios.post('/api/users/create', data)
   }
 
   render() {
