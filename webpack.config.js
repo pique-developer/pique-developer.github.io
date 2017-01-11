@@ -204,4 +204,5 @@ module.exports = {
 
   devtool: devtool[ENV],
   target: 'web',
+  node: {fs: false, net: false}
 }

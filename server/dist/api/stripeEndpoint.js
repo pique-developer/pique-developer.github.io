@@ -62,3 +62,20 @@ router.post('/create-scholarship-provider', function (req, res) {
 });
 
 module.exports = router;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(router, 'router', 'server/src/api/stripeEndpoint.js');
+
+  __REACT_HOT_LOADER__.register(stripe_test_secret_key, 'stripe_test_secret_key', 'server/src/api/stripeEndpoint.js');
+
+  __REACT_HOT_LOADER__.register(stripe, 'stripe', 'server/src/api/stripeEndpoint.js');
+
+  __REACT_HOT_LOADER__.register(firebase_db, 'firebase_db', 'server/src/api/stripeEndpoint.js');
+}();
+
+;

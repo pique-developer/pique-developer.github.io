@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Redirect from 'react-router/Redirect'
-import Site from 'containers/Site'
-import Protected from 'containers/Protected'
 import LoadingIndicator from 'components/LoadingIndicator'
+import LazyLoad, { importDefault } from 'components/LazyLoad'
 import * as API from 'api'
 import * as Actions from 'api/actions'
 import css from './style.css'
@@ -34,16 +33,19 @@ export class App extends Component {
   }
 
   render() {
+    const site = _ => importDefault(import('containers/Site'))
+    const app = _ => importDefault(import('containers/Protected'))
     const { user, initialized, loading, open } = this.props
+
     return (
       <div className={`${css.root} ${open ? css.open : ''}`}>
-        {loading ? <LoadingIndicator /> : null}
         {initialized
           ? <div className={`${css.router} ${!loading ? css.ready : ''}`}>
-              {user ? <Protected /> : <Site />}
+              <LazyLoad modules={{Component: user ? app : site}}>
+                {({ Component }) => <Component />}
+              </LazyLoad>}
             </div>
-          : null
-        }
+          : <LoadingIndicator />}
       </div>
     )
   }

@@ -38,3 +38,18 @@ app.get('*', function (req, res) {
 });
 
 app.listen(process.env.PORT || 5000);
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(app, 'app', 'server/src/index.js');
+
+  __REACT_HOT_LOADER__.register(publicPath, 'publicPath', 'server/src/index.js');
+
+  __REACT_HOT_LOADER__.register(outputPath, 'outputPath', 'server/src/index.js');
+}();
+
+;

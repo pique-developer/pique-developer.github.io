@@ -21,3 +21,14 @@ router.post('/scholarship-post', function (req, res) {
 });
 
 module.exports = router;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(router, 'router', 'server/src/api/providersEndpoint.js');
+}();
+
+;
