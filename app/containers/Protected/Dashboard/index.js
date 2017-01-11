@@ -57,7 +57,10 @@ export class Dashboard extends Component {
           <Match
             pattern='/dashboard'
             render={props => <DashboardNav {...props} links={links} />} />
-          <DashboardSortBy />
+
+          <Match pattern='/dashboard/interviewees' component={DashboardSortBy} />
+          <Match pattern='/dashboard/finalists' component={DashboardSortBy} />
+
           {routes.map(x =>
             <Match
               pattern={x.pattern}
