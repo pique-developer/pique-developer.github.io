@@ -2,35 +2,26 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import Redirect from 'components/Redirect'
-import Home from './Home'
-import Auth from 'containers/Auth'
-import About from './About'
-import Educators from './Educators'
-import Providers from './Providers'
-import Students from './Students'
-import Nonprofits from './Nonprofits'
-import FAQ from './FAQ'
+import { importDefault } from 'components/LazyLoad'
+import LazyLoadRoute from 'components/LazyLoadRoute'
 import SiteHeader from './SiteHeader'
 import SiteFooter from './SiteFooter'
 import SiteScroll from './SiteScroll'
 import SiteModal from './SiteModal'
 
 export class Site extends Component {
-  static defaultProps = {
-    routes: [
-      {pattern: '/',           component: Home, exactly: true},
-      {pattern: '/about',      component: About},
-      {pattern: '/signin',     component: Auth},
-      {pattern: '/educators',  component: Educators},
-      {pattern: '/providers',  component: Providers},
-      {pattern: '/students',   component: Students},
-      {pattern: '/faq',        component: FAQ},
-      {pattern: '/nonprofits', component: Nonprofits},
-    ]
-  }
-
   render() {
-    const { routes } = this.props
+    const routes = [
+      {pattern: '/',           component: _ => importDefault(import('containers/Site/Home')), exactly: true},
+      {pattern: '/about',      component: _ => importDefault(import('containers/Site/About'))},
+      {pattern: '/signin',     component: _ => importDefault(import('containers/Auth'))},
+      {pattern: '/educators',  component: _ => importDefault(import('containers/Site/Educators'))},
+      {pattern: '/providers',  component: _ => importDefault(import('containers/Site/Providers'))},
+      {pattern: '/students',   component: _ => importDefault(import('containers/Site/Students'))},
+      {pattern: '/faq',        component: _ => importDefault(import('containers/Site/FAQ'))},
+      {pattern: '/nonprofits', component: _ => importDefault(import('containers/Site/Nonprofits'))},
+    ]
+
     return (
       <Redirect
         to='/'
@@ -38,7 +29,7 @@ export class Site extends Component {
         <SiteScroll />
         <SiteModal />
         <SiteHeader />
-        {routes.map((x, i) =>  <Match key={i} {...x} />)}
+        {routes.map((x, i) =>  <LazyLoadRoute key={i} {...x} />)}
         <SiteFooter />
       </Redirect>
     )

@@ -43,7 +43,7 @@ export class App extends Component {
           ? <div className={`${css.router} ${!loading ? css.ready : ''}`}>
               <LazyLoad modules={{Component: user ? app : site}}>
                 {({ Component }) => <Component />}
-              </LazyLoad>}
+              </LazyLoad>
             </div>
           : <LoadingIndicator />}
       </div>

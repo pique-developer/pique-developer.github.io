@@ -56,7 +56,7 @@ export class SignIn extends Component {
           <div className={css.btns}>
             <span className={css.notify}>{error}</span>
             <button
-              onClick={this.handleSubmit}
+              onClick={this.handleClick}
               className={css.submit}>
               Log In
             </button>
