@@ -13,7 +13,7 @@ const app = new Koa()
 app.use(devMiddleware(compiler))
 app.use(hotMiddleware(compiler))
 app.use(ctx => {
-  const filepath = path.join(compiler.outputPath, '../index.html')
+  const filepath = path.join(compiler.outputPath, 'index.html')
   ctx.body = fs.readFileSync(filepath).toString()
 })
 

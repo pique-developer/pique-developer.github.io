@@ -15,7 +15,7 @@ import SiteFooter from './SiteFooter'
 import SiteScroll from './SiteScroll'
 import SiteModal from './SiteModal'
 
-export class Public extends Component {
+export class Site extends Component {
   static defaultProps = {
     routes: [
       {pattern: '/',           component: Home, exactly: true},
@@ -49,4 +49,4 @@ export default connect(
   state => ({
     route: state.routing.route,
   })
-)(Public)
+)(Site)
