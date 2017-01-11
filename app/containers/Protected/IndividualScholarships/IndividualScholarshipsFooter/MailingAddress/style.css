@@ -1,8 +1,0 @@
-.copy {
-  composes: copy from '../style.css';
-  color: #222222;
-}
-
-.copy span {
-  display: block;
-}
