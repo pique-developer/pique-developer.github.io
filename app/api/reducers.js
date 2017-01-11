@@ -29,7 +29,7 @@ const loadingReducer = (state=false, action) => {
   }
 }
 
-const authReducer = (state={user: false, initialized: false, error: '', isNew: true}, action) => {
+const authReducer = (state={user: false, isAuthed: false, initialized: false, error: '', isNew: true}, action) => {
   switch (action.type) {
 
     case 'AUTHENTICATING':
@@ -41,17 +41,20 @@ const authReducer = (state={user: false, initialized: false, error: '', isNew: t
       return Object.assign({}, state, {
         user: action.payload.user,
         initialized: true,
+        isAuthed: !!action.payload.user,
       })
 
     case 'LOGIN_SUCCESS':
       return Object.assign({}, state, {
         user: action.payload.user,
+        isAuthed: !!action.payload.user,
       })
 
     case 'LOGIN_ERROR':
       return Object.assign({}, state, {
         error: action.payload.error,
         initialized: true,
+        isAuthed: !!action.payload.user,
       })
 
     case 'SIGNOUT':
@@ -59,6 +62,7 @@ const authReducer = (state={user: false, initialized: false, error: '', isNew: t
         user: false,
         isNew: true,
         initialized: false,
+        isAuthed: false,
       })
 
     case 'SUBMIT_APPLICATION':

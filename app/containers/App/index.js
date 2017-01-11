@@ -8,7 +8,7 @@ import * as Actions from 'api/actions'
 import css from './style.css'
 
 export class App extends Component {
-
+  state = {redirect: false}
   updateRouteState = props => {
     const { pathname, location, locationChange } = props
     locationChange({ route: pathname, hash: location.hash })
@@ -30,13 +30,22 @@ export class App extends Component {
     if (nextProps.pathname !== this.props.pathname) {
       this.updateRouteState(nextProps)
     }
+
+    if (nextProps.isAuthed !== this.props.isAuthed) {
+      this.setState({redirect: true})
+    } else {
+      this.setState({redirect: false})
+    }
   }
 
   render() {
     const site = _ => importDefault(import('containers/Site'))
     const app = _ => importDefault(import('containers/Protected'))
+    const { redirect } = this.state
     const { user, initialized, loading, open } = this.props
-
+    if (redirect) {
+      return <Redirect to='/' />
+    }
     return (
       <div className={`${css.root} ${open ? css.open : ''}`}>
         {initialized
@@ -58,6 +67,7 @@ export default connect(
     user: state.auth.user,
     loading: state.loading,
     initialized: state.auth.initialized,
+    isAuthed: state.auth.isAuthed,
   }),
   Actions
 )(App)

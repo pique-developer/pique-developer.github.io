@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import AppHeader from './AppHeader'
-import InviteModal from './InviteModal'
-import AppRoutes from './AppRoutes'
-import FormRoutes from './FormRoutes'
+import Header from 'containers/Protected/Common/Header'
+import InviteModal from 'containers/Protected/Common/InviteModal'
+import LazyLoad, { importDefault } from 'components/LazyLoad'
 import * as API from 'api'
 import { fetchSuccess, fetchError } from 'api/actions'
 import css from './style.css'
@@ -18,15 +17,17 @@ export class MembersRoutes extends Component {
   }
 
   render() {
-    const { removeNav } = this.props
+    const { type } = this.props.user
+    const Component = type === 'provider'
+                    ? _ => importDefault(import('containers/Protected/Provider'))
+                    : _ => importDefault(import('containers/Protected/Student'))
     return (
       <div>
         <InviteModal />
-        {!removeNav ? <AppHeader /> : null}
-        <div className={css.root}>
-          <AppRoutes />
-          <FormRoutes />
-        </div>
+        <Header />
+        <LazyLoad modules={{ Component }}>
+          {({ Component }) => <Component />}
+        </LazyLoad>}
       </div>
     )
   }
@@ -34,10 +35,11 @@ export class MembersRoutes extends Component {
 
 export default connect(
   state => {
+    const { user } = state.auth
     return {
       applicants: state.app.applicants,
       scholarships: state.app.scholarships,
-      user: state.auth.user,
+      user: {...user, type: user.type || 'provider'},
       isNew: state.auth.isNew,
       removeNav: state.ui.removeNav,
     }
