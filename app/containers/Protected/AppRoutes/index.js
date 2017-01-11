@@ -38,14 +38,12 @@ export class AppRoutes extends Component {
             {pattern: '/settings', component: Settings},
             {pattern: '/committee', component: Committee},
           ]}
-          className={css.main}
           sidebar={AppSidebar} />
 
         <MatchWithSidebar
           routes={[
             {pattern: '/discovery', component: Discovery},
           ]}
-          className={css.main}
           sidebar={StudentSidebar} />
 
         <Match pattern='/' exactly render={props =>

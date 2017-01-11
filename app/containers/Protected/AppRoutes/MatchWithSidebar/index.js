@@ -10,9 +10,7 @@ const MatchWithSidebar = ({ routes, className, sidebar:Sidebar }) => {
           pattern={pattern}
           render={props =>
             <div>
-              <div className={className}>
-                <Component {...props} />
-              </div>
+              <Component {...props} />
               <Sidebar {...props} />
             </div>
         } />

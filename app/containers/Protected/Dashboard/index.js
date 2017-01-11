@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Match from 'react-router/Match'
 import DashboardNav from './DashboardNav'
 import DashboardCards from './DashboardCards'
+import DashboardSortBy from './DashboardSortBy'
 import css from './style.css'
 
 export class Dashboard extends Component {
@@ -51,18 +52,19 @@ export class Dashboard extends Component {
   render() {
     const { links, routes } = this.state
     return (
-      <div className='wrap'>
-        <Match
-          pattern='/dashboard'
-          render={props =>
-            <DashboardNav {...props} links={links} />} />
-
-        {routes.map(x =>
+      <div className={css.root}>
+        <div className='wrap'>
           <Match
-            pattern={x.pattern}
-            key={x.key}
-            render={props =>
-              <DashboardCards {...props} items={x.items} />} />)}
+            pattern='/dashboard'
+            render={props => <DashboardNav {...props} links={links} />} />
+          <DashboardSortBy />
+          {routes.map(x =>
+            <Match
+              pattern={x.pattern}
+              key={x.key}
+              render={props =>
+                <DashboardCards {...props} items={x.items} />} />)}
+        </div>
       </div>
     )
   }

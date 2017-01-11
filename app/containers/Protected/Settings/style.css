@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding-top: 55px;
   padding-bottom: 40px;
-  background-image: radial-gradient(50% 0%, #FAFAFA 0%, #EDEFF9 100%);
+  background-color: #FAFAFA;
 }
 
 @media (min-width: 1024px) {

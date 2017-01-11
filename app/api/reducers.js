@@ -72,7 +72,7 @@ const authReducer = (state={user: false, initialized: false, error: '', isNew: t
   }
 }
 
-const routeReducer = (state={route: '', hash: ''}, action) => {
+const routeReducer = (state={route: '', hash: '', query: {}}, action) => {
   switch (action.type) {
 
     case 'LOCATION_CHANGE':

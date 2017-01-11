@@ -11,8 +11,8 @@ import css from './style.css'
 export class App extends Component {
 
   updateRouteState = props => {
-    const { pathname, location, locationChange } = props
-    locationChange({ route: pathname, hash: location.hash })
+    const { pathname, location, params } = props
+    this.props.locationChange({ params, route: pathname, ...location, })
   }
 
   componentWillMount() {
@@ -28,8 +28,9 @@ export class App extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.pathname !== this.props.pathname) {
-      this.updateRouteState(nextProps)
+    const { pathname, location } = this.props
+    if (nextProps.pathname !== pathname || nextProps.location.query !== location.query) {
+      this.updateRouteState({nextProps})
     }
   }
 

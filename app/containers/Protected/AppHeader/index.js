@@ -90,7 +90,9 @@ export class AppHeader extends Component {
 }
 
 function setCompact(pathname) {
-  return pathname.startsWith('/applicant/')
+  if (pathname) {
+    return pathname.startsWith('/applicant/')
+  }
 }
 
 export default connect(
