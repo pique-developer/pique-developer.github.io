@@ -1,23 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import axios from 'axios'
+import StripeCheckout from 'react-stripe-checkout'
+import { firebaseAuth } from 'api'
 import PaymentBenefits from './PaymentBenefits'
 import PaymentForm from './PaymentForm'
-import StripeCheckout from 'react-stripe-checkout'
 import logo from './logo.png'
 import css from './style.css'
 
 export class Payment extends Component {
 
   onToken = token => {
-    fetch('/api/stripe/create-scholarship-provider', {
-      method: 'POST',
-      body: JSON.stringify({
-        token: token,
-        uid: 'DUMMY_VALUE_HERE'
-      }),
-    })
-    .then(x => x.json())
-    .then(x => console.log(`Supperz, ${x.email}`))
+    const url = '/api/stripe/create-scholarship-provider'
+    const body = { token, uid: firebaseAuth().currentUser.uid }
+    axios.post(url, body).then(x => console.log(x))
   }
 
   render() {
