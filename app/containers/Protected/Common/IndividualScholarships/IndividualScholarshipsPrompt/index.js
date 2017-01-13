@@ -17,11 +17,11 @@ export class IndividualScholarshipsPrompt extends Component {
     const { number } = this.props
     return (
       <div className={css.root}>
-        <div className={css.title}>Scholarship Prompt #1</div>
+        <div className={css.title}>Eligibility Requirements</div>
         <div className={css.overview}>
           <IndividualScholarshipsOverview  />
           <div className={css.border} />
-        <div className={css.title}>Scholarship Prompt #2</div>
+        <div className={css.title}>Scholarship Prompt #1</div>
           <IndividualScholarshipsOverview  />
         </div>
         <div className={css.details}>

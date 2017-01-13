@@ -37,15 +37,15 @@ export class IndividualScholarshipsDetails extends Component {
       },{
         component: CheckmarkRed,
         color: '#FF0000',
-        text: 'SAT or ACT Scores',
-        accent: 'jan 18th',
+        text: 'Standardized Test Scores',
+        accent: 'SAT or ACT Scores',
       },{
         color: '#FF0000',
         text: 'Minimum Composite SAT Score:',
         accent: '1050',
       },{
         color: '#FF0000',
-        text: 'Maximum Composite ACT Score:',
+        text: 'Minimum Composite ACT Score:',
         accent: '28',
     }]
   }

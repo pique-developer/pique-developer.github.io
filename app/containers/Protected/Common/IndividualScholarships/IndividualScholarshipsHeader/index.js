@@ -8,7 +8,8 @@ export class IndividualScholarshipsHeader extends Component {
   }
 
   static defaultProps = {
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit mi nec sapien ullamcorper porttitor. Phasellus sed placerat orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit mi nec sapien ullamcorper porttitor. Phasellus sed placerat orci.`
+    description: `Pique sets out to tackle one the most commonly experienced pains of the millennial demographic, student debt. At Pique, we're creating the common application for scholarships to simplify the scholarship application process for students across America.`
+
   }
 
   render() {
