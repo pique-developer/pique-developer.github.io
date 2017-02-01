@@ -111,10 +111,15 @@ const modalReducer = (state=false, action) => {
 const uiReducer = (state={}, action) => {
   switch (action.type) {
 
+    case 'CLEAR_STATE':
+      return {}
+
     case 'LOCATION_CHANGE':
       return {
         ...state,
-        removeNav: false,
+        removeNav: action.payload.route === '/payment' ? true : false,
+        fixed: false,
+        fill: false,
       }
 
     case 'ONBOARDING_ROUTE':

@@ -29,6 +29,7 @@ export class SiteHeader extends Component {
   render() {
     const { open } = this.state
     const { fill, fixed, launchModal } = this.props
+
     return (
       <div className={`${css.root} ${fill ? css.fill : ''} ${fixed ? css.fixed : ''}`}>
         <div className={css.brand}>

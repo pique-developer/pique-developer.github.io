@@ -4,12 +4,13 @@ import Header from 'containers/Protected/Common/Header'
 import InviteModal from 'containers/Protected/Common/InviteModal'
 import LazyLoad, { importDefault } from 'components/LazyLoad'
 import * as API from 'api'
-import { fetchSuccess, fetchError } from 'api/actions'
+import { fetchSuccess, fetchError, clearState } from 'api/actions'
 import css from './style.css'
 
 export class MembersRoutes extends Component {
   componentDidMount() {
-    const { fetchSuccess, fetchError } = this.props
+    const { fetchSuccess, fetchError, clearState } = this.props
+    clearState()
     API.fetchData({
       next: fetchSuccess,
       error: error => fetchError({ error }),
@@ -44,5 +45,5 @@ export default connect(
       removeNav: state.ui.removeNav,
     }
   },
-  { fetchSuccess, fetchError }
+  { fetchSuccess, fetchError, clearState }
 )(MembersRoutes)

@@ -101,6 +101,7 @@ function shouldBail(pathname) {
     return [
       '/scholarship-post',
       '/student-questionnaire',
+      '/payment'
     ].filter(x => pathname.startsWith(x))[0]
   }
 }

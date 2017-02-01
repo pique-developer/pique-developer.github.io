@@ -1,5 +1,9 @@
 import * as API from 'api'
 
+export const clearState = _ => {
+  return {type: 'CLEAR_STATE'}
+}
+
 export const launchModal = _ => {
   document.body.style.overflow = 'hidden'
   return {type: 'LAUNCH_MODAL'}
