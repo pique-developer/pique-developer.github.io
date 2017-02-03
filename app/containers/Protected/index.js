@@ -28,7 +28,7 @@ export class MembersRoutes extends Component {
         <Header />
         <LazyLoad modules={{ Component }}>
           {({ Component }) => <Component />}
-        </LazyLoad>}
+        </LazyLoad>
       </div>
     )
   }

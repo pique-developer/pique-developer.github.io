@@ -54,10 +54,8 @@ export class ProviderUser extends Component {
                   {x.sidebar ? <Sidebar /> : null}
                 </div>
               }
-
             </LazyLoad>
           } />)}
-
       </div>
     )
   }

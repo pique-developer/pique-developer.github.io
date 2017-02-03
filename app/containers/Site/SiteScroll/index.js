@@ -87,10 +87,12 @@ export class SiteScroll extends Component {
   }
 
   handleStudentsUI(scrollTop) {
-    const { position, animate1, animate2, animate3 } = this.props.ui
+    const { fixed, fill, position, animate1, animate2, animate3 } = this.props.ui
     const windowWidth = window.innerWidth
     const mobile = windowWidth < 1024
     if (mobile) { return }
+    if (fixed)  { this.applyStyles({fixed: false}); }
+    if (fill)   { this.applyStyles({fill: false}); }
 
     const small = windowWidth < 1280
     const positionFixed = small ? 1490 : 1580
