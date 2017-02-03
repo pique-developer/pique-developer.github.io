@@ -52,8 +52,13 @@ export class SiteScroll extends Component {
 
   switchView() {
     const scrollTop = window.scrollY
-    const { route, fixed } = this.props
-    if (route === '/' || route === '/about' && !fixed) {
+    const { route, ui } = this.props
+    if (route !== '/' || route !== '/about') {
+      if (ui.fixed)  { this.applyStyles({fixed: false}); }
+      if (ui.fill)   { this.applyStyles({fill: false}); }
+    }
+
+    if (route === '/' || route === '/about') {
       this.handleHeaderUI(scrollTop)
       if (route === '/') {
         this.handleLandingUI(scrollTop)
@@ -91,8 +96,6 @@ export class SiteScroll extends Component {
     const windowWidth = window.innerWidth
     const mobile = windowWidth < 1024
     if (mobile) { return }
-    if (fixed)  { this.applyStyles({fixed: false}); }
-    if (fill)   { this.applyStyles({fill: false}); }
 
     const small = windowWidth < 1280
     const positionFixed = small ? 1490 : 1580
