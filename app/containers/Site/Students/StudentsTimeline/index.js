@@ -18,7 +18,7 @@ export const StudentsTimeline = ({ position, animate1, animate2, animate3 })=> {
             <div className={animate1 ? `${css.left} ${css.in}` : css.left}>
               <div className={css.text}>
                 <div className={css.title}>Request and  Save All Your Documents in One Place</div>
-                <div className={css.copy}>Through Pique you can send a request to your teachers and counselors to upload your recommendations and official transcript. When each document is uploaded, it is saved onto your Pique account and can then be reused to apply to any scholarship on Pique.</div>
+                <div className={css.copy}>Through Pique you can send a request to your teachers and counselors to upload your recommendations and official transcript. When each document is uploaded, it is saved onto your Pique Profile and can then be reused to apply to any scholarship on Pique</div>
               </div>
             </div>
             <div className={animate1 ? `${css.right} ${css.in}` : css.right}>

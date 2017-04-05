@@ -20,7 +20,7 @@ export const ProvidersPricing = props => {
 
 const price = `$99.99 /year`
 const annotation = `*Billed Annually`
-const btnText = `Get Pique!`
+const btnText = `Request Demo`
 const list = [
   'Find Qualified Applicants',
   'Create a Scholarship Review Team',

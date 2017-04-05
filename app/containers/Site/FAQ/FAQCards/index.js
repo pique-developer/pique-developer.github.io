@@ -39,10 +39,10 @@ const cards = [{
     body: `We have some really lofty goals here at Pique. The loftiest of them all is to ensure that there is one scholarship for every student on our platform. In other words that there is a 1:1 ratio between scholarships and students. To do so, we need our supporters to spread the word about Pique by sharing our story on facebook and twitter and telling scholarship providers you know personally about Pique.`,
   },{
     title: `Can I Still Write a Personalized Recommendation for My Students? `,
-    body: `Absolutely! Scholarship Providers using Pique accept ‘generic recommendations’ because they understand that not all educators and mentors have the same amount of free time to write recommendations. (A counselor at a high school where the counselor to student ration is 1:80 presumably does not have as much time to spend on recommendations as a counselor at a high school with a ratio of 40:1). That being said, if time is on your side and you prefer to write a personalized recommendation, feel free to do so. `,
+    body: `Absolutely! Scholarship Providers using Pique accept ‘generic recommendations’ because they understand that not all educators and mentors have the same amount of free time to write recommendations. (A counselor at a high school where the counselor to student ration is 1:80 presumably does not have as much time to spend on recommendations as a counselor at a high school with a ratio of 1:40). That being said, if time is on your side and you prefer to write a personalized recommendation, feel free to do so.`,
   },{
     title: `Do You Offer Internships?`,
-    body: `Yes! We are currently accepting marketing intern applications until November 4th. (You do not have to be based in the San Franciso Bay Area or DC to apply).`,
+    body: `Yes! We are currently accepting marketing intern applications until April 30th. (You do not have to be based in the San Franciso Bay Area or DC to apply).`,
   },{
     title: `Have More Questions?`,
     body: <span>Feel free to email us at <a className={css.mail} href="mailto:support@getpique.co">support@getpique.co</a> and we will get back to you as soon as possible!</span>,

@@ -7,9 +7,9 @@ export const ConfirmationMessage = props => {
     <div className={css.confirmation}>
       <img src={heart} />
       <div className={css.thanks}>
-        <div className={css.message}>Thank for signing up the Pique!</div>
+        <div className={css.message}>Thanks for signing up the Pique!</div>
         <div className={css.message}>Help us spread the word by sharing Pique with</div>
-        <div className={css.message}>friend family let's end student debt!</div>
+        <div className={css.message}>friends and family to end student debt!</div>
       </div>
 
       <div className={css.share}>

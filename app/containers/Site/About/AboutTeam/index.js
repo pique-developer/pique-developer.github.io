@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import img1 from './102-brian-min.png'
 import img2 from './103-ev-min.png'
-import img3 from './104-adam-min.png'
-import img4 from './105-nnamdi-min.png'
 import img5 from './106-kevin-min.png'
-import img6 from './107-kyle-min.png'
 import css from './style.css'
 
 export class AboutTeam extends Component {
@@ -64,10 +61,7 @@ export class AboutTeam extends Component {
 const team = [
   {name: 'Brian', position: 'Founder', education: 'Haverford College', image: img1, style: {backgroundColor: `#31D26C`}},
   {name: 'Evan', position: 'Software Engineer', education: 'Hunter College', image: img2, style: {backgroundColor: `#51BBF1`}},
-  {name: 'Adam', position: 'Scholarship Pipeline Developer', education: 'George Washington University', image: img3, style: {backgroundColor: `#E1D113`}},
-  {name: 'Nnamdi', position: 'Scholarship Pipeline Developer', education: 'Columbia University', image: img4, style: {backgroundColor: `#2BDBB4`}},
   {name: 'Kevin', position: 'Scholarship Pipeline Developer', education: 'Lafayette College', image: img5, style: {backgroundColor: `#E1D113`}},
-  {name: 'Kyle', position: 'Data Engineer', education: 'Carleton College', image: img6, style: {backgroundColor: `#DB2BD4`}},
 ]
 
 export default AboutTeam
