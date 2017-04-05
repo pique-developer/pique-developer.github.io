@@ -24,7 +24,7 @@ const data = [
     component: _ => <div>
       <div className={css.title}>
         <span className={css.num}>01</span>
-        <span className={css.text}>Scholarships Have Become inaccessible</span>
+        <span className={css.text}>Scholarships Have Become Inaccessible</span>
       </div>
     </div>
   },{
