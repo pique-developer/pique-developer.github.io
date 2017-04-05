@@ -29,7 +29,7 @@ const data = [
     </div>
   },{
     style: {backgroundColor: `#6217D3`},
-    body: `Write a standard recommendation for your students with the peace of mind of knowing they will not be penalized for having a 'generic recommendation'. We educate scholarship foundations on limited time you have as an educator. Foundations that host their scholarships on Pique therefore agree to accept generic recommendations, no penalites.`,
+    body: `Write a standard recommendation for your students with the peace of mind of knowing they will not be penalized for having a 'generic recommendation'. We educate scholarship providers about the limited time you have as an educator. Providers that decide to host their scholarships on Pique therefore agree to accept generic recommendations, no penalties.`,
     component: _ => <div>
       <img src={img2} />
       <div className={css.title}>Students Are Never Penalized. That's a Pique Promise.</div>
@@ -38,5 +38,3 @@ const data = [
 ]
 
 export default EducatorsReasons
-
-
