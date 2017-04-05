@@ -46,7 +46,7 @@ export class HomeScholarships extends Component {
 }
 
 const halves = [{
-    title: `One Application. Unlimited Scholarships.`,
+    title: `One Profile. Unlimited Scholarships.`,
     image: img1,
     button: `Learn More`,
     copy: [
