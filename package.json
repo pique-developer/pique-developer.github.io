@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "engines": {
-    "node": "7.3.0"
+    "node": "7.8.0",
+    "npm": "4.5.0"
   },
   "scripts": {
     "start": "node ./server/dist/index.js",
@@ -15,8 +16,7 @@
     "build-client": "webpack --progress -p",
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production npm run build-client && npm run build-server",
-    "postbuild": "node ./scripts/cross-browser-open.js ./build/index.html",
-    "deploy": "npm run prebuild && npm run build && npm run start"
+    "postbuild": "node ./scripts/cross-browser-open.js ./build/index.html"
   },
   "dependencies": {
     "axios": "^0.15.3",

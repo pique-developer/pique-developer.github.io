@@ -38,6 +38,7 @@ app.get('*', function (req, res) {
 });
 
 app.listen(process.env.PORT || 5000);
+;
 
 var _temp = function () {
   if (typeof __REACT_HOT_LOADER__ === 'undefined') {
@@ -50,3 +51,5 @@ var _temp = function () {
 
   __REACT_HOT_LOADER__.register(outputPath, 'outputPath', 'server/src/index.js');
 }();
+
+;
