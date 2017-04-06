@@ -15,7 +15,8 @@
     "build-client": "webpack --progress -p",
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production npm run build-client && npm run build-server",
-    "postbuild": "node ./scripts/cross-browser-open.js ./build/index.html"
+    "postbuild": "node ./scripts/cross-browser-open.js ./build/index.html",
+    "deploy": "npm run prebuild && npm run build && npm run start"
   },
   "dependencies": {
     "axios": "^0.15.3",
