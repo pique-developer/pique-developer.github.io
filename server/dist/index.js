@@ -19,7 +19,7 @@ firebase_admin.initializeApp({
 });
 
 var publicPath = '/';
-var outputPath = path.resolve(__dirname, '..', '..', 'build');
+var outputPath = path.join(__dirname, '../../build');
 
 app.use(publicPath, express.static(outputPath));
 app.use(bodyParser.json());
@@ -34,7 +34,7 @@ var providersEndpoint = require('./api/providersEndpoint');
 app.use('/api/providers', providersEndpoint);
 
 app.get('*', function (req, res) {
-  res.sendFile(path.resolve(outputPath, 'index.html'));
+  res.sendFile(path.join(__dirname, '..', '..', 'build/index.html'));
 });
 
 app.listen(process.env.PORT || 5000);
