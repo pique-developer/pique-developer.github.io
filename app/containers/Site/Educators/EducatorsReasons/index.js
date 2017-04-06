@@ -23,17 +23,17 @@ const data = [
   {
     style: {backgroundColor: `#3DB39E`},
     body: `Our thoughts are simple; help save educators time in the scholarship application process and they will in turn have more time to prepare tomorrow’s lesson plan, review last night’s homework assignments and strategize ways to enhance the classroom environment.`,
-    component: _ => <div>
+    component: _ => (<div>
       <img src={img1} />
       <div className={css.title}>Save Time Writing Recommendations</div>
-    </div>
+    </div>)
   },{
     style: {backgroundColor: `#6217D3`},
     body: `Write a standard recommendation for your students with the peace of mind of knowing they will not be penalized for having a 'generic recommendation'. We educate scholarship providers about the limited time you have as an educator. Providers that decide to host their scholarships on Pique therefore agree to accept generic recommendations, no penalties.`,
-    component: _ => <div>
+    component: _ => (<div>
       <img src={img2} />
       <div className={css.title}>Students Are Never Penalized. That's a Pique Promise.</div>
-    </div>
+    </div>)
   }
 ]
 
