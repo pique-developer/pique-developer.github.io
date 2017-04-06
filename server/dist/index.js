@@ -19,7 +19,7 @@ firebase_admin.initializeApp({
 });
 
 var publicPath = '/';
-var outputPath = path.join(__dirname, '../../build');
+var outputPath = path.resolve(__dirname, '../../build');
 
 app.use(publicPath, express.static(outputPath));
 app.use(bodyParser.json());
